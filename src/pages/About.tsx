@@ -1,4 +1,3 @@
-
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -48,7 +47,7 @@ const About = () => {
                 className="h-48 w-48 mx-auto"
               />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
               About <span className="text-brand-lime">11th Temple Solutions</span>
             </h1>
             <p className="text-xl text-brand-silver max-w-3xl mx-auto">We're a dedicated team of AI specialists and local business advocates, committed to bridging the gap between cutting-edge technology and community-focused commerce.</p>

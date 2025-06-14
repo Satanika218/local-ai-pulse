@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
 
@@ -18,8 +17,8 @@ const Footer = () => {
                 className="h-16 w-16 drop-shadow-lg"
               />
               <div>
-                <span className="text-xl font-bold text-white">11th Temple Solutions</span>
-                <p className="text-brand-lime text-base">Powering Human Potential</p>
+                <span className="text-lg font-bold text-white">11th Temple Solutions</span>
+                <p className="text-brand-lime text-sm">Powering Human Potential</p>
               </div>
             </div>
             <p className="text-brand-silver mb-6 max-w-md">

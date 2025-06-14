@@ -1,4 +1,3 @@
-
 import { ArrowRight, Bot, TrendingUp, Users, Zap, CheckCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -69,7 +68,7 @@ const Index = () => {
                 className="h-64 w-64 mx-auto drop-shadow-2xl"
               />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Powering <span className="gradient-text">Local Business</span>
               <br />with AI Automation
             </h1>

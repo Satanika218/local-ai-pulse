@@ -54,8 +54,8 @@ const Navigation = () => {
               className="h-20 w-20 drop-shadow-lg"
             />
             <div className="hidden sm:block">
-              <span className="text-2xl font-bold text-white">11th Temple</span>
-              <span className="text-lg text-brand-lime block -mt-1">Solutions</span>
+              <span className="text-xl font-bold text-white">11th Temple</span>
+              <span className="text-base text-brand-lime block -mt-1">Solutions</span>
             </div>
           </Link>
 
