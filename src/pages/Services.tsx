@@ -1,9 +1,9 @@
-
 import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ServicesChatbot from "@/components/ServicesChatbot";
 
 const Services = () => {
   const services = [
@@ -17,7 +17,7 @@ const Services = () => {
         "Staff training and onboarding",
         "24/7 monitoring and support"
       ],
-      pricing: "Starting at $299/month"
+      pricing: "Starting at £299/month"
     },
     {
       icon: <TrendingUp className="h-12 w-12 text-brand-lime" />,
@@ -29,11 +29,11 @@ const Services = () => {
         "Review management automation",
         "Local citation building"
       ],
-      pricing: "Starting at $199/month"
+      pricing: "Starting at £199/month"
     },
     {
       icon: <Users className="h-12 w-12 text-brand-lime" />,
-      title: "Customer Service Bots",
+      title: "Customer Service Agents",
       description: "Provide 24/7 customer support that speaks your customers' language and understands local culture.",
       features: [
         "Local dialect recognition",
@@ -41,7 +41,7 @@ const Services = () => {
         "Seamless human handoff",
         "Multi-channel support"
       ],
-      pricing: "Starting at $149/month"
+      pricing: "Starting at £149/month"
     },
     {
       icon: <BarChart className="h-12 w-12 text-brand-lime" />,
@@ -53,7 +53,7 @@ const Services = () => {
         "Competitive intelligence",
         "Custom reporting dashboards"
       ],
-      pricing: "Starting at $249/month"
+      pricing: "Starting at £249/month"
     }
   ];
 
@@ -194,6 +194,7 @@ const Services = () => {
         </div>
       </section>
 
+      <ServicesChatbot />
       <Footer />
     </div>
   );

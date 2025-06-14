@@ -20,8 +20,11 @@ const Navigation = () => {
   const serviceItems = [
     { name: "Process Automation", path: "/services/process-automation" },
     { name: "Local SEO AI", path: "/services/local-seo" },
-    { name: "Customer Service Bots", path: "/services/customer-service" },
+    { name: "Customer Service Agents", path: "/services/customer-service" },
     { name: "Data Analytics", path: "/services/data-analytics" },
+    { name: "Website Creation", path: "/services/website-creation" },
+    { name: "Sales and Lead Tools", path: "/services/sales-lead-tools" },
+    { name: "Consultation", path: "/consultation" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -36,19 +39,19 @@ const Navigation = () => {
   const handleMouseLeave = () => {
     hoverTimeout = setTimeout(() => {
       setIsServicesOpen(false);
-    }, 500); // Increased delay to 500ms for easier navigation
+    }, 800);
   };
 
   return (
     <nav className="bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - Increased size */}
+          {/* Logo - Further increased size */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" 
               alt="11th Temple Solutions" 
-              className="h-14 w-14"
+              className="h-16 w-16"
             />
             <div className="hidden sm:block">
               <span className="text-xl font-bold text-white">11th Temple</span>
@@ -100,9 +103,11 @@ const Navigation = () => {
               </div>
             ))}
             
-            <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Get Started
-            </Button>
+            <Link to="/consultation">
+              <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -133,9 +138,11 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="pt-2">
-                <Button className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                  Get Started
-                </Button>
+                <Link to="/consultation">
+                  <Button className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

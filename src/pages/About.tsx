@@ -1,4 +1,3 @@
-
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -8,11 +7,11 @@ const About = () => {
   const teamMembers = [{
     name: "Dan Armour",
     role: "Co-Founder, Sales & AI Strategist",
-    experience: "15+ years in sales, business development and tech deployment"
+    experience: "15+ years in sales, business development and tech deployment. Local to Shropshire, Dan brings deep understanding of rural business challenges and opportunities."
   }, {
     name: "Neil Owen",
     role: "Co-Founder, Head of Local Partnerships",
-    experience: "20+ years in community business relations, operations specialist and local advocate"
+    experience: "20+ years in community business relations, operations specialist and local advocate. Born and raised in the heart of Powys, Neil understands the unique dynamics of local Welsh communities."
   }];
   
   const values = [{

@@ -15,7 +15,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" 
                 alt="11th Temple Solutions" 
-                className="h-8 w-8"
+                className="h-10 w-10"
               />
               <div>
                 <span className="text-lg font-bold text-white">11th Temple Solutions</span>
@@ -29,15 +29,22 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-3 text-brand-silver">
                 <Mail className="h-4 w-4 text-brand-lime" />
-                <span>hello@11thtemple.com</span>
+                <span>Hello@11thtemplesolutions.com</span>
               </div>
               <div className="flex items-center space-x-3 text-brand-silver">
                 <Phone className="h-4 w-4 text-brand-lime" />
-                <span>+1 (555) 123-4567</span>
+                <span>+44 7312 190 728</span>
               </div>
               <div className="flex items-center space-x-3 text-brand-silver">
                 <MapPin className="h-4 w-4 text-brand-lime" />
-                <span>Serving Local Businesses Nationwide</span>
+                <a 
+                  href="https://maps.google.com/?q=Newtown,Powys,UK" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-lime transition-colors cursor-pointer"
+                >
+                  Newtown Powys, Serving Local Businesses
+                </a>
               </div>
             </div>
           </div>
@@ -49,7 +56,6 @@ const Footer = () => {
               <li><Link to="/about" className="text-brand-silver hover:text-brand-lime transition-colors">About Us</Link></li>
               <li><Link to="/services" className="text-brand-silver hover:text-brand-lime transition-colors">Services</Link></li>
               <li><Link to="/case-studies" className="text-brand-silver hover:text-brand-lime transition-colors">Case Studies</Link></li>
-              <li><Link to="/blog" className="text-brand-silver hover:text-brand-lime transition-colors">Blog</Link></li>
               <li><Link to="/contact" className="text-brand-silver hover:text-brand-lime transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -60,7 +66,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/services/process-automation" className="text-brand-silver hover:text-brand-lime transition-colors">Process Automation</Link></li>
               <li><Link to="/services/local-seo" className="text-brand-silver hover:text-brand-lime transition-colors">Local SEO AI</Link></li>
-              <li><Link to="/services/customer-service" className="text-brand-silver hover:text-brand-lime transition-colors">Customer Service Bots</Link></li>
+              <li><Link to="/services/customer-service" className="text-brand-silver hover:text-brand-lime transition-colors">Customer Service Agents</Link></li>
               <li><Link to="/services/data-analytics" className="text-brand-silver hover:text-brand-lime transition-colors">Data Analytics</Link></li>
             </ul>
           </div>
