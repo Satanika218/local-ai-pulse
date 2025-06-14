@@ -1,3 +1,4 @@
+
 import { ArrowRight, Bot, TrendingUp, Users, Zap, CheckCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -63,7 +64,7 @@ const Index = () => {
             {/* Logo above main text - significantly increased size for better visibility */}
             <div className="mb-12">
               <img 
-                src="/lovable-uploads/d9209409-b4f5-40dd-a65a-500fc9cc4c1d.png" 
+                src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
                 alt="11th Temple Solutions" 
                 className="h-64 w-64 mx-auto drop-shadow-2xl"
               />

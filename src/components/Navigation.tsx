@@ -49,7 +49,7 @@ const Navigation = () => {
           {/* Logo - Significantly increased size for better visibility */}
           <Link to="/" className="flex items-center space-x-4">
             <img 
-              src="/lovable-uploads/d9209409-b4f5-40dd-a65a-500fc9cc4c1d.png" 
+              src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
               alt="11th Temple Solutions" 
               className="h-20 w-20 drop-shadow-lg"
             />

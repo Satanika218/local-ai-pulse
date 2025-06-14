@@ -1,3 +1,4 @@
+
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -42,7 +43,7 @@ const About = () => {
             {/* Logo above title - doubled in size */}
             <div className="mb-8">
               <img 
-                src="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" 
+                src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
                 alt="11th Temple Solutions" 
                 className="h-48 w-48 mx-auto"
               />
