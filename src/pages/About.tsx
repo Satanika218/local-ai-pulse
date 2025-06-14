@@ -43,10 +43,7 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               About <span className="text-brand-lime">11th Temple Solutions</span>
             </h1>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto">
-              We're a dedicated team of AI specialists and local business advocates, 
-              committed to bridging the gap between cutting-edge technology and community-focused commerce.
-            </p>
+            <p className="text-xl text-brand-silver max-w-3xl mx-auto">We're a dedicated team of AI specialists and local business advocates, committed to bridging the gap between cutting-edge technology and community-focused commerce.</p>
           </div>
         </div>
       </section>
@@ -73,15 +70,19 @@ const About = () => {
             <div className="relative">
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
                 <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
-                <p className="text-brand-silver mb-4">To be the catalyst for human potential in a digital world, transforming businesses through intelligent automation while strengthening the fabric of our local communities.</p>
+                <p className="text-brand-silver mb-4 text-base">To be the catalyst for human potential in a digital world, transforming businesses through intelligent automation while strengthening the fabric of our local communities.</p>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-brand-lime">500+</div>
-                    <div className="text-brand-silver text-sm">Local Businesses Served</div>
+                    <div className="text-2xl font-bold text-brand-lime">
+                  </div>
+                    <div className="text-brand-silver text-sm">
+                  </div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-brand-lime">98%</div>
-                    <div className="text-brand-silver text-sm">Client Satisfaction</div>
+                    <div className="text-2xl font-bold text-brand-lime">
+                  </div>
+                    <div className="text-brand-silver text-sm">
+                  </div>
                   </div>
                 </div>
               </div>
