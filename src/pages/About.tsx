@@ -1,3 +1,4 @@
+
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -70,6 +71,7 @@ const About = () => {
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
                 <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
                 <p className="text-brand-silver mb-4 text-base">To be the catalyst for human potential in a digital world, transforming businesses through intelligent automation while strengthening the fabric of our local communities.</p>
+                <p className="text-brand-silver mb-4 text-base">Heralding from the Marshes where Wales and England meet, both founders have a passion for the area, having worked and lived locally, there's a vested interest in seeing local businesses not just exist but thrive and increase the opportunities for those locally.</p>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-brand-lime">

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight, Mail } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Mail, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
@@ -61,6 +61,24 @@ const CaseStudies = () => {
             <p className="text-xl text-brand-silver max-w-3xl mx-auto">
               Discover how local businesses are transforming their operations and growing their communities with our AI solutions.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trustpilot Section */}
+      <section className="py-8 bg-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center space-x-4">
+            <span className="text-brand-silver text-lg">Read our reviews on</span>
+            <a 
+              href="https://uk.trustpilot.com/review/11thtemplesolutions.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-[#00b67a] text-white px-6 py-3 rounded-lg hover:bg-[#009c6b] transition-colors duration-200 font-semibold"
+            >
+              <span>Trustpilot</span>
+              <ExternalLink className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
