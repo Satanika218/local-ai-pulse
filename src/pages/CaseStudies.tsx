@@ -113,7 +113,7 @@ const CaseStudies = () => {
               href="https://uk.trustpilot.com/review/11thtemplesolutions.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-[#00b67a] text-white px-6 py-3 rounded-lg hover:bg-[#009c6b] transition-colors duration-200 font-semibold"
+              className="inline-flex items-center space-x-2 bg-brand-silver text-brand-navy px-6 py-3 rounded-lg hover:bg-brand-silver-dark hover:text-white transition-colors duration-200 font-semibold"
             >
               <span>Trustpilot</span>
               <ExternalLink className="h-4 w-4" />
