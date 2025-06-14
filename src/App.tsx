@@ -10,6 +10,12 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
 import Consultation from "./pages/Consultation";
+import ProcessAutomation from "./pages/ProcessAutomation";
+import LocalSEO from "./pages/LocalSEO";
+import CustomerService from "./pages/CustomerService";
+import DataAnalytics from "./pages/DataAnalytics";
+import WebsiteCreation from "./pages/WebsiteCreation";
+import SalesLeadTools from "./pages/SalesLeadTools";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +30,12 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/process-automation" element={<ProcessAutomation />} />
+          <Route path="/services/local-seo" element={<LocalSEO />} />
+          <Route path="/services/customer-service" element={<CustomerService />} />
+          <Route path="/services/data-analytics" element={<DataAnalytics />} />
+          <Route path="/services/website-creation" element={<WebsiteCreation />} />
+          <Route path="/services/sales-lead-tools" element={<SalesLeadTools />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/consultation" element={<Consultation />} />
