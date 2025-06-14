@@ -2,19 +2,16 @@ import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+
 const About = () => {
   const teamMembers = [{
-    name: "Alex Rivera",
+    name: "Jordan Mitchell",
     role: "CEO & AI Strategist",
     experience: "15+ years in AI and local business development"
   }, {
-    name: "Sarah Chen",
+    name: "Taylor Rodriguez",
     role: "CTO",
     experience: "12+ years in machine learning and automation"
-  }, {
-    name: "Marcus Johnson",
-    role: "Head of Local Partnerships",
-    experience: "10+ years in community business relations"
   }];
   const values = [{
     icon: <Target className="h-8 w-8 text-brand-lime" />,
@@ -129,7 +126,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {teamMembers.map((member, index) => <Card key={index} className="bg-brand-navy border-brand-silver/20">
                 <CardContent className="p-6 text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -149,4 +146,5 @@ const About = () => {
       <Footer />
     </div>;
 };
+
 export default About;
