@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight, Mail, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,7 +8,7 @@ import Footer from "@/components/Footer";
 const CaseStudies = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   
-  // Sample testimonials - in a real app, these would come from a backend
+  // Updated testimonials with new client feedback
   const testimonials = [
     {
       id: 1,
@@ -25,6 +24,46 @@ const CaseStudies = () => {
       company: "Chen's Auto Repair",
       rating: 5,
       text: "The process automation they implemented saved us 15 hours per week on scheduling and inventory management. ROI was visible within the first month!",
+      approved: true
+    },
+    {
+      id: 3,
+      name: "Oliver Harrington",
+      title: "Marketing Director",
+      rating: 5,
+      text: "Working with 11th Temple Solutions transformed our digital presence completely. Their AI-driven approach to website optimization increased our conversion rates by 32% within just three months. What impressed me most was how they seamlessly integrated advanced technology while maintaining our brand's unique voice. Dan and Neil didn't just implement tools—they developed a comprehensive strategy that continues to deliver results long after the initial project was completed.",
+      approved: true
+    },
+    {
+      id: 4,
+      name: "Sarah Pemberton",
+      title: "CEO",
+      rating: 5,
+      text: "As a small business owner, I was skeptical about AI solutions—I worried they'd make our brand feel impersonal. 11th Temple proved me wrong entirely. Their team took the time to understand our company culture and created automated marketing campaigns that actually sound like us, just more consistent and at a scale we could never manage manually. Our customer engagement has increased dramatically, and I've been able to redirect my time to product development instead of social media management.",
+      approved: true
+    },
+    {
+      id: 5,
+      name: "James Whitfield",
+      title: "Operations Director",
+      rating: 5,
+      text: "The efficiency gains we've experienced since implementing 11th Temple's AI solutions have been nothing short of remarkable. Their system automated our documentation processes, reducing processing time by 78% and virtually eliminating errors. What would have required hiring three additional staff members is now handled seamlessly by their intelligent systems. The ROI has been exceptional, and Dan and Neil's ongoing support has been prompt and thorough.",
+      approved: true
+    },
+    {
+      id: 6,
+      name: "Victoria Blackwell",
+      title: "Head of Talent",
+      rating: 5,
+      text: "11th Temple revolutionized our recruitment process with their AI-powered candidate screening system. We were drowning in applications for each position, spending countless hours on initial reviews. Their solution not only saved us time but actually improved the quality of our shortlists by identifying promising candidates we might have overlooked using traditional methods. The system continues to learn from our hiring decisions, becoming more aligned with our company culture with each recruitment cycle.",
+      approved: true
+    },
+    {
+      id: 7,
+      name: "Alistair Montgomery",
+      title: "Business Owner",
+      rating: 5,
+      text: "As someone who was decidedly skeptical about AI marketing, I can now say I've been completely won over by the results 11th Temple Solutions delivered. Their targeted lead generation system identified precisely the type of clients we specialize in serving, and their automated follow-up sequences maintain the personal touch that's essential in our business. We've seen a 47% increase in qualified inquiries and a 28% improvement in conversion rates. The system effectively pays for itself many times over.",
       approved: true
     }
   ];
@@ -114,7 +153,12 @@ const CaseStudies = () => {
                           {testimonials[currentTestimonial].name}
                         </h4>
                         <p className="text-brand-lime">
-                          {testimonials[currentTestimonial].company}
+                          {testimonials[currentTestimonial].title && (
+                            <span>{testimonials[currentTestimonial].title}</span>
+                          )}
+                          {testimonials[currentTestimonial].company && (
+                            <span>{testimonials[currentTestimonial].title ? ', ' : ''}{testimonials[currentTestimonial].company}</span>
+                          )}
                         </p>
                       </div>
                     </div>
