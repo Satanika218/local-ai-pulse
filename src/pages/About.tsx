@@ -1,4 +1,3 @@
-
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -40,6 +39,14 @@ const About = () => {
       <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            {/* Logo above title - doubled in size */}
+            <div className="mb-8">
+              <img 
+                src="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" 
+                alt="11th Temple Solutions" 
+                className="h-48 w-48 mx-auto"
+              />
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               About <span className="text-brand-lime">11th Temple Solutions</span>
             </h1>

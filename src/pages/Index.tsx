@@ -1,4 +1,3 @@
-
 import { ArrowRight, Bot, TrendingUp, Users, Zap, CheckCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -60,12 +59,12 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy opacity-90"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
-            {/* Logo above main text */}
+            {/* Logo above main text - doubled in size */}
             <div className="mb-8">
               <img 
                 src="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" 
                 alt="11th Temple Solutions" 
-                className="h-24 w-24 mx-auto"
+                className="h-48 w-48 mx-auto"
               />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">

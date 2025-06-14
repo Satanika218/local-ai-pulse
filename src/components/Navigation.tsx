@@ -69,10 +69,17 @@ const Navigation = () => {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <button className="flex items-center space-x-1 text-brand-silver hover:text-brand-lime transition-colors duration-200">
+                    <Link 
+                      to={item.path}
+                      className={`flex items-center space-x-1 transition-colors duration-200 ${
+                        isActive(item.path)
+                          ? "text-brand-lime"
+                          : "text-brand-silver hover:text-brand-lime"
+                      }`}
+                    >
                       <span>{item.name}</span>
                       <ChevronDown className="h-4 w-4" />
-                    </button>
+                    </Link>
                     
                     {isServicesOpen && (
                       <div className="absolute top-full left-0 mt-2 w-56 bg-brand-navy-light border border-brand-silver/20 rounded-lg shadow-xl z-50">
