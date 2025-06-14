@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight, Mail, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -95,7 +96,7 @@ const CaseStudies = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Case Studies & <span className="text-brand-lime">Success Stories</span>
+              Client <span className="text-brand-lime">Testimonials</span>
             </h1>
             <p className="text-xl text-brand-silver max-w-3xl mx-auto">
               Discover how local businesses are transforming their operations and growing their communities with our AI solutions.
@@ -113,7 +114,7 @@ const CaseStudies = () => {
               href="https://uk.trustpilot.com/review/11thtemplesolutions.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-brand-silver text-brand-navy px-6 py-3 rounded-lg hover:bg-brand-silver-dark hover:text-white transition-colors duration-200 font-semibold"
+              className="inline-flex items-center space-x-2 bg-brand-silver/20 text-brand-silver px-6 py-3 rounded-lg hover:bg-brand-silver/30 hover:text-white transition-colors duration-200 font-semibold border border-brand-silver/30"
             >
               <span>Trustpilot</span>
               <ExternalLink className="h-4 w-4" />
@@ -252,20 +253,6 @@ const CaseStudies = () => {
               </Button>
             </CardContent>
           </Card>
-        </div>
-      </section>
-
-      {/* Coming Soon Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Detailed Case Studies <span className="text-brand-lime">Coming Soon</span>
-            </h2>
-            <p className="text-xl text-brand-silver max-w-2xl mx-auto">
-              We're currently compiling comprehensive case studies that showcase the specific challenges, solutions, and measurable results our clients have achieved. Check back soon for in-depth analysis and metrics.
-            </p>
-          </div>
         </div>
       </section>
 
