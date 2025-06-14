@@ -1,9 +1,9 @@
-
 import { ArrowRight, Bot, TrendingUp, Users, Zap, CheckCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const services = [
@@ -77,10 +77,12 @@ const Index = () => {
               Our deep understanding of community dynamics helps your business thrive in the digital age.
             </p>
             <div className="flex justify-center">
-              <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow">
-                Start Your AI Journey
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/services-overview">
+                <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow">
+                  Start Your AI Journey
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -101,15 +103,17 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 hover:glow-effect group">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-                  <p className="text-brand-silver">{service.description}</p>
-                </CardContent>
-              </Card>
+              <Link key={index} to="/services-overview">
+                <Card className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 hover:glow-effect group cursor-pointer h-full">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+                    <p className="text-brand-silver">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -194,12 +198,16 @@ const Index = () => {
             Get a free consultation and discover how AI automation can transform your local business operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Schedule Free Consultation
-            </Button>
-            <Button size="lg" variant="outline" className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy">
-              View Case Studies
-            </Button>
+            <Link to="/consultation">
+              <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                Schedule Free Consultation
+              </Button>
+            </Link>
+            <Link to="/case-studies">
+              <Button size="lg" variant="outline" className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy">
+                View Case Studies
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

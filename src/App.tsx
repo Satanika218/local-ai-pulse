@@ -8,6 +8,7 @@ import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import ServicesOverview from "./pages/ServicesOverview";
 import Contact from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
 import Consultation from "./pages/Consultation";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services-overview" element={<ServicesOverview />} />
           <Route path="/services/process-automation" element={<ProcessAutomation />} />
           <Route path="/services/local-seo" element={<LocalSEO />} />
           <Route path="/services/customer-service" element={<CustomerService />} />
