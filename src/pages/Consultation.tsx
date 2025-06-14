@@ -1,3 +1,4 @@
+
 import { Calendar, Clock, Users, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
