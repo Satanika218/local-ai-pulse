@@ -45,17 +45,17 @@ const Navigation = () => {
   return (
     <nav className="bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo - Further increased size */}
-          <Link to="/" className="flex items-center space-x-3">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo - Significantly increased size for better visibility */}
+          <Link to="/" className="flex items-center space-x-4">
             <img 
-              src="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" 
+              src="/lovable-uploads/d9209409-b4f5-40dd-a65a-500fc9cc4c1d.png" 
               alt="11th Temple Solutions" 
-              className="h-16 w-16"
+              className="h-20 w-20 drop-shadow-lg"
             />
             <div className="hidden sm:block">
-              <span className="text-xl font-bold text-white">11th Temple</span>
-              <span className="text-sm text-brand-lime block -mt-1">Solutions</span>
+              <span className="text-2xl font-bold text-white">11th Temple</span>
+              <span className="text-lg text-brand-lime block -mt-1">Solutions</span>
             </div>
           </Link>
 

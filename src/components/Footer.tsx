@@ -11,15 +11,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="flex items-center space-x-4 mb-6">
               <img 
-                src="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" 
+                src="/lovable-uploads/d9209409-b4f5-40dd-a65a-500fc9cc4c1d.png" 
                 alt="11th Temple Solutions" 
-                className="h-10 w-10"
+                className="h-16 w-16 drop-shadow-lg"
               />
               <div>
-                <span className="text-lg font-bold text-white">11th Temple Solutions</span>
-                <p className="text-brand-lime text-sm">Powering Human Potential</p>
+                <span className="text-xl font-bold text-white">11th Temple Solutions</span>
+                <p className="text-brand-lime text-base">Powering Human Potential</p>
               </div>
             </div>
             <p className="text-brand-silver mb-6 max-w-md">
