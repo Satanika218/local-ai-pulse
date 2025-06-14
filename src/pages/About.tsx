@@ -1,3 +1,4 @@
+
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -133,7 +134,7 @@ const About = () => {
                 <CardContent className="p-6 text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-2xl font-bold text-brand-navy">
-                      {index === 0 ? "DA" : "NO"}
+                      {index === 0 ? "D.A" : "N.O"}
                     </span>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>

@@ -14,7 +14,6 @@ const Navigation = () => {
     { name: "About", path: "/about" },
     { name: "Services", path: "/services", hasDropdown: true },
     { name: "Case Studies", path: "/case-studies" },
-    { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -27,16 +26,29 @@ const Navigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  let hoverTimeout: NodeJS.Timeout;
+
+  const handleMouseEnter = () => {
+    clearTimeout(hoverTimeout);
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeout = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 500); // Increased delay to 500ms for easier navigation
+  };
+
   return (
     <nav className="bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo - Increased size */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" 
               alt="11th Temple Solutions" 
-              className="h-10 w-10"
+              className="h-14 w-14"
             />
             <div className="hidden sm:block">
               <span className="text-xl font-bold text-white">11th Temple</span>
@@ -51,8 +63,8 @@ const Navigation = () => {
                 {item.hasDropdown ? (
                   <div
                     className="relative"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
                   >
                     <button className="flex items-center space-x-1 text-brand-silver hover:text-brand-lime transition-colors duration-200">
                       <span>{item.name}</span>
