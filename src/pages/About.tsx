@@ -1,5 +1,7 @@
+
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -106,21 +108,28 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our <span className="text-brand-lime">Core Values</span>
             </h2>
-            <p className="text-xl text-brand-silver max-w-2xl mx-auto">
+            <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-4">
               These principles guide every decision we make and every solution we develop.
+            </p>
+            <p className="text-brand-lime text-lg">
+              Click on any value to learn how we put it into practice.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => <Card key={index} className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    {value.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                  <p className="text-brand-silver">{value.description}</p>
-                </CardContent>
-              </Card>)}
+            {values.map((value, index) => (
+              <Link key={index} to="/core-values" className="block">
+                <Card className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 cursor-pointer hover:transform hover:scale-105">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-4 flex justify-center">
+                      {value.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
+                    <p className="text-brand-silver">{value.description}</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

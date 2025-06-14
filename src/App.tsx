@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import CoreValues from "./pages/CoreValues";
 import Services from "./pages/Services";
 import ServicesOverview from "./pages/ServicesOverview";
 import Contact from "./pages/Contact";
@@ -31,6 +32,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/core-values" element={<CoreValues />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services-overview" element={<ServicesOverview />} />
           <Route path="/services/process-automation" element={<ProcessAutomation />} />
