@@ -5,14 +5,15 @@ import Footer from "@/components/Footer";
 
 const About = () => {
   const teamMembers = [{
-    name: "Jordan Mitchell",
-    role: "CEO & AI Strategist",
-    experience: "15+ years in AI and local business development"
+    name: "Dan Armour",
+    role: "Co-Founder, Sales & AI Strategist",
+    experience: "15+ years in sales, business development and tech deployment"
   }, {
-    name: "Taylor Rodriguez",
-    role: "CTO",
-    experience: "12+ years in machine learning and automation"
+    name: "Neil Owen",
+    role: "Co-Founder, Head of Local Partnerships",
+    experience: "20+ years in community business relations, operations specialist and local advocate"
   }];
+  
   const values = [{
     icon: <Target className="h-8 w-8 text-brand-lime" />,
     title: "Local Focus",
@@ -30,6 +31,7 @@ const About = () => {
     title: "Growth",
     description: "We measure our success by the growth and success of our local business partners."
   }];
+  
   return <div className="min-h-screen bg-brand-navy">
       <Navigation />
       
@@ -131,7 +133,7 @@ const About = () => {
                 <CardContent className="p-6 text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-2xl font-bold text-brand-navy">
-                      {member.name.split(' ').map(n => n[0]).join('')}
+                      {index === 0 ? "DA" : "NO"}
                     </span>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
