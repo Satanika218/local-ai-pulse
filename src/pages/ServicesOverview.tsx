@@ -1,4 +1,3 @@
-
 import { Bot, TrendingUp, Users, Zap, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,8 +18,7 @@ const ServicesOverview = () => {
         "24/7 automated operations",
         "Custom workflows for your business"
       ],
-      link: "/services/process-automation",
-      price: "Starting at £299/month"
+      link: "/services/process-automation"
     },
     {
       icon: <TrendingUp className="h-12 w-12 text-brand-lime" />,
@@ -33,8 +31,7 @@ const ServicesOverview = () => {
         "Automated local content creation",
         "Community-focused keyword optimization"
       ],
-      link: "/services/local-seo",
-      price: "Starting at £199/month"
+      link: "/services/local-seo"
     },
     {
       icon: <Users className="h-12 w-12 text-brand-lime" />,
@@ -47,8 +44,7 @@ const ServicesOverview = () => {
         "Personalize customer experiences",
         "Increase customer retention by 45%"
       ],
-      link: "/services/data-analytics",
-      price: "Starting at £249/month"
+      link: "/services/data-analytics"
     },
     {
       icon: <Zap className="h-12 w-12 text-brand-lime" />,
@@ -61,8 +57,7 @@ const ServicesOverview = () => {
         "Local cultural understanding",
         "Seamless escalation to human agents"
       ],
-      link: "/services/customer-service",
-      price: "Starting at £149/month"
+      link: "/services/customer-service"
     }
   ];
 
@@ -107,8 +102,7 @@ const ServicesOverview = () => {
                           </div>
                         ))}
                       </div>
-                      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-                        <span className="text-brand-lime font-semibold text-lg">{service.price}</span>
+                      <div className="flex items-center justify-center">
                         <Link to={service.link}>
                           <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
                             Learn More

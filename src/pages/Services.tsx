@@ -1,4 +1,3 @@
-
 import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,8 +16,7 @@ const Services = () => {
         "Local compliance integration",
         "Staff training and onboarding",
         "24/7 monitoring and support"
-      ],
-      pricing: "Starting at £299/month"
+      ]
     },
     {
       icon: <TrendingUp className="h-12 w-12 text-brand-lime" />,
@@ -29,8 +27,7 @@ const Services = () => {
         "Community event integration",
         "Review management automation",
         "Local citation building"
-      ],
-      pricing: "Starting at £199/month"
+      ]
     },
     {
       icon: <Users className="h-12 w-12 text-brand-lime" />,
@@ -41,8 +38,7 @@ const Services = () => {
         "Community-aware responses",
         "Seamless human handoff",
         "Multi-channel support"
-      ],
-      pricing: "Starting at £149/month"
+      ]
     },
     {
       icon: <BarChart className="h-12 w-12 text-brand-lime" />,
@@ -53,8 +49,7 @@ const Services = () => {
         "Customer behavior insights",
         "Competitive intelligence",
         "Custom reporting dashboards"
-      ],
-      pricing: "Starting at £249/month"
+      ]
     }
   ];
 
@@ -130,8 +125,7 @@ const Services = () => {
                     ))}
                   </div>
                   
-                  <div className="flex items-center justify-between pt-4 border-t border-brand-silver/20">
-                    <span className="text-brand-lime font-semibold">{service.pricing}</span>
+                  <div className="flex items-center justify-center pt-4 border-t border-brand-silver/20">
                     <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy">
                       Learn More
                     </Button>

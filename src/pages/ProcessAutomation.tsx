@@ -148,7 +148,7 @@ const ProcessAutomation = () => {
             Ready to Automate Your Processes?
           </h2>
           <p className="text-xl text-brand-silver mb-8">
-            Starting at £299/month. Get a free consultation to see how we can streamline your operations.
+            Get a free consultation to see how we can streamline your operations.
           </p>
           <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
             Schedule Free Consultation

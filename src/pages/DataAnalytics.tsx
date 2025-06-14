@@ -148,7 +148,7 @@ const DataAnalytics = () => {
             Ready to Unlock Your Data?
           </h2>
           <p className="text-xl text-brand-silver mb-8">
-            Starting at £249/month. Get a free analytics audit and discover hidden opportunities.
+            Get a free analytics audit and discover hidden opportunities.
           </p>
           <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
             Get Free Analytics Audit
