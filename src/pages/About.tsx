@@ -1,53 +1,39 @@
-
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Alex Rivera",
-      role: "CEO & AI Strategist",
-      experience: "15+ years in AI and local business development"
-    },
-    {
-      name: "Sarah Chen",
-      role: "CTO",
-      experience: "12+ years in machine learning and automation"
-    },
-    {
-      name: "Marcus Johnson",
-      role: "Head of Local Partnerships",
-      experience: "10+ years in community business relations"
-    }
-  ];
-
-  const values = [
-    {
-      icon: <Target className="h-8 w-8 text-brand-lime" />,
-      title: "Local Focus",
-      description: "We understand that every community is unique and tailor our solutions accordingly."
-    },
-    {
-      icon: <Users className="h-8 w-8 text-brand-lime" />,
-      title: "Human-Centered AI",
-      description: "Our AI enhances human capabilities rather than replacing the personal touch."
-    },
-    {
-      icon: <Award className="h-8 w-8 text-brand-lime" />,
-      title: "Excellence",
-      description: "We're committed to delivering exceptional results for every local business partner."
-    },
-    {
-      icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
-      title: "Growth",
-      description: "We measure our success by the growth and success of our local business partners."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-brand-navy">
+  const teamMembers = [{
+    name: "Alex Rivera",
+    role: "CEO & AI Strategist",
+    experience: "15+ years in AI and local business development"
+  }, {
+    name: "Sarah Chen",
+    role: "CTO",
+    experience: "12+ years in machine learning and automation"
+  }, {
+    name: "Marcus Johnson",
+    role: "Head of Local Partnerships",
+    experience: "10+ years in community business relations"
+  }];
+  const values = [{
+    icon: <Target className="h-8 w-8 text-brand-lime" />,
+    title: "Local Focus",
+    description: "We understand that every community is unique and tailor our solutions accordingly."
+  }, {
+    icon: <Users className="h-8 w-8 text-brand-lime" />,
+    title: "Human-Centered AI",
+    description: "Our AI enhances human capabilities rather than replacing the personal touch."
+  }, {
+    icon: <Award className="h-8 w-8 text-brand-lime" />,
+    title: "Excellence",
+    description: "We're committed to delivering exceptional results for every local business partner."
+  }, {
+    icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
+    title: "Growth",
+    description: "We measure our success by the growth and success of our local business partners."
+  }];
+  return <div className="min-h-screen bg-brand-navy">
       <Navigation />
       
       {/* Hero Section */}
@@ -87,10 +73,7 @@ const About = () => {
             <div className="relative">
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
                 <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
-                <p className="text-brand-silver mb-4">
-                  To be the leading provider of AI automation solutions specifically designed for local businesses, 
-                  creating a world where technology enhances community connections rather than replacing them.
-                </p>
+                <p className="text-brand-silver mb-4">To be the catalyst for human potential in a digital world, transforming businesses through intelligent automation while strengthening the fabric of our local communities.</p>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-brand-lime">500+</div>
@@ -120,8 +103,7 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300">
+            {values.map((value, index) => <Card key={index} className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300">
                 <CardContent className="p-6 text-center">
                   <div className="mb-4 flex justify-center">
                     {value.icon}
@@ -129,8 +111,7 @@ const About = () => {
                   <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
                   <p className="text-brand-silver">{value.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -148,8 +129,7 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="bg-brand-navy border-brand-silver/20">
+            {teamMembers.map((member, index) => <Card key={index} className="bg-brand-navy border-brand-silver/20">
                 <CardContent className="p-6 text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-2xl font-bold text-brand-navy">
@@ -160,15 +140,12 @@ const About = () => {
                   <p className="text-brand-lime mb-3">{member.role}</p>
                   <p className="text-brand-silver text-sm">{member.experience}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
