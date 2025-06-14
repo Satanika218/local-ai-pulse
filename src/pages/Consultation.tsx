@@ -1,4 +1,3 @@
-
 import { Calendar, Clock, Users, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -12,6 +11,13 @@ const Consultation = () => {
     "ROI projections and cost-benefit analysis",
     "Ongoing support and training options"
   ];
+
+  const scrollToBooking = () => {
+    const bookingSection = document.getElementById('booking-section');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-brand-navy">
@@ -60,7 +66,10 @@ const Consultation = () => {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-brand-navy border-brand-silver/20">
+              <Card 
+                className="bg-brand-navy border-brand-silver/20 cursor-pointer hover:border-brand-lime/50 transition-all duration-300"
+                onClick={scrollToBooking}
+              >
                 <CardContent className="p-6 text-center">
                   <Calendar className="h-12 w-12 text-brand-lime mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-white mb-3">Schedule Your Session</h3>
@@ -89,7 +98,7 @@ const Consultation = () => {
       </section>
 
       {/* Scheduler Section */}
-      <section className="py-16 bg-brand-navy">
+      <section id="booking-section" className="py-16 bg-brand-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
