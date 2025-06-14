@@ -75,13 +75,10 @@ const Index = () => {
               We deliver cutting-edge AI automation solutions tailored specifically for local businesses. 
               Our deep understanding of community dynamics helps your business thrive in the digital age.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow">
                 Start Your AI Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy">
-                Watch Demo
               </Button>
             </div>
           </div>
