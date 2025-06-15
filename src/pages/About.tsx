@@ -8,11 +8,15 @@ const About = () => {
   const teamMembers = [{
     name: "Dan Armour",
     role: "Co-Founder, Sales & AI Strategist",
-    experience: "15+ years in sales, business development and tech deployment. Local to Shropshire, Dan brings deep understanding of rural business challenges and opportunities."
+    experience: "15+ years in sales, business development and tech deployment. Local to Shropshire, Dan brings deep understanding of rural business challenges and opportunities.",
+    image: "/lovable-uploads/347422dc-12b8-4b65-8b63-98b195467f19.png",
+    linkedIn: "https://www.linkedin.com/in/dan-armour-a55800bb/"
   }, {
     name: "Neil Owen",
     role: "Co-Founder, Head of Local Partnerships",
-    experience: "20+ years in community business relations, operations specialist and local advocate. Born and raised in the heart of Powys, Neil understands the unique dynamics of local Welsh communities."
+    experience: "20+ years in community business relations, operations specialist and local advocate. Born and raised in the heart of Powys, Neil understands the unique dynamics of local Welsh communities.",
+    image: "/lovable-uploads/a843b65b-2b60-430a-9e41-3f8031fd67f0.png",
+    linkedIn: "https://www.linkedin.com/in/neil-o-76508218/"
   }];
   
   const values = [{
@@ -149,18 +153,19 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Dan Armour */}
             <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-brand-navy">
-                    D.A
-                  </span>
-                </div>
+              <CardContent className="p-6 text-center flex flex-col items-center">
+                <img
+                  src={teamMembers[0].image}
+                  alt="Dan Armour"
+                  className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-brand-lime shadow-md"
+                />
                 <h3 className="text-xl font-semibold text-white mb-2">{teamMembers[0].name}</h3>
                 <p className="text-brand-lime mb-3">{teamMembers[0].role}</p>
                 <p className="text-brand-silver text-sm mb-2">{teamMembers[0].experience}</p>
                 <a 
-                  href="https://www.linkedin.com/in/dan-armour-a55800bb/"
+                  href={teamMembers[0].linkedIn}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-brand-lime hover:text-brand-lime-dark underline"
@@ -169,34 +174,25 @@ const About = () => {
                 </a>
               </CardContent>
             </Card>
+            {/* Neil Owen */}
             <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-brand-navy">
-                    N.O
-                  </span>
-                </div>
+              <CardContent className="p-6 text-center flex flex-col items-center">
+                <img
+                  src={teamMembers[1].image}
+                  alt="Neil Owen"
+                  className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-brand-lime shadow-md"
+                />
                 <h3 className="text-xl font-semibold text-white mb-2">{teamMembers[1].name}</h3>
                 <p className="text-brand-lime mb-3">{teamMembers[1].role}</p>
                 <p className="text-brand-silver text-sm mb-2">{teamMembers[1].experience}</p>
-                <div className="flex flex-col items-center gap-1">
-                  <a 
-                    href="https://www.linkedin.com/in/dan-armour-a55800bb/"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-brand-lime hover:text-brand-lime-dark underline"
-                  >
-                    LinkedIn
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/in/neil-o-76508218/"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-brand-lime hover:text-brand-lime-dark underline"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
+                <a 
+                  href={teamMembers[1].linkedIn}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-brand-lime hover:text-brand-lime-dark underline"
+                >
+                  LinkedIn
+                </a>
               </CardContent>
             </Card>
           </div>
