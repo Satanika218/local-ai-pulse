@@ -13,8 +13,12 @@ interface ChatMessage {
 }
 
 interface UserPath {
-  mainCategory?: string;
+  initialPurpose?: string;
+  businessArea?: string;
+  biggestChallenge?: string;
+  techLevel?: string;
   specificProblem?: string;
+  detailedChallenges?: string[];
   recommendedSolution?: string;
 }
 
@@ -47,109 +51,119 @@ const DecisionTreeChatbot = () => {
   });
   const { toast } = useToast();
 
-  const businessAreas = [
-    'Website & Digital Presence',
-    'Digital Marketing', 
-    'Creative & Design',
-    'Financial Operations',
-    'Customer Relationships',
-    'Sales & Lead Generation',
-    'Human Resources',
-    'Customer Support',
-    'Project Management',
-    'Administrative Operations'
+  const initialPurposeOptions = [
+    'Solve a specific business challenge',
+    'Explore how AI and automation might benefit my operations',
+    'Just browsing and learning'
   ];
 
-  // Streamlined problem suggestions for each category
-  const categoryProblems: Record<string, string[]> = {
-    'Website & Digital Presence': [
-      'Website is outdated and looks unprofessional',
-      'Website loads slowly and has poor mobile experience',
-      'Website doesn\'t generate leads or sales'
-    ],
-    'Digital Marketing': [
-      'Social media posting is inconsistent and time-consuming',
-      'Email marketing has low open rates and engagement',
-      'SEO performance is poor with low search rankings'
-    ],
-    'Creative & Design': [
-      'Need professional logo and consistent branding',
-      'Creating marketing materials takes too much time',
-      'Visual content lacks quality and consistency'
-    ],
-    'Financial Operations': [
-      'Invoice processing and data entry is manual and slow',
-      'Expense tracking and financial reporting is disorganized',
-      'Cash flow forecasting is inaccurate'
-    ],
-    'Customer Relationships': [
-      'Customer communication is generic and impersonal',
-      'Missing insights about customer behavior and preferences',
-      'Difficulty retaining customers and predicting churn'
-    ],
-    'Sales & Lead Generation': [
-      'Not generating enough quality leads',
-      'Sales follow-up is inconsistent and manual',
-      'Lead qualification and scoring is ineffective'
-    ],
-    'Human Resources': [
-      'Resume screening and hiring process is overwhelming',
-      'Employee onboarding lacks consistency',
-      'Performance management and feedback is inefficient'
-    ],
-    'Customer Support': [
-      'Response times to customer inquiries are too slow',
-      'Support quality is inconsistent across team',
-      'Cannot handle support volume during peak times'
-    ],
-    'Project Management': [
-      'Task prioritization and deadlines are poorly managed',
-      'Team workload is unbalanced and inefficient',
-      'Project timelines are unrealistic and often missed'
-    ],
-    'Administrative Operations': [
-      'Document management is disorganized and time-consuming',
-      'Email overload is reducing productivity',
-      'Manual data entry creates errors and delays'
-    ]
+  const businessAreas = [
+    'Website and online presence',
+    'Marketing and customer acquisition', 
+    'Financial operations and paperwork',
+    'Customer relationships and support',
+    'Sales processes and lead generation',
+    'Administrative tasks and operations',
+    'Project management',
+    'Human resources',
+    'Other (please specify)'
+  ];
+
+  const biggestChallenges = [
+    'Growing revenue',
+    'Reducing costs',
+    'Improving efficiency',
+    'Enhancing customer experience',
+    'Managing workload with limited staff',
+    'Keeping up with competitors',
+    'Maintaining quality while scaling',
+    'Other (please specify)'
+  ];
+
+  const techLevels = [
+    'Mostly paper-based processes',
+    'Basic digital tools (email, spreadsheets)',
+    'Some specialized software but not integrated',
+    'Multiple digital systems that don\'t work well together',
+    'Fairly digitized but looking to optimize',
+    'Advanced systems but not using AI or automation'
+  ];
+
+  // Second-level questions based on business areas
+  const secondLevelQuestions: Record<string, { question: string; options: string[] }> = {
+    'Website and online presence': {
+      question: "Your website and online presence are crucial touchpoints for customers. Could you tell me more specifically what challenges you're facing in this area?",
+      options: [
+        'Website not generating enough leads or sales',
+        'Spending too much time managing website updates',
+        'Struggle to understand how visitors use the site',
+        'Website not performing well on mobile devices',
+        'Trouble creating fresh content for the site'
+      ]
+    },
+    'Marketing and customer acquisition': {
+      question: "Marketing can certainly be time-consuming and complex. What specific aspects of marketing are you finding most challenging?",
+      options: [
+        'Struggling to create consistent content across channels',
+        'Difficult to measure marketing effectiveness',
+        'Hard to identify which marketing activities drive best results',
+        'Too much time manually posting on social media',
+        'Email marketing not delivering desired results'
+      ]
+    },
+    'Financial operations and paperwork': {
+      question: "Many businesses are looking to streamline their financial operations. What specific aspects are most challenging for you?",
+      options: [
+        'Too much time processing invoices or receipts',
+        'Financial forecasting and planning difficult',
+        'Still rely on paper documents for financial processes',
+        'Reconciling accounts and transactions time-consuming',
+        'Struggle with financial compliance and reporting'
+      ]
+    },
+    'Customer relationships and support': {
+      question: "Customer relationships are vital to business success. What specific challenges are you facing in this area?",
+      options: [
+        'Struggling to provide timely responses to customer inquiries',
+        'Difficult to maintain consistent communication with customers',
+        'Trouble understanding customer satisfaction levels',
+        'Managing customer data across different systems challenging',
+        'Hard to personalize customer interactions'
+      ]
+    },
+    'Sales processes and lead generation': {
+      question: "Sales and lead generation are critical for growth. What specific aspects are most challenging for you?",
+      options: [
+        'Identifying quality leads is a challenge',
+        'Struggle to follow up with prospects consistently',
+        'Sales team spending too much time on admin tasks',
+        'Difficulty predicting sales outcomes and forecasting',
+        'CRM system not meeting needs'
+      ]
+    },
+    'Administrative tasks and operations': {
+      question: "Administrative tasks can consume valuable time. What specific administrative challenges are you facing?",
+      options: [
+        'Routine document processing takes too much time',
+        'Struggle with organizing and retrieving information',
+        'Coordinating meetings and communications inefficient',
+        'Still using paper-based processes for administration',
+        'Difficult to track and manage vendor relationships'
+      ]
+    }
   };
 
   const solutions: Record<string, string> = {
-    'Website is outdated and looks unprofessional': 'Our AI website builder creates modern, professional websites tailored to your industry in days instead of months, with mobile optimization and SEO built-in.',
-    'Website loads slowly and has poor mobile experience': 'Our performance optimization AI automatically improves site speed and mobile responsiveness, typically increasing page load speeds by 60% and mobile user engagement by 40%.',
-    'Website doesn\'t generate leads or sales': 'Our conversion optimization AI analyzes user behavior and implements improvements that have increased lead generation by 35-50% for our clients.',
-    'Social media posting is inconsistent and time-consuming': 'Our AI social media manager creates and schedules optimized content across all platforms, maintaining consistent presence while saving 15+ hours per week.',
-    'Email marketing has low open rates and engagement': 'Our AI email optimization system analyzes recipient behavior to determine optimal send times and creates personalized subject lines that increase open rates by 35%.',
-    'SEO performance is poor with low search rankings': 'Our AI-powered SEO system continuously optimizes your site against 200+ ranking factors, typically boosting organic traffic by 40-60% within three months.',
-    'Need professional logo and consistent branding': 'Our AI design system creates professional logos and brand guidelines based on your industry and values, delivering complete brand identity in minutes instead of weeks.',
-    'Creating marketing materials takes too much time': 'Our AI design assistant creates professional graphics, presentations, and marketing materials without requiring design expertise, reducing creation time by 80%.',
-    'Visual content lacks quality and consistency': 'Our automated image enhancement AI processes and optimizes visual content at scale, ensuring consistent quality and style across all materials.',
-    'Invoice processing and data entry is manual and slow': 'Our AI document processing system automatically extracts, categorizes, and enters invoice data, reducing processing time by 80% and virtually eliminating errors.',
-    'Expense tracking and financial reporting is disorganized': 'Our AI expense management system automatically categorizes expenses and generates financial reports, integrating seamlessly with your accounting software.',
-    'Cash flow forecasting is inaccurate': 'Our predictive financial AI analyzes historical patterns and market trends to provide accurate cash flow forecasts, helping you make confident business decisions.',
-    'Customer communication is generic and impersonal': 'Our AI personalization engine creates individualized communications that speak directly to each customer\'s needs, increasing engagement by 40% on average.',
-    'Missing insights about customer behavior and preferences': 'Our customer analysis AI identifies meaningful behavioral patterns and preferences, providing actionable insights to improve satisfaction and retention.',
-    'Difficulty retaining customers and predicting churn': 'Our predictive AI identifies customers showing signs of disengagement before they leave, enabling proactive retention efforts that reduce churn by 30%.',
-    'Not generating enough quality leads': 'Our AI lead generation system identifies high-potential prospects based on behavioral data, delivering qualified leads that match your ideal customer profile.',
-    'Sales follow-up is inconsistent and manual': 'Our automated follow-up system ensures timely, personalized communication throughout the sales cycle, increasing conversion rates by 28% on average.',
-    'Lead qualification and scoring is ineffective': 'Our lead scoring AI automatically evaluates prospects based on likelihood to convert, helping your sales team focus on the most promising opportunities.',
-    'Resume screening and hiring process is overwhelming': 'Our AI recruitment assistant automatically screens applications to identify qualified candidates, reducing hiring time by 65% while improving candidate quality.',
-    'Employee onboarding lacks consistency': 'Our AI onboarding system creates personalized experiences for new hires, ensuring they receive the right information at the right time for faster productivity.',
-    'Performance management and feedback is inefficient': 'Our AI performance system tracks key metrics and provides automated feedback suggestions, improving employee engagement and development.',
-    'Response times to customer inquiries are too slow': 'Our AI chatbot handles common inquiries instantly, 24/7, while routing complex issues to the right team members, improving satisfaction by 42%.',
-    'Support quality is inconsistent across team': 'Our response suggestion AI provides optimal answers based on successful past interactions, ensuring consistent, high-quality service across all team members.',
-    'Cannot handle support volume during peak times': 'Our AI support system automatically scales to handle increased volume, managing routine inquiries while prioritizing urgent issues for human attention.',
-    'Task prioritization and deadlines are poorly managed': 'Our AI task manager automatically prioritizes work based on deadlines, dependencies, and business impact, ensuring your team focuses on what matters most.',
-    'Team workload is unbalanced and inefficient': 'Our resource optimization AI balances workloads across your team based on skills and availability, improving productivity by 25-35% without increasing headcount.',
-    'Project timelines are unrealistic and often missed': 'Our predictive project AI generates accurate timelines based on historical data and team capacity, preventing missed deadlines and scope creep.',
-    'Document management is disorganized and time-consuming': 'Our AI document system automatically classifies, tags, and organizes files, making information instantly retrievable instead of lost in folders.',
-    'Email overload is reducing productivity': 'Our email management AI prioritizes messages, drafts responses, and handles routine correspondence, typically saving 5-10 hours per week per employee.',
-    'Manual data entry creates errors and delays': 'Our intelligent document processing AI extracts key information from any document type, eliminating manual data entry and reducing processing time by 85%.'
+    'Website not generating enough leads or sales': 'Based on your website lead generation challenges, I recommend: 1) AI-Powered Conversion Optimization that analyzes visitor behavior and automatically adjusts your website (typically 25-30% increase in leads), 2) Intelligent Chatbot Implementation for 24/7 visitor engagement (35% more leads captured outside business hours), and 3) Automated SEO Enhancement for better search visibility (40-60% organic traffic increase within three months).',
+    'Too much time processing invoices or receipts': 'For your invoice processing challenges, I recommend: 1) Intelligent Document Processing with 98% accuracy that reduces processing time by 80%, 2) Cloud-Based Document Management for instant searchability and compliance, and 3) Accounting System Integration that eliminates manual data entry entirely. Similar businesses reduce financial processing costs by 60-70%.',
+    'Struggling to provide timely responses to customer inquiries': 'To improve your customer response times, I recommend: 1) AI Customer Service Agents that provide instant 24/7 responses to common questions, 2) Intelligent Ticket Routing that prioritizes urgent issues and routes them to the right team members, and 3) Automated Follow-up Systems that ensure no customer inquiry falls through the cracks.',
+    'Identifying quality leads is a challenge': 'For better lead identification, I recommend: 1) AI Lead Scoring that analyzes prospect behavior to identify high-value opportunities, 2) Automated Lead Nurturing that maintains engagement until prospects are ready to buy, and 3) Predictive Analytics that identifies your ideal customer profile based on successful conversions.',
+    'Struggling to create consistent content across channels': 'To streamline your content creation, I recommend: 1) AI Content Generation that creates consistent, on-brand content across all platforms, 2) Social Media Automation that schedules and publishes content optimally, and 3) Content Performance Analytics that shows which content drives the best results.'
   };
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      addBotMessage("Hi! I'm here to help you find the perfect AI solution for your business. What area would you like to improve?");
+      addBotMessage("Hi there! I'm your AI business consultant from 11th Temple Solutions. I help businesses identify areas where technology and automation can save time, reduce costs, and drive growth. What brings you here today? Are you looking to solve a specific business challenge, or are you interested in exploring how AI and automation might benefit your operations?");
     }
   }, [isOpen]);
 
@@ -165,39 +179,73 @@ const DecisionTreeChatbot = () => {
     setMessages(prev => [...prev, { type: 'user', text, timestamp: new Date() }]);
   };
 
-  const handleBusinessAreaSelect = (area: string) => {
-    addUserMessage(area);
-    setUserPath(prev => ({ ...prev, mainCategory: area }));
+  const handleInitialPurpose = (purpose: string) => {
+    addUserMessage(purpose);
+    setUserPath(prev => ({ ...prev, initialPurpose: purpose }));
     
-    const problems = categoryProblems[area] || [];
-    addBotMessage(`Great! Here are some common ${area.toLowerCase()} challenges. Which sounds most like your situation?`);
-    setCurrentStep('problemSelection');
+    if (purpose === 'Just browsing and learning') {
+      addBotMessage("That's perfectly fine! Learning about AI and automation options is a great first step. Let me ask you a few questions to provide the most relevant information for your business. What area of your business currently takes up the most time or resources?");
+    } else {
+      addBotMessage("Excellent! To help identify the best solutions for your business, I'd like to understand your current situation better. What area of your business currently takes up the most time or resources?");
+    }
+    setCurrentStep('businessArea');
   };
 
-  const handleProblemSelect = (problem: string) => {
-    addUserMessage(problem);
-    setUserPath(prev => ({ ...prev, specificProblem: problem }));
+  const handleBusinessArea = (area: string) => {
+    addUserMessage(area);
+    setUserPath(prev => ({ ...prev, businessArea: area }));
     
-    if (problem === "Not sure / Something else") {
+    if (area === 'Other (please specify)') {
       setShowForm(true);
-      addBotMessage("No problem! Let's get you connected with our experts who can understand your specific needs.");
+      addBotMessage("I'd love to learn more about your specific situation. Let's connect you with our team to discuss your unique needs.");
       return;
     }
 
+    addBotMessage("Thank you for sharing that. Now, what's your biggest business challenge right now?");
+    setCurrentStep('biggestChallenge');
+  };
+
+  const handleBiggestChallenge = (challenge: string) => {
+    addUserMessage(challenge);
+    setUserPath(prev => ({ ...prev, biggestChallenge: challenge }));
+    
+    addBotMessage("That's helpful context. How would you describe your current level of technology adoption?");
+    setCurrentStep('techLevel');
+  };
+
+  const handleTechLevel = (level: string) => {
+    addUserMessage(level);
+    setUserPath(prev => ({ ...prev, techLevel: level }));
+    
+    const businessArea = userPath.businessArea;
+    if (businessArea && secondLevelQuestions[businessArea]) {
+      const { question } = secondLevelQuestions[businessArea];
+      addBotMessage(question);
+      setCurrentStep('specificProblem');
+    } else {
+      setShowForm(true);
+      addBotMessage("Based on what you've shared, I'd like to connect you with our specialists who can provide tailored recommendations for your situation.");
+    }
+  };
+
+  const handleSpecificProblem = (problem: string) => {
+    addUserMessage(problem);
+    setUserPath(prev => ({ ...prev, specificProblem: problem }));
+    
     const solution = solutions[problem];
     if (solution) {
       setUserPath(prev => ({ ...prev, recommendedSolution: solution }));
-      addBotMessage(`Perfect! ${solution} Would you like to learn more about this solution?`);
+      addBotMessage(`Perfect! ${solution} Would you like to learn more about implementing these solutions?`);
       setCurrentStep('solution');
     } else {
       setShowForm(true);
-      addBotMessage("Let's connect you with our team to discuss a tailored solution for your specific needs.");
+      addBotMessage("Thank you for the detailed information. Let me connect you with our team to discuss a customized solution for your specific needs.");
     }
   };
 
   const handleLearnMore = () => {
     setShowForm(true);
-    addBotMessage("Excellent! To provide you with specific information about implementation and pricing, we'd like to learn more about your business.");
+    addBotMessage("Excellent! To provide you with specific information about implementation, pricing, and next steps, I'd like to connect you with our team.");
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -212,7 +260,6 @@ const DecisionTreeChatbot = () => {
       return;
     }
 
-    // Simulate email sending
     console.log('Sending HOT LEAD email to hello@11thtemplesolutions.com and 11th-temple-solutions@mail.com');
     console.log('Lead Data:', {
       ...formData,
@@ -353,10 +400,28 @@ const DecisionTreeChatbot = () => {
     if (currentStep === 'greeting') {
       return (
         <div className="space-y-2">
+          {initialPurposeOptions.map((purpose, index) => (
+            <Button
+              key={index}
+              onClick={() => handleInitialPurpose(purpose)}
+              variant="outline"
+              size="sm"
+              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
+            >
+              {purpose}
+            </Button>
+          ))}
+        </div>
+      );
+    }
+
+    if (currentStep === 'businessArea') {
+      return (
+        <div className="space-y-2">
           {businessAreas.map((area, index) => (
             <Button
               key={index}
-              onClick={() => handleBusinessAreaSelect(area)}
+              onClick={() => handleBusinessArea(area)}
               variant="outline"
               size="sm"
               className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
@@ -368,14 +433,50 @@ const DecisionTreeChatbot = () => {
       );
     }
 
-    if (currentStep === 'problemSelection' && userPath.mainCategory) {
-      const problems = categoryProblems[userPath.mainCategory] || [];
+    if (currentStep === 'biggestChallenge') {
       return (
         <div className="space-y-2">
-          {problems.map((problem, index) => (
+          {biggestChallenges.map((challenge, index) => (
             <Button
               key={index}
-              onClick={() => handleProblemSelect(problem)}
+              onClick={() => handleBiggestChallenge(challenge)}
+              variant="outline"
+              size="sm"
+              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
+            >
+              {challenge}
+            </Button>
+          ))}
+        </div>
+      );
+    }
+
+    if (currentStep === 'techLevel') {
+      return (
+        <div className="space-y-2">
+          {techLevels.map((level, index) => (
+            <Button
+              key={index}
+              onClick={() => handleTechLevel(level)}
+              variant="outline"
+              size="sm"
+              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
+            >
+              {level}
+            </Button>
+          ))}
+        </div>
+      );
+    }
+
+    if (currentStep === 'specificProblem' && userPath.businessArea) {
+      const options = secondLevelQuestions[userPath.businessArea]?.options || [];
+      return (
+        <div className="space-y-2">
+          {options.map((problem, index) => (
+            <Button
+              key={index}
+              onClick={() => handleSpecificProblem(problem)}
               variant="outline"
               size="sm"
               className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
@@ -383,14 +484,6 @@ const DecisionTreeChatbot = () => {
               {problem}
             </Button>
           ))}
-          <Button
-            onClick={() => handleProblemSelect("Not sure / Something else")}
-            variant="outline"
-            size="sm"
-            className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
-          >
-            Not sure / Something else
-          </Button>
         </div>
       );
     }
@@ -426,7 +519,11 @@ const DecisionTreeChatbot = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="h-14 w-14 rounded-full bg-brand-lime text-brand-navy hover:bg-brand-navy hover:text-brand-lime shadow-lg"
+          className={`h-14 w-14 rounded-full shadow-lg ${
+            isOpen 
+              ? "bg-brand-silver text-brand-navy hover:bg-brand-navy hover:text-brand-silver" 
+              : "bg-brand-lime text-brand-navy hover:bg-brand-navy hover:text-brand-lime"
+          }`}
         >
           {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
         </Button>
@@ -441,7 +538,7 @@ const DecisionTreeChatbot = () => {
               <div className="flex items-center justify-between mb-4 pb-2 border-b border-brand-silver/20">
                 <div>
                   <h3 className="text-white font-semibold text-sm">11th Temple Solutions</h3>
-                  <p className="text-brand-silver text-xs">AI Business Solutions</p>
+                  <p className="text-brand-silver text-xs">AI Business Consultant</p>
                 </div>
                 {currentStep !== 'greeting' && !showForm && (
                   <Button
