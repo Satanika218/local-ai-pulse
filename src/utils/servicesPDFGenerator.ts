@@ -1,4 +1,3 @@
-
 import jsPDF from "jspdf";
 
 // ServiceData type is minimal and internal here.
@@ -30,9 +29,9 @@ function addLogo(doc: jsPDF, x: number, y: number, width: number, cb: () => void
 }
 
 // Brand palette
-const navy = [20, 33, 61];
-const lime = [150, 255, 0];
-const silver = [156, 163, 175];
+const navy = [20, 33, 61] as const;
+const lime = [150, 255, 0] as const;
+const silver = [156, 163, 175] as const;
 
 export async function generateServicesPDF(services: ServiceData[]) {
   const doc = new jsPDF();
