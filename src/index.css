@@ -62,7 +62,7 @@
     @apply text-white;
   }
 
-  /* Accessibility improvements */
+  /* Enhanced accessibility improvements */
   *:focus {
     outline: 2px solid #7FFF00;
     outline-offset: 2px;
@@ -154,9 +154,15 @@
     background-size: 20px 20px;
   }
 
-  /* High contrast mode styles */
+  /* Enhanced accessibility classes */
   .high-contrast {
-    filter: contrast(150%) brightness(120%);
+    filter: contrast(200%) brightness(150%) !important;
+  }
+
+  .high-contrast * {
+    border-color: #ffffff !important;
+    background: black !important;
+    color: white !important;
   }
 
   .high-contrast .bg-brand-navy {
@@ -175,6 +181,17 @@
     border-color: #ffffff !important;
   }
 
+  /* Dark mode */
+  .dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  .dark-mode img, 
+  .dark-mode video, 
+  .dark-mode svg {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
   /* Screen reader optimizations */
   .screen-reader-mode {
     line-height: 1.8 !important;
@@ -183,6 +200,97 @@
 
   .screen-reader-mode * {
     font-family: Arial, sans-serif !important;
+    font-weight: normal !important;
+  }
+
+  /* Enhanced focus indicators */
+  .enhanced-focus *:focus {
+    outline: 4px solid #7FFF00 !important;
+    outline-offset: 4px !important;
+    box-shadow: 0 0 0 8px rgba(127, 255, 0, 0.3) !important;
+  }
+
+  /* Keyboard navigation */
+  .keyboard-nav *:focus {
+    box-shadow: 0 0 0 3px #7FFF00, inset 0 0 0 1px #7FFF00 !important;
+    border-radius: 4px !important;
+  }
+
+  /* Animation control */
+  .pause-animations *,
+  .pause-animations *::before,
+  .pause-animations *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Dyslexia-friendly font */
+  .dyslexia-font * {
+    font-family: 'OpenDyslexic', 'Arial', sans-serif !important;
+    font-weight: normal !important;
+  }
+
+  /* Reading guide */
+  .reading-guide {
+    position: relative;
+  }
+
+  .reading-guide *:hover::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      transparent 35%, 
+      rgba(255, 255, 0, 0.2) 35%, 
+      rgba(255, 255, 0, 0.2) 65%, 
+      transparent 65%
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Enhanced tooltips */
+  .enhanced-tooltips [title]:hover::before {
+    content: attr(title);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 10000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .enhanced-tooltips [title]:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #000;
+    z-index: 10000;
+  }
+
+  /* Text magnifier */
+  .text-magnifier *:hover {
+    transform: scale(1.15);
+    z-index: 1000;
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 4px;
+    padding: 2px;
+    transition: transform 0.2s ease;
   }
 
   /* Screen reader only content */
@@ -196,23 +304,6 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-  }
-
-  /* Reading guide */
-  .reading-guide {
-    position: relative;
-  }
-
-  .reading-guide:hover::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(transparent 40%, rgba(255,255,0,0.3) 40%, rgba(255,255,0,0.3) 60%, transparent 60%);
-    pointer-events: none;
-    z-index: 9999;
   }
 
   /* GDPR compliance styling */
@@ -244,6 +335,14 @@
   }
 }
 
+/* High contrast media query */
+@media (prefers-contrast: high) {
+  :root {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+  }
+}
+
 /* Ensure minimum touch target size for mobile */
 @media (max-width: 768px) {
   button,
@@ -253,5 +352,17 @@
   select {
     min-height: 44px;
     min-width: 44px;
+  }
+}
+
+/* Print styles for accessibility */
+@media print {
+  .accessibility-toolbar {
+    display: none !important;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
   }
 }
