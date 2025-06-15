@@ -1,4 +1,5 @@
-import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight, Search, FileText, Eye, Lightbulb, Wrench, TrendingUp as Growth } from "lucide-react";
+
+import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight, Search, FileText, Eye, Lightbulb, Wrench, TrendingUp as Growth, Globe, Palette, Shield, Zap, MessageCircle, Clock, DollarSign, UserCheck, Briefcase, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -6,63 +7,6 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 
 const Services = () => {
-  const services = [
-    {
-      icon: <Bot className="h-12 w-12 text-brand-lime" />,
-      title: "Process Automation",
-      description: "Streamline your business operations with intelligent automation that understands your local workflow.",
-      features: [
-        "Custom workflow automation",
-        "Local compliance integration",
-        "Staff training and onboarding",
-        "24/7 monitoring and support"
-      ],
-      link: "/services/process-automation"
-    },
-    {
-      icon: <TrendingUp className="h-12 w-12 text-brand-lime" />,
-      title: "Local SEO AI",
-      description: "Dominate local search results with AI that knows your neighbourhood better than your competition.",
-      features: [
-        "Local keyword optimisation",
-        "Community event integration",
-        "Review management automation",
-        "Local citation building"
-      ],
-      link: "/services/local-seo",
-      hasAudit: true,
-      auditLink: "/seo-audit",
-      auditText: "Get Free SEO Audit"
-    },
-    {
-      icon: <Users className="h-12 w-12 text-brand-lime" />,
-      title: "Customer Service Agents",
-      description: "Provide 24/7 customer support that speaks your customers' language and understands local culture.",
-      features: [
-        "Local dialect recognition",
-        "Community-aware responses",
-        "Seamless human handoff",
-        "Multi-channel support"
-      ],
-      link: "/services/customer-service"
-    },
-    {
-      icon: <BarChart className="h-12 w-12 text-brand-lime" />,
-      title: "Data Analytics",
-      description: "Get insights that matter to your local market with AI-powered analytics and reporting.",
-      features: [
-        "Local market analysis",
-        "Customer behaviour insights",
-        "Competitive intelligence",
-        "Custom reporting dashboards"
-      ],
-      link: "/services/data-analytics",
-      hasAudit: true,
-      auditLink: "/analytics-audit",
-      auditText: "Get Free Analytics Audit"
-    }
-  ];
-
   const auditTools = [
     {
       icon: <Search className="h-12 w-12 text-brand-lime" />,
@@ -87,6 +31,119 @@ const Services = () => {
         "Growth opportunity identification"
       ],
       link: "/analytics-audit"
+    }
+  ];
+
+  const businessAreas = [
+    {
+      icon: <Globe className="h-8 w-8 text-brand-lime" />,
+      title: "Website & Digital Presence",
+      description: "Professional websites and digital solutions that convert visitors into customers.",
+      solutions: [
+        "AI-powered website building and optimization",
+        "Mobile-responsive design with fast loading",
+        "SEO optimization for local search visibility",
+        "User experience improvements to reduce bounce rates"
+      ]
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
+      title: "Digital Marketing",
+      description: "AI-driven marketing strategies that attract and retain customers.",
+      solutions: [
+        "Automated social media content creation and scheduling",
+        "Personalized email marketing campaigns",
+        "Local SEO to dominate search results",
+        "Content optimization for maximum engagement"
+      ]
+    },
+    {
+      icon: <Palette className="h-8 w-8 text-brand-lime" />,
+      title: "Creative & Design",
+      description: "Professional visual identity and marketing materials that captivate audiences.",
+      solutions: [
+        "AI-powered logo design and brand development",
+        "Automated graphic creation for social media",
+        "Consistent brand application across all materials",
+        "Professional image enhancement and editing"
+      ]
+    },
+    {
+      icon: <DollarSign className="h-8 w-8 text-brand-lime" />,
+      title: "Financial Operations",
+      description: "Streamline financial processes with intelligent automation.",
+      solutions: [
+        "Automated invoice and receipt processing",
+        "AI-powered cash flow forecasting",
+        "Budget variance tracking and alerts",
+        "Financial document classification and storage"
+      ]
+    },
+    {
+      icon: <Users className="h-8 w-8 text-brand-lime" />,
+      title: "Customer Relationships",
+      description: "Build stronger connections with AI-powered customer insights.",
+      solutions: [
+        "Personalized customer communication at scale",
+        "Intelligent customer segmentation",
+        "Competitive intelligence and market analysis",
+        "Trend identification for emerging opportunities"
+      ]
+    },
+    {
+      icon: <Zap className="h-8 w-8 text-brand-lime" />,
+      title: "Sales & Lead Generation",
+      description: "Automate your sales pipeline and generate more qualified leads.",
+      solutions: [
+        "AI-powered lead generation and qualification",
+        "Automated follow-up sequences",
+        "Professional proposal generation",
+        "Sales pipeline optimization and tracking"
+      ]
+    },
+    {
+      icon: <UserCheck className="h-8 w-8 text-brand-lime" />,
+      title: "Human Resources",
+      description: "Streamline HR processes from recruitment to employee engagement.",
+      solutions: [
+        "Automated resume screening and candidate matching",
+        "AI-powered interview scheduling coordination",
+        "Personalized employee onboarding experiences",
+        "Employee sentiment analysis and engagement tracking"
+      ]
+    },
+    {
+      icon: <MessageCircle className="h-8 w-8 text-brand-lime" />,
+      title: "Customer Support",
+      description: "Provide exceptional 24/7 support with AI-powered solutions.",
+      solutions: [
+        "Intelligent chatbots for instant customer service",
+        "Automated response suggestions for support teams",
+        "Customer satisfaction sentiment analysis",
+        "Predictive customer churn prevention"
+      ]
+    },
+    {
+      icon: <Briefcase className="h-8 w-8 text-brand-lime" />,
+      title: "Project Management",
+      description: "Optimize workflows and resource allocation with smart automation.",
+      solutions: [
+        "AI-powered task prioritization and scheduling",
+        "Predictive project timeline generation",
+        "Team workload optimization and balancing",
+        "Automated time tracking and categorization"
+      ]
+    },
+    {
+      icon: <FolderOpen className="h-8 w-8 text-brand-lime" />,
+      title: "Administrative Operations",
+      description: "Eliminate manual tasks with intelligent document and communication management.",
+      solutions: [
+        "Automated document classification and organization",
+        "Smart email management and prioritization",
+        "AI-powered meeting scheduling coordination",
+        "Intelligent data extraction from any document type"
+      ]
     }
   ];
 
@@ -135,55 +192,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Free Audit Tools Section - Moved Up */}
       <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 group">
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="group-hover:scale-110 transition-transform duration-300">
-                      {service.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                      <p className="text-brand-silver mb-4">{service.description}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
-                        <span className="text-brand-silver">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex flex-col gap-3 pt-4 border-t border-brand-silver/20">
-                    <Link to={service.link}>
-                      <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark w-full">
-                        Learn More
-                      </Button>
-                    </Link>
-                    {service.hasAudit && service.auditLink && (
-                      <Link to={service.auditLink}>
-                        <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy w-full">
-                          {service.auditText}
-                        </Button>
-                      </Link>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Free Audit Tools Section */}
-      <section className="py-16 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -196,7 +206,7 @@ const Services = () => {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {auditTools.map((tool, index) => (
-              <Card key={index} className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 group">
+              <Card key={index} className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 group">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-4 mb-6">
                     <div className="group-hover:scale-110 transition-transform duration-300">
@@ -224,6 +234,46 @@ const Services = () => {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Business Areas Section */}
+      <section className="py-16 bg-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Complete Business <span className="text-brand-lime">Solutions</span>
+            </h2>
+            <p className="text-xl text-brand-silver max-w-3xl mx-auto">
+              From digital presence to operational efficiency, we cover all aspects of your business with AI-powered solutions.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {businessAreas.map((area, index) => (
+              <Card key={index} className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 group">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="group-hover:scale-110 transition-transform duration-300">
+                      {area.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{area.title}</h3>
+                  </div>
+                  
+                  <p className="text-brand-silver mb-4">{area.description}</p>
+                  
+                  <div className="space-y-2">
+                    {area.solutions.map((solution, solutionIndex) => (
+                      <div key={solutionIndex} className="flex items-start space-x-2">
+                        <CheckCircle className="h-4 w-4 text-brand-lime flex-shrink-0 mt-0.5" />
+                        <span className="text-brand-silver text-sm">{solution}</span>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
