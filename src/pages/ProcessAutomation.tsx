@@ -3,12 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ChatbotLauncher from "@/components/ChatbotLauncher";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ProcessAutomation = () => {
-  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const navigate = useNavigate();
 
   const features = [
@@ -48,7 +45,7 @@ const ProcessAutomation = () => {
   ];
 
   const handleGetStarted = () => {
-    setIsChatbotOpen(true);
+    navigate('/consultation');
   };
 
   const handleScheduleConsultation = () => {
@@ -178,12 +175,6 @@ const ProcessAutomation = () => {
       </section>
 
       <Footer />
-      
-      {isChatbotOpen && (
-        <div className="fixed inset-0 z-[9999]">
-          <ChatbotLauncher />
-        </div>
-      )}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import AccessibilityQuestion from "@/components/AccessibilityQuestion";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary from "@/components/ErrorBoundaryTest";
 
@@ -80,6 +81,7 @@ const App = () => (
           </Suspense>
           <AccessibilityQuestion />
           <AccessibilityToolbar />
+          <ChatbotLauncher />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
