@@ -26,7 +26,7 @@ export const ChatWindow = ({ messages, isTyping, onOptionClick, onClose }: ChatW
 
   return (
     <div 
-      className="fixed bottom-24 right-4 md:right-8 w-[calc(100%-2rem)] max-w-md md:max-w-lg h-[70vh] max-h-[600px] flex flex-col bg-brand-navy-light border border-brand-silver/20 rounded-lg shadow-2xl z-[9998] animate-slide-in-right"
+      className="fixed bottom-24 right-4 md:right-8 w-[calc(100%-2rem)] max-w-lg md:max-w-2xl h-[80vh] max-h-[700px] flex flex-col bg-brand-navy-light border border-brand-silver/20 rounded-lg shadow-2xl z-[9998] animate-slide-in-right"
       style={{ zIndex: 9998 }}
     >
       <header className="flex items-center justify-between p-4 bg-brand-navy rounded-t-lg border-b border-brand-silver/20">

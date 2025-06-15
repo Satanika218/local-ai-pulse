@@ -13,7 +13,6 @@ const Navigation = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services", hasDropdown: true },
-    { name: "Solutions", path: "/solutions" },
     { name: "Blog", path: "/blog" },
     { name: "Testimonials", path: "/case-studies" },
     { name: "Contact", path: "/contact" },
@@ -24,6 +23,7 @@ const Navigation = () => {
     { name: "Customer Service Agents", path: "/services/customer-service" },
     { name: "Local SEO AI", path: "/services/local-seo" },
     { name: "Data Analytics", path: "/services/data-analytics" },
+    { name: "Solutions", path: "/solutions" },
   ];
 
   const isActive = (path: string) => location.pathname === path || (path === '/services' && location.pathname.startsWith('/services/'));
