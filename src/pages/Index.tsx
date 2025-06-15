@@ -197,15 +197,10 @@ const Index = () => {
           <p className="text-xl text-brand-silver mb-8">
             Get a free consultation and discover how AI automation can transform your local business operations.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
                 Schedule Free Consultation
-              </Button>
-            </Link>
-            <Link to="/case-studies">
-              <Button size="lg" variant="outline" className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy">
-                View Case Studies
               </Button>
             </Link>
           </div>
