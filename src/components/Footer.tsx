@@ -1,5 +1,6 @@
+
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { AccessibilityFooterLink } from "./AccessibilityQuestion";
 
 const Footer = () => {
@@ -82,15 +83,10 @@ const Footer = () => {
             </p>
             <AccessibilityFooterLink />
           </div>
+          {/* Only Linkedin remains */}
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colours">
+            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colours" aria-label="Linkedin">
               <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colours">
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colours">
-              <Facebook className="h-5 w-5" />
             </a>
           </div>
         </div>

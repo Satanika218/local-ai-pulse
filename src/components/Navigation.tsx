@@ -10,15 +10,17 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 
+// Main navigation items (for both inline and mobile)
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  // Services handled separately as sub-menu
+  // "Services" handled as sub-menu
   { name: "Blog", path: "/blog" },
   { name: "Testimonials", path: "/case-studies" },
   { name: "Contact", path: "/contact" },
 ];
 
+// Service items for the submenu
 const serviceItems = [
   { name: "Free SEO Audit", path: "/seo-audit" },
   { name: "Free Analytics Audit", path: "/analytics-audit" },
@@ -47,7 +49,6 @@ const Navigation = () => {
     return location.pathname === path;
   };
 
-  // Desktop menu on all breakpoints now hidden; Burger handles all
   return (
     <nav className="bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,9 +68,67 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* Main nav hidden, replaced by burger */}
-          <div className="hidden"></div>
-          <div className="flex items-center space-x-2">
+          {/* Inline navigation for md+ screens */}
+          <div className="hidden md:flex flex-1 items-center justify-center space-x-2 font-semibold">
+            {navItems.map((item) =>
+              item.name !== "Services" ? (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
+                    isActive(item.path)
+                      ? "text-brand-lime underline"
+                      : "text-white hover:text-brand-lime hover:underline"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                // Services sub-menu using shadcn/ui DropdownMenu
+                <DropdownMenu key="services">
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      className={`px-4 py-2 flex items-center text-sm xl:text-base rounded-md transition-colors duration-200 ${
+                        serviceItems.some((srv) => isActive(srv.path))
+                          ? "text-brand-lime underline"
+                          : "text-white hover:text-brand-lime hover:underline"
+                      }`}
+                      aria-label="Services"
+                    >
+                      Services
+                      <ChevronDown className="h-4 w-4 ml-1" />
+                    </button>
+                  </DropdownMenuTrigger>
+                  {/* Use brand-popover for consistent palette & full-width */}
+                  <DropdownMenuContent className="w-64 bg-popover border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1">
+                    {serviceItems.map((service) => (
+                      <DropdownMenuItem asChild key={service.name}>
+                        <Link
+                          to={service.path}
+                          className={`block px-4 py-2 text-base transition-colors duration-200 rounded-md no-underline ${
+                            isActive(service.path)
+                              ? "text-brand-lime underline bg-brand-navy-light"
+                              : "text-brand-silver hover:text-brand-lime hover:bg-brand-navy-light"
+                          }`}
+                        >
+                          {service.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              )
+            )}
+            {/* "Get Started" button (always visible on large screens) */}
+            <Link to="/consultation" className="ml-2">
+              <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-sm xl:text-base whitespace-nowrap">
+                Get Started
+              </Button>
+            </Link>
+          </div>
+
+          {/* Burger and mobile actions */}
+          <div className="flex items-center space-x-2 md:hidden">
             <Link to="/consultation" className="hidden lg:block">
               <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-sm xl:text-base whitespace-nowrap">
                 Get Started
@@ -85,9 +144,9 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Burger Menu (always renders for all breakpoints) */}
+        {/* Burger Menu (always renders for all breakpoints for accessibility) */}
         {isMenuOpen && (
-          <div className="border-t border-brand-silver/20 bg-brand-navy-light">
+          <div className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
@@ -117,15 +176,16 @@ const Navigation = () => {
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-64 ml-2">
+                {/* Brand palette for submenu */}
+                <DropdownMenuContent className="w-64 ml-2 bg-popover border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1">
                   {serviceItems.map((service) => (
                     <DropdownMenuItem asChild key={service.name}>
                       <Link
                         to={service.path}
-                        className={`block px-4 py-2 text-base transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg no-underline ${
+                        className={`block px-4 py-2 text-base transition-colors duration-200 rounded-md no-underline ${
                           isActive(service.path)
-                            ? "text-brand-lime underline"
-                            : "text-brand-silver hover:text-brand-lime hover:bg-brand-lime/10"
+                            ? "text-brand-lime underline bg-brand-navy-light"
+                            : "text-brand-silver hover:text-brand-lime hover:bg-brand-navy-light"
                         }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
