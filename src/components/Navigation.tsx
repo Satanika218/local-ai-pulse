@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -9,7 +10,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 
-// Main navigation items (for both inline and mobile)
+// Main navigation items (excluding Services for special placement)
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -71,22 +72,19 @@ const Navigation = () => {
 
           {/* Inline navigation for md+ screens */}
           <div className="hidden md:flex flex-1 items-center justify-center space-x-2 font-semibold">
-            {navItems.map((item) =>
-              item.name !== "Services" ? (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
-                    isActive(item.path)
-                      ? "text-brand-lime underline"
-                      : "text-white hover:text-brand-lime hover:underline"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ) : null
-            )}
-            {/* "Services" as a Link + Dropdown */}
+            {/* Home */}
+            <Link
+              key="Home"
+              to="/"
+              className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
+                isActive("/")
+                  ? "text-brand-lime underline"
+                  : "text-white hover:text-brand-lime hover:underline"
+              }`}
+            >
+              Home
+            </Link>
+            {/* Services Dropdown - immediately after Home */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="relative group">
@@ -98,10 +96,6 @@ const Navigation = () => {
                         : "text-white hover:text-brand-lime hover:underline"
                     }`}
                     aria-label="Services"
-                    // Prevent triggering dropdown when ctrl/cmd clicking
-                    onClick={e => {
-                      // Let keyboard modifiers pass through, but also keep dropdown accessible on hover
-                    }}
                     style={{ userSelect: 'none', cursor: 'pointer' }}
                   >
                     Services
@@ -128,6 +122,22 @@ const Navigation = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+            {/* The rest of main nav items */}
+            {navItems
+              .filter((item) => item.name !== "Home")
+              .map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
+                    isActive(item.path)
+                      ? "text-brand-lime underline"
+                      : "text-white hover:text-brand-lime hover:underline"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
             {/* Get Started button */}
             <Link to="/consultation" className="ml-2">
               <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-sm xl:text-base whitespace-nowrap">
@@ -157,28 +167,23 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden z-50">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) =>
-                item.name !== "Services" ? (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
-                      isActive(item.path)
-                        ? "text-brand-lime underline"
-                        : "text-white hover:text-brand-lime hover:underline"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ) : null
-              )}
+              {/* Home, then Services, then rest */}
+              <Link
+                key="Home-mobile"
+                to="/"
+                className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
+                  isActive("/")
+                    ? "text-brand-lime underline"
+                    : "text-white hover:text-brand-lime hover:underline"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
               {/* Services as a link and submenu trigger in burger menu */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <div className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 select-none cursor-pointer
-                    group
-                    ">
+                  <div className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 select-none cursor-pointer group">
                     <Link
                       to="/services"
                       className={`flex-grow block ${
@@ -212,6 +217,22 @@ const Navigation = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+              {navItems
+                .filter((item) => item.name !== "Home")
+                .map((item) => (
+                  <Link
+                    key={item.name + "-mobile"}
+                    to={item.path}
+                    className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
+                      isActive(item.path)
+                        ? "text-brand-lime underline"
+                        : "text-white hover:text-brand-lime hover:underline"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               <div className="pt-2">
                 <Link to="/consultation" onClick={() => setIsMenuOpen(false)}>
                   <Button className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
@@ -228,3 +249,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
