@@ -20,7 +20,7 @@ export default {
 		},
 		extend: {
 			colors: {
-				// Brand colors
+				// Brand colors with proper shades
 				brand: {
 					navy: '#0A1E3F',
 					silver: '#C0C0C0',

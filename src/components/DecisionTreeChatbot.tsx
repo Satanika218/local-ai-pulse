@@ -7,6 +7,7 @@ import ChatHeader from "./chatbot/ChatHeader";
 import MessageList from "./chatbot/MessageList";
 import OptionsRenderer from "./chatbot/OptionsRenderer";
 import ContactForm from "./chatbot/ContactForm";
+import ChatErrorBoundary from "./chatbot/ChatErrorBoundary";
 import { secondLevelQuestions, problemDetailsQuestions } from "./chatbot/conversationData";
 import { generateSolutionExplanation, generateUnderstandingSummary } from "./chatbot/ConversationHandlers";
 
@@ -200,13 +201,9 @@ const DecisionTreeChatbot = () => {
       return;
     }
 
-    console.log('Sending HOT LEAD email to hello@11thtemplesolutions.com and 11th-temple-solutions@mail.com');
-    console.log('Lead Data:', {
-      ...formData,
-      userPath,
-      timestamp: new Date().toISOString()
-    });
-
+    // Remove console.log - use proper logging in production
+    // Log lead data to analytics service instead
+    
     setFormSubmitted(true);
     toast({
       title: "Thank you!",
@@ -241,11 +238,12 @@ const DecisionTreeChatbot = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className={`h-14 w-14 rounded-full shadow-lg ${
+          className={`h-14 w-14 rounded-full shadow-lg transition-all duration-200 ${
             isOpen 
-              ? "bg-brand-silver text-brand-navy hover:bg-brand-navy hover:text-brand-silver" 
-              : "bg-brand-lime text-brand-navy hover:bg-brand-navy hover:text-brand-lime"
+              ? "bg-brand-silver text-brand-navy hover:bg-brand-silver/90" 
+              : "bg-brand-lime text-brand-navy hover:bg-brand-lime-dark"
           }`}
+          aria-label={isOpen ? "Close chat" : "Open chat"}
         >
           {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
         </Button>
@@ -254,44 +252,46 @@ const DecisionTreeChatbot = () => {
       {/* Chat Window */}
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-80 h-96">
-          <Card className="bg-brand-navy-light border-brand-silver/20 h-full">
+          <Card className="bg-brand-navy-light border-brand-silver/20 h-full shadow-2xl">
             <CardContent className="p-4 h-full flex flex-col">
-              <ChatHeader 
-                currentStep={currentStep}
-                showForm={showForm}
-                onReset={resetChat}
-              />
+              <ChatErrorBoundary onReset={resetChat}>
+                <ChatHeader 
+                  currentStep={currentStep}
+                  showForm={showForm}
+                  onReset={resetChat}
+                />
 
-              <MessageList 
-                messages={messages}
-                isTyping={isTyping}
-              />
-              
-              <div>
-                {showForm ? (
-                  <ContactForm
-                    formData={formData}
-                    userPath={userPath}
-                    formSubmitted={formSubmitted}
-                    onInputChange={handleInputChange}
-                    onSubmit={handleFormSubmit}
-                    onReset={resetChat}
-                  />
-                ) : (
-                  <OptionsRenderer
-                    currentStep={currentStep}
-                    userPath={userPath}
-                    onInitialPurpose={handleInitialPurpose}
-                    onBusinessArea={handleBusinessArea}
-                    onBiggestChallenge={handleBiggestChallenge}
-                    onTechLevel={handleTechLevel}
-                    onSpecificProblem={handleSpecificProblem}
-                    onProblemDetails={handleProblemDetails}
-                    onUnderstandsProblem={handleUnderstandsProblem}
-                    onSolutionInterest={handleSolutionInterest}
-                  />
-                )}
-              </div>
+                <MessageList 
+                  messages={messages}
+                  isTyping={isTyping}
+                />
+                
+                <div>
+                  {showForm ? (
+                    <ContactForm
+                      formData={formData}
+                      userPath={userPath}
+                      formSubmitted={formSubmitted}
+                      onInputChange={handleInputChange}
+                      onSubmit={handleFormSubmit}
+                      onReset={resetChat}
+                    />
+                  ) : (
+                    <OptionsRenderer
+                      currentStep={currentStep}
+                      userPath={userPath}
+                      onInitialPurpose={handleInitialPurpose}
+                      onBusinessArea={handleBusinessArea}
+                      onBiggestChallenge={handleBiggestChallenge}
+                      onTechLevel={handleTechLevel}
+                      onSpecificProblem={handleSpecificProblem}
+                      onProblemDetails={handleProblemDetails}
+                      onUnderstandsProblem={handleUnderstandsProblem}
+                      onSolutionInterest={handleSolutionInterest}
+                    />
+                  )}
+                </div>
+              </ChatErrorBoundary>
             </CardContent>
           </Card>
         </div>

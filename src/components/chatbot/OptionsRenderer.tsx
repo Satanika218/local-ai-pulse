@@ -47,16 +47,20 @@ const OptionsRenderer = ({
   onUnderstandsProblem,
   onSolutionInterest
 }: OptionsRendererProps) => {
+
+  const buttonClasses = "w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-lime-dark hover:text-brand-navy text-xs transition-colors duration-200";
+
   if (currentStep === 'greeting') {
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" role="group" aria-label="Purpose selection">
         {initialPurposeOptions.map((purpose, index) => (
           <Button
             key={index}
             onClick={() => onInitialPurpose(purpose)}
             variant="outline"
             size="sm"
-            className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
+            className={buttonClasses}
+            aria-label={`Select: ${purpose}`}
           >
             {purpose}
           </Button>
@@ -67,14 +71,15 @@ const OptionsRenderer = ({
 
   if (currentStep === 'businessArea') {
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" role="group" aria-label="Business area selection">
         {businessAreas.map((area, index) => (
           <Button
             key={index}
             onClick={() => onBusinessArea(area)}
             variant="outline"
             size="sm"
-            className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
+            className={buttonClasses}
+            aria-label={`Select business area: ${area}`}
           >
             {area}
           </Button>
@@ -85,14 +90,15 @@ const OptionsRenderer = ({
 
   if (currentStep === 'biggestChallenge') {
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" role="group" aria-label="Challenge selection">
         {biggestChallenges.map((challenge, index) => (
           <Button
             key={index}
             onClick={() => onBiggestChallenge(challenge)}
             variant="outline"
             size="sm"
-            className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
+            className={buttonClasses}
+            aria-label={`Select challenge: ${challenge}`}
           >
             {challenge}
           </Button>
@@ -103,14 +109,15 @@ const OptionsRenderer = ({
 
   if (currentStep === 'techLevel') {
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" role="group" aria-label="Technology level selection">
         {techLevels.map((level, index) => (
           <Button
             key={index}
             onClick={() => onTechLevel(level)}
             variant="outline"
             size="sm"
-            className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
+            className={buttonClasses}
+            aria-label={`Select technology level: ${level}`}
           >
             {level}
           </Button>
@@ -122,14 +129,15 @@ const OptionsRenderer = ({
   if (currentStep === 'specificProblem' && userPath.businessArea) {
     const options = secondLevelQuestions[userPath.businessArea]?.options || [];
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" role="group" aria-label="Specific problem selection">
         {options.map((problem, index) => (
           <Button
             key={index}
             onClick={() => onSpecificProblem(problem)}
             variant="outline"
             size="sm"
-            className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
+            className={buttonClasses}
+            aria-label={`Select problem: ${problem}`}
           >
             {problem}
           </Button>
@@ -152,7 +160,8 @@ const OptionsRenderer = ({
               }
             }
           }}
-          className="bg-brand-navy border-brand-silver/30 text-white placeholder:text-brand-silver/60"
+          className="bg-brand-navy border-brand-silver/30 text-white placeholder:text-brand-silver/60 focus:border-brand-lime"
+          aria-label="Provide additional details about your situation"
         />
       </div>
     );
@@ -160,14 +169,15 @@ const OptionsRenderer = ({
 
   if (currentStep === 'understandsProblem') {
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" role="group" aria-label="Understanding confirmation">
         {understandingOptions.map((option, index) => (
           <Button
             key={index}
             onClick={() => onUnderstandsProblem(option)}
             variant="outline"
             size="sm"
-            className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
+            className={buttonClasses}
+            aria-label={`Select: ${option}`}
           >
             {option}
           </Button>
@@ -178,11 +188,12 @@ const OptionsRenderer = ({
 
   if (currentStep === 'solutionExplanation') {
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" role="group" aria-label="Solution interest">
         <Button
           onClick={() => onSolutionInterest(true)}
           size="sm"
-          className="w-full bg-brand-lime text-black hover:bg-black hover:text-brand-lime"
+          className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark"
+          aria-label="Yes, I'm interested in learning more"
         >
           Yes, tell me more!
         </Button>
@@ -190,7 +201,8 @@ const OptionsRenderer = ({
           onClick={() => onSolutionInterest(false)}
           variant="outline"
           size="sm"
-          className="w-full bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime"
+          className={buttonClasses}
+          aria-label="I'd like to explore other solutions"
         >
           Explore other solutions
         </Button>
