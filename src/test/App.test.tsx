@@ -1,5 +1,6 @@
 
 import { render, screen } from '@testing-library/react'
+import { describe, test, expect, vi } from 'vitest'
 import App from '@/App'
 
 // Mock the lazy-loaded components to avoid import issues in tests
