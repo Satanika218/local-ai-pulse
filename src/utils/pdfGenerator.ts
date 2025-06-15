@@ -7,10 +7,10 @@ export const generateAuditPDF = (auditData: AuditData) => {
   const pageWidth = doc.internal.pageSize.width;
   const pageHeight = doc.internal.pageSize.height;
   
-  // Colors (RGB values)
-  const brandNavy = [20, 33, 61];
-  const brandLime = [150, 255, 0];
-  const brandSilver = [156, 163, 175];
+  // Colors (RGB values) - explicitly typed as tuples
+  const brandNavy: [number, number, number] = [20, 33, 61];
+  const brandLime: [number, number, number] = [150, 255, 0];
+  const brandSilver: [number, number, number] = [156, 163, 175];
 
   // Header with 11th Temple branding
   doc.setFillColor(...brandNavy);
