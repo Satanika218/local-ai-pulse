@@ -8,6 +8,7 @@ import MessageList from "./chatbot/MessageList";
 import OptionsRenderer from "./chatbot/OptionsRenderer";
 import ContactForm from "./chatbot/ContactForm";
 import { secondLevelQuestions, problemDetailsQuestions } from "./chatbot/conversationData";
+import { generateSolutionExplanation, generateUnderstandingSummary } from "./chatbot/ConversationHandlers";
 
 interface ChatMessage {
   type: 'bot' | 'user';
@@ -131,7 +132,9 @@ const DecisionTreeChatbot = () => {
       addBotMessage(followUpQuestion);
       setCurrentStep('problemDetails');
     } else {
-      addBotMessage("I want to make sure I understand your situation correctly. Based on what you've told me, it sounds like you're facing challenges with time management and efficiency in this area. Does that sound right?");
+      // Generate understanding summary for problems without specific follow-up questions
+      const summary = generateUnderstandingSummary(problem);
+      addBotMessage(summary);
       setCurrentStep('understandsProblem');
     }
   };
@@ -140,25 +143,14 @@ const DecisionTreeChatbot = () => {
     addUserMessage(details);
     setUserPath(prev => ({ ...prev, problemDetails: details }));
     
-    // Now provide understanding summary and check
+    // Generate understanding summary based on the specific problem
     const problem = userPath.specificProblem;
-    let summary = '';
-    
-    if (problem === 'Not enough people are contacting you or buying through your website') {
-      summary = "So it sounds like people are visiting your website but not taking the next step to contact you or make a purchase. This often happens when visitors can't quickly find what they're looking for or don't feel confident enough to reach out. Does that capture the main issue?";
-    } else if (problem === 'Processing bills, receipts and invoices takes too long') {
-      summary = "I see, so you're spending considerable time on manual data entry and document handling. This is actually one of the most common time drains for businesses. Does it feel like this task is taking time away from more important business activities?";
-    } else if (problem === 'Responding to customer questions quickly enough') {
-      summary = "It sounds like you want to respond to customers quickly but sometimes get overwhelmed with the volume or timing of inquiries. Quick responses really do make a difference in customer satisfaction. Is that the main challenge?";
-    } else if (problem === 'Identifying which potential customers are most likely to buy') {
-      summary = "So you're getting leads but finding that many aren't a good fit, which means time spent on prospects who won't convert. That can be really frustrating and inefficient. Is that hitting the mark?";
-    } else if (problem === 'Creating regular posts, emails or content to share with customers') {
-      summary = "It sounds like you know content is important but finding the time and knowing what to create is the challenge. Staying consistent across multiple platforms can definitely feel overwhelming. Does that sound right?";
+    if (problem) {
+      const summary = generateUnderstandingSummary(problem, details);
+      addBotMessage(summary);
     } else {
-      summary = "Based on what you've shared, it seems like this area is taking up more time and energy than you'd like, and you're looking for ways to make it more efficient. Does that capture the main issue?";
+      addBotMessage("Based on what you've shared, it seems like this area is taking up more time and energy than you'd like, and you're looking for ways to make it more efficient. Does that capture the main issue?");
     }
-    
-    addBotMessage(summary);
     setCurrentStep('understandsProblem');
   };
 
@@ -172,25 +164,14 @@ const DecisionTreeChatbot = () => {
       return;
     }
     
-    // Now provide a conversational solution explanation
+    // Generate solution explanation based on the specific problem
     const problem = userPath.specificProblem;
-    let solutionExplanation = '';
-    
-    if (problem === 'Not enough people are contacting you or buying through your website') {
-      solutionExplanation = "Great! So there are actually several ways we can help with this. Think of it like having a sales assistant working on your website 24/7. We can add tools that watch how visitors use your site and automatically make small improvements to encourage them to contact you. We can also add a friendly chat feature that answers common questions instantly and captures contact information when you're not available. Would you like to learn more about how these kinds of tools work?";
-    } else if (problem === 'Processing bills, receipts and invoices takes too long') {
-      solutionExplanation = "Perfect! What we can do is essentially teach a computer to read your invoices and receipts just like you do, but much faster. Imagine being able to take a photo of an invoice with your phone, and having all the important information automatically entered into your accounting system within seconds. We can set up a system that handles about 95% of your document processing automatically, only asking for your review on unusual items. Does that sound like something that would help?";
-    } else if (problem === 'Responding to customer questions quickly enough') {
-      solutionExplanation = "Excellent! Think of this like having a knowledgeable team member available 24/7 who never gets tired and always responds instantly. We can set up an intelligent system that answers common customer questions immediately, and for more complex issues, it can gather the initial information and make sure the inquiry gets to the right person on your team. This means customers get instant help for simple questions, and you get better organized information for the complex ones. Does this approach sound helpful?";
-    } else if (problem === 'Identifying which potential customers are most likely to buy') {
-      solutionExplanation = "Great! We can help you set up a system that's like having an experienced salesperson evaluate every lead before it gets to you. The system learns from your successful customers to identify which new prospects are most likely to become good clients. It can also nurture potential customers automatically until they're ready to buy, so you're not spending time on people who aren't ready yet. Would this kind of lead filtering and nurturing be valuable for your business?";
-    } else if (problem === 'Creating regular posts, emails or content to share with customers') {
-      solutionExplanation = "Perfect! We can help you set up a system that's like having a marketing assistant who knows your business well. It can help create content ideas based on what works in your industry, write posts in your brand voice, and even schedule them across your different platforms automatically. Think of it as taking one good piece of content and intelligently adapting it for different platforms and audiences. Does this kind of content assistance sound useful?";
+    if (problem) {
+      const solutionExplanation = generateSolutionExplanation(problem, userPath);
+      addBotMessage(solutionExplanation);
     } else {
-      solutionExplanation = "Based on your situation, there are definitely automated solutions that can help streamline this process for you. The key is finding the right combination of tools that work specifically for your business. Would you like to discuss some options that might fit your needs?";
+      addBotMessage("Based on your situation, there are definitely automated solutions that can help streamline this process for you. The key is finding the right combination of tools that work specifically for your business. Would you like to discuss some options that might fit your needs?");
     }
-    
-    addBotMessage(solutionExplanation);
     setCurrentStep('solutionExplanation');
   };
 
