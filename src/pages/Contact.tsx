@@ -41,19 +41,19 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6 text-brand-lime" />,
       title: "Email Us",
-      details: "hello@11thtemple.com",
+      details: "Hello@11thtemplesolutions.com",
       description: "Send us an email anytime"
     },
     {
       icon: <Phone className="h-6 w-6 text-brand-lime" />,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+44 7312 190 728",
       description: "Mon-Fri, 9AM-6PM EST"
     },
     {
       icon: <MapPin className="h-6 w-6 text-brand-lime" />,
       title: "Visit Us",
-      details: "Serving Local Businesses",
+      details: "Newtown Powys, Serving Local Businesses",
       description: "Nationwide coverage"
     },
     {
