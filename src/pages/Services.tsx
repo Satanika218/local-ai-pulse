@@ -1,5 +1,4 @@
-
-import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight, Search, FileText } from "lucide-react";
+import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight, Search, FileText, Eye, Lightbulb, Wrench, TrendingUp as Growth } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -93,22 +92,22 @@ const Services = () => {
 
   const processSteps = [
     {
-      step: "01",
+      icon: <Eye className="h-8 w-8 text-brand-navy" />,
       title: "Discovery & Assessment",
       description: "We analyse your business operations and local market to identify automation opportunities."
     },
     {
-      step: "02", 
+      icon: <Lightbulb className="h-8 w-8 text-brand-navy" />, 
       title: "Custom Solution Design",
       description: "Our team designs AI solutions specifically tailored to your business and community needs."
     },
     {
-      step: "03",
+      icon: <Wrench className="h-8 w-8 text-brand-navy" />,
       title: "Implementation & Training",
       description: "We implement the solution with comprehensive training for your team and ongoing support."
     },
     {
-      step: "04",
+      icon: <Growth className="h-8 w-8 text-brand-navy" />,
       title: "Optimisation & Growth",
       description: "Continuous monitoring and optimisation to ensure maximum performance and ROI."
     }
@@ -250,7 +249,7 @@ const Services = () => {
               <div key={index} className="text-center">
                 <div className="relative mb-6">
                   <div className="w-16 h-16 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto flex items-center justify-center">
-                    <span className="text-xl font-bold text-brand-navy">{step.step}</span>
+                    {step.icon}
                   </div>
                   {index < processSteps.length - 1 && (
                     <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-brand-lime to-brand-silver transform -translate-y-1/2"></div>
