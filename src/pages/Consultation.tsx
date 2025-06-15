@@ -1,6 +1,7 @@
 
 import { Calendar, Clock, Users, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -86,13 +87,15 @@ const Consultation = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-brand-navy border-brand-silver/20">
-                <CardContent className="p-6 text-center">
-                  <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-white mb-3">Local Expertise</h3>
-                  <p className="text-brand-silver mb-4">Work with experts who understand your local market</p>
-                </CardContent>
-              </Card>
+              <Link to="/about">
+                <Card className="bg-brand-navy border-brand-silver/20 cursor-pointer hover:border-brand-lime/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <CardContent className="p-6 text-center">
+                    <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold text-white mb-3">Local Expertise</h3>
+                    <p className="text-brand-silver mb-4">Work with experts who understand your local market</p>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </div>
         </div>
