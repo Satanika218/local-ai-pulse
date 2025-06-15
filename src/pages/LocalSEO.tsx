@@ -1,20 +1,17 @@
-
 import { TrendingUp, CheckCircle, ArrowRight, Search, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 const LocalSEO = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
 
   const handleSEOAudit = () => {
-    toast({
-      title: "SEO Audit Requested!",
-      description: "We'll analyze your website and send you a comprehensive SEO audit report within 24 hours. Check your email for next steps.",
-      duration: 5000,
-    });
+    navigate('/seo-audit');
   };
 
   const features = [
@@ -159,7 +156,7 @@ const LocalSEO = () => {
             Ready to Dominate Local Search?
           </h2>
           <p className="text-xl text-brand-silver mb-8">
-            Get a free local SEO audit and see how we can improve your rankings.
+            Get a free SEO audit and discover hidden opportunities to improve your rankings.
           </p>
           <Button 
             size="lg" 

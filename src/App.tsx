@@ -21,6 +21,7 @@ import DataAnalytics from "./pages/DataAnalytics";
 import WebsiteCreation from "./pages/WebsiteCreation";
 import SalesLeadTools from "./pages/SalesLeadTools";
 import AnalyticsAudit from "./pages/AnalyticsAudit";
+import SEOAudit from "./pages/SEOAudit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/services/website-creation" element={<WebsiteCreation />} />
           <Route path="/services/sales-lead-tools" element={<SalesLeadTools />} />
           <Route path="/analytics-audit" element={<AnalyticsAudit />} />
+          <Route path="/seo-audit" element={<SEOAudit />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/consultation" element={<Consultation />} />
