@@ -70,6 +70,8 @@ const Footer = () => {
               <li><Link to="/services/local-seo" className="text-brand-silver hover:text-brand-lime transition-colours">Local SEO AI</Link></li>
               <li><Link to="/services/customer-service" className="text-brand-silver hover:text-brand-lime transition-colours">Customer Service Agents</Link></li>
               <li><Link to="/services/data-analytics" className="text-brand-silver hover:text-brand-lime transition-colours">Data Analytics</Link></li>
+              <li><Link to="/seo-audit" className="text-brand-silver hover:text-brand-lime transition-colours">Free SEO Audit</Link></li>
+              <li><Link to="/analytics-audit" className="text-brand-silver hover:text-brand-lime transition-colours">Free Analytics Audit</Link></li>
             </ul>
           </div>
         </div>

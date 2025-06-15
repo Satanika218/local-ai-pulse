@@ -27,6 +27,8 @@ const Navigation = () => {
     { name: "Sales & Lead Tools", path: "/services/sales-lead-tools" },
     { name: "Design & Marketing", path: "/services/design-marketing" },
     { name: "Solutions", path: "/solutions" },
+    { name: "Free SEO Audit", path: "/seo-audit" },
+    { name: "Free Analytics Audit", path: "/analytics-audit" },
   ];
 
   const isActive = (path: string) => {
