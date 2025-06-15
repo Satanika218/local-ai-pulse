@@ -1,10 +1,10 @@
-
 import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight, Mail, ExternalLink } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Mail } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TestimonialForm from "@/components/TestimonialForm";
 
 const CaseStudies = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -219,40 +219,7 @@ const CaseStudies = () => {
             Have you worked with 11th Temple Solutions? We'd love to hear about your experience and share your success story with others.
           </p>
           
-          <Card className="bg-brand-navy-light border-brand-silver/20">
-            <CardContent className="p-8">
-              <div className="flex items-center justify-center mb-6">
-                <Mail className="h-8 w-8 text-brand-lime mr-3" />
-                <h3 className="text-2xl font-semibold text-white">Submit Your Testimonial</h3>
-              </div>
-              <p className="text-brand-silver mb-6 leading-relaxed">
-                To submit a testimonial, please email us at{' '}
-                <a 
-                  href="mailto:11th-temple-solutions@mail.com" 
-                  className="text-brand-lime hover:underline font-semibold"
-                >
-                  11th-temple-solutions@mail.com
-                </a>
-                {' '}with your story. Our team will review your submission and may contact you for approval before featuring it on our website.
-              </p>
-              <div className="bg-brand-navy border border-brand-silver/20 rounded-lg p-4">
-                <h4 className="text-lg font-semibold text-white mb-2">Include in your email:</h4>
-                <ul className="text-brand-silver text-left space-y-1">
-                  <li>• Your name and business name</li>
-                  <li>• A brief description of the services we provided</li>
-                  <li>• The impact our solutions had on your business</li>
-                  <li>• Permission to use your testimonial on our website</li>
-                </ul>
-              </div>
-              <Button 
-                size="lg" 
-                className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold mt-6"
-                onClick={() => window.location.href = 'mailto:11th-temple-solutions@mail.com?subject=Testimonial Submission&body=Dear 11th Temple Solutions team,%0D%0A%0D%0AI would like to submit a testimonial about my experience working with your company.%0D%0A%0D%0AName:%0D%0ABusiness:%0D%0AServices received:%0D%0ATestimonial:%0D%0A%0D%0AI give permission for this testimonial to be used on your website.%0D%0A%0D%0AThank you!'}
-              >
-                Send Testimonial Email
-              </Button>
-            </CardContent>
-          </Card>
+          <TestimonialForm />
         </div>
       </section>
 
