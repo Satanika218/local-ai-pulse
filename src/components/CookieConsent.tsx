@@ -1,8 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { X, Cookie } from 'lucide-react';
+
+// Fix for TS error: declare tracking_enabled property on window
+declare global {
+  interface Window {
+    __tracking_initialized?: boolean;
+  }
+}
 
 const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false);

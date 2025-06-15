@@ -121,13 +121,13 @@ const About = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <Link key={index} to="/core-values" className="block">
-                <Card className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 cursor-pointer hover:transform hover:scale-105">
-                  <CardContent className="p-6 text-center">
-                    <div className="mb-4 flex justify-center">
+                <Card className="bg-brand-navy-light border border-brand-silver/30 hover:border-brand-lime/50 transition-all duration-300 cursor-pointer hover:scale-105 rounded-2xl shadow-md">
+                  <CardContent className="flex flex-col items-center text-center p-8">
+                    <div className="mb-6 flex justify-center items-center">
                       {value.icon}
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                    <p className="text-brand-silver">{value.description}</p>
+                    <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
+                    <p className="text-lg text-brand-silver">{value.description}</p>
                   </CardContent>
                 </Card>
               </Link>
