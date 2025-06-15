@@ -15,6 +15,47 @@ export const generateAuditPDF = async (
   const brandLime: [number, number, number] = [150, 255, 0];
   const brandSilver: [number, number, number] = [156, 163, 175];
 
+  // Helper function to add logo
+  const addLogo = async () => {
+    if (logoUrl) {
+      try {
+        const absoluteLogoUrl = logoUrl.startsWith('http') ? logoUrl : `${window.location.origin}${logoUrl}`;
+        
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        await new Promise((resolve) => {
+          img.onload = () => {
+            try {
+              const canvas = document.createElement('canvas');
+              const ctx = canvas.getContext('2d');
+              canvas.width = img.width;
+              canvas.height = img.height;
+              ctx?.drawImage(img, 0, 0);
+              
+              const imgData = canvas.toDataURL('image/png');
+              
+              const logoWidth = 30;
+              const logoHeight = (img.height / img.width) * logoWidth;
+              doc.addImage(imgData, 'PNG', pageWidth - logoWidth - 10, 10, logoWidth, logoHeight);
+              resolve(undefined);
+            } catch (error) {
+              console.error('Error processing logo:', error);
+              resolve(undefined);
+            }
+          };
+          img.onerror = () => {
+            console.error('Error loading logo');
+            resolve(undefined);
+          };
+          img.src = absoluteLogoUrl;
+        });
+      } catch (error) {
+        console.error('Error adding logo to PDF:', error);
+      }
+    }
+  };
+
   // PAGE 1 - Main Report
   // Header with 11th Temple branding
   doc.setFillColor(...brandNavy);
@@ -29,44 +70,8 @@ export const generateAuditPDF = async (
   doc.setFont('helvetica', 'normal');
   doc.text('Analytics Audit Report', 20, 35);
 
-  // Add logo in the top right corner if provided
-  if (logoUrl) {
-    try {
-      const absoluteLogoUrl = logoUrl.startsWith('http') ? logoUrl : `${window.location.origin}${logoUrl}`;
-      
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      
-      await new Promise((resolve, reject) => {
-        img.onload = () => {
-          try {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx?.drawImage(img, 0, 0);
-            
-            const imgData = canvas.toDataURL('image/png');
-            
-            const logoWidth = 30;
-            const logoHeight = (img.height / img.width) * logoWidth;
-            doc.addImage(imgData, 'PNG', pageWidth - logoWidth - 10, 10, logoWidth, logoHeight);
-            resolve(undefined);
-          } catch (error) {
-            console.error('Error processing logo:', error);
-            resolve(undefined);
-          }
-        };
-        img.onerror = () => {
-          console.error('Error loading logo');
-          resolve(undefined);
-        };
-        img.src = absoluteLogoUrl;
-      });
-    } catch (error) {
-      console.error('Error adding logo to PDF:', error);
-    }
-  }
+  // Add logo in the top right corner
+  await addLogo();
 
   let yPosition = 60;
 
@@ -133,22 +138,6 @@ export const generateAuditPDF = async (
     });
   }
 
-  // Current Analytics Tools
-  if (auditData.currentAnalyticsTools.length > 0) {
-    yPosition += 15;
-    doc.setFontSize(16);
-    doc.setFont('helvetica', 'bold');
-    doc.setTextColor(...brandNavy);
-    doc.text('Current Analytics Tools', 20, yPosition);
-    yPosition += 10;
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    auditData.currentAnalyticsTools.forEach((tool) => {
-      doc.text(`• ${tool}`, 25, yPosition);
-      yPosition += 6;
-    });
-  }
-
   // PAGE 2 - Recommendations
   doc.addPage();
   
@@ -166,43 +155,7 @@ export const generateAuditPDF = async (
   doc.text('Analytics Recommendations', 20, 35);
 
   // Add logo on page 2 as well
-  if (logoUrl) {
-    try {
-      const absoluteLogoUrl = logoUrl.startsWith('http') ? logoUrl : `${window.location.origin}${logoUrl}`;
-      
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      
-      await new Promise((resolve, reject) => {
-        img.onload = () => {
-          try {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx?.drawImage(img, 0, 0);
-            
-            const imgData = canvas.toDataURL('image/png');
-            
-            const logoWidth = 30;
-            const logoHeight = (img.height / img.width) * logoWidth;
-            doc.addImage(imgData, 'PNG', pageWidth - logoWidth - 10, 10, logoWidth, logoHeight);
-            resolve(undefined);
-          } catch (error) {
-            console.error('Error processing logo:', error);
-            resolve(undefined);
-          }
-        };
-        img.onerror = () => {
-          console.error('Error loading logo');
-          resolve(undefined);
-        };
-        img.src = absoluteLogoUrl;
-      });
-    } catch (error) {
-      console.error('Error adding logo to PDF:', error);
-    }
-  }
+  await addLogo();
 
   yPosition = 60;
 
