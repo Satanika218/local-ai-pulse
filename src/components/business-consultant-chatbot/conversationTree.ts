@@ -50,7 +50,7 @@ export const conversationTree: ConversationTree = {
       { title: "3. Getting Found Online", description: "Our tools can help your website appear higher in search results when people look for businesses like yours. It's similar to moving your shop from a quiet side street to a busy main road. Most businesses see 40-60% more website visitors within three months." },
     ],
     options: [
-        { text: "Discuss these solutions", next: 'closing' },
+        { text: "Chat with a specialist", next: 'closing' },
         { text: "Explore other challenges", next: 'first_level_diagnostic' },
     ]
   },
@@ -71,7 +71,7 @@ export const conversationTree: ConversationTree = {
           { title: "2. On-Demand Website Support", description: "For a simple monthly fee, you can send us your updates, and we'll handle them for you within 24 hours, freeing you to focus on your business." },
       ],
       options: [
-          { text: "Discuss these solutions", next: 'closing' },
+          { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
       ]
   },
@@ -109,7 +109,7 @@ export const conversationTree: ConversationTree = {
           { title: "2. Clear Marketing Dashboard", description: "We can set up a simple, one-page report that clearly shows you which marketing activities are bringing in the most customers, so you can make data-driven decisions with confidence." },
       ],
       options: [
-          { text: "Discuss these solutions", next: 'closing' },
+          { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
       ]
   },
@@ -147,7 +147,7 @@ export const conversationTree: ConversationTree = {
         { title: "2. Automated Payment Reminders", description: "We can set up a polite, professional system to automatically follow up on unpaid invoices, so you get paid faster without the awkward conversations." },
       ],
       options: [
-          { text: "Discuss these solutions", next: 'closing' },
+          { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
       ]
   },
@@ -186,28 +186,22 @@ export const conversationTree: ConversationTree = {
         { title: "2. Customer Communication Hub", description: "All your customer conversations and details from email, social media, and your website can flow into one organised system. Imagine having everything in one place instead of scattered across different platforms." },
       ],
        options: [
-          { text: "Discuss these solutions", next: 'closing' },
+          { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
       ]
   },
   // Closing
   closing: {
     id: 'closing',
-    text: "What would be most helpful for you now?",
+    text: "Perfect! I'd love to connect you with one of our specialists who can discuss these solutions in detail and create a customised plan for your business. To book your free consultation, simply close this chat and click the 'Get Started' button at the top of the page, or scroll down to the booking section on our consultation page.",
     options: [
-      { text: "Chat with a specialist", next: 'end_chat_specialist' },
-      { text: "See a case study", next: 'end_chat_casestudy' },
+      { text: "Book consultation now", next: 'end_chat_specialist' },
     ],
     isEnd: false,
   },
   end_chat_specialist: {
     id: 'end_chat_specialist',
-    text: "Great! One of our specialists will be in touch shortly. You can also schedule a consultation directly on our website.",
-    isEnd: true
-  },
-  end_chat_casestudy: {
-    id: 'end_chat_casestudy',
-    text: "Excellent choice. We have several case studies on our website that show how we've helped businesses like yours.",
+    text: "Excellent! Please close this chat and look for the 'Get Started' button at the top of the page to book your free consultation. We're excited to help transform your business with the right technology solutions!",
     isEnd: true
   }
 };
