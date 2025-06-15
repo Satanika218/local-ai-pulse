@@ -197,7 +197,7 @@ const Index = () => {
             Ready to Automate Your Business?
           </h2>
           <p className="text-xl text-brand-silver mb-8">
-            Get a free consultation and discover how AI automation can transform your local business operations.
+            Get a free consultation and discover how AI automation can transform business.
           </p>
           <div className="flex justify-center">
             <Link to="/consultation">
