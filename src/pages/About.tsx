@@ -9,13 +9,13 @@ const About = () => {
     name: "Dan Armour",
     role: "Co-Founder, Sales & AI Strategist",
     experience: "15+ years in sales, business development and tech deployment. Local to Shropshire, Dan brings deep understanding of rural business challenges and opportunities.",
-    image: "/lovable-uploads/347422dc-12b8-4b65-8b63-98b195467f19.png",
+    image: "/lovable-uploads/a843b65b-2b60-430a-9e41-3f8031fd67f0.png",
     linkedIn: "https://www.linkedin.com/in/dan-armour-a55800bb/"
   }, {
     name: "Neil Owen",
     role: "Co-Founder, Head of Local Partnerships",
     experience: "20+ years in community business relations, operations specialist and local advocate. Born and raised in the heart of Powys, Neil understands the unique dynamics of local Welsh communities.",
-    image: "/lovable-uploads/a843b65b-2b60-430a-9e41-3f8031fd67f0.png",
+    image: "/lovable-uploads/347422dc-12b8-4b65-8b63-98b195467f19.png",
     linkedIn: "https://www.linkedin.com/in/neil-o-76508218/"
   }];
   
