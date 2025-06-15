@@ -10,7 +10,7 @@ const ChatbotLauncher = () => {
   return (
     <>
       <Button
-        className="fixed bottom-6 left-6 w-16 h-16 rounded-full bg-brand-lime hover:bg-brand-lime-dark text-brand-navy shadow-xl z-[9998] animate-pulse-glow"
+        className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-brand-lime hover:bg-brand-lime-dark text-brand-navy shadow-xl z-[9998] animate-pulse-glow"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
       >

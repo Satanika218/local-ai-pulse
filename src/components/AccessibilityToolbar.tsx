@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Settings, X, Type, Eye, Palette, Volume2, Mouse, Keyboard, Brain, Globe } from "lucide-react";
@@ -84,7 +83,7 @@ const AccessibilityToolbar = () => {
   return (
     <>
       <Button
-        className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl z-[9999]"
+        className="fixed bottom-6 left-6 w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl z-[9999]"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Accessibility settings"
       >
@@ -92,7 +91,7 @@ const AccessibilityToolbar = () => {
       </Button>
 
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl z-[9999] p-6 max-h-96 overflow-y-auto">
+        <div className="fixed bottom-24 left-6 w-80 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl z-[9999] p-6 max-h-96 overflow-y-auto">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               {hasShownInitialPrompt ? "Welcome! Accessibility Options" : "Accessibility Settings"}
