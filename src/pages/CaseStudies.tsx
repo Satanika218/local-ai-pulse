@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight, Mail } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Mail, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
