@@ -45,23 +45,23 @@ const Navigation = () => {
     <nav className="bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Fixed width container to prevent overlap */}
-          <div className="flex items-center space-x-2 min-w-0 flex-shrink-0">
+          {/* Logo */}
+          <div className="flex items-center space-x-2 flex-shrink-0 min-w-fit">
             <Link to="/" className="flex items-center space-x-2">
               <img 
                 src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
                 alt="11th Temple Solutions" 
-                className="h-16 w-16 sm:h-20 sm:w-20 drop-shadow-lg flex-shrink-0"
+                className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 drop-shadow-lg flex-shrink-0"
               />
-              <div className="hidden sm:block min-w-0">
-                <span className="text-lg xl:text-xl font-bold text-white whitespace-nowrap">11th Temple</span>
-                <span className="text-sm xl:text-base text-brand-lime block -mt-1 whitespace-nowrap">Solutions</span>
+              <div className="hidden sm:block">
+                <div className="text-sm md:text-lg xl:text-xl font-bold text-white whitespace-nowrap">11th Temple</div>
+                <div className="text-xs md:text-sm xl:text-base text-brand-lime -mt-1 whitespace-nowrap">Solutions</div>
               </div>
             </Link>
           </div>
 
-          {/* Desktop Navigation - Responsive spacing and text sizing */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 flex-1 justify-end">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-6 flex-1 justify-end">
             {navItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.hasDropdown ? (
@@ -72,7 +72,7 @@ const Navigation = () => {
                   >
                     <Link 
                       to={item.path}
-                      className={`flex items-center space-x-1 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap ${
+                      className={`flex items-center space-x-1 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap px-2 py-1 ${
                         isActive(item.path)
                           ? "text-brand-lime"
                           : "text-brand-silver hover:text-brand-lime"
@@ -100,7 +100,7 @@ const Navigation = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className={`transition-colors duration-200 text-sm xl:text-base whitespace-nowrap ${
+                    className={`transition-colors duration-200 text-sm xl:text-base whitespace-nowrap px-2 py-1 ${
                       isActive(item.path)
                         ? "text-brand-lime"
                         : "text-brand-silver hover:text-brand-lime"
@@ -112,7 +112,7 @@ const Navigation = () => {
               </div>
             ))}
             
-            <Link to="/consultation">
+            <Link to="/consultation" className="ml-4">
               <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-sm xl:text-base whitespace-nowrap">
                 Get Started
               </Button>
