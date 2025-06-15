@@ -39,7 +39,7 @@ const Index = () => {
   const testimonials = [
     {
       name: "Sarah Martinez",
-      business: "Martinez Family Restaurant",
+      business: "Sarah's Bistro",
       content: "11th Temple's local AI solutions increased our online orders by 40% in just 3 months!",
       rating: 5
     },
