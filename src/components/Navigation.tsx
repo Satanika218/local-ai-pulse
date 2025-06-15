@@ -60,59 +60,52 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-2 xl:space-x-6 flex-1 justify-end">
+          {/* Quick Navigation Items - Always visible */}
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6 flex-1 justify-center">
             {navItems.map((item) => (
-              <div key={item.name} className="relative">
-                {item.hasDropdown ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <Link 
-                      to={item.path}
-                      className={`flex items-center space-x-1 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap px-2 py-1 ${
-                        isActive(item.path)
-                          ? "text-brand-lime"
-                          : "text-brand-silver hover:text-brand-lime"
-                      }`}
-                    >
-                      <span>{item.name}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </Link>
-                    
-                    {isServicesOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-brand-navy-light border border-brand-silver/20 rounded-lg shadow-xl z-50">
-                        {serviceItems.map((service) => (
-                          <Link
-                            key={service.name}
-                            to={service.path}
-                            className="block px-4 py-2 text-brand-silver hover:text-brand-lime hover:bg-brand-lime/10 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
-                            onClick={() => setIsServicesOpen(false)}
-                          >
-                            {service.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className={`transition-colors duration-200 text-sm xl:text-base whitespace-nowrap px-2 py-1 ${
-                      isActive(item.path)
-                        ? "text-brand-lime"
-                        : "text-brand-silver hover:text-brand-lime"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </div>
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`transition-colors duration-200 text-sm lg:text-base whitespace-nowrap px-2 py-1 ${
+                  isActive(item.path)
+                    ? "text-brand-lime"
+                    : "text-brand-silver hover:text-brand-lime"
+                }`}
+              >
+                {item.name}
+              </Link>
             ))}
+          </div>
+
+          {/* Desktop Navigation with Dropdown */}
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-6 flex-shrink-0">
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="flex items-center space-x-1 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap px-2 py-1 text-brand-silver hover:text-brand-lime">
+                <span>Services Menu</span>
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              
+              {isServicesOpen && (
+                <div className="absolute top-full right-0 mt-2 w-56 bg-brand-navy-light border border-brand-silver/20 rounded-lg shadow-xl z-50">
+                  {serviceItems.map((service) => (
+                    <Link
+                      key={service.name}
+                      to={service.path}
+                      className="block px-4 py-2 text-brand-silver hover:text-brand-lime hover:bg-brand-lime/10 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             
-            <Link to="/consultation" className="ml-4">
+            <Link to="/consultation">
               <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-sm xl:text-base whitespace-nowrap">
                 Get Started
               </Button>
