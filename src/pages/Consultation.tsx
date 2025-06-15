@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import LazyServicesChatbot from "@/components/LazyServicesChatbot";
 import BookingSection from "@/components/BookingSection";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
@@ -137,10 +136,6 @@ const Consultation = () => {
           </div>
         </section>
       </main>
-
-      <ErrorBoundary>
-        <LazyServicesChatbot />
-      </ErrorBoundary>
       
       <Footer />
       <CookieConsent />

@@ -4,12 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ServicesChatbot from "@/components/ServicesChatbot";
 
 const CustomerService = () => {
   const features = [
     "24/7 intelligent customer support agents",
-    "Local dialect and cultural understanding",
+    "Local dialect and cultural understanding", 
     "Seamless handoff to human agents when needed",
     "Multi-channel support (chat, email, phone)",
     "Integration with your existing systems",
@@ -24,7 +23,7 @@ const CustomerService = () => {
     },
     {
       icon: <MessageCircle className="h-8 w-8 text-brand-lime" />,
-      title: "Instant Responses",
+      title: "Instant Responses", 
       description: "Provide immediate answers to common customer questions"
     },
     {
@@ -36,7 +35,7 @@ const CustomerService = () => {
 
   const capabilities = [
     "Answer frequently asked questions instantly",
-    "Process orders and bookings automatically",
+    "Process orders and bookings automatically", 
     "Provide product information and recommendations",
     "Handle appointment scheduling and changes",
     "Collect customer feedback and reviews",
@@ -157,7 +156,6 @@ const CustomerService = () => {
         </div>
       </section>
 
-      <ServicesChatbot />
       <Footer />
     </div>
   );

@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import DecisionTreeChatbot from "@/components/DecisionTreeChatbot";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -42,7 +41,7 @@ const Contact = () => {
       icon: <Mail className="h-6 w-6 text-brand-lime" />,
       title: "Email Us",
       details: "Hello@11thtemplesolutions.com",
-      description: "Send us an e-mail anytime and we'll get back to you ASAP"
+      description: "Send us an email anytime and we'll get back to you ASAP"
     },
     {
       icon: <Phone className="h-6 w-6 text-brand-lime" />,
@@ -260,7 +259,6 @@ const Contact = () => {
         </div>
       </section>
 
-      <DecisionTreeChatbot />
       <Footer />
     </div>
   );

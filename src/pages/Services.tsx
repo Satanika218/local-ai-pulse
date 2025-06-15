@@ -1,9 +1,9 @@
+
 import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import DecisionTreeChatbot from "@/components/DecisionTreeChatbot";
 
 const Services = () => {
   const services = [
@@ -21,9 +21,9 @@ const Services = () => {
     {
       icon: <TrendingUp className="h-12 w-12 text-brand-lime" />,
       title: "Local SEO AI",
-      description: "Dominate local search results with AI that knows your neighborhood better than your competition.",
+      description: "Dominate local search results with AI that knows your neighbourhood better than your competition.",
       features: [
-        "Local keyword optimization",
+        "Local keyword optimisation",
         "Community event integration",
         "Review management automation",
         "Local citation building"
@@ -46,7 +46,7 @@ const Services = () => {
       description: "Get insights that matter to your local market with AI-powered analytics and reporting.",
       features: [
         "Local market analysis",
-        "Customer behavior insights",
+        "Customer behaviour insights",
         "Competitive intelligence",
         "Custom reporting dashboards"
       ]
@@ -57,7 +57,7 @@ const Services = () => {
     {
       step: "01",
       title: "Discovery & Assessment",
-      description: "We analyze your business operations and local market to identify automation opportunities."
+      description: "We analyse your business operations and local market to identify automation opportunities."
     },
     {
       step: "02", 
@@ -71,8 +71,8 @@ const Services = () => {
     },
     {
       step: "04",
-      title: "Optimization & Growth",
-      description: "Continuous monitoring and optimization to ensure maximum performance and ROI."
+      title: "Optimisation & Growth",
+      description: "Continuous monitoring and optimisation to ensure maximum performance and ROI."
     }
   ];
 
@@ -189,7 +189,6 @@ const Services = () => {
         </div>
       </section>
 
-      <DecisionTreeChatbot />
       <Footer />
     </div>
   );
