@@ -403,7 +403,7 @@ export const blogs: BlogPostType[] = [
     slug: 'ai-for-smes',
     title: 'AI for SMEs: Is Your Business Missing the Intelligence Revolution?',
     date: 'June 15, 2025',
-    excerpt: 'Artificial intelligence (AI) is no longer just for tech giants and large corporations. Today\'s AI tools are more accessible and affordable than ever, offering SMEs powerful capabilities that were previously out of reach. Yet despite growing recognition of AI's potential, adoption among UK SMEs remains surprisingly low.',
+    excerpt: 'Artificial intelligence (AI) is no longer just for tech giants and large corporations. Today\'s AI tools are more accessible and affordable than ever, offering SMEs powerful capabilities that were previously out of reach. Yet despite growing recognition of AI\'s potential, adoption among UK SMEs remains surprisingly low.',
     content: (
       <>
         <p>Artificial intelligence (AI) is no longer just for tech giants and large corporations. Today&apos;s AI tools are more accessible and affordable than ever, offering SMEs powerful capabilities that were previously out of reach. Yet despite growing recognition of AI&apos;s potential, adoption among UK SMEs remains surprisingly low.</p>
