@@ -4,8 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
+import { useState } from "react";
 
 const ProcessAutomation = () => {
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+
   const features = [
     "Custom workflow automation tailored to your business",
     "Local compliance and regulation integration",
@@ -42,6 +46,10 @@ const ProcessAutomation = () => {
     "Email marketing campaigns and follow-ups"
   ];
 
+  const handleGetStarted = () => {
+    setIsChatbotOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
@@ -58,7 +66,11 @@ const ProcessAutomation = () => {
               Transform your business operations with intelligent automation that understands 
               your local workflow and eliminates time-consuming manual tasks.
             </p>
-            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+            <Button 
+              size="lg" 
+              className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold"
+              onClick={handleGetStarted}
+            >
               Get Started Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -150,13 +162,23 @@ const ProcessAutomation = () => {
           <p className="text-xl text-brand-silver mb-8">
             Get a free consultation to see how we can streamline your operations.
           </p>
-          <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          <Button 
+            size="lg" 
+            className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold"
+            onClick={handleGetStarted}
+          >
             Schedule Free Consultation
           </Button>
         </div>
       </section>
 
       <Footer />
+      
+      {isChatbotOpen && (
+        <div className="fixed inset-0 z-[9999]">
+          <ChatbotLauncher />
+        </div>
+      )}
     </div>
   );
 };
