@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -13,6 +12,7 @@ const Navigation = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services", hasDropdown: true },
+    { name: "Blog", path: "/blog" },
     { name: "Testimonials", path: "/case-studies" },
     { name: "Contact", path: "/contact" },
   ];
@@ -24,7 +24,7 @@ const Navigation = () => {
     { name: "Data Analytics", path: "/services/data-analytics" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path || (path === '/services' && location.pathname.startsWith('/services/'));
 
   let hoverTimeout: NodeJS.Timeout;
 
@@ -85,6 +85,7 @@ const Navigation = () => {
                             key={service.name}
                             to={service.path}
                             className="block px-4 py-2 text-brand-silver hover:text-brand-lime hover:bg-brand-lime/10 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                            onClick={() => setIsServicesOpen(false)}
                           >
                             {service.name}
                           </Link>
@@ -128,21 +129,54 @@ const Navigation = () => {
           <div className="md:hidden border-t border-brand-silver/20 bg-brand-navy-light">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`block px-3 py-2 text-base transition-colors duration-200 ${
-                    isActive(item.path)
-                      ? "text-brand-lime"
-                      : "text-brand-silver hover:text-brand-lime"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                <div key={item.name}>
+                  {item.hasDropdown ? (
+                     <div>
+                      <Link
+                        to={item.path}
+                        className={`block px-3 py-2 text-base transition-colors duration-200 ${
+                          isActive(item.path)
+                            ? "text-brand-lime"
+                            : "text-brand-silver hover:text-brand-lime"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                      <div className="pl-4">
+                        {serviceItems.map((service) => (
+                           <Link
+                           key={service.name}
+                           to={service.path}
+                           className={`block px-3 py-2 text-base transition-colors duration-200 ${
+                             isActive(service.path)
+                               ? "text-brand-lime"
+                               : "text-brand-silver hover:text-brand-lime"
+                           }`}
+                           onClick={() => setIsMenuOpen(false)}
+                         >
+                           - {service.name}
+                         </Link>
+                        ))}
+                      </div>
+                     </div>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      className={`block px-3 py-2 text-base transition-colors duration-200 ${
+                        isActive(item.path)
+                          ? "text-brand-lime"
+                          : "text-brand-silver hover:text-brand-lime"
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
               ))}
               <div className="pt-2">
-                <Link to="/consultation">
+                <Link to="/consultation" onClick={() => setIsMenuOpen(false)}>
                   <Button className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
                     Get Started
                   </Button>

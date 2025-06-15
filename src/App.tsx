@@ -22,6 +22,8 @@ import WebsiteCreation from "./pages/WebsiteCreation";
 import SalesLeadTools from "./pages/SalesLeadTools";
 import AnalyticsAudit from "./pages/AnalyticsAudit";
 import SEOAudit from "./pages/SEOAudit";
+import Blog from "./pages/Blog";
+import BlogPostPage from "./pages/BlogPostPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +52,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/consultation" element={<Consultation />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
