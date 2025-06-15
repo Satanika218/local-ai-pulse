@@ -12,7 +12,7 @@ const SalesLeadTools = () => {
     "CRM integration and contact management",
     "Email marketing and campaign automation",
     "Local prospect identification and targeting",
-    "Sales pipeline tracking and optimization"
+    "Sales pipeline tracking and optimisation"
   ];
 
   const benefits = [

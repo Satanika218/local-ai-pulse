@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 const Consultation = () => {
   const benefits = [
-    "Personalized AI strategy for your business",
+    "Personalised AI strategy for your business",
     "Local market analysis and opportunities",
     "Implementation roadmap and timeline",
     "ROI projections and cost-benefit analysis",
@@ -34,7 +34,7 @@ const Consultation = () => {
             </h1>
             <p className="text-xl text-brand-silver max-w-3xl mx-auto">
               Ready to transform your business with AI? Let's discuss how we can help you harness 
-              the full power of automation while maintaining your local community connections.
+              the full power of automation whilst maintaining your local community connections.
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ const Consultation = () => {
               </h2>
               <p className="text-brand-silver text-lg mb-6">
                 AI is everywhere in the conversation, but many businesses haven't harnessed its full potential. 
-                That's where we come in. We specialize in working with local businesses because we understand 
+                That's where we come in. We specialise in working with local businesses because we understand 
                 the unique challenges and opportunities that come with serving your community.
               </p>
               <p className="text-brand-silver text-lg mb-6">
