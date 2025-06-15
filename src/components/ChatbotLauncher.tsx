@@ -15,7 +15,7 @@ const ChatbotLauncher = () => {
         aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
         style={{ zIndex: 9999 }}
       >
-        {isOpen ? <X size={32} /> : <MessageSquare size={32} />}
+        {isOpen ? <X size={40} /> : <MessageSquare size={40} />}
       </Button>
       {isOpen && <BusinessConsultantChatbot onClose={() => setIsOpen(false)} />}
     </>
