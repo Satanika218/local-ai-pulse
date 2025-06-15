@@ -1,4 +1,3 @@
-
 import { ArrowRight, Bot, TrendingUp, Users, Zap, CheckCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -166,7 +165,7 @@ const Index = () => {
               What Our <span className="text-brand-lime">Local Partners</span> Say
             </h2>
             <p className="text-xl text-brand-silver">
-              Real results from real local businesses in your community.
+              Results from local businesses in our community.
             </p>
           </div>
           
