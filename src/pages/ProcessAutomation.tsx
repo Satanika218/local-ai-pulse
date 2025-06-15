@@ -1,4 +1,3 @@
-
 import { Bot, CheckCircle, ArrowRight, Zap, Clock, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,9 +5,11 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProcessAutomation = () => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const navigate = useNavigate();
 
   const features = [
     "Custom workflow automation tailored to your business",
@@ -48,6 +49,10 @@ const ProcessAutomation = () => {
 
   const handleGetStarted = () => {
     setIsChatbotOpen(true);
+  };
+
+  const handleScheduleConsultation = () => {
+    navigate('/consultation');
   };
 
   return (
@@ -165,7 +170,7 @@ const ProcessAutomation = () => {
           <Button 
             size="lg" 
             className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold"
-            onClick={handleGetStarted}
+            onClick={handleScheduleConsultation}
           >
             Schedule Free Consultation
           </Button>
