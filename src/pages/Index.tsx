@@ -1,3 +1,4 @@
+
 import { ArrowRight, Bot, TrendingUp, Users, Zap, CheckCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,12 +16,12 @@ const Index = () => {
     {
       icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
       title: "Local SEO AI",
-      description: "Dominate local search results with AI that understands your neighborhood's unique characteristics."
+      description: "Dominate local search results with AI that understands your neighbourhood's unique characteristics."
     },
     {
       icon: <Users className="h-8 w-8 text-brand-lime" />,
       title: "Customer Insights",
-      description: "Understand your local customers better with AI-driven analytics and behavioral patterns."
+      description: "Understand your local customers better with AI-driven analytics and behavioural patterns."
     },
     {
       icon: <Zap className="h-8 w-8 text-brand-lime" />,
@@ -46,7 +47,7 @@ const Index = () => {
     {
       name: "Mike Thompson", 
       business: "Thompson Auto Repair",
-      content: "Their automation helped us serve 60% more customers while maintaining personal service.",
+      content: "Their automation helped us serve 60% more customers whilst maintaining personal service.",
       rating: 5
     }
   ];
@@ -60,11 +61,11 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy opacity-90"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
-            {/* Logo above main text - significantly increased size for better visibility */}
+            {/* Logo above main text */}
             <div className="mb-12">
               <img 
                 src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
-                alt="11th Temple Solutions" 
+                alt="11th Temple Solutions Logo" 
                 className="h-64 w-64 mx-auto drop-shadow-2xl"
               />
             </div>
@@ -97,7 +98,7 @@ const Index = () => {
             </h2>
             <p className="text-xl text-brand-silver max-w-2xl mx-auto">
               Our AI solutions are designed specifically for local businesses who want to leverage automation 
-              while maintaining their community connection.
+              whilst maintaining their community connection.
             </p>
           </div>
           
@@ -146,9 +147,11 @@ const Index = () => {
                 <p className="text-brand-silver mb-6">
                   Join hundreds of local businesses already using our AI automation solutions.
                 </p>
-                <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                  Get Free Consultation
-                </Button>
+                <Link to="/consultation">
+                  <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
+                    Get Free Consultation
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -69,7 +69,7 @@ const Consultation = () => {
 
             <div className="space-y-6">
               <Card 
-                className="bg-brand-navy border-brand-silver/20 cursor-pointer hover:border-brand-lime/50 transition-all duration-300"
+                className="bg-brand-navy border-brand-silver/20 cursor-pointer hover:border-brand-lime/50 transition-all duration-300 hover:shadow-lg"
                 onClick={scrollToBooking}
               >
                 <CardContent className="p-6 text-center">
@@ -88,7 +88,7 @@ const Consultation = () => {
               </Card>
 
               <Link to="/about">
-                <Card className="bg-brand-navy border-brand-silver/20 cursor-pointer hover:border-brand-lime/50 transition-all duration-300 hover:transform hover:scale-105">
+                <Card className="bg-brand-navy border-brand-silver/20 cursor-pointer hover:border-brand-lime/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg">
                   <CardContent className="p-6 text-center">
                     <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" />
                     <h3 className="text-xl font-semibold text-white mb-3">Local Expertise</h3>
@@ -113,7 +113,7 @@ const Consultation = () => {
             </p>
           </div>
 
-          <Card className="bg-brand-navy-light border-brand-silver/20">
+          <Card className="bg-brand-navy-light border-brand-silver/20 shadow-2xl">
             <CardContent className="p-8">
               <div className="w-full" style={{ minHeight: '600px' }}>
                 <iframe 
@@ -123,6 +123,7 @@ const Consultation = () => {
                   frameBorder="0"
                   title="Book a Consultation"
                   className="rounded-lg"
+                  loading="lazy"
                 />
               </div>
             </CardContent>
