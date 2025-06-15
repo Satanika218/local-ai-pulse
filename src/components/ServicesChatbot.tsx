@@ -28,7 +28,7 @@ const ServicesChatbot = () => {
     setSelectedService(service);
     setMessages(prev => [...prev, 
       { type: 'user', text: service },
-      { type: 'bot', text: `Great choice! ${service} is one of our key specialties. Let me connect you with the right specialist. Would you like to schedule a consultation to discuss your specific needs?` }
+      { type: 'bot', text: `Great choice! ${service} is one of our key specialities. Let me connect you with the right specialist. Would you like to schedule a consultation to discuss your specific needs?` }
     ]);
   };
 
@@ -69,9 +69,7 @@ const ServicesChatbot = () => {
                       <Button
                         key={index}
                         onClick={() => handleServiceSelect(service)}
-                        variant="outline"
-                        size="sm"
-                        className="w-full text-left justify-start border-brand-silver/30 text-brand-silver hover:bg-brand-lime hover:text-brand-navy text-xs"
+                        className="w-full text-left justify-start bg-brand-silver text-black hover:bg-brand-silver-dark text-xs"
                       >
                         {service}
                       </Button>
