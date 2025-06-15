@@ -38,7 +38,10 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-brand-silver">
                 <MapPin className="h-4 w-4 text-brand-lime" />
-                <span>Newtown Powys, Nationwide coverage</span>
+                <span>Newtown, Powys</span>
+              </div>
+              <div className="flex items-center space-x-3 text-brand-silver">
+                <span className="text-brand-lime font-medium">Local Knowledge - Nationwide Coverage</span>
               </div>
             </div>
           </div>

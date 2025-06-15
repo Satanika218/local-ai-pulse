@@ -53,8 +53,8 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6 text-brand-lime" />,
       title: "Visit Us",
-      details: "Newtown Powys",
-      description: "Nationwide coverage"
+      details: "Newtown, Powys",
+      description: "Local Knowledge - Nationwide Coverage"
     },
     {
       icon: <Clock className="h-6 w-6 text-brand-lime" />,
