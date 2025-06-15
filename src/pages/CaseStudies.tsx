@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight, Mail, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TestimonialForm from "@/components/TestimonialForm";
@@ -106,24 +107,6 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Trustpilot Section */}
-      <section className="py-8 bg-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center space-x-4">
-            <span className="text-brand-silver text-lg">Read our reviews on</span>
-            <a 
-              href="https://uk.trustpilot.com/review/11thtemplesolutions.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-brand-silver/20 text-brand-silver px-6 py-3 rounded-lg hover:bg-brand-silver/30 hover:text-white transition-colors duration-200 font-semibold border border-brand-silver/30"
-            >
-              <span>Trustpilot</span>
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section className="py-16 bg-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -221,6 +204,42 @@ const CaseStudies = () => {
           </p>
           
           <TestimonialForm />
+        </div>
+      </section>
+
+      {/* Ready to Automate Section */}
+      <section className="py-16 bg-brand-navy-light">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Automate Your <span className="text-brand-lime">Processes?</span>
+          </h2>
+          <p className="text-xl text-brand-silver mb-8">
+            Get a free consultation to see how we can streamline your operations.
+          </p>
+          
+          <Link to="/consultation">
+            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+              Schedule Free Consultation
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Trustpilot Section - Moved to bottom above footer */}
+      <section className="py-8 bg-brand-navy border-t border-brand-silver/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center space-x-4">
+            <span className="text-brand-silver text-lg">Read our reviews on</span>
+            <a 
+              href="https://uk.trustpilot.com/review/11thtemplesolutions.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-brand-silver/20 text-brand-silver px-6 py-3 rounded-lg hover:bg-brand-silver/30 hover:text-white transition-colors duration-200 font-semibold border border-brand-silver/30"
+            >
+              <span>Trustpilot</span>
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </section>
 
