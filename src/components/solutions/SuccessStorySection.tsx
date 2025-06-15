@@ -12,7 +12,7 @@ export const SuccessStorySection = () => {
       </p>
       <Link to="/case-studies">
         <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-          View Case Studies
+          Testimonials
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </Link>

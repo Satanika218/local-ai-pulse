@@ -74,7 +74,7 @@ const Navigation = () => {
                 className={`transition-colors duration-200 text-sm lg:text-base whitespace-nowrap px-2 py-1 ${
                   isActive(item.path)
                     ? "text-brand-lime"
-                    : "text-brand-silver hover:text-brand-lime"
+                    : "text-white hover:text-brand-lime"
                 }`}
               >
                 {item.name}
