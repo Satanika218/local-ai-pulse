@@ -14,7 +14,6 @@ import {
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  // "Services" handled as sub-menu
   { name: "Blog", path: "/blog" },
   { name: "Testimonials", path: "/case-studies" },
   { name: "Contact", path: "/contact" },
@@ -46,6 +45,10 @@ const Navigation = () => {
           location.pathname !== "/solutions")
       );
     }
+    // Add support for all services sub-pages and /solutions
+    if (path === "/solutions") {
+      return location.pathname === "/solutions";
+    }
     return location.pathname === path;
   };
 
@@ -70,55 +73,53 @@ const Navigation = () => {
 
           {/* Inline navigation for md+ screens */}
           <div className="hidden md:flex flex-1 items-center justify-center space-x-2 font-semibold">
-            {navItems.map((item) =>
-              item.name !== "Services" ? (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
-                    isActive(item.path)
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
+                  isActive(item.path)
+                    ? "text-brand-lime underline"
+                    : "text-white hover:text-brand-lime hover:underline"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            {/* Services sub-menu as an inline dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={`px-4 py-2 flex items-center text-sm xl:text-base rounded-md transition-colors duration-200 ${
+                    serviceItems.some((srv) => isActive(srv.path))
                       ? "text-brand-lime underline"
                       : "text-white hover:text-brand-lime hover:underline"
                   }`}
+                  aria-label="Services"
+                  type="button"
                 >
-                  {item.name}
-                </Link>
-              ) : (
-                // Services sub-menu using shadcn/ui DropdownMenu
-                <DropdownMenu key="services">
-                  <DropdownMenuTrigger asChild>
-                    <button
-                      className={`px-4 py-2 flex items-center text-sm xl:text-base rounded-md transition-colors duration-200 ${
-                        serviceItems.some((srv) => isActive(srv.path))
-                          ? "text-brand-lime underline"
-                          : "text-white hover:text-brand-lime hover:underline"
+                  Services
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </button>
+              </DropdownMenuTrigger>
+              {/* Proper palette & bg for dropdown */}
+              <DropdownMenuContent className="w-64 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50">
+                {serviceItems.map((service) => (
+                  <DropdownMenuItem asChild key={service.name}>
+                    <Link
+                      to={service.path}
+                      className={`block px-4 py-2 text-base transition-colors duration-200 rounded-md no-underline ${
+                        isActive(service.path)
+                          ? "text-brand-lime underline bg-brand-navy-light"
+                          : "text-brand-silver hover:text-brand-lime hover:bg-brand-navy-light"
                       }`}
-                      aria-label="Services"
                     >
-                      Services
-                      <ChevronDown className="h-4 w-4 ml-1" />
-                    </button>
-                  </DropdownMenuTrigger>
-                  {/* Use brand-popover for consistent palette & full-width */}
-                  <DropdownMenuContent className="w-64 bg-popover border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1">
-                    {serviceItems.map((service) => (
-                      <DropdownMenuItem asChild key={service.name}>
-                        <Link
-                          to={service.path}
-                          className={`block px-4 py-2 text-base transition-colors duration-200 rounded-md no-underline ${
-                            isActive(service.path)
-                              ? "text-brand-lime underline bg-brand-navy-light"
-                              : "text-brand-silver hover:text-brand-lime hover:bg-brand-navy-light"
-                          }`}
-                        >
-                          {service.name}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              )
-            )}
+                      {service.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             {/* "Get Started" button (always visible on large screens) */}
             <Link to="/consultation" className="ml-2">
               <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-sm xl:text-base whitespace-nowrap">
@@ -146,7 +147,7 @@ const Navigation = () => {
 
         {/* Burger Menu (always renders for all breakpoints for accessibility) */}
         {isMenuOpen && (
-          <div className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden">
+          <div className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden z-50">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
@@ -177,7 +178,7 @@ const Navigation = () => {
                   </button>
                 </DropdownMenuTrigger>
                 {/* Brand palette for submenu */}
-                <DropdownMenuContent className="w-64 ml-2 bg-popover border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1">
+                <DropdownMenuContent className="w-64 ml-2 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50">
                   {serviceItems.map((service) => (
                     <DropdownMenuItem asChild key={service.name}>
                       <Link
