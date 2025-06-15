@@ -99,7 +99,16 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formData);
+    
+    let processedUrl = formData.websiteUrl.trim();
+    if (processedUrl && !/^https?:\/\//i.test(processedUrl)) {
+      processedUrl = `https://${processedUrl}`;
+    }
+
+    onSubmit({
+      ...formData,
+      websiteUrl: processedUrl,
+    });
   };
 
   return (
