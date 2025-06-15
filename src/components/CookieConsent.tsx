@@ -50,7 +50,7 @@ const CookieConsent = () => {
                 <Button 
                   onClick={handleDecline}
                   variant="outline"
-                  className="border-brand-silver text-brand-silver hover:bg-brand-silver/10 flex-1"
+                  className="border-brand-silver bg-brand-silver text-black hover:bg-brand-silver/80 flex-1"
                   aria-label="Decline non-essential cookies"
                 >
                   Decline
