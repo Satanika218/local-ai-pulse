@@ -1,9 +1,10 @@
 
-import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight } from "lucide-react";
+import { Bot, TrendingUp, Users, BarChart, CheckCircle, ArrowRight, Search, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -16,7 +17,8 @@ const Services = () => {
         "Local compliance integration",
         "Staff training and onboarding",
         "24/7 monitoring and support"
-      ]
+      ],
+      link: "/services/process-automation"
     },
     {
       icon: <TrendingUp className="h-12 w-12 text-brand-lime" />,
@@ -27,7 +29,11 @@ const Services = () => {
         "Community event integration",
         "Review management automation",
         "Local citation building"
-      ]
+      ],
+      link: "/services/local-seo",
+      hasAudit: true,
+      auditLink: "/seo-audit",
+      auditText: "Get Free SEO Audit"
     },
     {
       icon: <Users className="h-12 w-12 text-brand-lime" />,
@@ -38,7 +44,8 @@ const Services = () => {
         "Community-aware responses",
         "Seamless human handoff",
         "Multi-channel support"
-      ]
+      ],
+      link: "/services/customer-service"
     },
     {
       icon: <BarChart className="h-12 w-12 text-brand-lime" />,
@@ -49,7 +56,38 @@ const Services = () => {
         "Customer behaviour insights",
         "Competitive intelligence",
         "Custom reporting dashboards"
-      ]
+      ],
+      link: "/services/data-analytics",
+      hasAudit: true,
+      auditLink: "/analytics-audit",
+      auditText: "Get Free Analytics Audit"
+    }
+  ];
+
+  const auditTools = [
+    {
+      icon: <Search className="h-12 w-12 text-brand-lime" />,
+      title: "Free SEO Audit Tool",
+      description: "Get a comprehensive analysis of your website's SEO performance with actionable insights and recommendations.",
+      features: [
+        "Complete SEO performance analysis",
+        "Local search optimization review",
+        "Competitor comparison insights",
+        "Actionable improvement recommendations"
+      ],
+      link: "/seo-audit"
+    },
+    {
+      icon: <FileText className="h-12 w-12 text-brand-lime" />,
+      title: "Free Analytics Audit Tool",
+      description: "Discover how your website performs and get personalized recommendations to improve your online presence.",
+      features: [
+        "Website performance analysis",
+        "User behavior insights",
+        "Conversion tracking review",
+        "Growth opportunity identification"
+      ],
+      link: "/analytics-audit"
     }
   ];
 
@@ -88,8 +126,7 @@ const Services = () => {
               AI Automation <span className="text-brand-lime">Services</span>
             </h1>
             <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-              Comprehensive AI solutions designed specifically for local businesses. 
-              We combine cutting-edge technology with deep local market knowledge.
+              Comprehensive solutions designed specifically for local businesses. We combine cutting-edge technology with local market knowledge.
             </p>
             <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
               Get Free Consultation
@@ -125,10 +162,69 @@ const Services = () => {
                     ))}
                   </div>
                   
+                  <div className="flex flex-col gap-3 pt-4 border-t border-brand-silver/20">
+                    <Link to={service.link}>
+                      <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark w-full">
+                        Learn More
+                      </Button>
+                    </Link>
+                    {service.hasAudit && service.auditLink && (
+                      <Link to={service.auditLink}>
+                        <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy w-full">
+                          {service.auditText}
+                        </Button>
+                      </Link>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Free Audit Tools Section */}
+      <section className="py-16 bg-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Free <span className="text-brand-lime">Audit Tools</span>
+            </h2>
+            <p className="text-xl text-brand-silver max-w-2xl mx-auto">
+              Get instant insights into your website's performance with our comprehensive audit tools.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            {auditTools.map((tool, index) => (
+              <Card key={index} className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 group">
+                <CardContent className="p-8">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="group-hover:scale-110 transition-transform duration-300">
+                      {tool.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-white mb-2">{tool.title}</h3>
+                      <p className="text-brand-silver mb-4">{tool.description}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3 mb-6">
+                    {tool.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center space-x-3">
+                        <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                        <span className="text-brand-silver">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
                   <div className="flex items-center justify-center pt-4 border-t border-brand-silver/20">
-                    <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy">
-                      Learn More
-                    </Button>
+                    <Link to={tool.link}>
+                      <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                        Start Free Audit
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -138,7 +234,7 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-brand-navy">
+      <section className="py-16 bg-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
