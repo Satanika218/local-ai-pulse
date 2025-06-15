@@ -1,3 +1,4 @@
+
 import jsPDF from 'jspdf';
 import { SEOAuditData } from '@/pages/SEOAudit';
 
@@ -15,6 +16,7 @@ export const generateSEOAuditPDF = async (
   const brandLime: [number, number, number] = [150, 255, 0];
   const brandSilver: [number, number, number] = [156, 163, 175];
 
+  // PAGE 1 - Main Report
   // Header with 11th Temple branding
   doc.setFillColor(...brandNavy);
   doc.rect(0, 0, pageWidth, 40, 'F');
@@ -31,17 +33,14 @@ export const generateSEOAuditPDF = async (
   // Add logo in the top right corner if provided
   if (logoUrl) {
     try {
-      // Convert relative URL to absolute URL
       const absoluteLogoUrl = logoUrl.startsWith('http') ? logoUrl : `${window.location.origin}${logoUrl}`;
       
-      // Load and add the logo
       const img = new Image();
       img.crossOrigin = 'anonymous';
       
       await new Promise((resolve, reject) => {
         img.onload = () => {
           try {
-            // Create canvas to get image data
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
             canvas.width = img.width;
@@ -50,7 +49,6 @@ export const generateSEOAuditPDF = async (
             
             const imgData = canvas.toDataURL('image/png');
             
-            // Add logo to PDF (top right corner)
             const logoWidth = 30;
             const logoHeight = (img.height / img.width) * logoWidth;
             doc.addImage(imgData, 'PNG', pageWidth - logoWidth - 10, 10, logoWidth, logoHeight);
@@ -92,9 +90,23 @@ export const generateSEOAuditPDF = async (
   yPosition += 8;
   doc.text(`Current Ranking: ${auditData.currentRanking}`, 20, yPosition);
 
+  // SEO Score
+  yPosition += 25;
+  doc.setFillColor(...brandLime);
+  doc.rect(20, yPosition - 5, 50, 25, 'F');
+  
+  doc.setTextColor(...brandNavy);
+  doc.setFontSize(20);
+  doc.setFont('helvetica', 'bold');
+  doc.text(`${score}/100`, 30, yPosition + 8);
+  
+  doc.setTextColor(...brandNavy);
+  doc.setFontSize(14);
+  doc.text('Overall SEO Score', 80, yPosition + 8);
+
   // Primary Keywords
   if (auditData.primaryKeywords.length > 0) {
-    yPosition += 20;
+    yPosition += 35;
     doc.setFontSize(16);
     doc.setFont('helvetica', 'bold');
     doc.setTextColor(...brandNavy);
@@ -107,6 +119,7 @@ export const generateSEOAuditPDF = async (
       yPosition += 6;
     });
   }
+
   // Competitors
   if (auditData.competitors.length > 0) {
     yPosition += 10;
@@ -155,28 +168,70 @@ export const generateSEOAuditPDF = async (
     });
   }
 
-  // SEO Score (use passed-in score, not random)
-  yPosition += 20;
-  doc.setFillColor(...brandLime);
-  doc.rect(20, yPosition - 5, 50, 25, 'F');
+  // PAGE 2 - Recommendations
+  doc.addPage();
   
-  doc.setTextColor(...brandNavy);
-  doc.setFontSize(20);
+  // Header for page 2
+  doc.setFillColor(...brandNavy);
+  doc.rect(0, 0, pageWidth, 40, 'F');
+  
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(24);
   doc.setFont('helvetica', 'bold');
-  doc.text(`${score}/100`, 30, yPosition + 8);
+  doc.text('11th Temple', 20, 25);
   
-  doc.setTextColor(...brandNavy);
   doc.setFontSize(14);
-  doc.text('Overall SEO Score', 80, yPosition + 8);
+  doc.setFont('helvetica', 'normal');
+  doc.text('SEO Recommendations', 20, 35);
 
-  // Recommendations
-  yPosition += 40;
-  doc.setFontSize(16);
+  // Add logo on page 2 as well
+  if (logoUrl) {
+    try {
+      const absoluteLogoUrl = logoUrl.startsWith('http') ? logoUrl : `${window.location.origin}${logoUrl}`;
+      
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      
+      await new Promise((resolve, reject) => {
+        img.onload = () => {
+          try {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx?.drawImage(img, 0, 0);
+            
+            const imgData = canvas.toDataURL('image/png');
+            
+            const logoWidth = 30;
+            const logoHeight = (img.height / img.width) * logoWidth;
+            doc.addImage(imgData, 'PNG', pageWidth - logoWidth - 10, 10, logoWidth, logoHeight);
+            resolve(undefined);
+          } catch (error) {
+            console.error('Error processing logo:', error);
+            resolve(undefined);
+          }
+        };
+        img.onerror = () => {
+          console.error('Error loading logo');
+          resolve(undefined);
+        };
+        img.src = absoluteLogoUrl;
+      });
+    } catch (error) {
+      console.error('Error adding logo to PDF:', error);
+    }
+  }
+
+  yPosition = 60;
+
+  // Page 2 Title
+  doc.setFontSize(18);
   doc.setFont('helvetica', 'bold');
   doc.setTextColor(...brandNavy);
   doc.text('Priority SEO Recommendations', 20, yPosition);
 
-  // You could pass custom recommendations, for now stick to existing array:
+  // Recommendations
   const recommendations = [
     'Implement comprehensive keyword strategy',
     'Optimize website for local search terms',
@@ -187,29 +242,54 @@ export const generateSEOAuditPDF = async (
     'Implement structured data markup',
     'Improve internal linking structure'
   ];
-  yPosition += 15;
+
+  yPosition += 20;
   doc.setFontSize(10);
   doc.setFont('helvetica', 'normal');
   recommendations.forEach((rec, index) => {
-    if (yPosition > pageHeight - 30) {
-      doc.addPage();
-      yPosition = 30;
-    }
     doc.text(`${index + 1}. ${rec}`, 25, yPosition);
     yPosition += 8;
   });
 
-  // Footer
-  const footerY = pageHeight - 20;
-  doc.setFillColor(...brandNavy);
-  doc.rect(0, footerY - 5, pageWidth, 25, 'F');
-  
-  doc.setTextColor(255, 255, 255);
+  // Next Steps section on page 2
+  yPosition += 20;
+  doc.setFontSize(16);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(...brandNavy);
+  doc.text('Next Steps', 20, yPosition);
+
+  yPosition += 15;
   doc.setFontSize(10);
-  doc.text('Generated by 11th Temple SEO', 20, footerY + 5);
-  doc.text(`Report Date: ${new Date().toLocaleDateString()}`, 20, footerY + 12);
-  const contactInfo = 'Contact us for SEO implementation: hello@11thtemple.com';
-  doc.text(contactInfo, pageWidth - 20 - doc.getTextWidth(contactInfo), footerY + 5);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Ready to implement these recommendations? Our team at 11th Temple can help you:', 20, yPosition);
+  
+  yPosition += 10;
+  const nextSteps = [
+    'Set up advanced SEO tracking and analytics',
+    'Implement local SEO optimization strategies',
+    'Create custom SEO strategy and content plan',
+    'Provide ongoing SEO support and monitoring'
+  ];
+  
+  nextSteps.forEach((step) => {
+    yPosition += 6;
+    doc.text(`• ${step}`, 25, yPosition);
+  });
+
+  // Footer on both pages
+  [1, 2].forEach((pageNum) => {
+    doc.setPage(pageNum);
+    const footerY = pageHeight - 20;
+    doc.setFillColor(...brandNavy);
+    doc.rect(0, footerY - 5, pageWidth, 25, 'F');
+    
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(10);
+    doc.text('Generated by 11th Temple SEO', 20, footerY + 5);
+    doc.text(`Report Date: ${new Date().toLocaleDateString()}`, 20, footerY + 12);
+    const contactInfo = 'Contact us for SEO implementation: hello@11thtemple.com';
+    doc.text(contactInfo, pageWidth - 20 - doc.getTextWidth(contactInfo), footerY + 5);
+  });
 
   // Save the PDF
   doc.save(`${auditData.businessName}_SEO_Audit.pdf`);
