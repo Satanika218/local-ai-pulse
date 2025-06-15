@@ -138,10 +138,10 @@ const Navigation = () => {
                      <div>
                       <Link
                         to={item.path}
-                        className={`block px-3 py-2 text-base transition-colors duration-200 ${
+                        className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
                           isActive(item.path)
-                            ? "text-brand-lime"
-                            : "text-brand-silver hover:text-brand-lime"
+                            ? "text-brand-lime underline"
+                            : "text-white hover:text-brand-lime hover:underline"
                         }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -152,10 +152,10 @@ const Navigation = () => {
                            <Link
                            key={service.name}
                            to={service.path}
-                           className={`block px-3 py-2 text-base transition-colors duration-200 ${
+                           className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
                              isActive(service.path)
-                               ? "text-brand-lime"
-                               : "text-brand-silver hover:text-brand-lime"
+                               ? "text-brand-lime underline"
+                               : "text-white hover:text-brand-lime hover:underline"
                            }`}
                            onClick={() => setIsMenuOpen(false)}
                          >
@@ -167,10 +167,10 @@ const Navigation = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className={`block px-3 py-2 text-base transition-colors duration-200 ${
+                      className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
                         isActive(item.path)
-                          ? "text-brand-lime"
-                          : "text-brand-silver hover:text-brand-lime"
+                          ? "text-brand-lime underline"
+                          : "text-white hover:text-brand-lime hover:underline"
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
