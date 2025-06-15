@@ -28,6 +28,56 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
 
   const [keywordInput, setKeywordInput] = useState("");
   const [competitorInput, setCompetitorInput] = useState("");
+  const [showOtherIndustry, setShowOtherIndustry] = useState(false);
+  const [otherIndustry, setOtherIndustry] = useState("");
+
+  const industries = [
+    "Accounting & Bookkeeping",
+    "Aerospace & Aviation",
+    "Agriculture & Farming",
+    "Arts & Entertainment",
+    "Artificial Intelligence",
+    "Automotive Manufacturing",
+    "Banking & Financial Services",
+    "Biotechnology",
+    "Business Consulting",
+    "Chemical Production",
+    "Construction & Building",
+    "Digital Content Creation",
+    "Education & Training",
+    "Electronics Manufacturing",
+    "Engineering Services",
+    "Fishing & Aquaculture",
+    "Food & Beverage Processing",
+    "Forestry & Timber",
+    "Furniture Manufacturing",
+    "Government & Public Sector",
+    "Healthcare & Medical",
+    "Higher Education",
+    "Hospitality & Tourism",
+    "Information Technology",
+    "Insurance",
+    "Legal Services",
+    "Manufacturing & Construction",
+    "Marketing & Advertising",
+    "Media & Publishing",
+    "Metal Production & Fabrication",
+    "Mining & Quarrying",
+    "Oil & Gas Extraction",
+    "Pharmaceutical Manufacturing",
+    "Real Estate & Property",
+    "Recruitment & HR Services",
+    "Renewable Energy",
+    "Retail & E-commerce",
+    "Scientific Research",
+    "Software Development",
+    "Technology Consulting",
+    "Telecommunications",
+    "Textile & Clothing Production",
+    "Transportation & Logistics",
+    "Utilities & Energy",
+    "Wholesale & Distribution"
+  ];
 
   const seoGoals = [
     "Improve local search rankings",
@@ -99,6 +149,17 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
     }));
   };
 
+  const handleIndustryChange = (value: string) => {
+    if (value === "other-specify") {
+      setShowOtherIndustry(true);
+      setFormData(prev => ({ ...prev, industry: "" }));
+    } else {
+      setShowOtherIndustry(false);
+      setOtherIndustry("");
+      setFormData(prev => ({ ...prev, industry: value }));
+    }
+  };
+
   const processUrl = (url: string): string => {
     let processedUrl = url.trim();
     if (processedUrl && !/^https?:\/\//i.test(processedUrl)) {
@@ -120,10 +181,12 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
     }
 
     const processedUrl = processUrl(formData.websiteUrl);
+    const finalIndustry = showOtherIndustry ? otherIndustry : formData.industry;
 
     onSubmit({
       ...formData,
       websiteUrl: processedUrl,
+      industry: finalIndustry
     });
   };
 
@@ -141,7 +204,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
               value={formData.contactName}
               onChange={(e) => setFormData(prev => ({ ...prev, contactName: e.target.value }))}
               required
-              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-gray-500"
             />
           </div>
           <div>
@@ -153,7 +216,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
               value={formData.contactEmail}
               onChange={(e) => setFormData(prev => ({ ...prev, contactEmail: e.target.value }))}
               required
-              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-gray-500"
             />
           </div>
         </div>
@@ -171,7 +234,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
               value={formData.websiteUrl}
               onChange={(e) => setFormData(prev => ({ ...prev, websiteUrl: e.target.value }))}
               required
-              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-gray-500"
             />
           </div>
           <div>
@@ -182,7 +245,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
               value={formData.businessName}
               onChange={(e) => setFormData(prev => ({ ...prev, businessName: e.target.value }))}
               required
-              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-gray-500"
             />
           </div>
         </div>
@@ -191,22 +254,31 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="industry" className="text-brand-silver">Industry *</Label>
-          <Select onValueChange={(value) => setFormData(prev => ({ ...prev, industry: value }))}>
+          <Select onValueChange={handleIndustryChange}>
             <SelectTrigger className="bg-brand-navy-light border-brand-silver/30 text-white">
               <SelectValue placeholder="Select your industry" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="retail">Retail</SelectItem>
-              <SelectItem value="restaurant">Restaurant</SelectItem>
-              <SelectItem value="healthcare">Healthcare</SelectItem>
-              <SelectItem value="professional-services">Professional Services</SelectItem>
-              <SelectItem value="fitness">Fitness</SelectItem>
-              <SelectItem value="beauty">Beauty & Wellness</SelectItem>
-              <SelectItem value="automotive">Automotive</SelectItem>
-              <SelectItem value="real-estate">Real Estate</SelectItem>
+              {industries.map((industry) => (
+                <SelectItem key={industry} value={industry.toLowerCase().replace(/[^a-z0-9]/g, '-')}>
+                  {industry}
+                </SelectItem>
+              ))}
+              <SelectItem value="charity">Charity & Non-profit</SelectItem>
               <SelectItem value="other">Other</SelectItem>
+              <SelectItem value="other-specify">Other (please specify)</SelectItem>
             </SelectContent>
           </Select>
+          
+          {showOtherIndustry && (
+            <Input
+              placeholder="Please specify your industry"
+              value={otherIndustry}
+              onChange={(e) => setOtherIndustry(e.target.value)}
+              className="mt-2 bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-gray-500"
+              required
+            />
+          )}
         </div>
         <div>
           <Label htmlFor="targetLocation" className="text-brand-silver">Target Location *</Label>
@@ -216,7 +288,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
             value={formData.targetLocation}
             onChange={(e) => setFormData(prev => ({ ...prev, targetLocation: e.target.value }))}
             required
-            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-gray-500"
           />
         </div>
       </div>
@@ -243,7 +315,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
             placeholder="Enter a keyword"
             value={keywordInput}
             onChange={(e) => setKeywordInput(e.target.value)}
-            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-gray-500"
             onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleKeywordAdd())}
           />
           <Button type="button" onClick={handleKeywordAdd} className="bg-brand-lime text-brand-navy">
@@ -276,7 +348,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
             placeholder="Enter competitor website"
             value={competitorInput}
             onChange={(e) => setCompetitorInput(e.target.value)}
-            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-gray-500"
             onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleCompetitorAdd())}
           />
           <Button type="button" onClick={handleCompetitorAdd} className="bg-brand-lime text-brand-navy">
