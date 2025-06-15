@@ -117,14 +117,14 @@ const ServicesOverview = () => {
                 </div>
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <div className="relative">
-                    <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
+                    <div className="bg-brand-silver/10 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
                       <h4 className="text-xl font-bold text-white mb-4">Why Choose This Service?</h4>
                       <p className="text-brand-silver mb-6">
                         {service.description} Our solution is specifically designed for local businesses 
                         who want to leverage cutting-edge technology while maintaining their community connection.
                       </p>
                       <Link to="/consultation">
-                        <Button variant="outline" className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy w-full">
+                        <Button className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold w-full">
                           Get Free Consultation
                         </Button>
                       </Link>
