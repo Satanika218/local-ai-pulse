@@ -4,18 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { BarChart, FileText, Download } from "lucide-react";
+import { BarChart, FileText } from "lucide-react";
 import AnalyticsAuditForm from "@/components/AnalyticsAuditForm";
 import AuditResults from "@/components/AuditResults";
 
 export interface AuditData {
   websiteUrl: string;
   businessName: string;
+  contactName: string;
+  contactEmail: string;
   industry: string;
   targetLocation: string;
   monthlyVisitors: string;
   primaryGoals: string[];
   currentChallenges: string[];
+  gdprConsent: boolean;
 }
 
 const AnalyticsAudit = () => {

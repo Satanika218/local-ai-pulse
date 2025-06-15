@@ -14,13 +14,16 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
   const [formData, setFormData] = useState<SEOAuditData>({
     websiteUrl: "",
     businessName: "",
+    contactName: "",
+    contactEmail: "",
     industry: "",
     targetLocation: "",
     primaryKeywords: [],
     currentRanking: "",
     competitors: [],
     seoGoals: [],
-    currentIssues: []
+    currentIssues: [],
+    gdprConsent: false
   });
 
   const [keywordInput, setKeywordInput] = useState("");
@@ -96,13 +99,27 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
     }));
   };
 
+  const processUrl = (url: string): string => {
+    let processedUrl = url.trim();
+    if (processedUrl && !/^https?:\/\//i.test(processedUrl)) {
+      // Remove www. if it exists at the beginning
+      if (processedUrl.startsWith('www.')) {
+        processedUrl = processedUrl.substring(4);
+      }
+      processedUrl = `https://www.${processedUrl}`;
+    }
+    return processedUrl;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    let processedUrl = formData.websiteUrl.trim();
-    if (processedUrl && !/^https?:\/\//i.test(processedUrl)) {
-      processedUrl = `https://${processedUrl}`;
+    if (!formData.gdprConsent) {
+      alert("Please consent to data processing to continue.");
+      return;
     }
+
+    const processedUrl = processUrl(formData.websiteUrl);
 
     onSubmit({
       ...formData,
@@ -112,29 +129,62 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid md:grid-cols-2 gap-4">
-        <div>
-          <Label htmlFor="websiteUrl" className="text-brand-silver">Website URL *</Label>
-          <Input
-            id="websiteUrl"
-            type="url"
-            placeholder="https://yourwebsite.com"
-            value={formData.websiteUrl}
-            onChange={(e) => setFormData(prev => ({ ...prev, websiteUrl: e.target.value }))}
-            required
-            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
-          />
+      {/* Contact Information Section */}
+      <div className="border-b border-brand-silver/20 pb-6">
+        <h3 className="text-lg font-semibold text-white mb-4">Contact Information</h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="contactName" className="text-brand-silver">Your Name *</Label>
+            <Input
+              id="contactName"
+              placeholder="John Smith"
+              value={formData.contactName}
+              onChange={(e) => setFormData(prev => ({ ...prev, contactName: e.target.value }))}
+              required
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+            />
+          </div>
+          <div>
+            <Label htmlFor="contactEmail" className="text-brand-silver">Email Address *</Label>
+            <Input
+              id="contactEmail"
+              type="email"
+              placeholder="john@company.com"
+              value={formData.contactEmail}
+              onChange={(e) => setFormData(prev => ({ ...prev, contactEmail: e.target.value }))}
+              required
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+            />
+          </div>
         </div>
-        <div>
-          <Label htmlFor="businessName" className="text-brand-silver">Business Name *</Label>
-          <Input
-            id="businessName"
-            placeholder="Your Business Name"
-            value={formData.businessName}
-            onChange={(e) => setFormData(prev => ({ ...prev, businessName: e.target.value }))}
-            required
-            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
-          />
+      </div>
+
+      {/* Business Information Section */}
+      <div>
+        <h3 className="text-lg font-semibold text-white mb-4">Business Information</h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="websiteUrl" className="text-brand-silver">Website URL *</Label>
+            <Input
+              id="websiteUrl"
+              placeholder="example.co.uk or www.example.com"
+              value={formData.websiteUrl}
+              onChange={(e) => setFormData(prev => ({ ...prev, websiteUrl: e.target.value }))}
+              required
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+            />
+          </div>
+          <div>
+            <Label htmlFor="businessName" className="text-brand-silver">Business Name *</Label>
+            <Input
+              id="businessName"
+              placeholder="Your Business Name"
+              value={formData.businessName}
+              onChange={(e) => setFormData(prev => ({ ...prev, businessName: e.target.value }))}
+              required
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+            />
+          </div>
         </div>
       </div>
 
@@ -281,6 +331,28 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
               <Label htmlFor={issue} className="text-brand-silver text-sm">{issue}</Label>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* GDPR Consent */}
+      <div className="border-t border-brand-silver/20 pt-6">
+        <div className="flex items-start space-x-3">
+          <Checkbox 
+            id="gdprConsent"
+            checked={formData.gdprConsent}
+            onCheckedChange={(checked) => setFormData(prev => ({ ...prev, gdprConsent: checked as boolean }))}
+            required
+          />
+          <div className="flex-1">
+            <Label htmlFor="gdprConsent" className="text-brand-silver text-sm leading-relaxed">
+              I consent to 11th Temple processing my personal data to provide the SEO audit and contact me about relevant services. 
+              You can withdraw consent at any time. View our{" "}
+              <a href="/privacy" className="text-brand-lime hover:text-brand-lime-dark underline">
+                Privacy Policy
+              </a>{" "}
+              for more information. *
+            </Label>
+          </div>
         </div>
       </div>
 

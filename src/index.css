@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -107,9 +108,25 @@
     cursor: not-allowed;
   }
 
-  /* Improve form accessibility */
+  /* Improve form accessibility and brand consistency */
   input:invalid {
-    border-color: #7FFF00; /* brand-lime */
+    border-color: #7FFF00 !important; /* brand-lime */
+  }
+
+  input:focus:invalid {
+    border-color: #7FFF00 !important;
+    box-shadow: 0 0 0 2px rgba(127, 255, 0, 0.2) !important;
+  }
+
+  /* Brand-consistent selection highlight */
+  ::selection {
+    background-color: #7FFF00; /* brand-lime */
+    color: #0A1E3F; /* brand-navy */
+  }
+
+  ::-moz-selection {
+    background-color: #7FFF00;
+    color: #0A1E3F;
   }
 
   /* Ensure proper heading hierarchy */
@@ -196,6 +213,22 @@
     background: linear-gradient(transparent 40%, rgba(255,255,0,0.3) 40%, rgba(255,255,0,0.3) 60%, transparent 60%);
     pointer-events: none;
     z-index: 9999;
+  }
+
+  /* GDPR compliance styling */
+  .gdpr-notice {
+    font-size: 0.75rem;
+    color: #C0C0C0;
+    line-height: 1.4;
+  }
+
+  .gdpr-notice a {
+    color: #7FFF00;
+    text-decoration: underline;
+  }
+
+  .gdpr-notice a:hover {
+    color: #96FF32;
   }
 }
 

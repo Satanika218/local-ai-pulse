@@ -11,6 +11,8 @@ import SEOAuditResults from "@/components/SEOAuditResults";
 export interface SEOAuditData {
   websiteUrl: string;
   businessName: string;
+  contactName: string;
+  contactEmail: string;
   industry: string;
   targetLocation: string;
   primaryKeywords: string[];
@@ -18,6 +20,7 @@ export interface SEOAuditData {
   competitors: string[];
   seoGoals: string[];
   currentIssues: string[];
+  gdprConsent: boolean;
 }
 
 const SEOAudit = () => {
