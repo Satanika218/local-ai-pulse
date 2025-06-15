@@ -2,7 +2,7 @@
 import jsPDF from 'jspdf';
 import { AuditData } from '@/pages/AnalyticsAudit';
 
-export const generateAuditPDF = (auditData: AuditData) => {
+export const generateAuditPDF = async (auditData: AuditData, score: number, logoUrl?: string) => {
   const doc = new jsPDF();
   const pageWidth = doc.internal.pageSize.width;
   const pageHeight = doc.internal.pageSize.height;
@@ -14,7 +14,50 @@ export const generateAuditPDF = (auditData: AuditData) => {
 
   // Header with 11th Temple branding
   doc.setFillColor(...brandNavy);
-  doc.rect(0, 0, pageWidth, 40, 'F');
+  doc.rect(0, 0, pageWidth, 50, 'F');
+  
+  // Add logo if provided
+  if (logoUrl) {
+    try {
+      // Convert relative URL to absolute URL
+      const absoluteLogoUrl = logoUrl.startsWith('http') ? logoUrl : `${window.location.origin}${logoUrl}`;
+      
+      // Load and add the logo
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      
+      await new Promise((resolve, reject) => {
+        img.onload = () => {
+          try {
+            // Create canvas to get image data
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx?.drawImage(img, 0, 0);
+            
+            const imgData = canvas.toDataURL('image/png');
+            
+            // Add logo to PDF (top right corner)
+            const logoWidth = 30;
+            const logoHeight = (img.height / img.width) * logoWidth;
+            doc.addImage(imgData, 'PNG', pageWidth - logoWidth - 10, 10, logoWidth, logoHeight);
+            resolve(undefined);
+          } catch (error) {
+            console.error('Error processing logo:', error);
+            resolve(undefined);
+          }
+        };
+        img.onerror = () => {
+          console.error('Error loading logo');
+          resolve(undefined);
+        };
+        img.src = absoluteLogoUrl;
+      });
+    } catch (error) {
+      console.error('Error adding logo to PDF:', error);
+    }
+  }
   
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(24);
@@ -26,7 +69,7 @@ export const generateAuditPDF = (auditData: AuditData) => {
   doc.text('Analytics Audit Report', 20, 35);
 
   // Business Information
-  let yPosition = 60;
+  let yPosition = 70;
   
   doc.setTextColor(...brandNavy);
   doc.setFontSize(18);
@@ -76,9 +119,8 @@ export const generateAuditPDF = (auditData: AuditData) => {
     yPosition += 6;
   });
 
-  // Audit Score
+  // Audit Score (use the passed score instead of generating a new one)
   yPosition += 20;
-  const score = Math.floor(Math.random() * 30) + 60;
   
   doc.setFillColor(...brandLime);
   doc.rect(20, yPosition - 5, 50, 25, 'F');

@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, TrendingUp, Target, AlertTriangle, CheckCircle } from "lucide-react";
@@ -9,15 +10,19 @@ interface AuditResultsProps {
   auditData: AuditData;
 }
 
+const logoUrl = "/lovable-uploads/75f77758-fb5a-45f9-a0e0-770aa7766795.png";
+
 const AuditResults = ({ auditData }: AuditResultsProps) => {
+  // Generate score only once per audit
+  const [score] = useState(() => Math.floor(Math.random() * 30) + 60);
+
   const handleDownloadPDF = () => {
-    generateAuditPDF(auditData);
+    generateAuditPDF(auditData, score, logoUrl);
   };
 
   // Generate mock audit insights based on the form data
   const generateInsights = () => {
     const insights = {
-      score: Math.floor(Math.random() * 30) + 60, // Random score between 60-89
       strengths: [],
       weaknesses: [],
       recommendations: []
@@ -77,7 +82,7 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
               </p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-brand-lime">{insights.score}</div>
+              <div className="text-4xl font-bold text-brand-lime">{score}</div>
               <div className="text-brand-silver text-sm">Overall Score</div>
             </div>
           </div>
@@ -99,7 +104,7 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
         <Card className="bg-brand-navy border-brand-silver/20">
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-brand-lime" />
               Strengths
             </CardTitle>
           </CardHeader>
@@ -107,7 +112,7 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
             <ul className="space-y-2">
               {insights.strengths.map((strength, index) => (
                 <li key={index} className="text-brand-silver flex items-start gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-lime rounded-full mt-2 flex-shrink-0"></div>
                   {strength}
                 </li>
               ))}
@@ -159,18 +164,18 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
       </Card>
 
       {/* Next Steps */}
-      <Card className="bg-gradient-to-r from-brand-lime/10 to-brand-navy border-brand-lime/20">
+      <Card className="bg-brand-navy border-brand-silver/20">
         <CardHeader>
           <CardTitle className="text-white flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-brand-lime" />
             Next Steps
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="bg-brand-silver/10 rounded-lg p-6">
           <p className="text-brand-silver mb-4">
             Ready to implement these recommendations? Our team at 11th Temple can help you:
           </p>
-          <ul className="space-y-2 text-brand-silver">
+          <ul className="space-y-2 text-brand-silver mb-6">
             <li className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-brand-lime" />
               Set up advanced analytics tracking
@@ -188,7 +193,7 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
               Provide ongoing analytics support
             </li>
           </ul>
-          <Button className="mt-4 bg-brand-lime text-brand-navy hover:bg-brand-lime-dark">
+          <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
             Schedule Free Consultation
           </Button>
         </CardContent>
