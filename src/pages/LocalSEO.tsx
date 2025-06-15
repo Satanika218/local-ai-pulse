@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useToast } from "@/hooks/use-toast";
 
 const LocalSEO = () => {
+  const { toast } = useToast();
+
+  const handleSEOAudit = () => {
+    toast({
+      title: "SEO Audit Requested!",
+      description: "We'll analyze your website and send you a comprehensive SEO audit report within 24 hours. Check your email for next steps.",
+      duration: 5000,
+    });
+  };
+
   const features = [
     "Local keyword research and optimization",
     "Google My Business management and optimization",
@@ -148,9 +159,13 @@ const LocalSEO = () => {
             Ready to Dominate Local Search?
           </h2>
           <p className="text-xl text-brand-silver mb-8">
-            Starting at £199/month. Get a free local SEO audit and see how we can improve your rankings.
+            Get a free local SEO audit and see how we can improve your rankings.
           </p>
-          <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          <Button 
+            size="lg" 
+            className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold"
+            onClick={handleSEOAudit}
+          >
             Get Free SEO Audit
           </Button>
         </div>
