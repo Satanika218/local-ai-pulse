@@ -35,8 +35,8 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
     "Accounting & Bookkeeping",
     "Aerospace & Aviation",
     "Agriculture & Farming",
-    "Arts & Entertainment",
     "Artificial Intelligence",
+    "Arts & Entertainment",
     "Automotive Manufacturing",
     "Banking & Financial Services",
     "Biotechnology",
@@ -265,7 +265,6 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
                 </SelectItem>
               ))}
               <SelectItem value="charity">Charity & Non-profit</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
               <SelectItem value="other-specify">Other (please specify)</SelectItem>
             </SelectContent>
           </Select>
