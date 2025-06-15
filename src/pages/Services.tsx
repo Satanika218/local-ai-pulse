@@ -194,7 +194,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {auditTools.map((tool, index) => (
               <Card key={index} className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 group">
                 <CardContent className="p-8">
