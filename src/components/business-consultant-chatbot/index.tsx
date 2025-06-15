@@ -7,7 +7,7 @@ interface BusinessConsultantChatbotProps {
 }
 
 const BusinessConsultantChatbot = ({ onClose }: BusinessConsultantChatbotProps) => {
-  const { messages, isTyping, handleOptionClick } = useChatbot();
+  const { messages, isTyping, handleOptionClick, showBookConsultNow } = useChatbot();
 
   return (
     <ChatWindow
@@ -15,6 +15,7 @@ const BusinessConsultantChatbot = ({ onClose }: BusinessConsultantChatbotProps) 
       isTyping={isTyping}
       onOptionClick={handleOptionClick}
       onClose={onClose}
+      showBookConsultNow={showBookConsultNow}
     />
   );
 };

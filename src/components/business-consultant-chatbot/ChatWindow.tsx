@@ -1,20 +1,22 @@
-
 import { Message as MessageType, Option } from "./types";
 import { Message } from "./Message";
 import { Options } from "./Options";
 import { Solutions } from "./Solutions";
 import React, { useRef, useEffect } from "react";
 import { Bot, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ChatWindowProps {
   messages: MessageType[];
   isTyping: boolean;
   onOptionClick: (option: Option) => void;
   onClose: () => void;
+  showBookConsultNow: boolean;
 }
 
-export const ChatWindow = ({ messages, isTyping, onOptionClick, onClose }: ChatWindowProps) => {
+export const ChatWindow = ({ messages, isTyping, onOptionClick, onClose, showBookConsultNow }: ChatWindowProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -23,6 +25,14 @@ export const ChatWindow = ({ messages, isTyping, onOptionClick, onClose }: ChatW
   const lastMessage = messages[messages.length - 1];
   const lastMessageOptions = lastMessage?.sender === 'bot' ? lastMessage.options : undefined;
   const lastMessageSolutions = lastMessage?.sender === 'bot' ? lastMessage.solutions : undefined;
+
+  // Find if our special message is present and show the button if so (or via prop)
+  const showConsultBtn =
+    showBookConsultNow ||
+    (lastMessage &&
+      lastMessage.sender === 'bot' &&
+      typeof lastMessage.text === "string" &&
+      lastMessage.text.includes('Click Book Consultation Now'));
 
   return (
     <div 
@@ -51,6 +61,17 @@ export const ChatWindow = ({ messages, isTyping, onOptionClick, onClose }: ChatW
              <div className="w-2 h-2 rounded-full bg-brand-lime animate-pulse"></div>
              <div className="w-2 h-2 rounded-full bg-brand-lime animate-pulse [animation-delay:0.2s]"></div>
              <div className="w-2 h-2 rounded-full bg-brand-lime animate-pulse [animation-delay:0.4s]"></div>
+          </div>
+        )}
+        {showConsultBtn && !isTyping && (
+          <div className="flex justify-center mt-4">
+            <button
+              onClick={() => navigate("/consultation")}
+              className="bg-brand-navy px-8 py-3 rounded-lg border-2 border-brand-lime text-brand-lime font-bold text-xl transition hover:bg-brand-navy-light hover:text-brand-lime-dark"
+              aria-label="Book consultation now"
+            >
+              Book consultation now
+            </button>
           </div>
         )}
         <div ref={scrollRef} />
