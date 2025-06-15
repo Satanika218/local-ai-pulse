@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, TrendingUp, Target, AlertTriangle, CheckCircle } from "lucide-react";
@@ -150,7 +149,7 @@ const SEOAuditResults = ({ auditData }: SEOAuditResultsProps) => {
         <Card className="bg-brand-navy border-brand-silver/20">
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-brand-lime" />
               SEO Strengths
             </CardTitle>
           </CardHeader>
@@ -158,7 +157,7 @@ const SEOAuditResults = ({ auditData }: SEOAuditResultsProps) => {
             <ul className="space-y-2">
               {insights.strengths.map((strength, index) => (
                 <li key={index} className="text-brand-silver flex items-start gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-lime rounded-full mt-2 flex-shrink-0"></div>
                   {strength}
                 </li>
               ))}
@@ -210,18 +209,18 @@ const SEOAuditResults = ({ auditData }: SEOAuditResultsProps) => {
       </Card>
 
       {/* Next Steps */}
-      <Card className="bg-gradient-to-r from-brand-lime/10 to-brand-navy border-brand-lime/20">
+      <Card className="bg-brand-navy border-brand-silver/20">
         <CardHeader>
           <CardTitle className="text-white flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-brand-lime" />
             Next Steps
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="bg-brand-silver/10 rounded-lg p-6">
           <p className="text-brand-silver mb-4">
             Ready to improve your search rankings? Our team at 11th Temple can help you:
           </p>
-          <ul className="space-y-2 text-brand-silver">
+          <ul className="space-y-2 text-brand-silver mb-6">
             <li className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-brand-lime" />
               Implement comprehensive SEO strategy
@@ -239,7 +238,7 @@ const SEOAuditResults = ({ auditData }: SEOAuditResultsProps) => {
               Monitor and report on SEO progress
             </li>
           </ul>
-          <Button className="mt-4 bg-brand-lime text-brand-navy hover:bg-brand-lime-dark">
+          <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
             Schedule Free SEO Consultation
           </Button>
         </CardContent>
