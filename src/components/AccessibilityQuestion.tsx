@@ -71,8 +71,7 @@ const AccessibilityQuestion = () => {
               </Button>
               <Button
                 onClick={() => handleAnswer(false)}
-                variant="outline"
-                className="flex-1 border-brand-silver/20 text-brand-silver hover:bg-brand-silver/10"
+                className="flex-1 bg-brand-silver text-black hover:bg-brand-silver-dark"
               >
                 No, thank you
               </Button>
