@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { MessageCircle, X, Send, ArrowLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +19,8 @@ interface UserPath {
   biggestChallenge?: string;
   techLevel?: string;
   specificProblem?: string;
-  detailedChallenges?: string[];
+  problemDetails?: string;
+  understandsProblem?: string;
   recommendedSolution?: string;
 }
 
@@ -153,17 +155,25 @@ const DecisionTreeChatbot = () => {
     }
   };
 
-  const solutions: Record<string, string> = {
-    'Website not generating enough leads or sales': 'Based on your website lead generation challenges, I recommend: 1) AI-Powered Conversion Optimization that analyzes visitor behavior and automatically adjusts your website (typically 25-30% increase in leads), 2) Intelligent Chatbot Implementation for 24/7 visitor engagement (35% more leads captured outside business hours), and 3) Automated SEO Enhancement for better search visibility (40-60% organic traffic increase within three months).',
-    'Too much time processing invoices or receipts': 'For your invoice processing challenges, I recommend: 1) Intelligent Document Processing with 98% accuracy that reduces processing time by 80%, 2) Cloud-Based Document Management for instant searchability and compliance, and 3) Accounting System Integration that eliminates manual data entry entirely. Similar businesses reduce financial processing costs by 60-70%.',
-    'Struggling to provide timely responses to customer inquiries': 'To improve your customer response times, I recommend: 1) AI Customer Service Agents that provide instant 24/7 responses to common questions, 2) Intelligent Ticket Routing that prioritizes urgent issues and routes them to the right team members, and 3) Automated Follow-up Systems that ensure no customer inquiry falls through the cracks.',
-    'Identifying quality leads is a challenge': 'For better lead identification, I recommend: 1) AI Lead Scoring that analyzes prospect behavior to identify high-value opportunities, 2) Automated Lead Nurturing that maintains engagement until prospects are ready to buy, and 3) Predictive Analytics that identifies your ideal customer profile based on successful conversions.',
-    'Struggling to create consistent content across channels': 'To streamline your content creation, I recommend: 1) AI Content Generation that creates consistent, on-brand content across all platforms, 2) Social Media Automation that schedules and publishes content optimally, and 3) Content Performance Analytics that shows which content drives the best results.'
+  // Follow-up questions to understand the problem better
+  const problemDetailsQuestions: Record<string, string> = {
+    'Website not generating enough leads or sales': 'I understand that can be frustrating. Can you tell me - when people visit your website, do you know where they typically leave without taking action? For example, do they browse your services but not contact you, or do they leave right from the homepage?',
+    'Too much time processing invoices or receipts': 'That sounds like it takes up a lot of your valuable time. Can you help me understand your current process? Are you manually typing information from paper invoices into your computer, or are you dealing with digital files that still need manual sorting?',
+    'Struggling to provide timely responses to customer inquiries': 'Customer response time is so important for business success. Are your customers mainly reaching out through email, phone calls, or through your website? And what would you consider a "timely" response in your business?',
+    'Identifying quality leads is a challenge': 'Lead quality can make such a difference to your sales success. When you do get leads, are you finding that many of them aren\'t a good fit for your services, or is it more that you\'re not getting enough leads in the first place?',
+    'Struggling to create consistent content across channels': 'Content creation can definitely feel overwhelming. Are you trying to manage social media, email newsletters, website content, or all of the above? And is the challenge more about finding time to create content or knowing what content to create?'
   };
+
+  // Understanding check questions
+  const understandingOptions = [
+    'Yes, that sounds exactly like my situation',
+    'Partially, but there are other factors involved',
+    'Not quite, let me explain more'
+  ];
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      addBotMessage("Hi there! I'm your AI business consultant from 11th Temple Solutions. I help businesses identify areas where technology and automation can save time, reduce costs, and drive growth. What brings you here today? Are you looking to solve a specific business challenge, or are you interested in exploring how AI and automation might benefit your operations?");
+      addBotMessage("Hi there! I'm your AI business consultant from 11th Temple Solutions. I help businesses identify areas where technology and automation can save time, reduce costs, and drive growth. What brings you here today?");
     }
   }, [isOpen]);
 
@@ -232,20 +242,87 @@ const DecisionTreeChatbot = () => {
     addUserMessage(problem);
     setUserPath(prev => ({ ...prev, specificProblem: problem }));
     
-    const solution = solutions[problem];
-    if (solution) {
-      setUserPath(prev => ({ ...prev, recommendedSolution: solution }));
-      addBotMessage(`Perfect! ${solution} Would you like to learn more about implementing these solutions?`);
-      setCurrentStep('solution');
+    // Ask follow-up question to understand the problem better
+    const followUpQuestion = problemDetailsQuestions[problem];
+    if (followUpQuestion) {
+      addBotMessage(followUpQuestion);
+      setCurrentStep('problemDetails');
     } else {
-      setShowForm(true);
-      addBotMessage("Thank you for the detailed information. Let me connect you with our team to discuss a customized solution for your specific needs.");
+      // For problems without specific follow-ups, go to understanding check
+      addBotMessage("I want to make sure I understand your situation correctly. Based on what you've told me, it sounds like you're facing challenges with time management and efficiency in this area. Does that sound right?");
+      setCurrentStep('understandsProblem');
     }
   };
 
-  const handleLearnMore = () => {
-    setShowForm(true);
-    addBotMessage("Excellent! To provide you with specific information about implementation, pricing, and next steps, I'd like to connect you with our team.");
+  const handleProblemDetails = (details: string) => {
+    addUserMessage(details);
+    setUserPath(prev => ({ ...prev, problemDetails: details }));
+    
+    // Now provide understanding summary and check
+    const problem = userPath.specificProblem;
+    let summary = '';
+    
+    if (problem === 'Website not generating enough leads or sales') {
+      summary = "So it sounds like people are visiting your website but not taking the next step to contact you or make a purchase. This often happens when visitors can't quickly find what they're looking for or don't feel confident enough to reach out. Does that capture the main issue?";
+    } else if (problem === 'Too much time processing invoices or receipts') {
+      summary = "I see, so you're spending considerable time on manual data entry and document handling. This is actually one of the most common time drains for businesses. Does it feel like this task is taking time away from more important business activities?";
+    } else if (problem === 'Struggling to provide timely responses to customer inquiries') {
+      summary = "It sounds like you want to respond to customers quickly but sometimes get overwhelmed with the volume or timing of inquiries. Quick responses really do make a difference in customer satisfaction. Is that the main challenge?";
+    } else if (problem === 'Identifying quality leads is a challenge') {
+      summary = "So you're getting leads but finding that many aren't a good fit, which means time spent on prospects who won't convert. That can be really frustrating and inefficient. Is that hitting the mark?";
+    } else if (problem === 'Struggling to create consistent content across channels') {
+      summary = "It sounds like you know content is important but finding the time and knowing what to create is the challenge. Staying consistent across multiple platforms can definitely feel overwhelming. Does that sound right?";
+    } else {
+      summary = "Based on what you've shared, it seems like this area is taking up more time and energy than you'd like, and you're looking for ways to make it more efficient. Does that capture the main issue?";
+    }
+    
+    addBotMessage(summary);
+    setCurrentStep('understandsProblem');
+  };
+
+  const handleUnderstandsProblem = (understanding: string) => {
+    addUserMessage(understanding);
+    setUserPath(prev => ({ ...prev, understandsProblem: understanding }));
+    
+    if (understanding === 'Not quite, let me explain more') {
+      setShowForm(true);
+      addBotMessage("I'd love to understand your situation better. Let me connect you with one of our specialists who can have a more detailed conversation about your specific needs.");
+      return;
+    }
+    
+    // Now provide a conversational solution explanation
+    const problem = userPath.specificProblem;
+    let solutionExplanation = '';
+    
+    if (problem === 'Website not generating enough leads or sales') {
+      solutionExplanation = "Great! So there are actually several ways we can help with this. Think of it like having a sales assistant working on your website 24/7. We can add tools that watch how visitors use your site and automatically make small improvements to encourage them to contact you. We can also add a friendly chat feature that answers common questions instantly and captures contact information when you're not available. Would you like to learn more about how these kinds of tools work?";
+    } else if (problem === 'Too much time processing invoices or receipts') {
+      solutionExplanation = "Perfect! What we can do is essentially teach a computer to read your invoices and receipts just like you do, but much faster. Imagine being able to take a photo of an invoice with your phone, and having all the important information automatically entered into your accounting system within seconds. We can set up a system that handles about 95% of your document processing automatically, only asking for your review on unusual items. Does that sound like something that would help?";
+    } else if (problem === 'Struggling to provide timely responses to customer inquiries') {
+      solutionExplanation = "Excellent! Think of this like having a knowledgeable team member available 24/7 who never gets tired and always responds instantly. We can set up an intelligent system that answers common customer questions immediately, and for more complex issues, it can gather the initial information and make sure the inquiry gets to the right person on your team. This means customers get instant help for simple questions, and you get better organized information for the complex ones. Does this approach sound helpful?";
+    } else if (problem === 'Identifying quality leads is a challenge') {
+      solutionExplanation = "Great! We can help you set up a system that's like having an experienced salesperson evaluate every lead before it gets to you. The system learns from your successful customers to identify which new prospects are most likely to become good clients. It can also nurture potential customers automatically until they're ready to buy, so you're not spending time on people who aren't ready yet. Would this kind of lead filtering and nurturing be valuable for your business?";
+    } else if (problem === 'Struggling to create consistent content across channels') {
+      solutionExplanation = "Perfect! We can help you set up a system that's like having a marketing assistant who knows your business well. It can help create content ideas based on what works in your industry, write posts in your brand voice, and even schedule them across your different platforms automatically. Think of it as taking one good piece of content and intelligently adapting it for different platforms and audiences. Does this kind of content assistance sound useful?";
+    } else {
+      solutionExplanation = "Based on your situation, there are definitely automated solutions that can help streamline this process for you. The key is finding the right combination of tools that work specifically for your business. Would you like to discuss some options that might fit your needs?";
+    }
+    
+    addBotMessage(solutionExplanation);
+    setCurrentStep('solutionExplanation');
+  };
+
+  const handleSolutionInterest = (interested: boolean) => {
+    if (interested) {
+      addUserMessage("Yes, that sounds helpful!");
+      setShowForm(true);
+      addBotMessage("Excellent! I'd love to connect you with one of our specialists who can show you exactly how these solutions would work for your specific business and provide you with pricing and implementation details.");
+    } else {
+      addUserMessage("I'd like to explore other options");
+      // Reset to explore other areas
+      addBotMessage("No problem at all! Let's explore other areas of your business. What other area takes up significant time or resources that we haven't discussed yet?");
+      setCurrentStep('businessArea');
+    }
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -406,7 +483,7 @@ const DecisionTreeChatbot = () => {
               onClick={() => handleInitialPurpose(purpose)}
               variant="outline"
               size="sm"
-              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
+              className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
             >
               {purpose}
             </Button>
@@ -424,7 +501,7 @@ const DecisionTreeChatbot = () => {
               onClick={() => handleBusinessArea(area)}
               variant="outline"
               size="sm"
-              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
+              className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
             >
               {area}
             </Button>
@@ -442,7 +519,7 @@ const DecisionTreeChatbot = () => {
               onClick={() => handleBiggestChallenge(challenge)}
               variant="outline"
               size="sm"
-              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
+              className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
             >
               {challenge}
             </Button>
@@ -460,7 +537,7 @@ const DecisionTreeChatbot = () => {
               onClick={() => handleTechLevel(level)}
               variant="outline"
               size="sm"
-              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
+              className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
             >
               {level}
             </Button>
@@ -479,7 +556,7 @@ const DecisionTreeChatbot = () => {
               onClick={() => handleSpecificProblem(problem)}
               variant="outline"
               size="sm"
-              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
+              className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
             >
               {problem}
             </Button>
@@ -488,21 +565,59 @@ const DecisionTreeChatbot = () => {
       );
     }
 
-    if (currentStep === 'solution') {
+    if (currentStep === 'problemDetails') {
       return (
-        <div className="space-y-3">
+        <div className="space-y-2">
+          <Input
+            placeholder="Tell me more about your situation..."
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                const value = (e.target as HTMLInputElement).value;
+                if (value.trim()) {
+                  handleProblemDetails(value);
+                  (e.target as HTMLInputElement).value = '';
+                }
+              }
+            }}
+            className="bg-brand-navy border-brand-silver/30 text-white placeholder:text-brand-silver/60"
+          />
+        </div>
+      );
+    }
+
+    if (currentStep === 'understandsProblem') {
+      return (
+        <div className="space-y-2">
+          {understandingOptions.map((option, index) => (
+            <Button
+              key={index}
+              onClick={() => handleUnderstandsProblem(option)}
+              variant="outline"
+              size="sm"
+              className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
+            >
+              {option}
+            </Button>
+          ))}
+        </div>
+      );
+    }
+
+    if (currentStep === 'solutionExplanation') {
+      return (
+        <div className="space-y-2">
           <Button
-            onClick={handleLearnMore}
+            onClick={() => handleSolutionInterest(true)}
             size="sm"
-            className="w-full bg-brand-lime text-brand-navy hover:bg-brand-navy hover:text-brand-lime"
+            className="w-full bg-brand-lime text-black hover:bg-black hover:text-brand-lime"
           >
             Yes, tell me more!
           </Button>
           <Button
-            onClick={resetChat}
+            onClick={() => handleSolutionInterest(false)}
             variant="outline"
             size="sm"
-            className="w-full bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime"
+            className="w-full bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime"
           >
             Explore other solutions
           </Button>
