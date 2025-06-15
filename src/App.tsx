@@ -20,6 +20,7 @@ import CustomerService from "./pages/CustomerService";
 import DataAnalytics from "./pages/DataAnalytics";
 import WebsiteCreation from "./pages/WebsiteCreation";
 import SalesLeadTools from "./pages/SalesLeadTools";
+import AnalyticsAudit from "./pages/AnalyticsAudit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/services/data-analytics" element={<DataAnalytics />} />
           <Route path="/services/website-creation" element={<WebsiteCreation />} />
           <Route path="/services/sales-lead-tools" element={<SalesLeadTools />} />
+          <Route path="/analytics-audit" element={<AnalyticsAudit />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/consultation" element={<Consultation />} />

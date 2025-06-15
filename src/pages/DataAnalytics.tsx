@@ -1,12 +1,20 @@
-
 import { BarChart, CheckCircle, ArrowRight, PieChart, LineChart, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ServicesChatbot from "@/components/ServicesChatbot";
+import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const DataAnalytics = () => {
+  const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handleFreeAudit = () => {
+    navigate('/analytics-audit');
+  };
+
   const features = [
     "Real-time local market analysis and insights",
     "Customer behaviour tracking and analytics",
@@ -151,7 +159,11 @@ const DataAnalytics = () => {
           <p className="text-xl text-brand-silver mb-8">
             Get a free analytics audit and discover hidden opportunities.
           </p>
-          <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          <Button 
+            size="lg" 
+            className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold"
+            onClick={handleFreeAudit}
+          >
             Get Free Analytics Audit
           </Button>
         </div>
