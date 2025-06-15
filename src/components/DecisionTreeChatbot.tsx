@@ -68,6 +68,9 @@ const DecisionTreeChatbot = () => {
     'Administrative tasks and operations',
     'Project management',
     'Human resources',
+    'Website compliance and technical performance',
+    'Going paperless',
+    'Moving to the cloud',
     'Other (please specify)'
   ];
 
@@ -151,6 +154,61 @@ const DecisionTreeChatbot = () => {
         'Coordinating meetings and communications inefficient',
         'Still using paper-based processes for administration',
         'Difficult to track and manage vendor relationships'
+      ]
+    },
+    'Website compliance and technical performance': {
+      question: "Making sure your website follows privacy rules and performs well is important for any business. What's your main concern in this area?",
+      options: [
+        'You\'re not sure if your website is following GDPR privacy rules',
+        'You want to check if your website is working properly and securely',
+        'You\'re concerned about cookies and privacy notices on your website',
+        'You\'ve heard about website accessibility but don\'t know if your site complies',
+        'You\'re worried about potential fines or legal issues related to your website',
+        'You want to know how well your website performs compared to competitors'
+      ]
+    },
+    'Going paperless': {
+      question: "Moving away from paper documents can save space, time, and trees. What's your main concern about going paperless?",
+      options: [
+        'You\'re not sure how to start converting paper documents to digital',
+        'You\'re worried about the security of digital documents',
+        'You need certain documents to have signatures or be legally valid',
+        'You\'re concerned about finding digital documents when you need them',
+        'Your team is used to paper processes and might resist change',
+        'You need to keep some paper records for compliance or regulatory reasons'
+      ]
+    },
+    'Moving to the cloud': {
+      question: "Storing your information and running programs over the internet instead of just on your computer can be a big change. What's your main question or concern about moving to the cloud?",
+      options: [
+        'You\'re not sure what "the cloud" actually means for your business',
+        'You\'re concerned about the security of your information online',
+        'You\'re worried about what happens if the internet goes down',
+        'You\'re not sure if cloud solutions will work with your existing systems',
+        'You\'re concerned about the cost of cloud services',
+        'You\'re worried about being dependent on another company for your systems'
+      ]
+    }
+  };
+
+  // Third-level questions for GDPR compliance
+  const gdprThirdLevelQuestions: Record<string, { question: string; options: string[] }> = {
+    'You\'re not sure if your website is following GDPR privacy rules': {
+      question: "I understand you're concerned about whether your website follows GDPR privacy rules. Many business owners find this confusing, and you're not alone - about 70% of small businesses aren't fully confident in their GDPR compliance. To help identify the best solution, could you tell me:",
+      options: [
+        'Does your website collect any personal information from visitors, like names, email addresses, or phone numbers?',
+        'Do you have a privacy policy on your website that explains how you use people\'s information?',
+        'Does your website use forms where people can submit their details?',
+        'Do you know if your website uses cookies to track visitor behavior?'
+      ]
+    },
+    'You want to check if your website is working properly and securely': {
+      question: "I understand you want to check if your website is working properly and securely. A thorough website audit can identify issues you might not be aware of. To recommend the most helpful approach, could you tell me:",
+      options: [
+        'Have you noticed any specific problems with your website, like slow loading or error messages?',
+        'When was the last time someone checked your website for technical or security issues?',
+        'Do you sell products or take payments directly through your website?',
+        'Are you concerned more about how well your website works, or about potential security vulnerabilities?'
       ]
     }
   };
@@ -242,6 +300,16 @@ const DecisionTreeChatbot = () => {
     addUserMessage(problem);
     setUserPath(prev => ({ ...prev, specificProblem: problem }));
     
+    // Check if this is a GDPR compliance or website audit question
+    if (userPath.businessArea === 'Website compliance and technical performance') {
+      const gdprQuestion = gdprThirdLevelQuestions[problem];
+      if (gdprQuestion) {
+        addBotMessage(gdprQuestion.question);
+        setCurrentStep('gdprThirdLevel');
+        return;
+      }
+    }
+    
     // Ask follow-up question to understand the problem better
     const followUpQuestion = problemDetailsQuestions[problem];
     if (followUpQuestion) {
@@ -252,6 +320,23 @@ const DecisionTreeChatbot = () => {
       addBotMessage("I want to make sure I understand your situation correctly. Based on what you've told me, it sounds like you're facing challenges with time management and efficiency in this area. Does that sound right?");
       setCurrentStep('understandsProblem');
     }
+  };
+
+  const handleGdprThirdLevel = (answer: string) => {
+    addUserMessage(answer);
+    setUserPath(prev => ({ ...prev, problemDetails: answer }));
+    
+    const problem = userPath.specificProblem;
+    let solutionExplanation = '';
+    
+    if (problem === 'You\'re not sure if your website is following GDPR privacy rules') {
+      solutionExplanation = "Based on what you've shared about your GDPR compliance concerns, here are three approaches that could help:\n\n1. **Website Privacy Check-Up**: We can perform a thorough review of your website to identify any GDPR compliance issues and provide a clear action plan to fix them. Think of it like a health check-up for your website's privacy practices. This typically gives business owners peace of mind and a clear roadmap for compliance.\n\n2. **Privacy Essentials Package**: We can implement the core privacy elements your website needs - including a properly written privacy policy, compliant cookie notices, and secure forms. It's like having a privacy expert set up all the necessary safeguards for your business. Most businesses find this reduces their compliance concerns by over 90%.\n\n3. **Ongoing Compliance Monitoring**: We can set up a system that continuously checks your website for compliance issues as regulations change or if your website is updated. It's similar to having a security guard who's always on duty, watching for potential problems.\n\nIt's worth noting that proper GDPR compliance not only helps you avoid potential fines (which can be up to £17.5 million or 4% of annual turnover), but it also builds trust with your customers. Would you like to learn more about any of these options?";
+    } else if (problem === 'You want to check if your website is working properly and securely') {
+      solutionExplanation = "Based on what you've shared about checking your website's performance and security, here are three approaches that could help:\n\n1. **Complete Website Health Check**: We can perform a comprehensive audit of your website that examines everything from loading speed to security vulnerabilities. It's like taking your car for a full service where mechanics check everything from the engine to the brakes. Businesses typically discover 12-15 improvement opportunities they weren't aware of.\n\n2. **Security-Focused Audit**: We can conduct a specialized security assessment that identifies vulnerabilities hackers could exploit. Think of it as having a security expert check all the locks and alarm systems in your building. This typically gives business owners confidence that their website and customer data are protected.\n\n3. **Performance Optimization Review**: We can analyze what's making your website slow or difficult to use and provide specific recommendations to fix these issues. It's similar to having an efficiency expert streamline a manufacturing process. Most businesses see page loading times improve by 40-60% after implementing our recommendations.\n\nRegular website audits are like preventative healthcare - they catch small issues before they become serious problems. Which of these options sounds most helpful for your situation?";
+    }
+    
+    addBotMessage(solutionExplanation);
+    setCurrentStep('solutionExplanation');
   };
 
   const handleProblemDetails = (details: string) => {
@@ -559,6 +644,25 @@ const DecisionTreeChatbot = () => {
               className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
             >
               {problem}
+            </Button>
+          ))}
+        </div>
+      );
+    }
+
+    if (currentStep === 'gdprThirdLevel' && userPath.specificProblem) {
+      const gdprOptions = gdprThirdLevelQuestions[userPath.specificProblem]?.options || [];
+      return (
+        <div className="space-y-2">
+          {gdprOptions.map((option, index) => (
+            <Button
+              key={index}
+              onClick={() => handleGdprThirdLevel(option)}
+              variant="outline"
+              size="sm"
+              className="w-full text-left justify-start bg-brand-lime text-black border-brand-lime hover:bg-black hover:text-brand-lime text-xs"
+            >
+              {option}
             </Button>
           ))}
         </div>
