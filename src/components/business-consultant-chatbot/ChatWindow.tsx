@@ -24,9 +24,11 @@ export const ChatWindow = ({ messages, isTyping, onOptionClick, onClose }: ChatW
   const lastMessageOptions = lastMessage?.sender === 'bot' ? lastMessage.options : undefined;
   const lastMessageSolutions = lastMessage?.sender === 'bot' ? lastMessage.solutions : undefined;
 
-
   return (
-    <div className="fixed bottom-24 right-4 md:right-8 w-[calc(100%-2rem)] max-w-sm h-[70vh] max-h-[600px] flex flex-col bg-brand-navy-light border border-brand-silver/20 rounded-lg shadow-2xl z-50 animate-slide-in-right">
+    <div 
+      className="fixed bottom-24 right-4 md:right-8 w-[calc(100%-2rem)] max-w-sm h-[70vh] max-h-[600px] flex flex-col bg-brand-navy-light border border-brand-silver/20 rounded-lg shadow-2xl z-[9998] animate-slide-in-right"
+      style={{ zIndex: 9998 }}
+    >
       <header className="flex items-center justify-between p-4 bg-brand-navy rounded-t-lg border-b border-brand-silver/20">
         <div className="flex items-center gap-2">
           <Bot className="text-brand-lime" />
