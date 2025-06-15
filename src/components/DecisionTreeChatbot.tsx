@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { MessageCircle, X, Send, ArrowLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -258,7 +257,7 @@ const DecisionTreeChatbot = () => {
             <p className="text-brand-silver text-sm mb-4">Dan or Neil will contact you within 1 business day.</p>
             <Button 
               size="sm" 
-              className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark mb-2"
+              className="bg-brand-lime text-brand-navy hover:bg-brand-navy hover:text-brand-lime mb-2"
               onClick={() => window.open('/consultation', '_blank')}
             >
               <Calendar className="h-4 w-4 mr-2" />
@@ -272,7 +271,7 @@ const DecisionTreeChatbot = () => {
             variant="outline" 
             size="sm" 
             onClick={resetChat}
-            className="border-brand-silver/30 text-brand-silver hover:bg-brand-silver hover:text-brand-navy"
+            className="border-brand-lime text-brand-lime hover:bg-brand-navy hover:text-brand-lime"
           >
             Start New Conversation
           </Button>
@@ -343,7 +342,7 @@ const DecisionTreeChatbot = () => {
           <Button 
             type="submit" 
             size="sm" 
-            className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark"
+            className="w-full bg-brand-lime text-brand-navy hover:bg-brand-navy hover:text-brand-lime"
           >
             Get Expert Help
           </Button>
@@ -360,7 +359,7 @@ const DecisionTreeChatbot = () => {
               onClick={() => handleBusinessAreaSelect(area)}
               variant="outline"
               size="sm"
-              className="w-full text-left justify-start border-brand-silver/30 text-brand-silver hover:bg-brand-lime hover:text-brand-navy text-xs"
+              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
             >
               {area}
             </Button>
@@ -379,7 +378,7 @@ const DecisionTreeChatbot = () => {
               onClick={() => handleProblemSelect(problem)}
               variant="outline"
               size="sm"
-              className="w-full text-left justify-start border-brand-silver/30 text-brand-silver hover:bg-brand-lime hover:text-brand-navy text-xs"
+              className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
             >
               {problem}
             </Button>
@@ -388,7 +387,7 @@ const DecisionTreeChatbot = () => {
             onClick={() => handleProblemSelect("Not sure / Something else")}
             variant="outline"
             size="sm"
-            className="w-full text-left justify-start border-brand-lime/50 text-brand-lime hover:bg-brand-lime hover:text-brand-navy text-xs"
+            className="w-full text-left justify-start bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime text-xs"
           >
             Not sure / Something else
           </Button>
@@ -402,7 +401,7 @@ const DecisionTreeChatbot = () => {
           <Button
             onClick={handleLearnMore}
             size="sm"
-            className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark"
+            className="w-full bg-brand-lime text-brand-navy hover:bg-brand-navy hover:text-brand-lime"
           >
             Yes, tell me more!
           </Button>
@@ -410,7 +409,7 @@ const DecisionTreeChatbot = () => {
             onClick={resetChat}
             variant="outline"
             size="sm"
-            className="w-full border-brand-silver/30 text-brand-silver hover:bg-brand-silver hover:text-brand-navy"
+            className="w-full bg-brand-lime text-brand-navy border-brand-lime hover:bg-brand-navy hover:text-brand-lime"
           >
             Explore other solutions
           </Button>
@@ -427,7 +426,7 @@ const DecisionTreeChatbot = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="h-14 w-14 rounded-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark shadow-lg"
+          className="h-14 w-14 rounded-full bg-brand-lime text-brand-navy hover:bg-brand-navy hover:text-brand-lime shadow-lg"
         >
           {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
         </Button>
