@@ -23,6 +23,9 @@ const Navigation = () => {
     { name: "Customer Service Agents", path: "/services/customer-service" },
     { name: "Local SEO AI", path: "/services/local-seo" },
     { name: "Data Analytics", path: "/services/data-analytics" },
+    { name: "Website Creation", path: "/services/website-creation" },
+    { name: "Sales & Lead Tools", path: "/services/sales-lead-tools" },
+    { name: "Design & Marketing", path: "/services/design-marketing" },
     { name: "Solutions", path: "/solutions" },
   ];
 
@@ -33,17 +36,15 @@ const Navigation = () => {
     return location.pathname === path;
   };
 
-  let hoverTimeout: NodeJS.Timeout;
-
   const handleMouseEnter = () => {
-    clearTimeout(hoverTimeout);
     setIsServicesOpen(true);
   };
 
   const handleMouseLeave = () => {
-    hoverTimeout = setTimeout(() => {
+    // Use a shorter timeout for better UX
+    setTimeout(() => {
       setIsServicesOpen(false);
-    }, 800);
+    }, 300);
   };
 
   return (

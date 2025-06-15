@@ -3,69 +3,84 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import AccessibilityQuestion from "@/components/AccessibilityQuestion";
 import ScrollToTop from "@/components/ScrollToTop";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import CoreValues from "./pages/CoreValues";
-import Services from "./pages/Services";
-import ServicesOverview from "./pages/ServicesOverview";
-import Solutions from "./pages/Solutions";
-import Contact from "./pages/Contact";
-import CaseStudies from "./pages/CaseStudies";
-import Consultation from "./pages/Consultation";
-import Privacy from "./pages/Privacy";
-import ProcessAutomation from "./pages/ProcessAutomation";
-import LocalSEO from "./pages/LocalSEO";
-import CustomerService from "./pages/CustomerService";
-import DataAnalytics from "./pages/DataAnalytics";
-import WebsiteCreation from "./pages/WebsiteCreation";
-import SalesLeadTools from "./pages/SalesLeadTools";
-import AnalyticsAudit from "./pages/AnalyticsAudit";
-import SEOAudit from "./pages/SEOAudit";
-import Blog from "./pages/Blog";
-import BlogPostPage from "./pages/BlogPostPage";
-import NotFound from "./pages/NotFound";
-import DesignMarketing from "./pages/DesignMarketing";
+import ErrorBoundary from "@/components/ErrorBoundaryTest";
+
+// Lazy load pages for better performance
+const Index = lazy(() => import("./pages/Index"));
+const About = lazy(() => import("./pages/About"));
+const CoreValues = lazy(() => import("./pages/CoreValues"));
+const Services = lazy(() => import("./pages/Services"));
+const ServicesOverview = lazy(() => import("./pages/ServicesOverview"));
+const Solutions = lazy(() => import("./pages/Solutions"));
+const Contact = lazy(() => import("./pages/Contact"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const Consultation = lazy(() => import("./pages/Consultation"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const ProcessAutomation = lazy(() => import("./pages/ProcessAutomation"));
+const LocalSEO = lazy(() => import("./pages/LocalSEO"));
+const CustomerService = lazy(() => import("./pages/CustomerService"));
+const DataAnalytics = lazy(() => import("./pages/DataAnalytics"));
+const WebsiteCreation = lazy(() => import("./pages/WebsiteCreation"));
+const SalesLeadTools = lazy(() => import("./pages/SalesLeadTools"));
+const AnalyticsAudit = lazy(() => import("./pages/AnalyticsAudit"));
+const SEOAudit = lazy(() => import("./pages/SEOAudit"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const DesignMarketing = lazy(() => import("./pages/DesignMarketing"));
 
 const queryClient = new QueryClient();
 
+// Loading component for suspense fallback
+const PageLoader = () => (
+  <div className="min-h-screen bg-brand-navy flex items-center justify-center">
+    <div className="text-brand-lime text-lg">Loading...</div>
+  </div>
+);
+
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/core-values" element={<CoreValues />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services-overview" element={<ServicesOverview />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/services/process-automation" element={<ProcessAutomation />} />
-          <Route path="/services/local-seo" element={<LocalSEO />} />
-          <Route path="/services/customer-service" element={<CustomerService />} />
-          <Route path="/services/data-analytics" element={<DataAnalytics />} />
-          <Route path="/services/website-creation" element={<WebsiteCreation />} />
-          <Route path="/services/sales-lead-tools" element={<SalesLeadTools />} />
-          <Route path="/services/design-marketing" element={<DesignMarketing />} />
-          <Route path="/analytics-audit" element={<AnalyticsAudit />} />
-          <Route path="/seo-audit" element={<SEOAudit />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/consultation" element={<Consultation />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <AccessibilityQuestion />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/core-values" element={<CoreValues />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services-overview" element={<ServicesOverview />} />
+              <Route path="/solutions" element={<Solutions />} />
+              <Route path="/services/process-automation" element={<ProcessAutomation />} />
+              <Route path="/services/local-seo" element={<LocalSEO />} />
+              <Route path="/services/customer-service" element={<CustomerService />} />
+              <Route path="/services/data-analytics" element={<DataAnalytics />} />
+              <Route path="/services/website-creation" element={<WebsiteCreation />} />
+              <Route path="/services/sales-lead-tools" element={<SalesLeadTools />} />
+              <Route path="/services/design-marketing" element={<DesignMarketing />} />
+              <Route path="/analytics-audit" element={<AnalyticsAudit />} />
+              <Route path="/seo-audit" element={<SEOAudit />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/consultation" element={<Consultation />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+          <AccessibilityQuestion />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;
