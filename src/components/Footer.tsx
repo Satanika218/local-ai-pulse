@@ -1,5 +1,7 @@
+
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { AccessibilityFooterLink } from "./AccessibilityQuestion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,7 +24,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-brand-silver mb-6 max-w-md">
-              We specialize in delivering AI automation solutions tailored for local businesses, 
+              We specialise in delivering AI automation solutions tailored for local businesses, 
               combining cutting-edge technology with deep local market knowledge.
             </p>
             <div className="space-y-2">
@@ -45,10 +47,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-brand-silver hover:text-brand-lime transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="text-brand-silver hover:text-brand-lime transition-colors">Services</Link></li>
-              <li><Link to="/case-studies" className="text-brand-silver hover:text-brand-lime transition-colors">Testimonials</Link></li>
-              <li><Link to="/contact" className="text-brand-silver hover:text-brand-lime transition-colors">Contact</Link></li>
+              <li><Link to="/about" className="text-brand-silver hover:text-brand-lime transition-colours">About Us</Link></li>
+              <li><Link to="/services" className="text-brand-silver hover:text-brand-lime transition-colours">Services</Link></li>
+              <li><Link to="/case-studies" className="text-brand-silver hover:text-brand-lime transition-colours">Testimonials</Link></li>
+              <li><Link to="/contact" className="text-brand-silver hover:text-brand-lime transition-colours">Contact</Link></li>
             </ul>
           </div>
 
@@ -56,26 +58,29 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/process-automation" className="text-brand-silver hover:text-brand-lime transition-colors">Process Automation</Link></li>
-              <li><Link to="/services/local-seo" className="text-brand-silver hover:text-brand-lime transition-colors">Local SEO AI</Link></li>
-              <li><Link to="/services/customer-service" className="text-brand-silver hover:text-brand-lime transition-colors">Customer Service Agents</Link></li>
-              <li><Link to="/services/data-analytics" className="text-brand-silver hover:text-brand-lime transition-colors">Data Analytics</Link></li>
+              <li><Link to="/services/process-automation" className="text-brand-silver hover:text-brand-lime transition-colours">Process Automation</Link></li>
+              <li><Link to="/services/local-seo" className="text-brand-silver hover:text-brand-lime transition-colours">Local SEO AI</Link></li>
+              <li><Link to="/services/customer-service" className="text-brand-silver hover:text-brand-lime transition-colours">Customer Service Agents</Link></li>
+              <li><Link to="/services/data-analytics" className="text-brand-silver hover:text-brand-lime transition-colours">Data Analytics</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-brand-silver/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-brand-silver text-sm">
-            © {currentYear} 11th Temple Solutions. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+            <p className="text-brand-silver text-sm">
+              © {currentYear} 11th Temple Solutions. All rights reserved.
+            </p>
+            <AccessibilityFooterLink />
+          </div>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colors">
+            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colours">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colors">
+            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colours">
               <Twitter className="h-5 w-5" />
             </a>
-            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colors">
+            <a href="#" className="text-brand-silver hover:text-brand-lime transition-colours">
               <Facebook className="h-5 w-5" />
             </a>
           </div>

@@ -48,7 +48,7 @@ const Contact = () => {
       icon: <Phone className="h-6 w-6 text-brand-lime" />,
       title: "Call Us",
       details: "+44 7312 190 728",
-      description: "Mon-Fri, 9AM-6PM EST"
+      description: "Mon-Fri, 9AM-6PM GMT"
     },
     {
       icon: <MapPin className="h-6 w-6 text-brand-lime" />,
@@ -111,7 +111,7 @@ const Contact = () => {
               Start Your <span className="text-brand-lime">AI Journey Today</span>
             </h2>
             <p className="text-xl text-brand-silver">
-              Fill out the form below and we'll get back to you with a customized solution proposal.
+              Fill out the form below and we'll get back to you with a customised solution proposal.
             </p>
           </div>
 
@@ -228,7 +228,7 @@ const Contact = () => {
                 </h3>
                 <p className="text-brand-silver">
                   Implementation timelines vary based on complexity, but most local businesses see initial 
-                  automation benefits within 2-4 weeks. We work with your schedule to minimize disruption.
+                  automation benefits within 2-4 weeks. We work with your schedule to minimise disruption.
                 </p>
               </CardContent>
             </Card>
