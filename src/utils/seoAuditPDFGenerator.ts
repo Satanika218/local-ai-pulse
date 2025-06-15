@@ -1,4 +1,3 @@
-
 import jsPDF from 'jspdf';
 import { SEOAuditData } from '@/pages/SEOAudit';
 
@@ -16,29 +15,6 @@ export const generateSEOAuditPDF = async (
   const brandLime: [number, number, number] = [150, 255, 0];
   const brandSilver: [number, number, number] = [156, 163, 175];
 
-  let yPosition = 15;
-
-  // Add logo at the top center if provided
-  if (logoUrl) {
-    // Fetch logo and convert to base64 data URL for jsPDF
-    try {
-      const response = await fetch(logoUrl);
-      const blob = await response.blob();
-      const reader = new FileReader();
-      // Wrap FileReader in a promise for async/await
-      const dataUrl: string = await new Promise((resolve, reject) => {
-        reader.onloadend = () => resolve(reader.result as string);
-        reader.onerror = () => reject(reader.error);
-        reader.readAsDataURL(blob);
-      });
-      doc.addImage(dataUrl, 'PNG', pageWidth/2 - 25, 10, 50, 50);
-      yPosition = 65;
-    } catch (err) {
-      // Fallback: just set yPosition for title
-      yPosition = 40;
-    }
-  }
-
   // Header with 11th Temple branding
   doc.setFillColor(...brandNavy);
   doc.rect(0, 0, pageWidth, 40, 'F');
@@ -52,8 +28,50 @@ export const generateSEOAuditPDF = async (
   doc.setFont('helvetica', 'normal');
   doc.text('SEO Audit Report', 20, 35);
 
-  // Advance past logo if placed
-  if (yPosition < 60) yPosition = 60;
+  // Add logo in the top right corner if provided
+  if (logoUrl) {
+    try {
+      // Convert relative URL to absolute URL
+      const absoluteLogoUrl = logoUrl.startsWith('http') ? logoUrl : `${window.location.origin}${logoUrl}`;
+      
+      // Load and add the logo
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      
+      await new Promise((resolve, reject) => {
+        img.onload = () => {
+          try {
+            // Create canvas to get image data
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx?.drawImage(img, 0, 0);
+            
+            const imgData = canvas.toDataURL('image/png');
+            
+            // Add logo to PDF (top right corner)
+            const logoWidth = 30;
+            const logoHeight = (img.height / img.width) * logoWidth;
+            doc.addImage(imgData, 'PNG', pageWidth - logoWidth - 10, 10, logoWidth, logoHeight);
+            resolve(undefined);
+          } catch (error) {
+            console.error('Error processing logo:', error);
+            resolve(undefined);
+          }
+        };
+        img.onerror = () => {
+          console.error('Error loading logo');
+          resolve(undefined);
+        };
+        img.src = absoluteLogoUrl;
+      });
+    } catch (error) {
+      console.error('Error adding logo to PDF:', error);
+    }
+  }
+
+  let yPosition = 60;
 
   // Business Information
   doc.setTextColor(...brandNavy);
