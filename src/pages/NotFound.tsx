@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ServicesChatbot from "@/components/ServicesChatbot";
 
 const NotFound = () => {
   const location = useLocation();
@@ -32,7 +33,7 @@ const NotFound = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/">
-              <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+              <Button className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
                 <Home className="mr-2 h-4 w-4" />
                 Return Home
               </Button>
@@ -60,6 +61,7 @@ const NotFound = () => {
         </div>
       </div>
       
+      <ServicesChatbot />
       <Footer />
     </div>
   );

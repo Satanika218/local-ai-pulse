@@ -1,8 +1,10 @@
+
 import { Bot, TrendingUp, Users, Zap, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ServicesChatbot from "@/components/ServicesChatbot";
 import { Link } from "react-router-dom";
 
 const ServicesOverview = () => {
@@ -23,25 +25,25 @@ const ServicesOverview = () => {
     {
       icon: <TrendingUp className="h-12 w-12 text-brand-lime" />,
       title: "Local SEO AI",
-      description: "Dominate local search results with AI that understands your neighborhood's unique characteristics.",
-      fullDescription: "Leverage AI that truly understands your local market dynamics to dominate search results in your area. Our Local SEO AI analyzes neighborhood patterns, local events, and community behavior to optimize your online presence for maximum local visibility and customer acquisition.",
+      description: "Dominate local search results with AI that understands your neighbourhood's unique characteristics.",
+      fullDescription: "Leverage AI that truly understands your local market dynamics to dominate search results in your area. Our Local SEO AI analyses neighbourhood patterns, local events, and community behaviour to optimise your online presence for maximum local visibility and customer acquisition.",
       benefits: [
         "Increase local search visibility by 200%",
         "Attract more foot traffic from your area",
         "Automated local content creation",
-        "Community-focused keyword optimization"
+        "Community-focused keyword optimisation"
       ],
       link: "/services/local-seo"
     },
     {
       icon: <Users className="h-12 w-12 text-brand-lime" />,
       title: "Customer Insights",
-      description: "Understand your local customers better with AI-driven analytics and behavioral patterns.",
-      fullDescription: "Gain deep insights into your local customer base with AI analytics that reveal shopping patterns, preferences, and behaviors unique to your community. Make data-driven decisions that resonate with your local market and increase customer lifetime value through personalized experiences.",
+      description: "Understand your local customers better with AI-driven analytics and behavioural patterns.",
+      fullDescription: "Gain deep insights into your local customer base with AI analytics that reveal shopping patterns, preferences, and behaviours unique to your community. Make data-driven decisions that resonate with your local market and increase customer lifetime value through personalised experiences.",
       benefits: [
         "Understand local buying patterns",
         "Predict seasonal demand fluctuations",
-        "Personalize customer experiences",
+        "Personalise customer experiences",
         "Increase customer retention by 45%"
       ],
       link: "/services/data-analytics"
@@ -104,7 +106,7 @@ const ServicesOverview = () => {
                       </div>
                       <div className="flex items-center justify-center">
                         <Link to={service.link}>
-                          <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                          <Button className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
                             Learn More
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
@@ -122,7 +124,7 @@ const ServicesOverview = () => {
                         who want to leverage cutting-edge technology while maintaining their community connection.
                       </p>
                       <Link to="/consultation">
-                        <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy w-full">
+                        <Button variant="outline" className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy w-full">
                           Get Free Consultation
                         </Button>
                       </Link>
@@ -146,7 +148,7 @@ const ServicesOverview = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/consultation">
-              <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+              <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
                 Schedule Free Consultation
               </Button>
             </Link>
@@ -159,6 +161,7 @@ const ServicesOverview = () => {
         </div>
       </section>
 
+      <ServicesChatbot />
       <Footer />
     </div>
   );

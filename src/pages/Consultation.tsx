@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ServicesChatbot from "@/components/ServicesChatbot";
 
 const Consultation = () => {
   const benefits = [
@@ -131,6 +132,7 @@ const Consultation = () => {
         </div>
       </section>
 
+      <ServicesChatbot />
       <Footer />
     </div>
   );

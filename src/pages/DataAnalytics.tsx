@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ServicesChatbot from "@/components/ServicesChatbot";
 
 const DataAnalytics = () => {
   const features = [
     "Real-time local market analysis and insights",
-    "Customer behavior tracking and analytics",
+    "Customer behaviour tracking and analytics",
     "Competitive intelligence and monitoring",
     "Custom reporting dashboards and alerts",
     "ROI tracking and performance metrics",
@@ -38,7 +39,7 @@ const DataAnalytics = () => {
     "Local market trends and seasonal patterns",
     "Competitor pricing and strategy analysis",
     "Website and social media performance",
-    "Sales funnel optimization insights",
+    "Sales funnel optimisation insights",
     "Customer lifetime value calculations"
   ];
 
@@ -58,7 +59,7 @@ const DataAnalytics = () => {
               Get powerful insights that matter to your local market with AI-powered 
               analytics and reporting tailored to your community.
             </p>
-            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+            <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
               Unlock Business Insights
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -119,7 +120,7 @@ const DataAnalytics = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What We <span className="text-brand-lime">Analyze</span>
+              What We <span className="text-brand-lime">Analyse</span>
             </h2>
             <p className="text-xl text-brand-silver">
               Comprehensive analytics tailored to local business needs.
@@ -150,12 +151,13 @@ const DataAnalytics = () => {
           <p className="text-xl text-brand-silver mb-8">
             Get a free analytics audit and discover hidden opportunities.
           </p>
-          <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
             Get Free Analytics Audit
           </Button>
         </div>
       </section>
 
+      <ServicesChatbot />
       <Footer />
     </div>
   );
