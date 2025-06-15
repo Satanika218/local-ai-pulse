@@ -153,7 +153,7 @@ const ServicesOverview = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy">
+              <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver-dark font-semibold">
                 Contact Us
               </Button>
             </Link>
