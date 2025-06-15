@@ -30,7 +30,12 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-3 text-brand-silver">
                 <Mail className="h-4 w-4 text-brand-lime" />
-                <span>Hello@11thtemplesolutions.com</span>
+                <a 
+                  href="mailto:Hello@11thtemplesolutions.com" 
+                  className="hover:text-brand-lime transition-colors"
+                >
+                  Hello@11thtemplesolutions.com
+                </a>
               </div>
               <div className="flex items-center space-x-3 text-brand-silver">
                 <Phone className="h-4 w-4 text-brand-lime" />

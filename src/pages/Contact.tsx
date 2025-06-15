@@ -40,7 +40,14 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6 text-brand-lime" />,
       title: "Email Us",
-      details: "Hello@11thtemplesolutions.com",
+      details: (
+        <a 
+          href="mailto:Hello@11thtemplesolutions.com" 
+          className="text-brand-lime font-medium hover:text-brand-lime-dark transition-colors"
+        >
+          Hello@11thtemplesolutions.com
+        </a>
+      ),
       description: "Send us an email anytime and we'll get back to you ASAP"
     },
     {
@@ -93,7 +100,7 @@ const Contact = () => {
                     {info.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{info.title}</h3>
-                  <p className="text-brand-lime font-medium mb-1">{info.details}</p>
+                  <div className="text-brand-lime font-medium mb-1">{info.details}</div>
                   <p className="text-brand-silver text-sm">{info.description}</p>
                 </CardContent>
               </Card>
