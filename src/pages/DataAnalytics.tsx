@@ -59,7 +59,7 @@ const DataAnalytics = () => {
               Get powerful insights that matter to your local market with AI-powered 
               analytics and reporting tailored to your community.
             </p>
-            <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
+            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
               Unlock Business Insights
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -151,7 +151,7 @@ const DataAnalytics = () => {
           <p className="text-xl text-brand-silver mb-8">
             Get a free analytics audit and discover hidden opportunities.
           </p>
-          <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
+          <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
             Get Free Analytics Audit
           </Button>
         </div>

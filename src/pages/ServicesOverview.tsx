@@ -106,7 +106,7 @@ const ServicesOverview = () => {
                       </div>
                       <div className="flex items-center justify-center">
                         <Link to={service.link}>
-                          <Button className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
+                          <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
                             Learn More
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
@@ -124,7 +124,7 @@ const ServicesOverview = () => {
                         who want to leverage cutting-edge technology while maintaining their community connection.
                       </p>
                       <Link to="/consultation">
-                        <Button className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold w-full">
+                        <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
                           Get Free Consultation
                         </Button>
                       </Link>
@@ -148,7 +148,7 @@ const ServicesOverview = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/consultation">
-              <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
+              <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
                 Schedule Free Consultation
               </Button>
             </Link>

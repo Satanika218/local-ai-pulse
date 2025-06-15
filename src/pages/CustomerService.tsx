@@ -59,7 +59,7 @@ const CustomerService = () => {
               Provide exceptional 24/7 customer support with AI agents that understand 
               your local community and speak your customers' language.
             </p>
-            <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
+            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
               Try AI Customer Service
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -151,7 +151,7 @@ const CustomerService = () => {
           <p className="text-xl text-brand-silver mb-8">
             Get a free demo and see how AI can transform your customer service.
           </p>
-          <Button size="lg" className="bg-brand-silver text-black hover:bg-brand-silver/90 font-semibold">
+          <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
             Schedule Free Demo
           </Button>
         </div>
