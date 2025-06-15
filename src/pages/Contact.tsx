@@ -42,17 +42,17 @@ const Contact = () => {
       icon: <Mail className="h-6 w-6 text-brand-lime" />,
       title: "Email Us",
       details: "Hello@11thtemplesolutions.com",
-      description: "Send us an email anytime"
+      description: "Send us an e-mail anytime and we'll get back to you ASAP"
     },
     {
       icon: <Phone className="h-6 w-6 text-brand-lime" />,
-      title: "Call Us",
+      title: "Call Us or WhatsApp",
       details: "+44 7312 190 728",
-      description: "Mon-Fri, 9AM-6PM GMT"
+      description: "Mon-Sun 10:00 - 20:00"
     },
     {
       icon: <MapPin className="h-6 w-6 text-brand-lime" />,
-      title: "Visit Us",
+      title: "Based In",
       details: "Newtown, Powys",
       description: "Local Knowledge - Nationwide Coverage"
     },
