@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,6 +24,61 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
     currentChallenges: [],
     gdprConsent: false
   });
+
+  const industries = [
+    "Accounting/Financial/Insurance",
+    "Administration", 
+    "Aerospace",
+    "Advertising",
+    "Air Force",
+    "Army",
+    "Automotive",
+    "Aviation",
+    "Building Services",
+    "Catering",
+    "Charity",
+    "Child and Social Care",
+    "Construction",
+    "Contracting",
+    "Customer Services",
+    "Dental",
+    "Distribution/Driving",
+    "Education",
+    "Electrical",
+    "Electronics",
+    "Energy",
+    "Engineering",
+    "FMCG",
+    "Government",
+    "Graduate",
+    "Health",
+    "Hospitality/Hotel",
+    "HR",
+    "IT/Technical",
+    "Legal",
+    "Logistics",
+    "Management",
+    "Manufacturing",
+    "Marketing",
+    "Media",
+    "Medical",
+    "Military/Emergency",
+    "Navy",
+    "Nursing",
+    "Oil & Gas",
+    "Personnel",
+    "Pharmaceutical",
+    "Property",
+    "Public Sector",
+    "Purchasing",
+    "Recruitment",
+    "Retail",
+    "Sales",
+    "Scientific",
+    "Secretarial",
+    "Surveying",
+    "Other (please specify)"
+  ];
 
   const goals = [
     "Increase website traffic",
@@ -159,15 +213,11 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
               <SelectValue placeholder="Select your industry" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="retail">Retail</SelectItem>
-              <SelectItem value="restaurant">Restaurant</SelectItem>
-              <SelectItem value="healthcare">Healthcare</SelectItem>
-              <SelectItem value="professional-services">Professional Services</SelectItem>
-              <SelectItem value="fitness">Fitness</SelectItem>
-              <SelectItem value="beauty">Beauty & Wellness</SelectItem>
-              <SelectItem value="automotive">Automotive</SelectItem>
-              <SelectItem value="real-estate">Real Estate</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
+              {industries.map((industry) => (
+                <SelectItem key={industry} value={industry.toLowerCase().replace(/[^a-z0-9]/g, '-')}>
+                  {industry}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
