@@ -152,7 +152,7 @@ const CustomerService = () => {
             Get a free demo and see how AI can transform your customer service.
           </p>
           <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-            Schedule Free Demo
+            Schedule Free Consultation
           </Button>
         </div>
       </section>
