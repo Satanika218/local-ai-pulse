@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -123,7 +122,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
             value={formData.websiteUrl}
             onChange={(e) => setFormData(prev => ({ ...prev, websiteUrl: e.target.value }))}
             required
-            className="bg-brand-navy-light border-brand-silver/30 text-white"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
           />
         </div>
         <div>
@@ -134,7 +133,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
             value={formData.businessName}
             onChange={(e) => setFormData(prev => ({ ...prev, businessName: e.target.value }))}
             required
-            className="bg-brand-navy-light border-brand-silver/30 text-white"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
           />
         </div>
       </div>
@@ -167,7 +166,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
             value={formData.targetLocation}
             onChange={(e) => setFormData(prev => ({ ...prev, targetLocation: e.target.value }))}
             required
-            className="bg-brand-navy-light border-brand-silver/30 text-white"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
           />
         </div>
       </div>
@@ -194,7 +193,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
             placeholder="Enter a keyword"
             value={keywordInput}
             onChange={(e) => setKeywordInput(e.target.value)}
-            className="bg-brand-navy-light border-brand-silver/30 text-white"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
             onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleKeywordAdd())}
           />
           <Button type="button" onClick={handleKeywordAdd} className="bg-brand-lime text-brand-navy">
@@ -227,7 +226,7 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
             placeholder="Enter competitor website"
             value={competitorInput}
             onChange={(e) => setCompetitorInput(e.target.value)}
-            className="bg-brand-navy-light border-brand-silver/30 text-white"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
             onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleCompetitorAdd())}
           />
           <Button type="button" onClick={handleCompetitorAdd} className="bg-brand-lime text-brand-navy">

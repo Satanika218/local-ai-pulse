@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -61,7 +60,16 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formData);
+    
+    let processedUrl = formData.websiteUrl.trim();
+    if (processedUrl && !/^https?:\/\//i.test(processedUrl)) {
+      processedUrl = `https://${processedUrl}`;
+    }
+
+    onSubmit({
+      ...formData,
+      websiteUrl: processedUrl,
+    });
   };
 
   return (
@@ -76,7 +84,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
             value={formData.websiteUrl}
             onChange={(e) => setFormData(prev => ({ ...prev, websiteUrl: e.target.value }))}
             required
-            className="bg-brand-navy-light border-brand-silver/30 text-white"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
           />
         </div>
         <div>
@@ -87,7 +95,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
             value={formData.businessName}
             onChange={(e) => setFormData(prev => ({ ...prev, businessName: e.target.value }))}
             required
-            className="bg-brand-navy-light border-brand-silver/30 text-white"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
           />
         </div>
       </div>
@@ -120,7 +128,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
             value={formData.targetLocation}
             onChange={(e) => setFormData(prev => ({ ...prev, targetLocation: e.target.value }))}
             required
-            className="bg-brand-navy-light border-brand-silver/30 text-white"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
           />
         </div>
       </div>
