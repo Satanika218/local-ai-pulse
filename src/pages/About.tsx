@@ -80,7 +80,10 @@ const About = () => {
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
                 <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
                 <p className="text-brand-silver mb-4 text-base">To be the catalyst for human potential in a digital world, transforming businesses through intelligent automation while strengthening the fabric of our local communities.</p>
-                <p className="text-brand-silver mb-4 text-base">Heralding from the Marshes where Wales and England meet, both founders have a passion for the area, having worked and lived locally, there's a vested interest in seeing local businesses not just exist but thrive and increase the opportunities for those locally.</p>
+                <p className="text-brand-silver mb-4 text-base">Tech innovators rooted in the Welsh-English borderlands, delivering global standards with local insight. Our AI solutions don't replace talent—they amplify it.</p>
+                <p className="text-brand-silver mb-4 text-base">As locals to the area, we understand your challenges. Expect cutting-edge technology with neighbour-like reliability.</p>
+                <p className="text-brand-silver mb-4 text-base">We transform businesses through intelligent automation while strengthening our shared community. No jargon—just powerful tech, local expertise, and a genuine commitment to regional prosperity.</p>
+                <p className="text-brand-lime text-base font-semibold">Your success is personal to us. That's how we do business here.</p>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-brand-lime">
