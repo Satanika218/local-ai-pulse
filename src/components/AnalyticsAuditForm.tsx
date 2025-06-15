@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -103,7 +104,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
               value={formData.contactName}
               onChange={(e) => setFormData(prev => ({ ...prev, contactName: e.target.value }))}
               required
-              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver focus:border-brand-lime focus:ring-brand-lime"
             />
           </div>
           <div>
@@ -115,7 +116,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
               value={formData.contactEmail}
               onChange={(e) => setFormData(prev => ({ ...prev, contactEmail: e.target.value }))}
               required
-              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver focus:border-brand-lime focus:ring-brand-lime"
             />
           </div>
         </div>
@@ -133,7 +134,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
               value={formData.websiteUrl}
               onChange={(e) => setFormData(prev => ({ ...prev, websiteUrl: e.target.value }))}
               required
-              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver focus:border-brand-lime focus:ring-brand-lime"
             />
           </div>
           <div>
@@ -144,7 +145,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
               value={formData.businessName}
               onChange={(e) => setFormData(prev => ({ ...prev, businessName: e.target.value }))}
               required
-              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+              className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver focus:border-brand-lime focus:ring-brand-lime"
             />
           </div>
         </div>
@@ -154,7 +155,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
         <div>
           <Label htmlFor="industry" className="text-brand-silver">Industry *</Label>
           <Select onValueChange={(value) => setFormData(prev => ({ ...prev, industry: value }))}>
-            <SelectTrigger className="bg-brand-navy-light border-brand-silver/30 text-white">
+            <SelectTrigger className="bg-brand-navy-light border-brand-silver/30 text-white focus:border-brand-lime focus:ring-brand-lime">
               <SelectValue placeholder="Select your industry" />
             </SelectTrigger>
             <SelectContent>
@@ -171,14 +172,14 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
           </Select>
         </div>
         <div>
-          <Label htmlFor="targetLocation" className="text-brand-silver">Target Location *</Label>
+          <Label htmlFor="targetLocation" className="text-brand-silver">Business Location *</Label>
           <Input
             id="targetLocation"
             placeholder="City, Region"
             value={formData.targetLocation}
             onChange={(e) => setFormData(prev => ({ ...prev, targetLocation: e.target.value }))}
             required
-            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver"
+            className="bg-brand-navy-light border-brand-silver/30 text-white placeholder:text-brand-silver focus:border-brand-lime focus:ring-brand-lime"
           />
         </div>
       </div>
@@ -186,7 +187,7 @@ const AnalyticsAuditForm = ({ onSubmit }: AnalyticsAuditFormProps) => {
       <div>
         <Label htmlFor="monthlyVisitors" className="text-brand-silver">Monthly Website Visitors</Label>
         <Select onValueChange={(value) => setFormData(prev => ({ ...prev, monthlyVisitors: value }))}>
-          <SelectTrigger className="bg-brand-navy-light border-brand-silver/30 text-white">
+          <SelectTrigger className="bg-brand-navy-light border-brand-silver/30 text-white focus:border-brand-lime focus:ring-brand-lime">
             <SelectValue placeholder="Select visitor range" />
           </SelectTrigger>
           <SelectContent>
