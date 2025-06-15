@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Bot, TrendingUp, Users, Shield, Zap, ArrowRight, CheckCircle } from "lucide-react";
+import { Bot, TrendingUp, Users, Shield, Zap, ArrowRight, CheckCircle, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -105,6 +105,27 @@ const Solutions = () => {
       ]
     },
     {
+      id: "design-marketing",
+      title: "Design & Marketing",
+      icon: <Palette className="h-6 w-6" />,
+      description: "Transform your brand's visual identity with comprehensive design services that captivate audiences and strengthen market presence.",
+      services: [
+        {
+          icon: <Palette className="h-8 w-8 text-brand-lime" />,
+          title: "Visual Design Services",
+          description: "Elevate your brand with strategic visual design solutions that drive engagement and support growth.",
+          benefits: [
+            "Brand development and guidelines",
+            "Digital presence optimization",
+            "Visual content creation",
+            "Marketing materials design"
+          ],
+          link: "/services/design-marketing",
+          primaryCta: "Learn More"
+        }
+      ]
+    },
+    {
       id: "data-security",
       title: "Data Security & Compliance",
       icon: <Shield className="h-6 w-6" />,
@@ -170,8 +191,8 @@ const Solutions = () => {
       <section className="py-16 bg-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="customer-growth" className="w-full">
-            {/* Improved responsive tabs grid */}
-            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 bg-brand-navy border border-brand-silver/20 mb-8 gap-1 h-auto p-2">
+            {/* Improved responsive tabs grid - now 6 tabs */}
+            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 bg-brand-navy border border-brand-silver/20 mb-8 gap-1 h-auto p-2">
               {businessAreas.map((area) => (
                 <TabsTrigger 
                   key={area.id} 

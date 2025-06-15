@@ -26,6 +26,7 @@ import SEOAudit from "./pages/SEOAudit";
 import Blog from "./pages/Blog";
 import BlogPostPage from "./pages/BlogPostPage";
 import NotFound from "./pages/NotFound";
+import DesignMarketing from "./pages/DesignMarketing";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/services/data-analytics" element={<DataAnalytics />} />
           <Route path="/services/website-creation" element={<WebsiteCreation />} />
           <Route path="/services/sales-lead-tools" element={<SalesLeadTools />} />
+          <Route path="/services/design-marketing" element={<DesignMarketing />} />
           <Route path="/analytics-audit" element={<AnalyticsAudit />} />
           <Route path="/seo-audit" element={<SEOAudit />} />
           <Route path="/case-studies" element={<CaseStudies />} />
