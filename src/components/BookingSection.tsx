@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -72,7 +71,7 @@ const BookingSection = () => {
             <Link to="/privacy">
               <Button 
                 variant="outline"
-                className="border-brand-silver text-brand-silver hover:bg-brand-silver/10 w-full sm:w-auto"
+                className="border-brand-silver bg-brand-silver text-black hover:bg-brand-silver/80 w-full sm:w-auto"
                 aria-label="Read our privacy policy"
               >
                 <ExternalLink className="h-4 w-4 mr-2" />
