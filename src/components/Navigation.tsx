@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -45,7 +44,6 @@ const Navigation = () => {
           location.pathname !== "/solutions")
       );
     }
-    // Add support for all services sub-pages and /solutions
     if (path === "/solutions") {
       return location.pathname === "/solutions";
     }
@@ -73,36 +71,46 @@ const Navigation = () => {
 
           {/* Inline navigation for md+ screens */}
           <div className="hidden md:flex flex-1 items-center justify-center space-x-2 font-semibold">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
-                  isActive(item.path)
-                    ? "text-brand-lime underline"
-                    : "text-white hover:text-brand-lime hover:underline"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            {/* Services sub-menu as an inline dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  className={`px-4 py-2 flex items-center text-sm xl:text-base rounded-md transition-colors duration-200 ${
-                    serviceItems.some((srv) => isActive(srv.path))
+            {navItems.map((item) =>
+              item.name !== "Services" ? (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
+                    isActive(item.path)
                       ? "text-brand-lime underline"
                       : "text-white hover:text-brand-lime hover:underline"
                   }`}
-                  aria-label="Services"
-                  type="button"
                 >
-                  Services
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
+                  {item.name}
+                </Link>
+              ) : null
+            )}
+            {/* "Services" as a Link + Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <div className="relative group">
+                  <Link
+                    to="/services"
+                    className={`px-4 py-2 flex items-center text-sm xl:text-base rounded-md transition-colors duration-200 select-none ${
+                      isActive("/services") || serviceItems.some((srv) => isActive(srv.path))
+                        ? "text-brand-lime underline"
+                        : "text-white hover:text-brand-lime hover:underline"
+                    }`}
+                    aria-label="Services"
+                    // Prevent triggering dropdown when ctrl/cmd clicking
+                    onClick={e => {
+                      // Let keyboard modifiers pass through, but also keep dropdown accessible on hover
+                    }}
+                    style={{ userSelect: 'none', cursor: 'pointer' }}
+                  >
+                    Services
+                    <ChevronDown className="h-4 w-4 ml-1" />
+                  </Link>
+                  {/* Absolute invisible overlay to allow hover/focus activation of dropdown */}
+                  <span className="absolute inset-0" tabIndex={-1}></span>
+                </div>
               </DropdownMenuTrigger>
-              {/* Proper palette & bg for dropdown */}
               <DropdownMenuContent className="w-64 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50">
                 {serviceItems.map((service) => (
                   <DropdownMenuItem asChild key={service.name}>
@@ -120,7 +128,7 @@ const Navigation = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            {/* "Get Started" button (always visible on large screens) */}
+            {/* Get Started button */}
             <Link to="/consultation" className="ml-2">
               <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-sm xl:text-base whitespace-nowrap">
                 Get Started
@@ -145,39 +153,47 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Burger Menu (always renders for all breakpoints for accessibility) */}
+        {/* Burger Menu for mobile */}
         {isMenuOpen && (
           <div className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden z-50">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
-                    isActive(item.path)
-                      ? "text-brand-lime underline"
-                      : "text-white hover:text-brand-lime hover:underline"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              {/* Services with sub-menu (dropdown) */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <button
-                    className={`w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 ${
-                      serviceItems.some((srv) => isActive(srv.path))
+              {navItems.map((item) =>
+                item.name !== "Services" ? (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
+                      isActive(item.path)
                         ? "text-brand-lime underline"
                         : "text-white hover:text-brand-lime hover:underline"
                     }`}
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    Services
+                    {item.name}
+                  </Link>
+                ) : null
+              )}
+              {/* Services as a link and submenu trigger in burger menu */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <div className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 select-none cursor-pointer
+                    group
+                    ">
+                    <Link
+                      to="/services"
+                      className={`flex-grow block ${
+                        isActive("/services") || serviceItems.some((srv) => isActive(srv.path))
+                          ? "text-brand-lime underline"
+                          : "text-white hover:text-brand-lime hover:underline"
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                      style={{ textAlign: 'left', userSelect: 'none' }}
+                    >
+                      Services
+                    </Link>
                     <ChevronDown className="h-4 w-4 ml-2" />
-                  </button>
+                  </div>
                 </DropdownMenuTrigger>
-                {/* Brand palette for submenu */}
                 <DropdownMenuContent className="w-64 ml-2 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50">
                   {serviceItems.map((service) => (
                     <DropdownMenuItem asChild key={service.name}>
