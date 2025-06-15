@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -12,7 +13,7 @@ const Navigation = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services", hasDropdown: true },
-    { name: "Case Studies", path: "/case-studies" },
+    { name: "Testimonials", path: "/case-studies" },
     { name: "Contact", path: "/contact" },
   ];
 

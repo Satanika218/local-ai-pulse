@@ -36,14 +36,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-brand-silver">
                 <MapPin className="h-4 w-4 text-brand-lime" />
-                <a 
-                  href="https://maps.google.com/?q=Newtown,Powys,UK" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-brand-lime transition-colors cursor-pointer"
-                >
-                  Newtown Powys, Serving Local Businesses
-                </a>
+                <span>Newtown Powys, Nationwide coverage</span>
               </div>
             </div>
           </div>
@@ -54,7 +47,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/about" className="text-brand-silver hover:text-brand-lime transition-colors">About Us</Link></li>
               <li><Link to="/services" className="text-brand-silver hover:text-brand-lime transition-colors">Services</Link></li>
-              <li><Link to="/case-studies" className="text-brand-silver hover:text-brand-lime transition-colors">Case Studies</Link></li>
+              <li><Link to="/case-studies" className="text-brand-silver hover:text-brand-lime transition-colors">Testimonials</Link></li>
               <li><Link to="/contact" className="text-brand-silver hover:text-brand-lime transition-colors">Contact</Link></li>
             </ul>
           </div>
