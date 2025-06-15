@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, TrendingUp, Target, AlertTriangle, CheckCircle } from "lucide-react";
@@ -8,15 +9,20 @@ interface SEOAuditResultsProps {
   auditData: SEOAuditData;
 }
 
+const logoUrl = "/lovable-uploads/75f77758-fb5a-45f9-a0e0-770aa7766795.png";
+
 const SEOAuditResults = ({ auditData }: SEOAuditResultsProps) => {
-  const handleDownloadPDF = () => {
-    generateSEOAuditPDF(auditData);
+  // Make sure score is generated only once per audit
+  const [score] = useState(() => Math.floor(Math.random() * 35) + 55);
+
+  const handleDownloadPDF = async () => {
+    await generateSEOAuditPDF(auditData, score, logoUrl);
   };
 
   // Generate mock SEO insights based on the form data
   const generateInsights = () => {
     const insights = {
-      score: Math.floor(Math.random() * 35) + 55, // Random score between 55-89
+      score,
       strengths: [],
       weaknesses: [],
       recommendations: []
