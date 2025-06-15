@@ -13,6 +13,7 @@ import ServicesOverview from "./pages/ServicesOverview";
 import Contact from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
 import Consultation from "./pages/Consultation";
+import Privacy from "./pages/Privacy";
 import ProcessAutomation from "./pages/ProcessAutomation";
 import LocalSEO from "./pages/LocalSEO";
 import CustomerService from "./pages/CustomerService";
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/consultation" element={<Consultation />} />
+          <Route path="/privacy" element={<Privacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
