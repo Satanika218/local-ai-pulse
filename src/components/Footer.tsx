@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
 import { AccessibilityFooterLink } from "./AccessibilityQuestion";
@@ -66,12 +65,12 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
+              <li><Link to="/seo-audit" className="text-brand-silver hover:text-brand-lime transition-colours">Free SEO Audit</Link></li>
+              <li><Link to="/analytics-audit" className="text-brand-silver hover:text-brand-lime transition-colours">Free Analytics Audit</Link></li>
               <li><Link to="/services/process-automation" className="text-brand-silver hover:text-brand-lime transition-colours">Process Automation</Link></li>
               <li><Link to="/services/local-seo" className="text-brand-silver hover:text-brand-lime transition-colours">Local SEO AI</Link></li>
               <li><Link to="/services/customer-service" className="text-brand-silver hover:text-brand-lime transition-colours">Customer Service Agents</Link></li>
               <li><Link to="/services/data-analytics" className="text-brand-silver hover:text-brand-lime transition-colours">Data Analytics</Link></li>
-              <li><Link to="/seo-audit" className="text-brand-silver hover:text-brand-lime transition-colours">Free SEO Audit</Link></li>
-              <li><Link to="/analytics-audit" className="text-brand-silver hover:text-brand-lime transition-colours">Free Analytics Audit</Link></li>
             </ul>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -148,20 +147,58 @@ const About = () => {
               Our team combines deep technical expertise with genuine passion for local business success.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {teamMembers.map((member, index) => <Card key={index} className="bg-brand-navy border-brand-silver/20">
-                <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-brand-navy">
-                      {index === 0 ? "D.A" : "N.O"}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-                  <p className="text-brand-lime mb-3">{member.role}</p>
-                  <p className="text-brand-silver text-sm">{member.experience}</p>
-                </CardContent>
-              </Card>)}
+            <Card className="bg-brand-navy border-brand-silver/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-brand-navy">
+                    D.A
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{teamMembers[0].name}</h3>
+                <p className="text-brand-lime mb-3">{teamMembers[0].role}</p>
+                <p className="text-brand-silver text-sm mb-2">{teamMembers[0].experience}</p>
+                <a 
+                  href="https://www.linkedin.com/in/dan-armour-a55800bb/"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-brand-lime hover:text-brand-lime-dark underline"
+                >
+                  LinkedIn
+                </a>
+              </CardContent>
+            </Card>
+            <Card className="bg-brand-navy border-brand-silver/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-brand-lime to-brand-silver rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-brand-navy">
+                    N.O
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{teamMembers[1].name}</h3>
+                <p className="text-brand-lime mb-3">{teamMembers[1].role}</p>
+                <p className="text-brand-silver text-sm mb-2">{teamMembers[1].experience}</p>
+                <div className="flex flex-col items-center gap-1">
+                  <a 
+                    href="https://www.linkedin.com/in/dan-armour-a55800bb/"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-brand-lime hover:text-brand-lime-dark underline"
+                  >
+                    LinkedIn
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/neil-o-76508218/"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-brand-lime hover:text-brand-lime-dark underline"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

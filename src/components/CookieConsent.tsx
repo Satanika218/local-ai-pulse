@@ -12,11 +12,22 @@ const CookieConsent = () => {
     if (!consent) {
       setIsVisible(true);
     }
+    // GDPR: Only load analytics/tracking if consent is 'accepted'
+    if (consent === "accepted" && !window.__tracking_initialized) {
+      window.__tracking_initialized = true;
+      // Example: window.dataLayer = window.dataLayer || [];
+      // (initialize gtag, pixel, etc. here only after consent)
+    }
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
     setIsVisible(false);
+    // Only then initialize analytics/tracking here if needed
+    if (!window.__tracking_initialized) {
+      window.__tracking_initialized = true;
+      // Example: window.dataLayer = window.dataLayer || [];
+    }
   };
 
   const handleDecline = () => {
@@ -37,7 +48,7 @@ const CookieConsent = () => {
                 Cookie Consent
               </h3>
               <p id="cookie-banner-description" className="text-brand-silver text-sm mb-4">
-                We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. This includes cookies from our booking system.
+                We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. We only track usage and habits if you accept cookies, in full compliance with GDPR.
               </p>
               <div className="flex flex-col sm:flex-row gap-2">
                 <Button 
@@ -56,6 +67,7 @@ const CookieConsent = () => {
                   Decline
                 </Button>
               </div>
+              <p className="text-xs text-brand-silver mt-3">You can update your cookie preferences at any time from our Accessibility options in the footer.</p>
             </div>
           </div>
         </CardContent>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -19,6 +18,8 @@ const Navigation = () => {
   ];
 
   const serviceItems = [
+    { name: "Free SEO Audit", path: "/seo-audit" },
+    { name: "Free Analytics Audit", path: "/analytics-audit" },
     { name: "Process Automation", path: "/services/process-automation" },
     { name: "Customer Service Agents", path: "/services/customer-service" },
     { name: "Local SEO AI", path: "/services/local-seo" },
@@ -26,9 +27,7 @@ const Navigation = () => {
     { name: "Website Creation", path: "/services/website-creation" },
     { name: "Sales & Lead Tools", path: "/services/sales-lead-tools" },
     { name: "Design & Marketing", path: "/services/design-marketing" },
-    { name: "Solutions", path: "/solutions" },
-    { name: "Free SEO Audit", path: "/seo-audit" },
-    { name: "Free Analytics Audit", path: "/analytics-audit" },
+    { name: "Solutions", path: "/solutions" }
   ];
 
   const isActive = (path: string) => {

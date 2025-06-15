@@ -80,10 +80,26 @@ const AccessibilityToolbar = () => {
     });
   };
 
+  // Move icon when user scrolls past midway
+  const [moveToTop, setMoveToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight / 2) {
+        setMoveToTop(true);
+      } else {
+        setMoveToTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <Button
-        className="fixed bottom-6 left-6 w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl z-[9999]"
+        className={`fixed left-6 w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl z-[9999] transition-all duration-500
+            ${moveToTop ? "top-6" : "bottom-6"}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Accessibility settings"
       >
