@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ServicesChatbot from "@/components/ServicesChatbot";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -169,7 +168,6 @@ const DataAnalytics = () => {
         </div>
       </section>
 
-      <ServicesChatbot />
       <Footer />
     </div>
   );

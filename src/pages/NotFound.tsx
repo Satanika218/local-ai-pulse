@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ServicesChatbot from "@/components/ServicesChatbot";
 
 const NotFound = () => {
   const location = useLocation();
@@ -61,7 +60,6 @@ const NotFound = () => {
         </div>
       </div>
       
-      <ServicesChatbot />
       <Footer />
     </div>
   );
