@@ -26,7 +26,12 @@ const Navigation = () => {
     { name: "Solutions", path: "/solutions" },
   ];
 
-  const isActive = (path: string) => location.pathname === path || (path === '/services' && location.pathname.startsWith('/services/'));
+  const isActive = (path: string) => {
+    if (path === '/services') {
+      return location.pathname === '/services' || (location.pathname.startsWith('/services/') && location.pathname !== '/solutions');
+    }
+    return location.pathname === path;
+  };
 
   let hoverTimeout: NodeJS.Timeout;
 
