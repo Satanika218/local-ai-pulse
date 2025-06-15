@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -44,21 +45,23 @@ const Navigation = () => {
     <nav className="bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Significantly increased size for better visibility */}
-          <Link to="/" className="flex items-center space-x-4">
-            <img 
-              src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
-              alt="11th Temple Solutions" 
-              className="h-20 w-20 drop-shadow-lg"
-            />
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold text-white">11th Temple</span>
-              <span className="text-base text-brand-lime block -mt-1">Solutions</span>
-            </div>
-          </Link>
+          {/* Logo - Fixed width container to prevent overlap */}
+          <div className="flex items-center space-x-2 min-w-0 flex-shrink-0">
+            <Link to="/" className="flex items-center space-x-2">
+              <img 
+                src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
+                alt="11th Temple Solutions" 
+                className="h-16 w-16 sm:h-20 sm:w-20 drop-shadow-lg flex-shrink-0"
+              />
+              <div className="hidden sm:block min-w-0">
+                <span className="text-lg xl:text-xl font-bold text-white whitespace-nowrap">11th Temple</span>
+                <span className="text-sm xl:text-base text-brand-lime block -mt-1 whitespace-nowrap">Solutions</span>
+              </div>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Responsive spacing and text sizing */}
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 flex-1 justify-end">
             {navItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.hasDropdown ? (
@@ -69,7 +72,7 @@ const Navigation = () => {
                   >
                     <Link 
                       to={item.path}
-                      className={`flex items-center space-x-1 transition-colors duration-200 ${
+                      className={`flex items-center space-x-1 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap ${
                         isActive(item.path)
                           ? "text-brand-lime"
                           : "text-brand-silver hover:text-brand-lime"
@@ -97,7 +100,7 @@ const Navigation = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className={`transition-colors duration-200 ${
+                    className={`transition-colors duration-200 text-sm xl:text-base whitespace-nowrap ${
                       isActive(item.path)
                         ? "text-brand-lime"
                         : "text-brand-silver hover:text-brand-lime"
@@ -110,7 +113,7 @@ const Navigation = () => {
             ))}
             
             <Link to="/consultation">
-              <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+              <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-sm xl:text-base whitespace-nowrap">
                 Get Started
               </Button>
             </Link>
@@ -118,7 +121,7 @@ const Navigation = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-brand-silver hover:text-brand-lime"
+            className="lg:hidden text-brand-silver hover:text-brand-lime flex-shrink-0"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -127,7 +130,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-brand-silver/20 bg-brand-navy-light">
+          <div className="lg:hidden border-t border-brand-silver/20 bg-brand-navy-light">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <div key={item.name}>

@@ -166,25 +166,26 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* Solutions Tabs Section */}
+      {/* Solutions Tabs Section - Fixed responsive layout */}
       <section className="py-16 bg-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="customer-growth" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 bg-brand-navy border border-brand-silver/20 mb-8">
+            {/* Improved responsive tabs grid */}
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 bg-brand-navy border border-brand-silver/20 mb-8 gap-1 h-auto p-2">
               {businessAreas.map((area) => (
                 <TabsTrigger 
                   key={area.id} 
                   value={area.id}
-                  className="flex flex-col items-center space-y-2 p-4 text-brand-silver data-[state=active]:text-brand-lime data-[state=active]:bg-brand-lime/10"
+                  className="flex flex-col items-center space-y-2 p-3 text-brand-silver data-[state=active]:text-brand-lime data-[state=active]:bg-brand-lime/10 h-auto min-h-[80px] text-center"
                 >
-                  {area.icon}
-                  <span className="text-xs text-center font-medium">{area.title}</span>
+                  <div className="flex-shrink-0">{area.icon}</div>
+                  <span className="text-xs font-medium leading-tight">{area.title}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
 
             {businessAreas.map((area) => (
-              <TabsContent key={area.id} value={area.id} className="space-y-8">
+              <TabsContent key={area.id} value={area.id} className="space-y-8 mt-8">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold text-white mb-4">{area.title}</h2>
                   <p className="text-xl text-brand-silver max-w-3xl mx-auto">{area.description}</p>
