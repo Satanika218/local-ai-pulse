@@ -1,5 +1,7 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import Navigation from "@/components/navigation/Navigation";
@@ -7,9 +9,16 @@ import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
 import { Link } from "react-router-dom";
 
+export type AuditData = {
+  url: string;
+  score: number;
+  issues: string[];
+  recommendations: string[];
+};
+
 export default function AnalyticsAudit() {
   const [url, setUrl] = useState("");
-  const [results, setResults] = useState<any>(null);
+  const [results, setResults] = useState<AuditData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async () => {

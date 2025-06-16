@@ -1,8 +1,9 @@
+import { Bot, TrendingUp, Users, Shield, Zap, Palette, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, CheckCircle, Zap, Target, Users, TrendingUp, Globe, Search, BarChart3, MessageCircle, Clock, Shield, Award, Star } from "lucide-react";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -10,7 +11,8 @@ const Index = () => {
     {
       icon: <Bot className="h-8 w-8 text-brand-lime" />,
       title: "Process Automation",
-      description: "Streamline your local business operations with intelligent automation that knows your community."
+      description: "Streamline repetitive tasks and workflows with intelligent automation solutions.",
+      link: "/services/process-automation"
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
@@ -56,7 +58,7 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-16 pb-20 circuit-pattern">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy opacity-90"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
@@ -103,7 +105,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Link key={index} to="/services-overview">
+              <Link key={index} to={service.link}>
                 <Card className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 hover:glow-effect group cursor-pointer h-full">
                   <CardContent className="p-6 text-center">
                     <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
@@ -210,6 +212,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <ChatbotLauncher />
     </div>
   );
 };
