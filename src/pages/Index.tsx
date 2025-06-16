@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star, Bot, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/navigation/Navigation";
