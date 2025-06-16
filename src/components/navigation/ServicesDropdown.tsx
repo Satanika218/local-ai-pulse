@@ -19,7 +19,6 @@ const serviceItems = [
   { name: "Website Creation", path: "/services/website-creation" },
   { name: "Sales & Lead Tools", path: "/services/sales-lead-tools" },
   { name: "Design & Marketing", path: "/services/design-marketing" },
-  { name: "Solutions", path: "/solutions" },
 ];
 
 const ServicesDropdown = ({
@@ -31,9 +30,9 @@ const ServicesDropdown = ({
     <DropdownMenuTrigger asChild>
       <div className="relative group">
         <Link
-          to="/solutions"
+          to="/services"
           className={`px-4 py-2 flex items-center text-sm xl:text-base rounded-md transition-colors duration-200 select-none ${
-            isActive("/services") || isActive("/solutions") || serviceItems.some((srv) => isActive(srv.path))
+            isActive("/services") || serviceItems.some((srv) => isActive(srv.path))
               ? "text-brand-lime underline"
               : "text-white hover:text-brand-lime hover:underline"
           }`}

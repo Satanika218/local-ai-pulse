@@ -1,9 +1,15 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle, Globe, TrendingUp, Palette, DollarSign, Users, Zap, UserCheck, MessageCircle, BarChart3, FolderOpen } from "lucide-react";
+import { CheckCircle, Globe, TrendingUp, Palette, DollarSign, Users, Zap, UserCheck, MessageCircle, BarChart3, FolderOpen, Download } from "lucide-react";
 import { useCallback } from "react";
 import { generateServicesPDF } from "@/utils/servicesPDFGenerator";
+import Navigation from "@/components/navigation/Navigation";
+import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
+import PDFDownloadForm from "@/components/forms/PDFDownloadForm";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const services = [
   {
@@ -119,12 +125,27 @@ const services = [
 ];
 
 export default function Services() {
-  const handleDownload = useCallback(async () => {
-    await generateServicesPDF(services);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handlePDFDownload = useCallback(async (formData: any) => {
+    setIsGeneratingPDF(true);
+    try {
+      console.log('PDF Download form data:', formData);
+      await generateServicesPDF(services);
+      setIsDialogOpen(false);
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    } finally {
+      setIsGeneratingPDF(false);
+    }
   }, []);
 
   return (
     <div className="min-h-screen bg-brand-navy">
+      <Navigation />
+      
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -133,9 +154,17 @@ export default function Services() {
         <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
           Comprehensive solutions designed specifically for local businesses. We combine cutting-edge technology with local market knowledge.
         </p>
-        <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold" onClick={handleDownload}>
-          Download Service Guide (.PDF)
-        </Button>
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogTrigger asChild>
+            <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+              <Download className="h-4 w-4 mr-2" />
+              Download Service Guide (.PDF)
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="bg-brand-navy border-brand-silver/30 max-w-md">
+            <PDFDownloadForm onSubmit={handlePDFDownload} isLoading={isGeneratingPDF} />
+          </DialogContent>
+        </Dialog>
       </div>
 
       {/* Services Grid */}
@@ -176,11 +205,22 @@ export default function Services() {
               Schedule Consultation
             </Button>
           </Link>
-          <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy" onClick={handleDownload}>
-            Download Service Guide
-          </Button>
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogTrigger asChild>
+              <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy">
+                <Download className="h-4 w-4 mr-2" />
+                Download Service Guide
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="bg-brand-navy border-brand-silver/30 max-w-md">
+              <PDFDownloadForm onSubmit={handlePDFDownload} isLoading={isGeneratingPDF} />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
+      
+      <Footer />
+      <ChatbotLauncher />
     </div>
   );
 }

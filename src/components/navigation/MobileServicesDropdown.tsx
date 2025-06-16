@@ -19,7 +19,6 @@ const serviceItems = [
   { name: "Website Creation", path: "/services/website-creation" },
   { name: "Sales & Lead Tools", path: "/services/sales-lead-tools" },
   { name: "Design & Marketing", path: "/services/design-marketing" },
-  { name: "Solutions", path: "/solutions" },
 ];
 
 const MobileServicesDropdown = ({
@@ -33,9 +32,9 @@ const MobileServicesDropdown = ({
     <DropdownMenuTrigger asChild>
       <div className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 select-none cursor-pointer group">
         <Link
-          to="/solutions"
+          to="/services"
           className={`flex-grow block ${
-            isActive("/services") || isActive("/solutions") || serviceItems.some((srv) => isActive(srv.path))
+            isActive("/services") || serviceItems.some((srv) => isActive(srv.path))
               ? "text-brand-lime underline"
               : "text-white hover:text-brand-lime hover:underline"
           }`}
