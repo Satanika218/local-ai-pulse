@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -16,7 +17,8 @@ const CookieConsent = () => {
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent');
     if (!consent) {
-      setIsVisible(true);
+      // Show cookie banner after a short delay to ensure it's visible
+      setTimeout(() => setIsVisible(true), 1000);
     }
     // GDPR: Only load analytics/tracking if consent is 'accepted'
     if (consent === "accepted" && !window.__tracking_initialized) {
@@ -32,6 +34,7 @@ const CookieConsent = () => {
     // Only then initialize analytics/tracking here if needed
     if (!window.__tracking_initialized) {
       window.__tracking_initialized = true;
+      console.log('Analytics tracking initialized after user consent');
       // Example: window.dataLayer = window.dataLayer || [];
     }
   };
@@ -39,13 +42,14 @@ const CookieConsent = () => {
   const handleDecline = () => {
     localStorage.setItem('cookie-consent', 'declined');
     setIsVisible(false);
+    console.log('User declined cookie tracking - no analytics will be loaded');
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:max-w-md" role="dialog" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-description">
-      <Card className="bg-brand-navy-light border-brand-lime shadow-2xl">
+    <div className="fixed bottom-4 left-4 right-4 z-[9999] md:left-auto md:max-w-md" role="dialog" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-description">
+      <Card className="bg-brand-navy border-2 border-brand-lime shadow-2xl">
         <CardContent className="p-6">
           <div className="flex items-start space-x-3">
             <Cookie className="h-6 w-6 text-brand-lime flex-shrink-0 mt-0.5" />
@@ -59,7 +63,7 @@ const CookieConsent = () => {
               <div className="flex flex-col sm:flex-row gap-2">
                 <Button 
                   onClick={handleAccept}
-                  className="bg-brand-lime text-brand-navy hover:bg-brand-lime/90 flex-1"
+                  className="bg-brand-lime text-brand-navy hover:bg-brand-lime/90 flex-1 font-semibold"
                   aria-label="Accept all cookies"
                 >
                   Accept All
@@ -67,13 +71,15 @@ const CookieConsent = () => {
                 <Button 
                   onClick={handleDecline}
                   variant="outline"
-                  className="border-brand-silver bg-brand-silver text-black hover:bg-brand-silver/80 flex-1"
+                  className="border-brand-silver bg-transparent text-white hover:bg-brand-silver hover:text-brand-navy flex-1"
                   aria-label="Decline non-essential cookies"
                 >
                   Decline
                 </Button>
               </div>
-              <p className="text-xs text-brand-silver mt-3">You can update your cookie preferences at any time from our Accessibility options in the footer.</p>
+              <p className="text-xs text-brand-silver mt-3">
+                You can update your cookie preferences at any time from our Privacy Policy page.
+              </p>
             </div>
           </div>
         </CardContent>

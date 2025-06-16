@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,6 +8,7 @@ import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
 import PDFDownloadForm from "@/components/forms/PDFDownloadForm";
+import PDFTestButton from "@/components/PDFTestButton";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const services = [
@@ -154,17 +154,20 @@ export default function Services() {
         <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
           Comprehensive solutions designed specifically for local businesses. We combine cutting-edge technology with local market knowledge.
         </p>
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogTrigger asChild>
-            <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              <Download className="h-4 w-4 mr-2" />
-              Download Service Guide (.PDF)
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="bg-brand-navy border-brand-silver/30 max-w-md">
-            <PDFDownloadForm onSubmit={handlePDFDownload} isLoading={isGeneratingPDF} />
-          </DialogContent>
-        </Dialog>
+        <div className="flex gap-4 justify-center">
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogTrigger asChild>
+              <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                <Download className="h-4 w-4 mr-2" />
+                Download Service Guide (.PDF)
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="bg-brand-navy border-brand-silver/30 max-w-md">
+              <PDFDownloadForm onSubmit={handlePDFDownload} isLoading={isGeneratingPDF} />
+            </DialogContent>
+          </Dialog>
+          <PDFTestButton />
+        </div>
       </div>
 
       {/* Services Grid */}
