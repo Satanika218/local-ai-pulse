@@ -8,25 +8,31 @@ import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
 import { Link } from "react-router-dom";
+import AnalyticsAuditForm from "@/components/AnalyticsAuditForm";
+import AuditResults from "@/components/AuditResults";
 
 export type AuditData = {
-  url: string;
-  score: number;
-  issues: string[];
-  recommendations: string[];
+  websiteUrl: string;
+  businessName: string;
+  contactName: string;
+  contactEmail: string;
+  industry: string;
+  targetLocation: string;
+  monthlyVisitors: string;
+  primaryGoals: string[];
+  currentChallenges: string[];
+  gdprConsent: boolean;
 };
 
 export default function AnalyticsAudit() {
-  const [url, setUrl] = useState("");
   const [results, setResults] = useState<AuditData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (data: AuditData) => {
     setIsLoading(true);
-    setResults(null);
     try {
-      const response = await fetch(`/api/analytics-audit?url=${url}`);
-      const data = await response.json();
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
       setResults(data);
     } catch (error) {
       console.error("Error:", error);
@@ -46,35 +52,29 @@ export default function AnalyticsAudit() {
           Free Analytics Audit
         </h1>
         <p className="text-lg text-brand-silver mb-8">
-          Enter your website URL to receive a comprehensive analytics audit report.
+          Get a comprehensive analytics audit report with actionable recommendations.
         </p>
-
-        {/* URL Input and Submit */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <Input
-            type="url"
-            placeholder="Enter your website URL"
-            className="w-full md:w-auto text-black"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
-          <Button onClick={handleSubmit} disabled={isLoading}>
-            {isLoading ? "Loading..." : "Get Audit"}
-          </Button>
-        </div>
       </div>
 
-      {/* Results Section */}
-      {results && (
-        <div className="max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-4">Audit Results</h2>
+      {/* Form or Results Section */}
+      <div className="max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        {!results ? (
           <Card className="bg-brand-navy-light border border-brand-silver/20">
-            <CardContent>
-              <pre className="text-white">{JSON.stringify(results, null, 2)}</pre>
+            <CardContent className="p-6">
+              {isLoading ? (
+                <div className="text-center py-8">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-lime mx-auto mb-4"></div>
+                  <p className="text-white">Analyzing your website...</p>
+                </div>
+              ) : (
+                <AnalyticsAuditForm onSubmit={handleSubmit} />
+              )}
             </CardContent>
           </Card>
-        </div>
-      )}
+        ) : (
+          <AuditResults auditData={results} />
+        )}
+      </div>
 
       {/* Back to Home */}
       <div className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center">
