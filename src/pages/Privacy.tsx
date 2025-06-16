@@ -1,89 +1,138 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Shield, Lock, Eye, UserCheck } from "lucide-react";
+import Navigation from "@/components/navigation/Navigation";
+import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+const Privacy = () => (
+  <div className="min-h-screen bg-brand-navy">
+    <Navigation />
 
-const Privacy = () => {
-  return (
-    <div className="min-h-screen bg-brand-navy">
-      <Navigation />
-      
-      <section className="pt-20 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
-            Privacy <span className="text-brand-lime">Policy</span>
-          </h1>
-          
-          <Card className="bg-brand-navy-light border-brand-silver/20">
-            <CardContent className="p-8 space-y-8">
-              <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Data Collection</h2>
-                <p className="text-brand-silver mb-4">
-                  We collect information you provide directly to us, such as when you schedule a consultation, 
-                  contact us, or use our services. This may include:
-                </p>
-                <ul className="list-disc list-inside text-brand-silver space-y-2 ml-4">
-                  <li>Name and contact information</li>
-                  <li>Business information and requirements</li>
-                  <li>Communication preferences</li>
-                  <li>Technical information about your browsing session</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold text-white mb-4">How We Use Your Data</h2>
-                <p className="text-brand-silver mb-4">
-                  We use the information we collect to:
-                </p>
-                <ul className="list-disc list-inside text-brand-silver space-y-2 ml-4">
-                  <li>Provide and improve our services</li>
-                  <li>Schedule and conduct consultations</li>
-                  <li>Communicate about our services</li>
-                  <li>Analyze website usage and improve user experience</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Third-Party Services</h2>
-                <p className="text-brand-silver mb-4">
-                  Our booking system is powered by YouCanBook.me. When you schedule a consultation, 
-                  your data is processed according to their privacy policy in addition to ours.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Your Rights</h2>
-                <p className="text-brand-silver mb-4">
-                  Under GDPR, you have the right to:
-                </p>
-                <ul className="list-disc list-inside text-brand-silver space-y-2 ml-4">
-                  <li>Access your personal data</li>
-                  <li>Correct inaccurate data</li>
-                  <li>Delete your data</li>
-                  <li>Object to processing</li>
-                  <li>Data portability</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
-                <p className="text-brand-silver">
-                  For privacy-related questions or to exercise your rights, contact us at privacy@11thtemple.com
-                </p>
-              </section>
-
-              <p className="text-brand-silver text-sm">
-                Last updated: {new Date().toLocaleDateString()}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <Footer />
+    {/* Hero Section */}
+    <div className="bg-brand-navy-light py-24 text-center">
+      <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        Privacy Policy
+      </h1>
+      <p className="text-xl text-brand-silver max-w-3xl mx-auto">
+        Your privacy is important to us. This policy explains how we collect,
+        use, and protect your personal information.
+      </p>
     </div>
-  );
-};
+
+    {/* Privacy Policy Content */}
+    <div className="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <Card className="bg-brand-navy-light border border-brand-silver/20">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-white">
+            Information We Collect
+          </CardTitle>
+          <CardDescription className="text-brand-silver">
+            We collect information to provide better services to all our users.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside text-brand-silver">
+            <li>
+              Personal Information: Name, email address, phone number, etc.
+            </li>
+            <li>
+              Usage Data: Information about how you use our website and
+              services.
+            </li>
+            <li>
+              Cookies: Small files stored on your device to track your
+              preferences.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-8 bg-brand-navy-light border border-brand-silver/20">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-white">
+            How We Use Your Information
+          </CardTitle>
+          <CardDescription className="text-brand-silver">
+            We use your information to improve our services and personalize
+            your experience.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside text-brand-silver">
+            <li>
+              To provide and maintain our services.
+            </li>
+            <li>
+              To personalize your experience.
+            </li>
+            <li>
+              To communicate with you about updates and promotions.
+            </li>
+            <li>
+              To analyze and improve our services.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-8 bg-brand-navy-light border border-brand-silver/20">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-white">
+            Data Security
+          </CardTitle>
+          <CardDescription className="text-brand-silver">
+            We take reasonable measures to protect your information from
+            unauthorized access.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside text-brand-silver">
+            <li>
+              Encryption: We use encryption to protect your data during
+              transmission.
+            </li>
+            <li>
+              Access Control: We restrict access to your personal information to
+              authorized personnel.
+            </li>
+            <li>
+              Regular Audits: We conduct regular security audits to identify and
+              address vulnerabilities.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-8 bg-brand-navy-light border border-brand-silver/20">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-white">
+            Your Rights
+          </CardTitle>
+          <CardDescription className="text-brand-silver">
+            You have the right to access, correct, and delete your personal
+            information.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside text-brand-silver">
+            <li>
+              Access: You can request a copy of your personal information.
+            </li>
+            <li>
+              Correction: You can request to correct any inaccuracies in your
+              personal information.
+            </li>
+            <li>
+              Deletion: You can request to delete your personal information.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
+
+    <Footer />
+    <ChatbotLauncher />
+  </div>
+);
 
 export default Privacy;

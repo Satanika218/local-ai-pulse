@@ -1,176 +1,156 @@
-import { BarChart, CheckCircle, ArrowRight, PieChart, LineChart, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Navigation from "@/components/navigation/Navigation";
+import { BarChart3, Database, Code, FileCode, ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const DataAnalytics = () => {
-  const { toast } = useToast();
-  const navigate = useNavigate();
-
-  const handleFreeAudit = () => {
-    navigate('/analytics-audit');
-  };
-
-  const features = [
-    "Real-time local market analysis and insights",
-    "Customer behaviour tracking and analytics",
-    "Competitive intelligence and monitoring",
-    "Custom reporting dashboards and alerts",
-    "ROI tracking and performance metrics",
-    "Predictive analytics for business planning"
-  ];
-
-  const benefits = [
-    {
-      icon: <PieChart className="h-8 w-8 text-brand-lime" />,
-      title: "Local Market Insights",
-      description: "Understand your community's unique buying patterns and preferences"
-    },
-    {
-      icon: <LineChart className="h-8 w-8 text-brand-lime" />,
-      title: "Performance Tracking",
-      description: "Monitor key metrics and identify growth opportunities"
-    },
-    {
-      icon: <Target className="h-8 w-8 text-brand-lime" />,
-      title: "Data-Driven Decisions",
-      description: "Make informed business decisions based on real data"
-    }
-  ];
-
-  const analytics = [
-    "Customer acquisition and retention analysis",
-    "Local market trends and seasonal patterns",
-    "Competitor pricing and strategy analysis",
-    "Website and social media performance",
-    "Sales funnel optimisation insights",
-    "Customer lifetime value calculations"
-  ];
-
+export default function DataAnalytics() {
   return (
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <BarChart className="h-20 w-20 text-brand-lime mx-auto mb-6" />
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Data <span className="text-brand-lime">Analytics</span>
-            </h1>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-              Get powerful insights that matter to your local market with AI-powered 
-              analytics and reporting tailored to your community.
-            </p>
-            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Unlock Business Insights
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-        </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Comprehensive <span className="text-brand-lime">Analytics Suite</span>
-            </h2>
-            <p className="text-xl text-brand-silver">
-              Everything you need to understand and grow your local business.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <CheckCircle className="h-6 w-6 text-brand-lime flex-shrink-0" />
-                <span className="text-brand-silver text-lg">{feature}</span>
-              </div>
-            ))}
-          </div>
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <span className="text-brand-lime">Data Analytics</span> Solutions
+        </h1>
+        <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
+          Unlock the power of your data with our comprehensive analytics solutions.
+        </p>
+        <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          Get Started
+        </Button>
+      </div>
+
+      {/* Key Features Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-10">
+          Key <span className="text-brand-lime">Features</span>
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Feature Card 1 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <BarChart3 className="h-8 w-8 text-brand-lime mb-2" />
+              <CardTitle className="text-xl font-bold text-white">Data Visualization</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Transform raw data into actionable insights with interactive dashboards and visualizations.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 2 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <Database className="h-8 w-8 text-brand-lime mb-2" />
+              <CardTitle className="text-xl font-bold text-white">Data Integration</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Seamlessly connect to various data sources and consolidate information for a unified view.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 3 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <Code className="h-8 w-8 text-brand-lime mb-2" />
+              <CardTitle className="text-xl font-bold text-white">Custom Analytics</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Develop custom analytics solutions tailored to your specific business needs and objectives.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 4 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <FileCode className="h-8 w-8 text-brand-lime mb-2" />
+              <CardTitle className="text-xl font-bold text-white">Predictive Modeling</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Leverage predictive modeling techniques to forecast future trends and make data-driven decisions.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 5 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <TrendingUp className="h-8 w-8 text-brand-lime mb-2" />
+              <CardTitle className="text-xl font-bold text-white">Performance Tracking</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Monitor key performance indicators (KPIs) and track progress towards your business goals.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 6 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <Users className="h-8 w-8 text-brand-lime mb-2" />
+              <CardTitle className="text-xl font-bold text-white">Customer Analytics</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Gain insights into customer behavior, preferences, and trends to improve engagement and loyalty.
+              </p>
+            </CardContent>
+          </Card>
         </div>
-      </section>
+      </div>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Turn Data Into <span className="text-brand-lime">Growth</span>
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="bg-brand-navy-light border-brand-silver/20 text-center">
-                <CardContent className="p-8">
-                  <div className="mb-4 flex justify-center">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-brand-silver">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Analytics Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What We <span className="text-brand-lime">Analyse</span>
-            </h2>
-            <p className="text-xl text-brand-silver">
-              Comprehensive analytics tailored to local business needs.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {analytics.map((analytic, index) => (
-              <Card key={index} className="bg-brand-navy border-brand-silver/20">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
-                    <span className="text-brand-silver">{analytic}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">
+          <span className="text-brand-lime">Benefits</span> of Data Analytics
+        </h2>
+        <ul className="space-y-4">
+          <li className="flex items-center text-brand-silver">
+            <CheckCircle className="h-5 w-5 text-brand-lime mr-2" />
+            Improved Decision-Making
+          </li>
+          <li className="flex items-center text-brand-silver">
+            <CheckCircle className="h-5 w-5 text-brand-lime mr-2" />
+            Increased Efficiency
+          </li>
+          <li className="flex items-center text-brand-silver">
+            <CheckCircle className="h-5 w-5 text-brand-lime mr-2" />
+            Enhanced Customer Experience
+          </li>
+          <li className="flex items-center text-brand-silver">
+            <CheckCircle className="h-5 w-5 text-brand-lime mr-2" />
+            Competitive Advantage
+          </li>
+          <li className="flex items-center text-brand-silver">
+            <CheckCircle className="h-5 w-5 text-brand-lime mr-2" />
+            Data-Driven Insights
+          </li>
+        </ul>
+      </div>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Unlock Your Data?
-          </h2>
-          <p className="text-xl text-brand-silver mb-8">
-            Get a free analytics audit and discover hidden opportunities.
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold"
-            onClick={handleFreeAudit}
-          >
-            Get Free Analytics Audit
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Unlock Your Data Potential Today
+        </h2>
+        <p className="text-xl text-brand-silver mb-6">
+          Contact us to learn more about our data analytics solutions and how they can benefit your business.
+        </p>
+        <Link to="/contact">
+          <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+            Contact Us
           </Button>
-        </div>
-      </section>
-
-      <Footer />
+        </Link>
+      </div>
     </div>
   );
-};
-
-export default DataAnalytics;
+}

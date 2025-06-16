@@ -1,164 +1,175 @@
-
-import { Users, CheckCircle, ArrowRight, MessageCircle, Clock, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { MessageCircle, Clock, Users, TrendingUp, CheckCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 
-const CustomerService = () => {
-  const features = [
-    "24/7 intelligent customer support agents",
-    "Local dialect and cultural understanding", 
-    "Seamless handoff to human agents when needed",
-    "Multi-channel support (chat, email, phone)",
-    "Integration with your existing systems",
-    "Continuous learning and improvement"
-  ];
-
-  const benefits = [
-    {
-      icon: <Clock className="h-8 w-8 text-brand-lime" />,
-      title: "24/7 Availability",
-      description: "Never miss a customer inquiry, even outside business hours"
-    },
-    {
-      icon: <MessageCircle className="h-8 w-8 text-brand-lime" />,
-      title: "Instant Responses", 
-      description: "Provide immediate answers to common customer questions"
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-brand-lime" />,
-      title: "Local Understanding",
-      description: "AI agents that understand your local community and culture"
-    }
-  ];
-
-  const capabilities = [
-    "Answer frequently asked questions instantly",
-    "Process orders and bookings automatically", 
-    "Provide product information and recommendations",
-    "Handle appointment scheduling and changes",
-    "Collect customer feedback and reviews",
-    "Escalate complex issues to human staff"
-  ];
-
+export default function CustomerService() {
   return (
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Users className="h-20 w-20 text-brand-lime mx-auto mb-6" />
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Customer Service <span className="text-brand-lime">Agents</span>
-            </h1>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-              Provide exceptional 24/7 customer support with AI agents that understand 
-              your local community and speak your customers' language.
-            </p>
-            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Try AI Customer Service
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-        </div>
-      </section>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <span className="text-brand-lime">Customer Service</span> Solutions
+        </h1>
+        <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
+          Elevate your customer support with AI-driven solutions that provide exceptional service and build lasting relationships.
+        </p>
+        <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          Explore Our Solutions
+        </Button>
+      </div>
 
-      {/* Features Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Intelligent Customer <span className="text-brand-lime">Support</span>
-            </h2>
-            <p className="text-xl text-brand-silver">
-              AI-powered customer service that feels personal and local.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <CheckCircle className="h-6 w-6 text-brand-lime flex-shrink-0" />
-                <span className="text-brand-silver text-lg">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Solutions Overview */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-10">
+          AI-Powered <span className="text-brand-lime">Customer Service</span>
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Card 1: Intelligent Chatbots */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <MessageCircle className="h-5 w-5 text-brand-lime" />
+                <span>Intelligent Chatbots</span>
+              </CardTitle>
+              <CardDescription className="text-brand-silver">
+                24/7 support that understands and resolves customer issues instantly.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="list-none space-y-2">
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Instant responses to common queries</span>
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Personalized support based on customer history</span>
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Seamless handoff to human agents when needed</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose AI <span className="text-brand-lime">Customer Service</span>
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="bg-brand-navy-light border-brand-silver/20 text-center">
-                <CardContent className="p-8">
-                  <div className="mb-4 flex justify-center">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-brand-silver">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+          {/* Card 2: Automated Ticket Management */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <Clock className="h-5 w-5 text-brand-lime" />
+                <span>Automated Ticket Management</span>
+              </CardTitle>
+              <CardDescription className="text-brand-silver">
+                Efficiently manage and prioritize support tickets with AI-driven automation.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="list-none space-y-2">
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Automatic ticket routing to the right agents</span>
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Intelligent prioritization based on urgency</span>
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Real-time tracking and reporting on ticket status</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
 
-      {/* Capabilities Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What Our AI Agents <span className="text-brand-lime">Can Do</span>
-            </h2>
-            <p className="text-xl text-brand-silver">
-              Comprehensive customer support capabilities designed for local businesses.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {capabilities.map((capability, index) => (
-              <Card key={index} className="bg-brand-navy border-brand-silver/20">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
-                    <span className="text-brand-silver">{capability}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {/* Card 3: Customer Service Agents */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <Users className="h-5 w-5 text-brand-lime" />
+                <span>Customer Service Agents</span>
+              </CardTitle>
+              <CardDescription className="text-brand-silver">
+                Dedicated support professionals trained to deliver exceptional customer experiences.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="list-none space-y-2">
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Highly trained agents with industry expertise</span>
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Personalized support tailored to your business needs</span>
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Scalable solutions to handle fluctuating support volumes</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Card 4: Sentiment Analysis */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <TrendingUp className="h-5 w-5 text-brand-lime" />
+                <span>Sentiment Analysis</span>
+              </CardTitle>
+              <CardDescription className="text-brand-silver">
+                Understand customer emotions and improve satisfaction with AI-powered sentiment analysis.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="list-none space-y-2">
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Real-time monitoring of customer sentiment</span>
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Identification of potential issues before they escalate</span>
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-4 w-4 text-brand-lime mr-2" />
+                  <span>Data-driven insights to improve customer experiences</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
-      </section>
+      </div>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Enhance Customer Support?
-          </h2>
-          <p className="text-xl text-brand-silver mb-8">
-            Get a free demo and see how AI can transform your customer service.
-          </p>
-          <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-            Schedule Free Consultation
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Transform Your Customer Service Today
+        </h2>
+        <p className="text-xl text-brand-silver mb-6">
+          Contact us to learn how our AI-powered solutions can help you deliver exceptional customer experiences and drive business growth.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link to="/consultation">
+            <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+              Schedule a Consultation
+            </Button>
+          </Link>
+          <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy">
+            Learn More <ArrowRight className="ml-2" />
           </Button>
         </div>
-      </section>
+      </div>
 
       <Footer />
+      <ChatbotLauncher />
     </div>
   );
-};
-
-export default CustomerService;
+}

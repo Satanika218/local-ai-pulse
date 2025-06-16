@@ -1,206 +1,184 @@
-import { Users, Target, Award, TrendingUp } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 
-const About = () => {
-  const teamMembers = [{
-    name: "Dan Armour",
-    role: "Co-Founder, Sales & AI Strategist",
-    experience: "15+ years in sales, business development and tech deployment. Local to Shropshire, Dan brings deep understanding of rural business challenges and opportunities.",
-    image: "/lovable-uploads/a843b65b-2b60-430a-9e41-3f8031fd67f0.png",
-    linkedIn: "https://www.linkedin.com/in/dan-armour-a55800bb/"
-  }, {
-    name: "Neil Owen",
-    role: "Co-Founder, Head of Local Partnerships",
-    experience: "20+ years in community business relations, operations specialist and local advocate. Born and raised in the heart of Powys, Neil understands the unique dynamics of local Welsh communities.",
-    image: "/lovable-uploads/347422dc-12b8-4b65-8b63-98b195467f19.png",
-    linkedIn: "https://www.linkedin.com/in/neil-o-76508218/"
-  }];
-  
-  const values = [{
-    icon: <Target className="h-8 w-8 text-brand-lime" />,
-    title: "Local Focus",
-    description: "We understand that every community is unique and tailor our solutions accordingly."
-  }, {
-    icon: <Users className="h-8 w-8 text-brand-lime" />,
-    title: "Human-Centered AI",
-    description: "Our AI enhances human capabilities rather than replacing the personal touch."
-  }, {
-    icon: <Award className="h-8 w-8 text-brand-lime" />,
-    title: "Excellence",
-    description: "We're committed to delivering exceptional results for every local business partner."
-  }, {
-    icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
-    title: "Growth",
-    description: "We measure our success by the growth and success of our local business partners."
-  }];
-  
-  return <div className="min-h-screen bg-brand-navy">
+export default function About() {
+  return (
+    <div className="min-h-screen bg-brand-navy">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            {/* Logo above title - doubled in size */}
-            <div className="mb-8">
-              <img 
-                src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
-                alt="11th Temple Solutions" 
-                className="h-48 w-48 mx-auto"
-              />
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              About <span className="text-brand-lime">11th Temple Solutions</span>
-            </h1>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto">We're a dedicated team of AI specialists and local business advocates, committed to bridging the gap between cutting-edge technology and community-focused commerce.</p>
-          </div>
+      <div className="relative bg-cover bg-center h-64 md:h-96 flex items-center justify-center"
+        style={{ backgroundImage: `url('/lovable-uploads/09998a9d-7586-4645-8991-c494c9493911.jpg')` }}>
+        <div className="absolute inset-0 bg-brand-navy opacity-60"></div>
+        <div className="container mx-auto text-center relative z-10">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            About <span className="text-brand-lime">11th Temple Solutions</span>
+          </h1>
+          <p className="text-lg md:text-xl text-brand-silver">
+            Learn about our mission, values, and the team behind the AI innovation.
+          </p>
         </div>
-      </section>
+      </div>
 
       {/* Mission Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Our Mission: <span className="text-brand-lime">Powering Human Potential</span>
-              </h2>
-              <p className="text-brand-silver text-lg mb-6">
-                At 11th Temple Solutions, we believe that AI should amplify human capabilities, not replace them. 
-                Our mission is to deliver AI automation solutions that help local businesses thrive while 
-                maintaining their unique community connections.
+              <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
+              <p className="text-brand-silver mb-6">
+                At 11th Temple Solutions, our mission is to empower local businesses with cutting-edge AI automation solutions. We strive to simplify complex processes, enhance productivity, and foster sustainable growth, enabling our clients to thrive in an increasingly competitive market.
               </p>
-              <p className="text-brand-silver text-lg">
-                We understand that local businesses are the backbone of communities. That's why we've developed 
-                AI solutions that respect local culture, understand regional nuances, and enhance the personal 
-                relationships that make local businesses special.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
-                <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
-                <p className="text-brand-silver mb-4 text-base">To be the catalyst for human potential in a digital world, transforming businesses through intelligent automation while strengthening the fabric of our local communities.</p>
-                <p className="text-brand-silver mb-4 text-base">Tech innovators rooted in the Welsh-English borderlands, delivering global standards with local insight. Our AI solutions don't replace talent—they amplify it.</p>
-                <p className="text-brand-silver mb-4 text-base">As locals to the area, we understand your challenges. Expect cutting-edge technology with neighbour-like reliability.</p>
-                <p className="text-brand-silver mb-4 text-base">We transform businesses through intelligent automation while strengthening our shared community. No jargon—just powerful tech, local expertise, and a genuine commitment to regional prosperity.</p>
-                <p className="text-brand-lime text-base font-semibold">Your success is personal to us. That's how we do business here.</p>
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-brand-lime">
-                  </div>
-                    <div className="text-brand-silver text-sm">
-                  </div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-brand-lime">
-                  </div>
-                    <div className="text-brand-silver text-sm">
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-16 bg-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our <span className="text-brand-lime">Core Values</span>
-            </h2>
-            <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-4">
-              These principles guide every decision we make and every solution we develop.
-            </p>
-            <p className="text-brand-lime text-lg">
-              Click on any value to learn how we put it into practice.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Link key={index} to="/core-values" className="block">
-                <Card className="bg-brand-navy-light border border-brand-silver/30 hover:border-brand-lime/50 transition-all duration-300 cursor-pointer hover:scale-105 rounded-2xl shadow-md">
-                  <CardContent className="flex flex-col items-center text-center p-8">
-                    <div className="mb-6 flex justify-center items-center">
-                      {value.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
-                    <p className="text-lg text-brand-silver">{value.description}</p>
-                  </CardContent>
-                </Card>
+              <Link to="/core-values">
+                <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                  Our Core Values <ArrowRight className="ml-2" />
+                </Button>
               </Link>
-            ))}
+            </div>
+            <div>
+              <img
+                src="/lovable-uploads/49f15e9a-456a-4499-8991-191e59989544.jpg"
+                alt="Our Mission"
+                className="rounded-lg shadow-md"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Meet Our <span className="text-brand-lime">Expert Team</span>
-            </h2>
-            <p className="text-xl text-brand-silver max-w-2xl mx-auto">
-              Our team combines deep technical expertise with genuine passion for local business success.
-            </p>
+      {/* Why Choose Us Section */}
+      <section className="py-12 bg-brand-navy-light">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">Why Choose Us?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Expertise */}
+            <div className="bg-brand-navy rounded-lg p-6 shadow-md border border-brand-silver/20">
+              <h3 className="text-xl font-bold text-white mb-2">Expertise</h3>
+              <p className="text-brand-silver">
+                Our team comprises AI specialists, software developers, and business strategists with years of experience in automation and digital transformation.
+              </p>
+            </div>
+            {/* Customized Solutions */}
+            <div className="bg-brand-navy rounded-lg p-6 shadow-md border border-brand-silver/20">
+              <h3 className="text-xl font-bold text-white mb-2">Customized Solutions</h3>
+              <p className="text-brand-silver">
+                We understand that every business is unique. Our solutions are tailored to meet your specific needs and challenges, ensuring maximum impact and ROI.
+              </p>
+            </div>
+            {/* Proven Results */}
+            <div className="bg-brand-navy rounded-lg p-6 shadow-md border border-brand-silver/20">
+              <h3 className="text-xl font-bold text-white mb-2">Proven Results</h3>
+              <p className="text-brand-silver">
+                We have a track record of delivering measurable results for our clients, from increased efficiency and reduced costs to improved customer satisfaction and revenue growth.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Dan Armour */}
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-6 text-center flex flex-col items-center">
-                <img
-                  src={teamMembers[0].image}
-                  alt="Dan Armour"
-                  className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-brand-lime shadow-md"
-                />
-                <h3 className="text-xl font-semibold text-white mb-2">{teamMembers[0].name}</h3>
-                <p className="text-brand-lime mb-3">{teamMembers[0].role}</p>
-                <p className="text-brand-silver text-sm mb-2">{teamMembers[0].experience}</p>
-                <a 
-                  href={teamMembers[0].linkedIn}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-brand-lime hover:text-brand-lime-dark underline"
-                >
-                  LinkedIn
-                </a>
-              </CardContent>
-            </Card>
-            {/* Neil Owen */}
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-6 text-center flex flex-col items-center">
-                <img
-                  src={teamMembers[1].image}
-                  alt="Neil Owen"
-                  className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-brand-lime shadow-md"
-                />
-                <h3 className="text-xl font-semibold text-white mb-2">{teamMembers[1].name}</h3>
-                <p className="text-brand-lime mb-3">{teamMembers[1].role}</p>
-                <p className="text-brand-silver text-sm mb-2">{teamMembers[1].experience}</p>
-                <a 
-                  href={teamMembers[1].linkedIn}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-brand-lime hover:text-brand-lime-dark underline"
-                >
-                  LinkedIn
-                </a>
-              </CardContent>
-            </Card>
+      {/* Our Approach Section */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">Our Approach</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div>
+              <img
+                src="/lovable-uploads/f649999b-0115-4971-9071-ca9150a9b544.jpg"
+                alt="Our Approach"
+                className="rounded-lg shadow-md"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Strategic, Collaborative, and Results-Driven
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-5 w-5 text-brand-lime mr-2" />
+                  <span className="font-semibold">Strategic Planning:</span> We start with a deep dive into your business to identify key areas for automation.
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-5 w-5 text-brand-lime mr-2" />
+                  <span className="font-semibold">Collaborative Partnership:</span> We work closely with your team to ensure seamless integration and alignment with your business goals.
+                </li>
+                <li className="flex items-center text-brand-silver">
+                  <CheckCircle className="h-5 w-5 text-brand-lime mr-2" />
+                  <span className="font-semibold">Results-Driven Execution:</span> We focus on delivering measurable results, continuously optimizing our solutions to maximize your ROI.
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Team Section (Optional) */}
+      {/* <section className="py-12 bg-brand-navy-light">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">Meet Our Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-brand-navy rounded-lg p-4 shadow-md">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Team Member"
+                className="rounded-full mx-auto mb-2"
+              />
+              <h3 className="text-xl font-bold text-white text-center">John Doe</h3>
+              <p className="text-brand-silver text-center">CEO</p>
+            </div>
+            <div className="bg-brand-navy rounded-lg p-4 shadow-md">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Team Member"
+                className="rounded-full mx-auto mb-2"
+              />
+              <h3 className="text-xl font-bold text-white text-center">Jane Smith</h3>
+              <p className="text-brand-silver text-center">CTO</p>
+            </div>
+            <div className="bg-brand-navy rounded-lg p-4 shadow-md">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Team Member"
+                className="rounded-full mx-auto mb-2"
+              />
+              <h3 className="text-xl font-bold text-white text-center">Mike Johnson</h3>
+              <p className="text-brand-silver text-center">AI Specialist</p>
+            </div>
+            <div className="bg-brand-navy rounded-lg p-4 shadow-md">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Team Member"
+                className="rounded-full mx-auto mb-2"
+              />
+              <h3 className="text-xl font-bold text-white text-center">Emily Brown</h3>
+              <p className="text-brand-silver text-center">Business Strategist</p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* CTA Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-brand-silver mb-8">
+            Contact us today to learn more about how our AI automation solutions can help your business thrive.
+          </p>
+          <Link to="/contact">
+            <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+              Get in Touch
+            </Button>
+          </Link>
         </div>
       </section>
 
       <Footer />
-    </div>;
-};
-
-export default About;
+      <ChatbotLauncher />
+    </div>
+  );
+}

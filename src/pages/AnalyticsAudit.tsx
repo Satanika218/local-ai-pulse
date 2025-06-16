@@ -1,99 +1,81 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft } from "lucide-react";
+import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
-import { BarChart, FileText } from "lucide-react";
-import AnalyticsAuditForm from "@/components/AnalyticsAuditForm";
-import AuditResults from "@/components/AuditResults";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
+import { Link } from "react-router-dom";
 
-export interface AuditData {
-  websiteUrl: string;
-  businessName: string;
-  contactName: string;
-  contactEmail: string;
-  industry: string;
-  targetLocation: string;
-  monthlyVisitors: string;
-  primaryGoals: string[];
-  currentChallenges: string[];
-  gdprConsent: boolean;
-}
+export default function AnalyticsAudit() {
+  const [url, setUrl] = useState("");
+  const [results, setResults] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-const AnalyticsAudit = () => {
-  const [auditData, setAuditData] = useState<AuditData | null>(null);
-  const [showResults, setShowResults] = useState(false);
-
-  const handleAuditSubmit = (data: AuditData) => {
-    setAuditData(data);
-    setShowResults(true);
-  };
-
-  const startNewAudit = () => {
-    setAuditData(null);
-    setShowResults(false);
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    setResults(null);
+    try {
+      const response = await fetch(`/api/analytics-audit?url=${url}`);
+      const data = await response.json();
+      setResults(data);
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <BarChart className="h-20 w-20 text-brand-lime mx-auto mb-6" />
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Free Analytics <span className="text-brand-lime">Audit Tool</span>
-            </h1>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-              Get a comprehensive analysis of your website's performance with actionable 
-              insights and recommendations tailored to your local market.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Main Content */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {!showResults ? (
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-bold text-white flex items-center justify-center gap-2">
-                  <FileText className="h-6 w-6 text-brand-lime" />
-                  Website Analytics Audit
-                </CardTitle>
-                <p className="text-brand-silver">
-                  Complete the form below to receive your personalized analytics audit report
-                </p>
-              </CardHeader>
-              <CardContent>
-                <AnalyticsAuditForm onSubmit={handleAuditSubmit} />
-              </CardContent>
-            </Card>
-          ) : (
-            <div>
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-white">Your Analytics Audit Report</h2>
-                <Button 
-                  onClick={startNewAudit}
-                  variant="outline"
-                  className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy"
-                >
-                  Start New Audit
-                </Button>
-              </div>
-              {auditData && <AuditResults auditData={auditData} />}
-            </div>
-          )}
+      {/* Hero Section */}
+      <div className="max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-3xl font-bold text-white sm:text-4xl mb-4">
+          Free Analytics Audit
+        </h1>
+        <p className="text-lg text-brand-silver mb-8">
+          Enter your website URL to receive a comprehensive analytics audit report.
+        </p>
+
+        {/* URL Input and Submit */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+          <Input
+            type="url"
+            placeholder="Enter your website URL"
+            className="w-full md:w-auto text-black"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+          />
+          <Button onClick={handleSubmit} disabled={isLoading}>
+            {isLoading ? "Loading..." : "Get Audit"}
+          </Button>
         </div>
-      </section>
+      </div>
+
+      {/* Results Section */}
+      {results && (
+        <div className="max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-white mb-4">Audit Results</h2>
+          <Card className="bg-brand-navy-light border border-brand-silver/20">
+            <CardContent>
+              <pre className="text-white">{JSON.stringify(results, null, 2)}</pre>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+      {/* Back to Home */}
+      <div className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center">
+        <Link to="/" className="text-brand-lime hover:underline flex items-center justify-center gap-2">
+          <ArrowLeft /> Back to Home
+        </Link>
+      </div>
 
       <Footer />
+      <ChatbotLauncher />
     </div>
   );
-};
-
-export default AnalyticsAudit;
+}

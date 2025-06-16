@@ -1,164 +1,151 @@
-
-import { Globe, CheckCircle, ArrowRight, Smartphone, Zap, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Globe, Smartphone, Search, Zap, CheckCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 
-const WebsiteCreation = () => {
-  const features = [
-    "Custom responsive design optimized for local search",
-    "AI-powered content creation and optimization",
-    "Local SEO integration from day one",
-    "Mobile-first design for on-the-go customers",
-    "Fast loading speeds and performance optimization",
-    "Ongoing maintenance and security updates"
-  ];
-
-  const benefits = [
-    {
-      icon: <Smartphone className="h-8 w-8 text-brand-lime" />,
-      title: "Mobile Optimized",
-      description: "Perfect experience on all devices, especially mobile"
-    },
-    {
-      icon: <Zap className="h-8 w-8 text-brand-lime" />,
-      title: "Lightning Fast",
-      description: "Optimized for speed to keep customers engaged"
-    },
-    {
-      icon: <Palette className="h-8 w-8 text-brand-lime" />,
-      title: "Local Brand Design",
-      description: "Custom design that reflects your local community"
-    }
-  ];
-
-  const includes = [
-    "Professional custom website design",
-    "Local business schema and SEO setup",
-    "Contact forms and appointment booking",
-    "Google Maps integration and directions",
-    "Social media integration and sharing",
-    "Analytics tracking and performance monitoring"
-  ];
-
+export default function WebsiteCreation() {
   return (
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Globe className="h-20 w-20 text-brand-lime mx-auto mb-6" />
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Website <span className="text-brand-lime">Creation</span>
-            </h1>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-              Get a professional, fast, and SEO-optimized website designed specifically 
-              for local businesses in your community.
-            </p>
-            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Get Your Website
-              <ArrowRight className="ml-2 h-5 w-5" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <span className="text-brand-lime">Website Creation</span>
+        </h1>
+        <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
+          Establish a powerful online presence with our AI-driven website creation services.
+        </p>
+        <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          Get Started
+        </Button>
+      </div>
+
+      {/* Key Features Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-10">
+          Key <span className="text-brand-lime">Features</span>
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Feature Card 1 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <Globe className="h-5 w-5 text-brand-lime" />
+                <span>Responsive Design</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Websites that adapt seamlessly to any device, ensuring a consistent user experience.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 2 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <Smartphone className="h-5 w-5 text-brand-lime" />
+                <span>Mobile Optimization</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Ensure your website looks and performs flawlessly on smartphones and tablets.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 3 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <Search className="h-5 w-5 text-brand-lime" />
+                <span>SEO Friendly</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Optimized for search engines to improve visibility and attract more organic traffic.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 4 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <Zap className="h-5 w-5 text-brand-lime" />
+                <span>Fast Loading</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Quick loading times to reduce bounce rates and improve user satisfaction.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 5 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5 text-brand-lime" />
+                <span>Customizable</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Tailor your website to reflect your brand identity and meet your specific needs.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Feature Card 6 */}
+          <Card className="bg-brand-navy-light border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white flex items-center space-x-2">
+                <ArrowRight className="h-5 w-5 text-brand-lime" />
+                <span>Easy Navigation</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-brand-silver">
+                Intuitive navigation to guide visitors through your website effortlessly.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ready to Elevate Your Online Presence?
+        </h2>
+        <p className="text-xl text-brand-silver mb-6">
+          Contact us today for a free consultation and discover how our website creation services can transform your business.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link to="/consultation">
+            <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+              Schedule Consultation
             </Button>
-          </div>
+          </Link>
+          <Link to="/contact">
+            <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy">
+              Contact Us
+            </Button>
+          </Link>
         </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Professional Website <span className="text-brand-lime">Features</span>
-            </h2>
-            <p className="text-xl text-brand-silver">
-              Everything your local business needs to succeed online.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <CheckCircle className="h-6 w-6 text-brand-lime flex-shrink-0" />
-                <span className="text-brand-silver text-lg">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-16 bg-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose Our <span className="text-brand-lime">Websites</span>
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="bg-brand-navy-light border-brand-silver/20 text-center">
-                <CardContent className="p-8">
-                  <div className="mb-4 flex justify-center">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-brand-silver">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Includes Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What's <span className="text-brand-lime">Included</span>
-            </h2>
-            <p className="text-xl text-brand-silver">
-              Complete website package designed for local business success.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {includes.map((include, index) => (
-              <Card key={index} className="bg-brand-navy border-brand-silver/20">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
-                    <span className="text-brand-silver">{include}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready for Your New Website?
-          </h2>
-          <p className="text-xl text-brand-silver mb-8">
-            Starting at £499 one-time. Get a free design consultation and see your vision come to life.
-          </p>
-          <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-            Start Website Project
-          </Button>
-        </div>
-      </section>
+      </div>
 
       <Footer />
+      <ChatbotLauncher />
     </div>
   );
-};
-
-export default WebsiteCreation;
+}

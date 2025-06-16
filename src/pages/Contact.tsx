@@ -1,272 +1,131 @@
-
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import Navigation from "@/components/navigation/Navigation";
+import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    business: "",
-    message: ""
-  });
   const { toast } = useToast();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", phone: "", business: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const contactInfo = [
-    {
-      icon: <Mail className="h-6 w-6 text-brand-lime" />,
-      title: "Email Us",
-      details: (
-        <a 
-          href="mailto:Hello@11thtemplesolutions.com" 
-          className="text-brand-lime font-medium hover:text-brand-lime-dark transition-colors"
-        >
-          Hello@11thtemplesolutions.com
-        </a>
-      ),
-      description: "Send us an email anytime and we'll get back to you ASAP"
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-brand-lime" />,
-      title: "Call Us or WhatsApp",
-      details: "+44 7312 190 728",
-      description: "Mon-Sun 10:00 - 20:00"
-    },
-    {
-      icon: <MapPin className="h-6 w-6 text-brand-lime" />,
-      title: "Based In",
-      details: "Newtown, Powys",
-      description: "Local Knowledge - Nationwide Coverage"
-    },
-    {
-      icon: <Clock className="h-6 w-6 text-brand-lime" />,
-      title: "Response Time",
-      details: "Within 24 hours",
-      description: "Typically same day"
+    // Basic form validation
+    if (!name || !email || !message) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Please fill in all fields.",
+      });
+      return;
     }
-  ];
+
+    // Simulate form submission (replace with actual submission logic)
+    console.log("Form submitted", { name, email, message });
+    toast({
+      title: "Success",
+      description: "Your message has been sent!",
+    });
+
+    // Clear form fields
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   return (
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Get in <span className="text-brand-lime">Touch</span>
-            </h1>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto">
-              Ready to transform your local business with AI automation? 
-              Let's discuss how we can help you achieve your goals.
-            </p>
-          </div>
-        </div>
-      </section>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Contact <span className="text-brand-lime">Us</span>
+        </h1>
+        <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
+          We're here to help! Reach out with any questions or inquiries.
+        </p>
+      </div>
 
-      {/* Contact Info Cards */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    {info.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{info.title}</h3>
-                  <div className="text-brand-lime font-medium mb-1">{info.details}</div>
-                  <p className="text-brand-silver text-sm">{info.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Contact Form & Info */}
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 pb-16">
+        {/* Contact Form */}
+        <Card className="bg-brand-navy-light border border-brand-silver/20">
+          <CardHeader>
+            <CardTitle className="text-xl font-bold text-white">Send us a message</CardTitle>
+            <CardDescription className="text-brand-silver">We'll get back to you as soon as possible.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <Input
+                  type="text"
+                  placeholder="Your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="bg-brand-navy border-brand-silver/50 text-white placeholder:text-brand-silver"
+                />
+              </div>
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-brand-navy border-brand-silver/50 text-white placeholder:text-brand-silver"
+                />
+              </div>
+              <div>
+                <Textarea
+                  placeholder="Your Message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="bg-brand-navy border-brand-silver/50 text-white placeholder:text-brand-silver min-h-[100px]"
+                />
+              </div>
+              <Button className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                Send Message
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
 
-      {/* Contact Form Section */}
-      <section className="py-16 bg-brand-navy">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Start Your <span className="text-brand-lime">AI Journey Today</span>
-            </h2>
-            <p className="text-xl text-brand-silver">
-              Fill out the form below and we'll get back to you with a customised solution proposal.
-            </p>
-          </div>
-
-          <Card className="bg-brand-navy-light border-brand-silver/20">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-white font-medium mb-2">
-                      Full Name *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="bg-brand-navy border-brand-silver/30 text-white placeholder:text-brand-silver/60 focus:border-brand-lime"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-white font-medium mb-2">
-                      Email Address *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="bg-brand-navy border-brand-silver/30 text-white placeholder:text-brand-silver/60 focus:border-brand-lime"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-white font-medium mb-2">
-                      Phone Number
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="bg-brand-navy border-brand-silver/30 text-white placeholder:text-brand-silver/60 focus:border-brand-lime"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="business" className="block text-white font-medium mb-2">
-                      Business Name
-                    </label>
-                    <Input
-                      id="business"
-                      name="business"
-                      type="text"
-                      value={formData.business}
-                      onChange={handleChange}
-                      className="bg-brand-navy border-brand-silver/30 text-white placeholder:text-brand-silver/60 focus:border-brand-lime"
-                      placeholder="Enter your business name"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-white font-medium mb-2">
-                    Message *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="bg-brand-navy border-brand-silver/30 text-white placeholder:text-brand-silver/60 focus:border-brand-lime min-h-[120px]"
-                    placeholder="Tell us about your business and how we can help..."
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold"
-                >
-                  Send Message
-                  <Send className="ml-2 h-5 w-5" />
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-brand-navy-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Frequently Asked <span className="text-brand-lime">Questions</span>
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  How quickly can you implement AI automation for my business?
-                </h3>
-                <p className="text-brand-silver">
-                  Implementation timelines vary based on complexity, but most local businesses see initial 
-                  automation benefits within 2-4 weeks. We work with your schedule to minimise disruption.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  Do you provide training for our staff?
-                </h3>
-                <p className="text-brand-silver">
-                  Absolutely! We include comprehensive training as part of every implementation. Our team 
-                  ensures your staff is comfortable and confident using the new AI tools.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  What makes your local approach different?
-                </h3>
-                <p className="text-brand-silver">
-                  We understand that local businesses have unique community connections and cultural nuances. 
-                  Our AI solutions are designed to enhance these relationships, not replace them.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+        {/* Contact Info */}
+        <Card className="bg-brand-navy-light border border-brand-silver/20">
+          <CardHeader>
+            <CardTitle className="text-xl font-bold text-white">Contact Information</CardTitle>
+            <CardDescription className="text-brand-silver">Get in touch with us.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center space-x-3 text-brand-silver">
+              <MapPin className="h-5 w-5 text-brand-lime" />
+              <span>123 Main Street, Anytown, USA</span>
+            </div>
+            <div className="flex items-center space-x-3 text-brand-silver">
+              <Phone className="h-5 w-5 text-brand-lime" />
+              <span>(123) 456-7890</span>
+            </div>
+            <div className="flex items-center space-x-3 text-brand-silver">
+              <Mail className="h-5 w-5 text-brand-lime" />
+              <span>hello@example.com</span>
+            </div>
+            <div className="flex items-center space-x-3 text-brand-silver">
+              <Clock className="h-5 w-5 text-brand-lime" />
+              <span>Mon - Fri: 9am - 5pm</span>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
 
       <Footer />
+      <ChatbotLauncher />
     </div>
   );
 };

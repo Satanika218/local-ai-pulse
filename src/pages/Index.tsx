@@ -1,7 +1,7 @@
-import { ArrowRight, Bot, TrendingUp, Users, Zap, CheckCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, CheckCircle, Zap, Target, Users, TrendingUp, Globe, Search, BarChart3, MessageCircle, Clock, Shield, Award, Star } from "lucide-react";
+import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 

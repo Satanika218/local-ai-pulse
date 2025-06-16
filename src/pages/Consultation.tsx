@@ -1,144 +1,134 @@
-
-import { Calendar, Clock, Users, CheckCircle } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
-import Navigation from "@/components/Navigation";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
-import BookingSection from "@/components/BookingSection";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import CookieConsent from "@/components/CookieConsent";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 
 const Consultation = () => {
-  const benefits = [
-    "Personalised AI strategy for your business",
-    "Local market analysis and opportunities",
-    "Implementation roadmap and timeline",
-    "ROI projections and cost-benefit analysis",
-    "Ongoing support and training options"
-  ];
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
 
-  const scrollToBooking = () => {
-    const bookingSection = document.getElementById('booking-section');
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log("Form submitted", { name, email, phone, message });
+    // Reset form fields after submission
+    setName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
   };
 
   return (
     <div className="min-h-screen bg-brand-navy">
-      <a href="#main-content" className="skip-link sr-only focus:not-sr-only">
-        Skip to main content
-      </a>
-      
       <Navigation />
-      
-      <main id="main-content">
-        {/* Hero Section */}
-        <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Free AI <span className="text-brand-lime">Consultation</span>
-              </h1>
-              <p className="text-xl text-brand-silver max-w-3xl mx-auto">
-                Ready to transform your business with AI? Let's discuss how we can help you harness 
-                the full power of automation whilst maintaining your local community connections.
-              </p>
+
+      {/* Hero Section */}
+      <div className="bg-brand-navy-light py-12 text-center">
+        <h1 className="text-3xl font-bold text-white mb-4">
+          Free Consultation
+        </h1>
+        <p className="text-brand-silver text-lg">
+          Get expert advice on how AI can transform your business.
+        </p>
+      </div>
+
+      {/* Consultation Form */}
+      <div className="max-w-3xl mx-auto px-4 py-8">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-brand-silver"
+            >
+              Name
+            </label>
+            <div className="mt-1">
+              <Input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="shadow-sm focus:ring-brand-lime focus:border-brand-lime block w-full sm:text-sm border-brand-silver rounded-md bg-brand-navy-dark text-brand-silver"
+                placeholder="Your Name"
+              />
             </div>
           </div>
-        </section>
 
-        {/* Introduction Section */}
-        <section className="py-16 bg-brand-navy-light" aria-labelledby="intro-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 id="intro-heading" className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Why Choose <span className="text-brand-lime">Local AI Expertise?</span>
-                </h2>
-                <p className="text-brand-silver text-lg mb-6">
-                  AI is everywhere in the conversation, but many businesses haven't harnessed its full potential. 
-                  That's where we come in. We specialise in working with local businesses because we understand 
-                  the unique challenges and opportunities that come with serving your community.
-                </p>
-                <p className="text-brand-silver text-lg mb-6">
-                  Our goal is to help elevate entire communities by enabling local businesses to grow, eliminate 
-                  menial tasks, and focus on the parts of their business that truly drive growth and customer satisfaction.
-                </p>
-                <ul className="space-y-3" aria-label="Consultation benefits">
-                  {benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" aria-hidden="true" />
-                      <span className="text-brand-silver">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-6">
-                <Card 
-                  className="bg-brand-navy border-brand-silver/20 cursor-pointer hover:border-brand-lime/50 transition-all duration-300 hover:shadow-lg focus-within:ring-2 focus-within:ring-brand-lime"
-                  onClick={scrollToBooking}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      scrollToBooking();
-                    }
-                  }}
-                  aria-label="Schedule your consultation session"
-                >
-                  <CardContent className="p-6 text-center">
-                    <Calendar className="h-12 w-12 text-brand-lime mx-auto mb-4" aria-hidden="true" />
-                    <h3 className="text-xl font-semibold text-white mb-3">Schedule Your Session</h3>
-                    <p className="text-brand-silver mb-4">Book a free 30-minute consultation at your convenience</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-brand-navy border-brand-silver/20">
-                  <CardContent className="p-6 text-center">
-                    <Clock className="h-12 w-12 text-brand-lime mx-auto mb-4" aria-hidden="true" />
-                    <h3 className="text-xl font-semibold text-white mb-3">Quick Response</h3>
-                    <p className="text-brand-silver mb-4">Get actionable insights and next steps within 24 hours</p>
-                  </CardContent>
-                </Card>
-
-                <Link to="/about">
-                  <Card className="bg-brand-navy border-brand-silver/20 cursor-pointer hover:border-brand-lime/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg focus-within:ring-2 focus-within:ring-brand-lime">
-                    <CardContent className="p-6 text-center">
-                      <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" aria-hidden="true" />
-                      <h3 className="text-xl font-semibold text-white mb-3">Local Expertise</h3>
-                      <p className="text-brand-silver mb-4">Work with experts who understand your local market</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              </div>
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-brand-silver"
+            >
+              Email
+            </label>
+            <div className="mt-1">
+              <Input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="shadow-sm focus:ring-brand-lime focus:border-brand-lime block w-full sm:text-sm border-brand-silver rounded-md bg-brand-navy-dark text-brand-silver"
+                placeholder="Your Email"
+              />
             </div>
           </div>
-        </section>
 
-        {/* Scheduler Section */}
-        <section id="booking-section" className="py-16 bg-brand-navy" aria-labelledby="booking-heading">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 id="booking-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Book Your <span className="text-brand-lime">Free Consultation</span>
-              </h2>
-              <p className="text-xl text-brand-silver">
-                Choose a time that works for you and let's start your AI transformation journey.
-              </p>
+          <div>
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-brand-silver"
+            >
+              Phone
+            </label>
+            <div className="mt-1">
+              <Input
+                type="tel"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="shadow-sm focus:ring-brand-lime focus:border-brand-lime block w-full sm:text-sm border-brand-silver rounded-md bg-brand-navy-dark text-brand-silver"
+                placeholder="Your Phone"
+              />
             </div>
-
-            <ErrorBoundary>
-              <BookingSection />
-            </ErrorBoundary>
           </div>
-        </section>
-      </main>
-      
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-brand-silver"
+            >
+              Message
+            </label>
+            <div className="mt-1">
+              <Textarea
+                id="message"
+                rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="shadow-sm focus:ring-brand-lime focus:border-brand-lime block w-full sm:text-sm border-brand-silver rounded-md bg-brand-navy-dark text-brand-silver"
+                placeholder="How can we help you?"
+              />
+            </div>
+          </div>
+
+          <div>
+            <Button
+              type="submit"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-brand-navy bg-brand-lime hover:bg-brand-lime-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-lime"
+            >
+              Request Consultation
+            </Button>
+          </div>
+        </form>
+      </div>
+
       <Footer />
-      <CookieConsent />
+      <ChatbotLauncher />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { TrendingUp, CheckCircle, ArrowRight, Search, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";

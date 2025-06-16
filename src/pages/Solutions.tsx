@@ -1,8 +1,7 @@
-
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
