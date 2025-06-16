@@ -30,21 +30,23 @@ const MobileServicesDropdown = ({
 }) => (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <div className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 select-none cursor-pointer group">
+      <button className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 outline-none">
         <Link
           to="/services"
-          className={`flex-grow block ${
+          className={`flex-grow text-left ${
             isActive("/services") || serviceItems.some((srv) => isActive(srv.path))
               ? "text-brand-lime underline"
               : "text-white hover:text-brand-lime hover:underline"
           }`}
-          onClick={closeMenu}
-          style={{ textAlign: 'left', userSelect: 'none' }}
+          onClick={(e) => {
+            e.stopPropagation();
+            closeMenu();
+          }}
         >
           Services
         </Link>
-        <ChevronDown className="h-4 w-4 ml-2" />
-      </div>
+        <ChevronDown className="h-4 w-4 ml-2 text-white" />
+      </button>
     </DropdownMenuTrigger>
     <DropdownMenuContent className="w-64 ml-2 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50">
       {serviceItems.map((service) => (
