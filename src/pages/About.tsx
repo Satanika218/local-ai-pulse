@@ -82,30 +82,19 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-white mb-4">Our Team</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Who we Are</h2>
             <p className="text-lg text-brand-silver">
-              Meet the experts behind 11th Temple Solutions
+              11th Temple Solutions is a business driven from the appreciation and variety of the wide range of smaller, local businessess. We've spent years working for local businessess, so we know the nuanced challenges you face. We're not here to sell you on huge corporate solutions, we're focused on your business, how we can improve efficiency in your business, streamline processess and offer solutions specific to your business.
+            </p>
+            <p className="text-lg text-brand-silver mt-4">
+              There is no 'One size that fits all', we work with you to create the best outcomes, so you can spend more time on the things that you want to and less on the things you have to.
+            </p>
+            <p className="text-lg text-brand-silver mt-4">
+              Let's talk about how we can make your business work smarter today.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-8 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/963e5718-1f17-4852-ace3-68119a97691d.png" 
-                    alt="Dan Armour"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Dan Armour</h3>
-                <p className="text-brand-lime font-medium mb-3">Co-Founder & Technical Director</p>
-                <p className="text-brand-silver">
-                  Consultative AI implementation and technical strategist, experienced in machine learning and business automation. London born & Shropshire raised.
-                </p>
-              </CardContent>
-            </Card>
-
             <Card className="bg-brand-navy border-brand-silver/20">
               <CardContent className="p-8 text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
@@ -119,6 +108,23 @@ const About = () => {
                 <p className="text-brand-lime font-medium mb-3">Co-Founder & Operations Director</p>
                 <p className="text-brand-silver">
                   Specialising in optimal transformation strategy, advocacy in helping local businesses navigate their journey to modern technological brilliance. Born & Bred in the heart of Powys.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-brand-navy border-brand-silver/20">
+              <CardContent className="p-8 text-center">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/963e5718-1f17-4852-ace3-68119a97691d.png" 
+                    alt="Dan Armour"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Dan Armour</h3>
+                <p className="text-brand-lime font-medium mb-3">Co-Founder & Technical Director</p>
+                <p className="text-brand-silver">
+                  Consultative AI implementation and technical strategist, experienced in machine learning and business automation. London born & Shropshire raised.
                 </p>
               </CardContent>
             </Card>

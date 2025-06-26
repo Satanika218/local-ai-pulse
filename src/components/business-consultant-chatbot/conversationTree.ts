@@ -11,6 +11,15 @@ export const conversationTree: ConversationTree = {
     options: [
       { text: "Solve a specific challenge", next: 'first_level_diagnostic' },
       { text: "Explore what's possible", next: 'first_level_diagnostic' },
+      { text: "Other", next: 'other_start' },
+    ],
+  },
+  other_start: {
+    id: 'other_start',
+    text: "I understand you have something else in mind. Please feel free to tell me what you're looking for, and I'll do my best to help guide you in the right direction.",
+    options: [
+      { text: "Go back to main options", next: 'start' },
+      { text: "Chat with a specialist", next: 'closing' },
     ],
   },
   first_level_diagnostic: {
@@ -21,6 +30,16 @@ export const conversationTree: ConversationTree = {
       { text: "Getting the word out and finding new customers", next: 'marketing_q' },
       { text: "Paperwork, invoices and financial tasks", next: 'finance_q' },
       { text: "Keeping in touch with customers", next: 'customer_relations_q' },
+      { text: "Other", next: 'other_business_area' },
+      { text: "Go back", next: 'start' },
+    ],
+  },
+  other_business_area: {
+    id: 'other_business_area',
+    text: "That's perfectly fine - every business has unique challenges. I'd love to connect you with one of our specialists who can discuss your specific needs in detail.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back to business areas", next: 'first_level_diagnostic' },
     ],
   },
   // Website Path
@@ -30,6 +49,16 @@ export const conversationTree: ConversationTree = {
     options: [
       { text: "Not enough people are contacting/buying through the site", next: 'website_leads_q' },
       { text: "Making updates to the site is too time-consuming", next: 'website_updates_q' },
+      { text: "Other website issue", next: 'other_website' },
+      { text: "Go back", next: 'first_level_diagnostic' },
+    ],
+  },
+  other_website: {
+    id: 'other_website',
+    text: "Website challenges can be complex and varied. Our specialists can help identify and solve whatever specific issues you're facing with your online presence.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back to website questions", next: 'website_presence_q' },
     ],
   },
   website_leads_q: {
@@ -39,6 +68,16 @@ export const conversationTree: ConversationTree = {
         { text: "Yes, we seem to rank well", next: 'website_leads_solutions' },
         { text: "No, we're hard to find online", next: 'website_leads_solutions' },
         { text: "I'm not sure", next: 'website_leads_solutions' },
+        { text: "Other", next: 'other_website_leads' },
+        { text: "Go back", next: 'website_presence_q' },
+    ],
+  },
+  other_website_leads: {
+    id: 'other_website_leads',
+    text: "Lead generation challenges can have many different causes. Let's connect you with a specialist who can analyze your specific situation.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back", next: 'website_leads_q' },
     ],
   },
   website_leads_solutions: {
@@ -52,6 +91,7 @@ export const conversationTree: ConversationTree = {
     options: [
         { text: "Chat with a specialist", next: 'closing' },
         { text: "Explore other challenges", next: 'first_level_diagnostic' },
+        { text: "Go back", next: 'website_leads_q' },
     ]
   },
   website_updates_q: {
@@ -61,7 +101,17 @@ export const conversationTree: ConversationTree = {
           { text: "Updating text and images", next: 'website_updates_solutions' },
           { text: "Adding new pages or sections", next: 'website_updates_solutions' },
           { text: "Creating blog posts or news", next: 'website_updates_solutions' },
+          { text: "Other content type", next: 'other_website_updates' },
+          { text: "Go back", next: 'website_presence_q' },
       ],
+  },
+  other_website_updates: {
+    id: 'other_website_updates',
+    text: "Website management can involve many different types of content and updates. Our specialists can help create a solution tailored to your specific content needs.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back", next: 'website_updates_q' },
+    ],
   },
   website_updates_solutions: {
       id: 'website_updates_solutions',
@@ -73,6 +123,7 @@ export const conversationTree: ConversationTree = {
       options: [
           { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
+          { text: "Go back", next: 'website_updates_q' },
       ]
   },
   // Marketing Path
@@ -82,6 +133,16 @@ export const conversationTree: ConversationTree = {
     options: [
       { text: "Creating regular content to share with customers", next: 'marketing_content_q' },
       { text: "Figuring out which marketing brings in customers", next: 'marketing_roi_q' },
+      { text: "Other marketing challenge", next: 'other_marketing' },
+      { text: "Go back", next: 'first_level_diagnostic' },
+    ],
+  },
+  other_marketing: {
+    id: 'other_marketing',
+    text: "Marketing challenges come in many forms. Our specialists can help develop a strategy that addresses your specific marketing needs and goals.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back to marketing questions", next: 'marketing_q' },
     ],
   },
   marketing_content_q: {
@@ -91,7 +152,17 @@ export const conversationTree: ConversationTree = {
           { text: "Social media posts", next: 'marketing_solutions' },
           { text: "Email newsletters", next: 'marketing_solutions' },
           { text: "Blog articles", next: 'marketing_solutions' },
+          { text: "Other content type", next: 'other_marketing_content' },
+          { text: "Go back", next: 'marketing_q' },
       ],
+  },
+  other_marketing_content: {
+    id: 'other_marketing_content',
+    text: "Content creation can involve many different formats and approaches. Let's connect you with a specialist who can help streamline your specific content needs.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back", next: 'marketing_content_q' },
+    ],
   },
   marketing_roi_q: {
       id: 'marketing_roi_q',
@@ -99,7 +170,17 @@ export const conversationTree: ConversationTree = {
       options: [
           { text: "Yes, but the data is confusing", next: 'marketing_solutions' },
           { text: "No, we're not tracking performance", next: 'marketing_solutions' },
+          { text: "Other tracking situation", next: 'other_marketing_roi' },
+          { text: "Go back", next: 'marketing_q' },
       ],
+  },
+  other_marketing_roi: {
+    id: 'other_marketing_roi',
+    text: "Marketing measurement can be complex with many different approaches. Our specialists can help you find the right tracking solution for your business.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back", next: 'marketing_roi_q' },
+    ],
   },
   marketing_solutions: {
       id: 'marketing_solutions',
@@ -111,6 +192,7 @@ export const conversationTree: ConversationTree = {
       options: [
           { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
+          { text: "Go back", next: 'marketing_content_q' },
       ]
   },
   // Finance Path
@@ -120,6 +202,16 @@ export const conversationTree: ConversationTree = {
     options: [
         { text: "Processing bills, receipts and invoices takes too long", next: 'finance_invoices_q' },
         { text: "Chasing late payments from customers is a hassle", next: 'finance_chasing_q' },
+        { text: "Other financial task", next: 'other_finance' },
+        { text: "Go back", next: 'first_level_diagnostic' },
+    ],
+  },
+  other_finance: {
+    id: 'other_finance',
+    text: "Financial management involves many different processes and challenges. Our specialists can help identify automation opportunities for your specific financial workflows.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back to finance questions", next: 'finance_q' },
     ],
   },
   finance_invoices_q: {
@@ -129,7 +221,17 @@ export const conversationTree: ConversationTree = {
           { text: "Less than 50", next: 'finance_solutions' },
           { text: "Between 50 and 200", next: 'finance_solutions' },
           { text: "More than 200", next: 'finance_solutions' },
+          { text: "Other amount/situation", next: 'other_finance_invoices' },
+          { text: "Go back", next: 'finance_q' },
       ],
+  },
+  other_finance_invoices: {
+    id: 'other_finance_invoices',
+    text: "Every business has different invoice processing needs. Our specialists can design a solution that fits your specific volume and workflow requirements.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back", next: 'finance_invoices_q' },
+    ],
   },
   finance_chasing_q: {
     id: 'finance_chasing_q',
@@ -137,7 +239,17 @@ export const conversationTree: ConversationTree = {
      options: [
           { text: "Fully automated chasing", next: 'finance_solutions' },
           { text: "Just send me reminders", next: 'finance_solutions' },
+          { text: "Other approach", next: 'other_finance_chasing' },
+          { text: "Go back", next: 'finance_q' },
       ],
+  },
+  other_finance_chasing: {
+    id: 'other_finance_chasing',
+    text: "Payment collection strategies can be customized in many ways. Let's connect you with a specialist to discuss the best approach for your business relationships.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back", next: 'finance_chasing_q' },
+    ],
   },
   finance_solutions: {
     id: 'finance_solutions',
@@ -149,6 +261,7 @@ export const conversationTree: ConversationTree = {
       options: [
           { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
+          { text: "Go back", next: 'finance_invoices_q' },
       ]
   },
   // Customer Relations Path
@@ -158,6 +271,16 @@ export const conversationTree: ConversationTree = {
     options: [
         { text: "Responding to customer questions quickly enough", next: 'customer_response_q' },
         { text: "Keeping customer information organised and up-to-date", next: 'customer_data_q' },
+        { text: "Other customer challenge", next: 'other_customer' },
+        { text: "Go back", next: 'first_level_diagnostic' },
+    ],
+  },
+  other_customer: {
+    id: 'other_customer',
+    text: "Customer relationship challenges can take many forms. Our specialists can help design systems to improve your specific customer interactions and processes.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back to customer questions", next: 'customer_relations_q' },
     ],
   },
   customer_response_q: {
@@ -167,7 +290,17 @@ export const conversationTree: ConversationTree = {
           { text: "Yes, all the time!", next: 'customer_relations_solutions' },
           { text: "Sometimes, but not often", next: 'customer_relations_solutions' },
           { text: "No, most questions are unique", next: 'customer_relations_solutions' },
+          { text: "Other situation", next: 'other_customer_response' },
+          { text: "Go back", next: 'customer_relations_q' },
       ]
+  },
+  other_customer_response: {
+    id: 'other_customer_response',
+    text: "Customer communication patterns vary greatly between businesses. Let's connect you with a specialist to discuss your specific response challenges.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back", next: 'customer_response_q' },
+    ],
   },
   customer_data_q: {
       id: 'customer_data_q',
@@ -176,7 +309,17 @@ export const conversationTree: ConversationTree = {
           { text: "In spreadsheets or documents", next: 'customer_relations_solutions' },
           { text: "In my email contacts", next: 'customer_relations_solutions' },
           { text: "We don't have a central system", next: 'customer_relations_solutions' },
+          { text: "Other system", next: 'other_customer_data' },
+          { text: "Go back", next: 'customer_relations_q' },
       ]
+  },
+  other_customer_data: {
+    id: 'other_customer_data',
+    text: "Customer data management systems come in many forms. Our specialists can help optimize whatever system you're currently using or suggest better alternatives.",
+    options: [
+      { text: "Chat with a specialist", next: 'closing' },
+      { text: "Go back", next: 'customer_data_q' },
+    ],
   },
   customer_relations_solutions: {
       id: 'customer_relations_solutions',
@@ -188,6 +331,7 @@ export const conversationTree: ConversationTree = {
        options: [
           { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
+          { text: "Go back", next: 'customer_response_q' },
       ]
   },
   // Closing
