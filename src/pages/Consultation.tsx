@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -43,83 +44,75 @@ const Consultation = () => {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-brand-silver"
+              className="block text-sm font-medium text-white mb-2"
             >
               Name
             </label>
-            <div className="mt-1">
-              <Input
-                type="text"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="shadow-sm focus:ring-brand-lime focus:border-brand-lime block w-full sm:text-sm border-brand-silver rounded-md bg-brand-navy-dark text-brand-silver"
-                placeholder="Your Name"
-              />
-            </div>
+            <Input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full bg-white text-brand-navy placeholder:text-gray-500 border-brand-silver focus:border-brand-lime focus:ring-brand-lime"
+              placeholder="Your Name"
+            />
           </div>
 
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-brand-silver"
+              className="block text-sm font-medium text-white mb-2"
             >
               Email
             </label>
-            <div className="mt-1">
-              <Input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="shadow-sm focus:ring-brand-lime focus:border-brand-lime block w-full sm:text-sm border-brand-silver rounded-md bg-brand-navy-dark text-brand-silver"
-                placeholder="Your Email"
-              />
-            </div>
+            <Input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full bg-white text-brand-navy placeholder:text-gray-500 border-brand-silver focus:border-brand-lime focus:ring-brand-lime"
+              placeholder="Your Email"
+            />
           </div>
 
           <div>
             <label
               htmlFor="phone"
-              className="block text-sm font-medium text-brand-silver"
+              className="block text-sm font-medium text-white mb-2"
             >
               Phone
             </label>
-            <div className="mt-1">
-              <Input
-                type="tel"
-                id="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="shadow-sm focus:ring-brand-lime focus:border-brand-lime block w-full sm:text-sm border-brand-silver rounded-md bg-brand-navy-dark text-brand-silver"
-                placeholder="Your Phone"
-              />
-            </div>
+            <Input
+              type="tel"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full bg-white text-brand-navy placeholder:text-gray-500 border-brand-silver focus:border-brand-lime focus:ring-brand-lime"
+              placeholder="Your Phone"
+            />
           </div>
 
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-brand-silver"
+              className="block text-sm font-medium text-white mb-2"
             >
               Message
             </label>
-            <div className="mt-1">
-              <Textarea
-                id="message"
-                rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="shadow-sm focus:ring-brand-lime focus:border-brand-lime block w-full sm:text-sm border-brand-silver rounded-md bg-brand-navy-dark text-brand-silver"
-                placeholder="How can we help you?"
-              />
-            </div>
+            <Textarea
+              id="message"
+              rows={4}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="w-full bg-white text-brand-navy placeholder:text-gray-500 border-brand-silver focus:border-brand-lime focus:ring-brand-lime resize-none"
+              placeholder="How can we help you?"
+            />
           </div>
 
           <div>
             <Button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-brand-navy bg-brand-lime hover:bg-brand-lime-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-lime"
+              className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime/90 font-semibold py-3 text-lg"
             >
               Request Consultation
             </Button>
