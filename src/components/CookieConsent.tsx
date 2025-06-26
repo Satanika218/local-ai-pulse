@@ -30,6 +30,7 @@ const CookieConsent = () => {
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
+    localStorage.setItem('cookie-consent-date', new Date().toISOString());
     setIsVisible(false);
     // Only then initialize analytics/tracking here if needed
     if (!window.__tracking_initialized) {
@@ -41,8 +42,14 @@ const CookieConsent = () => {
 
   const handleDecline = () => {
     localStorage.setItem('cookie-consent', 'declined');
+    localStorage.setItem('cookie-consent-date', new Date().toISOString());
     setIsVisible(false);
     console.log('User declined cookie tracking - no analytics will be loaded');
+  };
+
+  const handleManagePreferences = () => {
+    // In a real implementation, this would open a preferences modal
+    alert('Cookie preferences management would be implemented here. For now, you can accept or decline all cookies.');
   };
 
   if (!isVisible) return null;
@@ -58,9 +65,9 @@ const CookieConsent = () => {
                 Cookie Consent
               </h3>
               <p id="cookie-banner-description" className="text-brand-silver text-sm mb-4">
-                We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. We only track usage and habits if you accept cookies, in full compliance with GDPR.
+                We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. We only track usage and habits if you accept cookies, in full compliance with GDPR. You have the right to withdraw consent at any time.
               </p>
-              <div className="flex flex-col sm:flex-row gap-2">
+              <div className="flex flex-col sm:flex-row gap-2 mb-2">
                 <Button 
                   onClick={handleAccept}
                   className="bg-brand-lime text-brand-navy hover:bg-brand-lime/90 flex-1 font-semibold"
@@ -77,8 +84,16 @@ const CookieConsent = () => {
                   Decline
                 </Button>
               </div>
+              <Button 
+                onClick={handleManagePreferences}
+                variant="ghost"
+                className="text-brand-silver hover:text-white text-xs p-0 h-auto"
+                aria-label="Manage cookie preferences"
+              >
+                Manage Preferences
+              </Button>
               <p className="text-xs text-brand-silver mt-3">
-                You can update your cookie preferences at any time from our Privacy Policy page.
+                You can update your cookie preferences at any time from our Privacy Policy page. Data processing is based on your consent (Art. 6.1.a GDPR).
               </p>
             </div>
           </div>

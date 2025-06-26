@@ -69,7 +69,7 @@ const About = () => {
                 <MapPin className="h-12 w-12 text-brand-lime mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-3">Local Knowledge</h3>
                 <p className="text-brand-silver">
-                  Having grown up and worked for firms in Powys, Shropshire, Herefordshire, we're attuned to the more nuanced challenges that businesses in less urban environments face.
+                  We understand rural business challenges through firsthand regional experience.
                 </p>
               </CardContent>
             </Card>
