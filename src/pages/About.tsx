@@ -3,7 +3,7 @@ import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Lightbulb, Award } from "lucide-react";
+import { Users, Target, Lightbulb, Award, MapPin } from "lucide-react";
 
 const About = () => {
   return (
@@ -17,7 +17,7 @@ const About = () => {
             About 11th Temple Solutions
           </h1>
           <p className="text-xl text-brand-silver leading-relaxed">
-            Empowering Welsh SMEs through innovative AI solutions and digital transformation
+            Empowering local businesses from the heart of Powys through innovative AI solutions and digital transformation
           </p>
         </div>
       </div>
@@ -33,7 +33,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <Card className="bg-brand-navy-light border-brand-silver/20">
               <CardContent className="p-8 text-center">
                 <Target className="h-12 w-12 text-brand-lime mx-auto mb-4" />
@@ -63,6 +63,16 @@ const About = () => {
                 </p>
               </CardContent>
             </Card>
+
+            <Card className="bg-brand-navy-light border-brand-silver/20">
+              <CardContent className="p-8 text-center">
+                <MapPin className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">Local Knowledge</h3>
+                <p className="text-brand-silver">
+                  Having grown up and worked for firms in Powys, Shropshire, Herefordshire, we're attuned to the more nuanced challenges that businesses in less urban environments face.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
@@ -81,28 +91,34 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="bg-brand-navy border-brand-silver/20">
               <CardContent className="p-8 text-center">
-                <div className="w-24 h-24 bg-brand-lime rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-brand-navy">DA</span>
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/963e5718-1f17-4852-ace3-68119a97691d.png" 
+                    alt="Dan Armour"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Dan Armour</h3>
                 <p className="text-brand-lime font-medium mb-3">Co-Founder & Technical Director</p>
                 <p className="text-brand-silver">
-                  Leading AI implementation and technical strategy with extensive experience 
-                  in machine learning and business automation.
+                  Consultative AI implementation and technical strategist, experienced in machine learning and business automation. London born & Shropshire raised.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-brand-navy border-brand-silver/20">
               <CardContent className="p-8 text-center">
-                <div className="w-24 h-24 bg-brand-lime rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-brand-navy">NO</span>
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/5c3ff16d-ca8e-477f-8c58-0b7a4193cbbc.png" 
+                    alt="Neil Owen"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Neil Owen</h3>
-                <p className="text-brand-lime font-medium mb-3">Co-Founder & Business Development</p>
+                <p className="text-brand-lime font-medium mb-3">Co-Founder & Operations Director</p>
                 <p className="text-brand-silver">
-                  Specializing in digital transformation strategy and helping SMEs 
-                  navigate their journey to technological advancement.
+                  Specialising in optimal transformation strategy, advocacy in helping local businesses navigate their journey to modern technological brilliance. Born & Bred in the heart of Powys.
                 </p>
               </CardContent>
             </Card>
