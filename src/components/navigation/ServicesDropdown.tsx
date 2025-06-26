@@ -30,9 +30,9 @@ const ServicesDropdown = ({
     <DropdownMenuTrigger asChild>
       <div className="flex items-center group">
         <Link
-          to="/services"
+          to="/services-overview"
           className={`px-4 py-2 flex items-center text-sm xl:text-base rounded-md transition-colors duration-200 ${
-            isActive("/services") || serviceItems.some((srv) => isActive(srv.path))
+            isActive("/services-overview") || serviceItems.some((srv) => isActive(srv.path))
               ? "text-brand-lime underline"
               : "text-white hover:text-brand-lime hover:underline"
           }`}

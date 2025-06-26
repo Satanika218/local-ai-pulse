@@ -37,9 +37,9 @@ const Navigation = () => {
   const location = useLocation();
 
   const isActive = (path: string) => {
-    if (path === "/services") {
+    if (path === "/services-overview") {
       return (
-        location.pathname === "/services" ||
+        location.pathname === "/services-overview" ||
         (location.pathname.startsWith("/services/") &&
           location.pathname !== "/solutions")
       );
@@ -87,11 +87,11 @@ const Navigation = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="relative group">
-                  {/* Now link to /solutions */}
+                  {/* Now link to /services-overview */}
                   <Link
-                    to="/solutions"
+                    to="/services-overview"
                     className={`px-4 py-2 flex items-center text-sm xl:text-base rounded-md transition-colors duration-200 select-none ${
-                      isActive("/services") || isActive("/solutions") || serviceItems.some((srv) => isActive(srv.path))
+                      isActive("/services-overview") || isActive("/solutions") || serviceItems.some((srv) => isActive(srv.path))
                         ? "text-brand-lime underline"
                         : "text-white hover:text-brand-lime hover:underline"
                     }`}
@@ -184,11 +184,11 @@ const Navigation = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <div className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 select-none cursor-pointer group">
-                    {/* Now link to /solutions */}
+                    {/* Now link to /services-overview */}
                     <Link
-                      to="/solutions"
+                      to="/services-overview"
                       className={`flex-grow block ${
-                        isActive("/services") || isActive("/solutions") || serviceItems.some((srv) => isActive(srv.path))
+                        isActive("/services-overview") || isActive("/solutions") || serviceItems.some((srv) => isActive(srv.path))
                           ? "text-brand-lime underline"
                           : "text-white hover:text-brand-lime hover:underline"
                       }`}

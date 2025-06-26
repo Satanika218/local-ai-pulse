@@ -30,9 +30,9 @@ const MobileServicesDropdown = ({
 }) => (
   <div className="w-full">
     <Link
-      to="/services"
+      to="/services-overview"
       className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
-        isActive("/services") || serviceItems.some((srv) => isActive(srv.path))
+        isActive("/services-overview") || serviceItems.some((srv) => isActive(srv.path))
           ? "text-brand-lime underline"
           : "text-white hover:text-brand-lime hover:underline"
       }`}
