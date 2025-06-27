@@ -8,6 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
+import { Link } from "react-router-dom";
 
 interface Question {
   id: string;
@@ -236,8 +237,8 @@ const DigitalSkillsAudit = () => {
             <CardContent className="space-y-6">
               <div className="text-center">
                 {results.score >= 80 ? (
-                  <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-green-400 mb-2">Excellent Digital Skills!</h3>
+                  <div className="bg-brand-lime/10 border border-brand-lime/30 rounded-lg p-6">
+                    <h3 className="text-xl font-semibold text-brand-lime mb-2">Excellent Digital Skills!</h3>
                     <p className="text-brand-silver">
                       You demonstrate strong digital capabilities across all essential skill areas. 
                       Consider exploring our advanced automation solutions to further enhance your business efficiency.
@@ -271,7 +272,7 @@ const DigitalSkillsAudit = () => {
                     
                     return (
                       <div key={question.id} className={`p-4 rounded-lg border ${
-                        isCorrect ? 'bg-green-900/10 border-green-500/30' : 'bg-red-900/10 border-red-500/30'
+                        isCorrect ? 'bg-brand-lime/10 border-brand-lime/30' : 'bg-red-900/10 border-red-500/30'
                       }`}>
                         <h4 className="font-semibold text-white mb-2">
                           Question {index + 1}: {isCorrect ? '✓' : '✗'}
@@ -291,9 +292,11 @@ const DigitalSkillsAudit = () => {
                 <p className="text-brand-silver mb-6">
                   Book a free consultation to discuss how we can help you develop the digital skills your business needs to thrive.
                 </p>
-                <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold px-8 py-3">
-                  Book Free Consultation
-                </Button>
+                <Link to="/consultation">
+                  <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold px-8 py-3">
+                    Book Free Consultation
+                  </Button>
+                </Link>
               </div>
 
               <div className="text-center text-xs text-brand-silver pt-4">
@@ -332,7 +335,7 @@ const DigitalSkillsAudit = () => {
           <p className="text-xl text-brand-silver mb-6">
             Based on the UK's Essential Digital Skills Framework
           </p>
-          <div className="bg-brand-navy-light rounded-lg p-6 text-left max-w-3xl mx-auto">
+          <div className="bg-brand-navy-light rounded-lg p-6 text-left max-w-3xl mx-auto border border-brand-silver/20">
             <h2 className="text-lg font-semibold text-white mb-4">Introduction</h2>
             <p className="text-brand-silver mb-4">
               This comprehensive digital skills audit tool is designed to assess business owners' proficiency across 
@@ -357,7 +360,7 @@ const DigitalSkillsAudit = () => {
             <span>Progress</span>
             <span>{currentQuestion + 1} of {questions.length}</span>
           </div>
-          <Progress value={progress} className="h-2" />
+          <Progress value={progress} className="h-2 bg-brand-navy-light" />
         </div>
 
         {/* Question Card */}
@@ -380,15 +383,15 @@ const DigitalSkillsAudit = () => {
               
               <RadioGroup value={currentAnswer} onValueChange={handleAnswerChange}>
                 {questions[currentQuestion].options.map((option, index) => (
-                  <div key={index} className="flex items-center space-x-2">
+                  <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-brand-silver/5 transition-colors">
                     <RadioGroupItem 
                       value={index.toString()} 
                       id={`option-${index}`}
-                      className="border-brand-silver text-brand-lime"
+                      className="border-brand-silver data-[state=checked]:bg-brand-lime data-[state=checked]:border-brand-lime mt-1"
                     />
                     <Label 
                       htmlFor={`option-${index}`} 
-                      className="text-brand-silver cursor-pointer flex-1"
+                      className="text-brand-silver cursor-pointer flex-1 leading-relaxed"
                     >
                       {String.fromCharCode(65 + index)}) {option}
                     </Label>
@@ -401,14 +404,14 @@ const DigitalSkillsAudit = () => {
                   onClick={handlePrevious}
                   disabled={currentQuestion === 0}
                   variant="outline"
-                  className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy"
+                  className="border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy disabled:opacity-50"
                 >
                   Previous
                 </Button>
                 <Button
                   onClick={handleNext}
                   disabled={currentAnswer === ""}
-                  className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold"
+                  className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold disabled:opacity-50"
                 >
                   {currentQuestion === questions.length - 1 ? 'View Results' : 'Next'}
                 </Button>

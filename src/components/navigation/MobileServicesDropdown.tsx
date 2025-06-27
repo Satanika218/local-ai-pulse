@@ -12,6 +12,7 @@ import {
 const serviceItems = [
   { name: "Free SEO Audit", path: "/seo-audit" },
   { name: "Free Analytics Audit", path: "/analytics-audit" },
+  { name: "Digital Skills Audit", path: "/digital-skills-audit" },
   { name: "Process Automation", path: "/services/process-automation" },
   { name: "Customer Service Agents", path: "/services/customer-service" },
   { name: "Local SEO AI", path: "/services/local-seo" },
