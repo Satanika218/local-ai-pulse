@@ -1,4 +1,3 @@
-
 import { ConversationTree } from './types';
 
 export const conversationTree: ConversationTree = {
@@ -11,7 +10,7 @@ export const conversationTree: ConversationTree = {
     options: [
       { text: "Solve a specific challenge", next: 'first_level_diagnostic' },
       { text: "Explore what's possible", next: 'first_level_diagnostic' },
-      { text: "Other - speak with specialist", next: 'redirect_consultation' },
+      { text: "Other - Discuss problem now", next: 'redirect_consultation' },
     ],
   },
   redirect_consultation: {
@@ -35,7 +34,7 @@ export const conversationTree: ConversationTree = {
       { text: "Getting the word out and finding new customers", next: 'marketing_q' },
       { text: "Paperwork, invoices and financial tasks", next: 'finance_q' },
       { text: "Keeping in touch with customers", next: 'customer_relations_q' },
-      { text: "Other - speak with specialist", next: 'redirect_consultation' },
+      { text: "Other - Discuss problem now", next: 'redirect_consultation' },
       { text: "Go back", next: 'start' },
     ],
   },
@@ -46,7 +45,7 @@ export const conversationTree: ConversationTree = {
     options: [
       { text: "Not enough people are contacting/buying through the site", next: 'website_leads_q' },
       { text: "Making updates to the site is too time-consuming", next: 'website_updates_q' },
-      { text: "Other - speak with specialist", next: 'redirect_consultation' },
+      { text: "Other - Discuss problem now", next: 'redirect_consultation' },
       { text: "Go back", next: 'first_level_diagnostic' },
     ],
   },
@@ -57,7 +56,7 @@ export const conversationTree: ConversationTree = {
         { text: "Yes, we seem to rank well", next: 'website_leads_solutions' },
         { text: "No, we're hard to find online", next: 'website_leads_solutions' },
         { text: "I'm not sure", next: 'website_leads_solutions' },
-        { text: "Other - speak with specialist", next: 'redirect_consultation' },
+        { text: "Other - Discuss problem now", next: 'redirect_consultation' },
         { text: "Go back", next: 'website_presence_q' },
     ],
   },
@@ -72,7 +71,7 @@ export const conversationTree: ConversationTree = {
     options: [
         { text: "Chat with a specialist", next: 'closing' },
         { text: "Explore other challenges", next: 'first_level_diagnostic' },
-        { text: "Other - speak with specialist", next: 'redirect_consultation' },
+        { text: "Other - Discuss problem now", next: 'redirect_consultation' },
         { text: "Go back", next: 'website_leads_q' },
     ]
   },
@@ -83,7 +82,7 @@ export const conversationTree: ConversationTree = {
           { text: "Updating text and images", next: 'website_updates_solutions' },
           { text: "Adding new pages or sections", next: 'website_updates_solutions' },
           { text: "Creating blog posts or news", next: 'website_updates_solutions' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'website_presence_q' },
       ],
   },
@@ -97,7 +96,7 @@ export const conversationTree: ConversationTree = {
       options: [
           { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'website_updates_q' },
       ]
   },
@@ -108,7 +107,7 @@ export const conversationTree: ConversationTree = {
     options: [
       { text: "Creating regular content to share with customers", next: 'marketing_content_q' },
       { text: "Figuring out which marketing brings in customers", next: 'marketing_roi_q' },
-      { text: "Other - speak with specialist", next: 'redirect_consultation' },
+      { text: "Other - Discuss problem now", next: 'redirect_consultation' },
       { text: "Go back", next: 'first_level_diagnostic' },
     ],
   },
@@ -119,7 +118,7 @@ export const conversationTree: ConversationTree = {
           { text: "Social media posts", next: 'marketing_solutions' },
           { text: "Email newsletters", next: 'marketing_solutions' },
           { text: "Blog articles", next: 'marketing_solutions' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'marketing_q' },
       ],
   },
@@ -129,7 +128,7 @@ export const conversationTree: ConversationTree = {
       options: [
           { text: "Yes, but the data is confusing", next: 'marketing_solutions' },
           { text: "No, we're not tracking performance", next: 'marketing_solutions' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'marketing_q' },
       ],
   },
@@ -143,7 +142,7 @@ export const conversationTree: ConversationTree = {
       options: [
           { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'marketing_content_q' },
       ]
   },
@@ -154,7 +153,7 @@ export const conversationTree: ConversationTree = {
     options: [
         { text: "Processing bills, receipts and invoices takes too long", next: 'finance_invoices_q' },
         { text: "Chasing late payments from customers is a hassle", next: 'finance_chasing_q' },
-        { text: "Other - speak with specialist", next: 'redirect_consultation' },
+        { text: "Other - Discuss problem now", next: 'redirect_consultation' },
         { text: "Go back", next: 'first_level_diagnostic' },
     ],
   },
@@ -165,7 +164,7 @@ export const conversationTree: ConversationTree = {
           { text: "Less than 50", next: 'finance_solutions' },
           { text: "Between 50 and 200", next: 'finance_solutions' },
           { text: "More than 200", next: 'finance_solutions' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'finance_q' },
       ],
   },
@@ -175,7 +174,7 @@ export const conversationTree: ConversationTree = {
      options: [
           { text: "Fully automated chasing", next: 'finance_solutions' },
           { text: "Just send me reminders", next: 'finance_solutions' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'finance_q' },
       ],
   },
@@ -189,7 +188,7 @@ export const conversationTree: ConversationTree = {
       options: [
           { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'finance_invoices_q' },
       ]
   },
@@ -200,7 +199,7 @@ export const conversationTree: ConversationTree = {
     options: [
         { text: "Responding to customer questions quickly enough", next: 'customer_response_q' },
         { text: "Keeping customer information organised and up-to-date", next: 'customer_data_q' },
-        { text: "Other - speak with specialist", next: 'redirect_consultation' },
+        { text: "Other - Discuss problem now", next: 'redirect_consultation' },
         { text: "Go back", next: 'first_level_diagnostic' },
     ],
   },
@@ -211,7 +210,7 @@ export const conversationTree: ConversationTree = {
           { text: "Yes, all the time!", next: 'customer_relations_solutions' },
           { text: "Sometimes, but not often", next: 'customer_relations_solutions' },
           { text: "No, most questions are unique", next: 'customer_relations_solutions' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'customer_relations_q' },
       ]
   },
@@ -222,7 +221,7 @@ export const conversationTree: ConversationTree = {
           { text: "In spreadsheets or documents", next: 'customer_relations_solutions' },
           { text: "In my email contacts", next: 'customer_relations_solutions' },
           { text: "We don't have a central system", next: 'customer_relations_solutions' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'customer_relations_q' },
       ]
   },
@@ -236,7 +235,7 @@ export const conversationTree: ConversationTree = {
        options: [
           { text: "Chat with a specialist", next: 'closing' },
           { text: "Explore other challenges", next: 'first_level_diagnostic' },
-          { text: "Other - speak with specialist", next: 'redirect_consultation' },
+          { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'customer_response_q' },
       ]
   },
@@ -246,7 +245,7 @@ export const conversationTree: ConversationTree = {
     text: "Perfect! I'd love to connect you with one of our specialists who can discuss these solutions in detail and create a customised plan for your business. To book your free consultation, simply close this chat and click the 'Get Started' button at the top of the page, or scroll down to the booking section on our consultation page.",
     options: [
       { text: "Book consultation now", next: 'end_chat_specialist' },
-      { text: "Other - speak with specialist", next: 'redirect_consultation' },
+      { text: "Other - Discuss problem now", next: 'redirect_consultation' },
     ],
     isEnd: false,
   },

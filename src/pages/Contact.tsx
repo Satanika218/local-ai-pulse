@@ -1,9 +1,10 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
@@ -106,19 +107,15 @@ const Contact = () => {
           <CardContent className="space-y-4">
             <div className="flex items-center space-x-3 text-brand-silver">
               <MapPin className="h-5 w-5 text-brand-lime" />
-              <span>123 Main Street, Anytown, USA</span>
+              <span>Newtown, Powys</span>
             </div>
             <div className="flex items-center space-x-3 text-brand-silver">
               <Phone className="h-5 w-5 text-brand-lime" />
-              <span>(123) 456-7890</span>
+              <span>07218 170 298</span>
             </div>
             <div className="flex items-center space-x-3 text-brand-silver">
               <Mail className="h-5 w-5 text-brand-lime" />
-              <span>hello@example.com</span>
-            </div>
-            <div className="flex items-center space-x-3 text-brand-silver">
-              <Clock className="h-5 w-5 text-brand-lime" />
-              <span>Mon - Fri: 9am - 5pm</span>
+              <span>hello@11thtemplesolutions.com</span>
             </div>
           </CardContent>
         </Card>

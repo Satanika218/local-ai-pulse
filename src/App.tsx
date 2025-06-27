@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,6 +35,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const DesignMarketing = lazy(() => import("./pages/DesignMarketing"));
+const DigitalSkillsAudit = lazy(() => import("./pages/DigitalSkillsAudit"));
 
 const queryClient = new QueryClient();
 
@@ -69,6 +71,7 @@ const App = () => (
               <Route path="/services/design-marketing" element={<DesignMarketing />} />
               <Route path="/analytics-audit" element={<AnalyticsAudit />} />
               <Route path="/seo-audit" element={<SEOAudit />} />
+              <Route path="/digital-skills-audit" element={<DigitalSkillsAudit />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/consultation" element={<Consultation />} />
