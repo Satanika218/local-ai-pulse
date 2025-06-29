@@ -160,8 +160,38 @@ const About = () => {
         </div>
       </section>
 
-      {/* UK Focus Section */}
+      {/* Trust Elements Section */}
       <section className="py-20 bg-brand-navy-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Technology That Respects <span className="text-brand-lime">Traditional Business Values</span>
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-xl p-6 text-center">
+              <Heart className="h-8 w-8 text-brand-lime mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Part of the Rural Business Community</h3>
+            </div>
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-xl p-6 text-center">
+              <Users className="h-8 w-8 text-brand-lime mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Pillars of the Community</h3>
+            </div>
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-xl p-6 text-center">
+              <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Supporting Rural Enterprises</h3>
+            </div>
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-xl p-6 text-center">
+              <Zap className="h-8 w-8 text-brand-lime mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-white mb-2">Respecting Traditional Values</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* UK Focus Section */}
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -173,7 +203,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-brand-navy border border-brand-silver/20 rounded-2xl p-8">
+          <div className="bg-brand-navy-light border border-brand-silver/20 rounded-2xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-4">UK Compliance & Standards</h3>
@@ -222,36 +252,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Trust Elements Section */}
-      <section className="py-20 bg-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Technology That Respects <span className="text-brand-lime">Traditional Business Values</span>
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-brand-navy-light border border-brand-silver/20 rounded-xl p-6 text-center">
-              <Heart className="h-8 w-8 text-brand-lime mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-white mb-2">Part of the Rural Business Community</h3>
-            </div>
-            <div className="bg-brand-navy-light border border-brand-silver/20 rounded-xl p-6 text-center">
-              <Users className="h-8 w-8 text-brand-lime mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-white mb-2">Pillars of the Community</h3>
-            </div>
-            <div className="bg-brand-navy-light border border-brand-silver/20 rounded-xl p-6 text-center">
-              <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-white mb-2">Supporting Rural Enterprises</h3>
-            </div>
-            <div className="bg-brand-navy-light border border-brand-silver/20 rounded-xl p-6 text-center">
-              <Zap className="h-8 w-8 text-brand-lime mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-white mb-2">Respecting Traditional Values</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -265,7 +265,7 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Learn How We Can Give You Time With a Free Consultation
+                Let's Talk - Free - How Can We Help?
               </Button>
             </Link>
             <Link to="/contact">

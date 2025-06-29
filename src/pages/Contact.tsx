@@ -17,12 +17,9 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Let's Have a <span className="text-brand-lime">Friendly Chat</span> About Your Business
+              Let's Talk, <span className="text-brand-lime">How Can We Help Your Business?</span>
             </h1>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-4">
-              We understand business schedules - we're flexible around farming season, market days, and the rhythms of community-focused enterprises.
-            </p>
-            <p className="text-lg text-brand-silver max-w-3xl mx-auto">
+            <p className="text-xl text-brand-silver max-w-3xl mx-auto">
               No corporate pressure, no overwhelming tech talk - just a genuine conversation about how technology might help your business thrive.
             </p>
           </div>
@@ -64,21 +61,6 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-
-              {/* UK Focus */}
-              <div className="mt-12 p-6 bg-brand-navy-light border border-brand-silver/20 rounded-2xl">
-                <h3 className="text-xl font-bold text-white mb-4">UK-Based Support</h3>
-                <p className="text-brand-silver mb-4">
-                  As a UK-based company, we understand the unique challenges facing British businesses. 
-                  We provide regional support with full knowledge of UK regulations, market conditions, and community dynamics.
-                </p>
-                <ul className="space-y-2 text-brand-silver">
-                  <li>• GDPR compliant solutions</li>
-                  <li>• UK data protection standards</li>
-                  <li>• Regional market understanding</li>
-                  <li>• Rural business expertise</li>
-                </ul>
-              </div>
             </div>
 
             {/* Contact Options */}
@@ -99,7 +81,7 @@ const Contact = () => {
                   <CardContent>
                     <Link to="/consultation">
                       <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                        Learn How We Can Give You Time With a Free Consultation
+                        Let's Talk - Free - How Can We Help?
                       </Button>
                     </Link>
                   </CardContent>

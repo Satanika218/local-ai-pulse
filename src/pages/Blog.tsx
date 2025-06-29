@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { CalendarDays, User, ArrowRight } from "lucide-react";
 import Navigation from "@/components/navigation/Navigation";
@@ -9,7 +10,7 @@ const posts = [
     title: "The Future of AI in Local Business",
     author: "Alex Thompson",
     date: "2024-01-20",
-    contentSnippet: "Explore how AI is revolutionizing local businesses, from marketing to customer service.",
+    contentSnippet: "Explore how AI is revolutionising local businesses, from marketing to customer service.",
     slug: "future-of-ai-in-local-business",
   },
   {
@@ -23,7 +24,7 @@ const posts = [
     title: "How AI Can Improve Customer Engagement",
     author: "Emily Davis",
     date: "2024-03-10",
-    contentSnippet: "Learn how artificial intelligence can enhance customer engagement and satisfaction through personalized experiences.",
+    contentSnippet: "Learn how artificial intelligence can enhance customer engagement and satisfaction through personalised experiences.",
     slug: "how-ai-can-improve-customer-engagement",
   },
   {

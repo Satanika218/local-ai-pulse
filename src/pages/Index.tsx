@@ -1,5 +1,5 @@
 
-import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star, Bot, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star, Bot, Zap, PoundSterling } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/navigation/Navigation";
@@ -206,13 +206,16 @@ const Index = () => {
             </div>
             <div className="relative">
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
-                <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
-                <p className="text-brand-silver mb-6">
-                  Join hundreds of UK independent businesses already using our AI automation solutions.
+                <div className="flex items-center justify-center mb-4">
+                  <PoundSterling className="h-16 w-16 text-brand-lime" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4 text-center">Reduce Costs by 60%</h3>
+                <p className="text-brand-silver mb-6 text-center">
+                  Lower operational expenses through intelligent automation
                 </p>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                    Learn How We Can Give You Time With a Free Consultation
+                    Let's Talk - Free - How Can We Help?
                   </Button>
                 </Link>
               </div>
@@ -258,23 +261,27 @@ const Index = () => {
       <section className="py-16 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-brand-navy-light border border-brand-silver/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">UK Compliant & Secure</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">UK-Based Support</h3>
             <p className="text-brand-silver mb-6 max-w-3xl mx-auto">
-              All our AI solutions are designed with UK data protection regulations in mind. We understand the importance of 
-              GDPR compliance and maintaining the trust your community places in your business.
+              As a UK-based company, we understand the unique challenges facing British businesses. 
+              We provide regional support with full knowledge of UK regulations, market conditions, and community dynamics.
             </p>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
                 <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
-                <p className="text-brand-silver">GDPR Compliant</p>
+                <p className="text-brand-silver">GDPR Compliant Solutions</p>
               </div>
               <div className="text-center">
                 <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
-                <p className="text-brand-silver">UK Data Storage</p>
+                <p className="text-brand-silver">UK Data Protection Standards</p>
               </div>
               <div className="text-center">
                 <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
-                <p className="text-brand-silver">Regional Support</p>
+                <p className="text-brand-silver">Regional Market Understanding</p>
+              </div>
+              <div className="text-center">
+                <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
+                <p className="text-brand-silver">Rural Business Expertise</p>
               </div>
             </div>
           </div>
@@ -294,7 +301,7 @@ const Index = () => {
           <div className="flex justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Let's Chat About Your Business
+                Let's Talk - Free - How Can We Help?
               </Button>
             </Link>
           </div>
