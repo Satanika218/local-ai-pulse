@@ -2,8 +2,9 @@
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
-import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Lightbulb, Award, MapPin } from "lucide-react";
+import { CheckCircle, Heart, Users, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -11,163 +12,206 @@ const About = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="bg-brand-navy-light py-16 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About 11th Temple Solutions
-          </h1>
-          <p className="text-xl text-brand-silver leading-relaxed">
-            Empowering local businesses from the heart of Powys through innovative AI solutions and digital transformation
-          </p>
+      <section className="pt-24 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              About <span className="text-brand-lime">11th Temple Solutions</span>
+            </h1>
+            <p className="text-xl text-brand-silver max-w-3xl mx-auto">
+              We're a UK-based AI automation company with deep roots in rural and local business communities. 
+              We understand rural business challenges through firsthand regional experience.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Mission Section */}
-      <div className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
-            <p className="text-lg text-brand-silver max-w-3xl mx-auto">
-              To democratize AI technology for small and medium enterprises in Wales, 
-              helping them compete in the digital age through accessible, practical solutions.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            <Card className="bg-brand-navy-light border-brand-silver/20">
-              <CardContent className="p-8 text-center">
-                <Target className="h-12 w-12 text-brand-lime mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Focused Solutions</h3>
-                <p className="text-brand-silver">
-                  We deliver targeted AI solutions that address real business challenges.
+      <section className="py-20 bg-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Our <span className="text-brand-lime">Mission</span>
+              </h2>
+              <p className="text-xl text-brand-silver mb-6">
+                To empower UK local businesses with cutting-edge AI automation whilst preserving the personal touch 
+                and community connection that makes them special.
+              </p>
+              <p className="text-brand-silver mb-8">
+                We believe that rural and local businesses are the backbone of British communities. Our technology 
+                solutions are designed to help them thrive in the digital age without losing their authentic, 
+                personal approach to customer service.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-brand-lime flex-shrink-0" />
+                  <span className="text-brand-silver">UK-focused solutions with local market understanding</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-brand-lime flex-shrink-0" />
+                  <span className="text-brand-silver">Full GDPR compliance and UK data protection</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-brand-lime flex-shrink-0" />
+                  <span className="text-brand-silver">Rural business experience and community understanding</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-brand-lime flex-shrink-0" />
+                  <span className="text-brand-silver">GMT/BST support hours and local availability</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
+                <h3 className="text-2xl font-bold text-white mb-4">Why We're Different</h3>
+                <p className="text-brand-silver mb-6">
+                  Unlike large tech companies, we understand the unique challenges facing UK rural and local businesses. 
+                  We've lived in these communities, worked with these businesses, and understand what really matters.
                 </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-brand-navy-light border-brand-silver/20">
-              <CardContent className="p-8 text-center">
-                <Lightbulb className="h-12 w-12 text-brand-lime mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Innovation</h3>
-                <p className="text-brand-silver">
-                  Cutting-edge technology made accessible for traditional industries.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-brand-navy-light border-brand-silver/20">
-              <CardContent className="p-8 text-center">
-                <Award className="h-12 w-12 text-brand-lime mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Excellence</h3>
-                <p className="text-brand-silver">
-                  Committed to delivering exceptional results and ongoing support.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-brand-navy-light border-brand-silver/20">
-              <CardContent className="p-8 text-center">
-                <MapPin className="h-12 w-12 text-brand-lime mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Local Knowledge</h3>
-                <p className="text-brand-silver">
-                  We understand rural business challenges through firsthand regional experience.
-                </p>
-              </CardContent>
-            </Card>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <Heart className="h-8 w-8 text-brand-lime mx-auto mb-2" />
+                    <p className="text-brand-silver text-sm">Community First</p>
+                  </div>
+                  <div className="text-center">
+                    <Users className="h-8 w-8 text-brand-lime mx-auto mb-2" />
+                    <p className="text-brand-silver text-sm">Local Knowledge</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Team Section */}
-      <div className="py-16 px-4 bg-brand-navy-light">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-white mb-4">Who we Are</h2>
-            <p className="text-lg text-brand-silver">
-              11th Temple Solutions is a business driven from the appreciation and variety of the wide range of smaller, local businessess. We've spent years working for local businessess, so we know the nuanced challenges you face. We're not here to sell you on huge corporate solutions, we're focused on your business, how we can improve efficiency in your business, streamline processess and offer solutions specific to your business.
-            </p>
-            <p className="text-lg text-brand-silver mt-4">
-              There is no 'One size that fits all', we work with you to create the best outcomes, so you can spend more time on the things that you want to and less on the things you have to.
-            </p>
-            <p className="text-lg text-brand-silver mt-4">
-              Let's talk about how we can make your business work smarter today.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-8 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/5c3ff16d-ca8e-477f-8c58-0b7a4193cbbc.png" 
-                    alt="Neil Owen"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Neil Owen</h3>
-                <p className="text-brand-lime font-medium mb-3">Co-Founder & Operations Director</p>
-                <p className="text-brand-silver">
-                  Specialising in optimal transformation strategy, advocacy in helping local businesses navigate their journey to modern technological brilliance. Born & Bred in the heart of Powys.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-brand-navy border-brand-silver/20">
-              <CardContent className="p-8 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/963e5718-1f17-4852-ace3-68119a97691d.png" 
-                    alt="Dan Armour"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Dan Armour</h3>
-                <p className="text-brand-lime font-medium mb-3">Co-Founder & Technical Director</p>
-                <p className="text-brand-silver">
-                  Consultative AI implementation and technical strategist, experienced in machine learning and business automation. London born & Shropshire raised.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
+      </section>
 
       {/* Values Section */}
-      <div className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-8">Our Values</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold text-brand-lime mb-3">Accessibility</h3>
+      <section className="py-20 bg-brand-navy-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our <span className="text-brand-lime">Core Values</span>
+            </h2>
+            <p className="text-xl text-brand-silver max-w-2xl mx-auto">
+              These principles guide everything we do and every solution we create for UK businesses.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-2xl p-8 text-center">
+              <Heart className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-4">Community Connection</h3>
               <p className="text-brand-silver">
-                Making advanced AI technology accessible and understandable for all businesses, 
-                regardless of their technical background.
+                We believe technology should strengthen community bonds, not replace them. Our solutions help 
+                businesses serve their local customers better whilst maintaining personal relationships.
               </p>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold text-brand-lime mb-3">Partnership</h3>
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-2xl p-8 text-center">
+              <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-4">Local Understanding</h3>
               <p className="text-brand-silver">
-                Building long-term partnerships with our clients, supporting their growth 
-                and evolution in the digital landscape.
+                Rural businesses face unique challenges. We understand seasonal variations, limited resources, 
+                and the importance of word-of-mouth reputation in close-knit communities.
               </p>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold text-brand-lime mb-3">Local Focus</h3>
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-2xl p-8 text-center">
+              <Zap className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-4">Practical Innovation</h3>
               <p className="text-brand-silver">
-                Proudly Welsh, we understand the unique challenges and opportunities 
-                facing businesses in our communities.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-brand-lime mb-3">Results-Driven</h3>
-              <p className="text-brand-silver">
-                Every solution we implement is designed to deliver measurable improvements 
-                to your business operations and bottom line.
+                We focus on AI solutions that solve real problems and deliver measurable results. No 
+                unnecessary complexity - just practical technology that works for UK businesses.
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* UK Focus Section */}
+      <section className="py-20 bg-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Proudly <span className="text-brand-lime">UK-Based</span>
+            </h2>
+            <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
+              Our understanding of British business culture, regulatory requirements, and community dynamics 
+              comes from being part of these communities ourselves.
+            </p>
+          </div>
+          
+          <div className="bg-brand-navy-light border border-brand-silver/20 rounded-2xl p-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-4">UK Compliance & Standards</h3>
+                <ul className="space-y-3 text-brand-silver">
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                    <span>Full GDPR compliance and UK data protection adherence</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                    <span>Understanding of UK business regulations and requirements</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                    <span>GMT/BST operating hours and local support availability</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                    <span>UK-based data storage and processing where required</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-4">Regional Expertise</h3>
+                <ul className="space-y-3 text-brand-silver">
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                    <span>Deep understanding of Welsh rural business challenges</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                    <span>Experience with Scottish Highland and Border communities</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                    <span>Knowledge of English countryside and market town dynamics</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-brand-lime flex-shrink-0" />
+                    <span>Understanding of seasonal business variations across the UK</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Work Together?
+          </h2>
+          <p className="text-xl text-brand-silver mb-8">
+            Let's discuss how our UK-focused AI solutions can help your local business thrive whilst 
+            maintaining the community connection that makes you special.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/consultation">
+              <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                Schedule Free Consultation
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy font-semibold">
+                Get In Touch
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <Footer />
       <ChatbotLauncher />

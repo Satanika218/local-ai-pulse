@@ -1,125 +1,189 @@
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Phone, Mail } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
+import { Mail, Phone, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Basic form validation
-    if (!name || !email || !message) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Please fill in all fields.",
-      });
-      return;
-    }
-
-    // Simulate form submission (replace with actual submission logic)
-    console.log("Form submitted", { name, email, message });
-    toast({
-      title: "Success",
-      description: "Your message has been sent!",
-    });
-
-    // Clear form fields
-    setName("");
-    setEmail("");
-    setMessage("");
-  };
-
   return (
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
-
+      
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Contact <span className="text-brand-lime">Us</span>
-        </h1>
-        <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
-          We're here to help! Reach out with any questions or inquiries.
-        </p>
-      </div>
+      <section className="pt-24 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Get In <span className="text-brand-lime">Touch</span>
+            </h1>
+            <p className="text-xl text-brand-silver max-w-3xl mx-auto">
+              Ready to transform your UK business with AI automation? We're here to help. 
+              Contact us for a free consultation and discover how we can support your growth.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* Contact Form & Info */}
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 pb-16">
-        {/* Contact Form */}
-        <Card className="bg-brand-navy-light border border-brand-silver/20">
-          <CardHeader>
-            <CardTitle className="text-xl font-bold text-white">Send us a message</CardTitle>
-            <CardDescription className="text-brand-silver">We'll get back to you as soon as possible.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Input
-                  type="text"
-                  placeholder="Your Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="bg-brand-navy border-brand-silver/50 text-white placeholder:text-brand-silver"
-                />
-              </div>
-              <div>
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-brand-navy border-brand-silver/50 text-white placeholder:text-brand-silver"
-                />
-              </div>
-              <div>
-                <Textarea
-                  placeholder="Your Message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="bg-brand-navy border-brand-silver/50 text-white placeholder:text-brand-silver min-h-[100px]"
-                />
-              </div>
-              <Button className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Send Message
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+      {/* Contact Information */}
+      <section className="py-20 bg-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            
+            {/* Contact Details */}
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-8">Contact Information</h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <MapPin className="h-6 w-6 text-brand-lime mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Address</h3>
+                    <p className="text-brand-silver">Newtown, Powys, Wales</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <Phone className="h-6 w-6 text-brand-lime mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Phone</h3>
+                    <p className="text-brand-silver">07218 170 298</p>
+                    <p className="text-brand-silver text-sm">Available GMT/BST business hours</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <Mail className="h-6 w-6 text-brand-lime mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Email</h3>
+                    <p className="text-brand-silver">hello@11thtemplesolutions.com</p>
+                    <p className="text-brand-silver text-sm">We respond within 24 hours</p>
+                  </div>
+                </div>
 
-        {/* Contact Info */}
-        <Card className="bg-brand-navy-light border border-brand-silver/20">
-          <CardHeader>
-            <CardTitle className="text-xl font-bold text-white">Contact Information</CardTitle>
-            <CardDescription className="text-brand-silver">Get in touch with us.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center space-x-3 text-brand-silver">
-              <MapPin className="h-5 w-5 text-brand-lime" />
-              <span>Newtown, Powys</span>
+                <div className="flex items-start space-x-4">
+                  <Clock className="h-6 w-6 text-brand-lime mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Support Hours</h3>
+                    <p className="text-brand-silver">Monday - Friday: 9:00 AM - 6:00 PM GMT/BST</p>
+                    <p className="text-brand-silver">Weekend consultations available by appointment</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* UK Focus */}
+              <div className="mt-12 p-6 bg-brand-navy-light border border-brand-silver/20 rounded-2xl">
+                <h3 className="text-xl font-bold text-white mb-4">UK-Based Support</h3>
+                <p className="text-brand-silver mb-4">
+                  As a UK-based company, we understand the unique challenges facing British businesses. 
+                  We provide local support with full knowledge of UK regulations, market conditions, and community dynamics.
+                </p>
+                <ul className="space-y-2 text-brand-silver">
+                  <li>• GDPR compliant solutions</li>
+                  <li>• UK data protection standards</li>
+                  <li>• Local market understanding</li>
+                  <li>• Rural business expertise</li>
+                </ul>
+              </div>
             </div>
-            <div className="flex items-center space-x-3 text-brand-silver">
-              <Phone className="h-5 w-5 text-brand-lime" />
-              <span>07218 170 298</span>
+
+            {/* Contact Options */}
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-8">How Can We Help?</h2>
+              
+              <div className="space-y-6">
+                <Card className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <MessageSquare className="h-6 w-6 text-brand-lime mr-3" />
+                      Free Consultation
+                    </CardTitle>
+                    <CardDescription className="text-brand-silver">
+                      Book a free 30-minute consultation to discuss your business needs and how AI automation can help.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Link to="/consultation">
+                      <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
+                        Schedule Consultation
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Phone className="h-6 w-6 text-brand-lime mr-3" />
+                      Call Us Direct
+                    </CardTitle>
+                    <CardDescription className="text-brand-silver">
+                      Speak directly with our team during UK business hours for immediate assistance.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Button 
+                      variant="outline" 
+                      className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy font-semibold w-full"
+                      onClick={() => window.open('tel:07218170298')}
+                    >
+                      Call 07218 170 298
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Mail className="h-6 w-6 text-brand-lime mr-3" />
+                      Email Us
+                    </CardTitle>
+                    <CardDescription className="text-brand-silver">
+                      Send us a detailed message about your requirements and we'll respond within 24 hours.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Button 
+                      variant="outline" 
+                      className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy font-semibold w-full"
+                      onClick={() => window.open('mailto:hello@11thtemplesolutions.com')}
+                    >
+                      Send Email
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Quick Access to Audits */}
+              <div className="mt-8 p-6 bg-brand-navy-light border border-brand-silver/20 rounded-2xl">
+                <h3 className="text-xl font-bold text-white mb-4">Free Business Audits</h3>
+                <p className="text-brand-silver mb-4">
+                  Get immediate insights into your business with our free audit tools:
+                </p>
+                <div className="space-y-3">
+                  <Link to="/seo-audit">
+                    <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy font-semibold w-full">
+                      Free SEO Audit
+                    </Button>
+                  </Link>
+                  <Link to="/analytics-audit">
+                    <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy font-semibold w-full">
+                      Free Analytics Audit
+                    </Button>
+                  </Link>
+                  <Link to="/digital-skills-audit">
+                    <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy font-semibold w-full">
+                      Digital Skills Assessment
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center space-x-3 text-brand-silver">
-              <Mail className="h-5 w-5 text-brand-lime" />
-              <span>hello@11thtemplesolutions.com</span>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
       <ChatbotLauncher />

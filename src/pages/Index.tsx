@@ -1,3 +1,4 @@
+
 import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star, Bot, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,44 +12,50 @@ const Index = () => {
     {
       icon: <Bot className="h-8 w-8 text-brand-lime" />,
       title: "Process Automation",
-      description: "Streamline repetitive tasks and workflows with intelligent automation solutions.",
+      description: "Streamline repetitive tasks and workflows with intelligent automation solutions tailored for UK businesses.",
       link: "/services/process-automation"
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
       title: "Local SEO AI",
-      description: "Dominate local search results with AI that understands your neighbourhood's unique characteristics."
+      description: "Dominate local search results with AI that understands your community's unique characteristics and UK market dynamics."
     },
     {
       icon: <Users className="h-8 w-8 text-brand-lime" />,
       title: "Customer Insights",
-      description: "Understand your local customers better with AI-driven analytics and behavioural patterns."
+      description: "Understand your local customers better with AI-driven analytics and behavioural patterns specific to UK markets."
     },
     {
       icon: <Zap className="h-8 w-8 text-brand-lime" />,
       title: "Smart Responses",
-      description: "AI-powered customer service that speaks your local language and culture."
+      description: "AI-powered customer service that speaks your local language, understands UK culture, and operates within GMT/BST hours."
     }
   ];
 
   const benefits = [
-    "30% increase in local customer engagement",
-    "50% reduction in operational costs", 
-    "24/7 intelligent customer support",
-    "Real-time local market insights"
+    "30% increase in local customer engagement across UK markets",
+    "50% reduction in operational costs for SMEs", 
+    "24/7 intelligent customer support with UK data protection compliance",
+    "Real-time local market insights tailored for British businesses"
   ];
 
   const testimonials = [
     {
-      name: "Sarah Martinez",
-      business: "Sarah's Bistro",
-      content: "11th Temple's local AI solutions increased our online orders by 40% in just 3 months!",
+      name: "Sarah Williams",
+      business: "Williams & Co. Solicitors, Cardiff",
+      content: "11th Temple's automation solutions helped us serve 60% more clients whilst maintaining the personal touch our Welsh community expects.",
       rating: 5
     },
     {
-      name: "Mike Thompson", 
-      business: "Thompson Auto Repair",
-      content: "Their automation helped us serve 60% more customers whilst maintaining personal service.",
+      name: "James McKenzie", 
+      business: "Highland Farm Shop, Scottish Borders",
+      content: "Their local SEO AI increased our online orders by 45% and helped us reach customers we never thought possible in rural Scotland.",
+      rating: 5
+    },
+    {
+      name: "Emma Thompson",
+      business: "Cotswold Craft Brewery",
+      content: "The customer insights tool revealed buying patterns we'd never noticed. Sales are up 35% and we understand our community better than ever.",
       rating: 5
     }
   ];
@@ -75,8 +82,8 @@ const Index = () => {
               <br />with AI Automation
             </h1>
             <p className="text-xl text-brand-silver mb-8 max-w-3xl mx-auto">
-              We deliver cutting-edge AI automation solutions tailored specifically for local businesses. 
-              Our deep understanding of community dynamics helps your business thrive in the digital age.
+              We deliver cutting-edge AI automation solutions tailored specifically for UK local businesses. 
+              Our deep understanding of British community dynamics and rural business challenges helps your business thrive in the digital age.
             </p>
             <div className="flex justify-center">
               <Link to="/services-overview">
@@ -98,8 +105,8 @@ const Index = () => {
               Local Knowledge, <span className="text-brand-lime">Global Technology</span>
             </h2>
             <p className="text-xl text-brand-silver max-w-2xl mx-auto">
-              Our AI solutions are designed specifically for local businesses who want to leverage automation 
-              whilst maintaining their community connection.
+              Our AI solutions are designed specifically for UK local businesses who want to leverage automation 
+              whilst maintaining their community connection and complying with British data protection standards.
             </p>
           </div>
           
@@ -127,11 +134,11 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Proven Results for <span className="text-brand-lime">Local Businesses</span>
+                Proven Results for <span className="text-brand-lime">UK Local Businesses</span>
               </h2>
               <p className="text-xl text-brand-silver mb-8">
-                Our AI automation solutions are specifically designed to understand and leverage local market dynamics, 
-                giving your business a competitive edge in your community.
+                Our AI automation solutions are specifically designed to understand and leverage local UK market dynamics, 
+                giving your business a competitive edge in your community whilst ensuring full compliance with UK data protection regulations.
               </p>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -146,7 +153,7 @@ const Index = () => {
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
                 <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
                 <p className="text-brand-silver mb-6">
-                  Join hundreds of local businesses already using our AI automation solutions.
+                  Join hundreds of UK local businesses already using our AI automation solutions.
                 </p>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
@@ -164,14 +171,14 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What Our <span className="text-brand-lime">Local Partners</span> Say
+              What Our <span className="text-brand-lime">UK Partners</span> Say
             </h2>
             <p className="text-xl text-brand-silver">
-              Results from local businesses in our community.
+              Results from local businesses across Wales, Scotland, and England.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-brand-navy border-brand-silver/20">
                 <CardContent className="p-6">
@@ -183,11 +190,38 @@ const Index = () => {
                   <p className="text-brand-silver mb-4 italic">"{testimonial.content}"</p>
                   <div className="border-t border-brand-silver/20 pt-4">
                     <p className="text-white font-semibold">{testimonial.name}</p>
-                    <p className="text-brand-lime">{testimonial.business}</p>
+                    <p className="text-brand-lime text-sm">{testimonial.business}</p>
                   </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* UK Compliance Section */}
+      <section className="py-16 bg-brand-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-brand-navy-light border border-brand-silver/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-4">UK Compliant & Secure</h3>
+            <p className="text-brand-silver mb-6 max-w-3xl mx-auto">
+              All our AI solutions are designed with UK data protection regulations in mind. We understand the importance of 
+              GDPR compliance, local data storage requirements, and maintaining the trust your community places in your business.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
+                <p className="text-brand-silver">GDPR Compliant</p>
+              </div>
+              <div className="text-center">
+                <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
+                <p className="text-brand-silver">UK Data Storage</p>
+              </div>
+              <div className="text-center">
+                <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
+                <p className="text-brand-silver">Local Support</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -199,7 +233,7 @@ const Index = () => {
             Ready to Automate Your Business?
           </h2>
           <p className="text-xl text-brand-silver mb-8">
-            Get a free consultation and discover how AI automation can transform business.
+            Get a free consultation and discover how AI automation can transform your UK business whilst maintaining your local community connection.
           </p>
           <div className="flex justify-center">
             <Link to="/consultation">
