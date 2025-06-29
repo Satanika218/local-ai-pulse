@@ -84,9 +84,6 @@ const Index = () => {
             <p className="text-xl text-brand-silver mb-4 max-w-3xl mx-auto">
               Serving the heart of Wales and the border counties - where community matters and every business counts
             </p>
-            <p className="text-lg text-brand-silver mb-4 max-w-3xl mx-auto">
-              Trusted by businesses across Powys, Shropshire, Herefordshire and rural Wales
-            </p>
             <p className="text-base text-brand-silver mb-8 max-w-3xl mx-auto">
               We understand rural business challenges: geographic isolation, limited tech support, and knowledge gaps in an increasingly tech-driven world - we work with you to craft the right solution.
             </p>
