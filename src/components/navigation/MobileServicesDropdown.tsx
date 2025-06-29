@@ -45,7 +45,7 @@ const MobileServicesDropdown = ({
       <DropdownMenuTrigger asChild>
         <button className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 outline-none text-brand-silver hover:text-brand-lime">
           <span>View All Services</span>
-          <ChevronDown className="h-4 w-4 ml-2" />
+          <ChevronDown className="h-4 w-4 ml-2 text-brand-lime" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-64 ml-2 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50">

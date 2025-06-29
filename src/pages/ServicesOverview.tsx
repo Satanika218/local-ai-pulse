@@ -68,13 +68,13 @@ export default function ServicesOverview() {
           Stop Struggling With <span className="text-brand-lime">Business Problems</span>
         </h1>
         <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-          Every local business faces the same challenges. We solve them with AI automation 
+          Every independent business faces the same challenges. We solve them with AI automation 
           so you can focus on what you do best - serving your customers.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/consultation">
             <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Get Free Consultation
+              Learn How We Can Give You Time With a Free Consultation
             </Button>
           </Link>
           <Link to="/solutions">
@@ -92,7 +92,7 @@ export default function ServicesOverview() {
             Common Business Problems We Solve
           </h2>
           <p className="text-xl text-brand-silver max-w-3xl mx-auto">
-            Recognize any of these challenges? We have the solution.
+            Recognise any of these challenges? We have the solution.
           </p>
         </div>
 
@@ -260,7 +260,7 @@ export default function ServicesOverview() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/consultation">
             <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Schedule Free Consultation
+              Learn How We Can Give You Time With a Free Consultation
             </Button>
           </Link>
           <Link to="/seo-audit">

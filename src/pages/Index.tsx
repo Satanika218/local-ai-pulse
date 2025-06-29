@@ -12,50 +12,50 @@ const Index = () => {
     {
       icon: <Bot className="h-8 w-8 text-brand-lime" />,
       title: "Process Automation",
-      description: "Streamline repetitive tasks and workflows with intelligent automation solutions tailored for UK businesses.",
+      description: "Streamline the manual tasks that too many businesses struggle with due to limited skilled staff. We're tailor-made for the hundreds of SMEs and family-run businesses across the border counties and Wales.",
       link: "/services/process-automation"
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
-      title: "Local SEO AI",
-      description: "Dominate local search results with AI that understands your community's unique characteristics and UK market dynamics."
+      title: "Regional SEO AI",
+      description: "Help your business compete with larger urban competitors. Essential for businesses serving both Welsh and English markets in the border counties."
     },
     {
       icon: <Users className="h-8 w-8 text-brand-lime" />,
       title: "Customer Insights",
-      description: "Understand your local customers better with AI-driven analytics and behavioural patterns specific to UK markets."
+      description: "Understand your customer's patterns, seasonal variations, and community dynamics. Crucial for the productivity boost that smaller teams need."
     },
     {
       icon: <Zap className="h-8 w-8 text-brand-lime" />,
       title: "Smart Responses",
-      description: "AI-powered customer service that speaks your local language, understands UK culture, and operates within GMT/BST hours."
+      description: "Handle customer inquiries when you're busy with other work or serving customers face-to-face. Perfect for independent businesses wearing multiple hats."
     }
   ];
 
   const benefits = [
-    "30% increase in local customer engagement across UK markets",
+    "30% increase in community customer engagement across UK markets",
     "50% reduction in operational costs for SMEs", 
     "24/7 intelligent customer support with UK data protection compliance",
-    "Real-time local market insights tailored for British businesses"
+    "Real-time regional market insights tailored for British businesses"
   ];
 
   const testimonials = [
     {
-      name: "Sarah Williams",
-      business: "Williams & Co. Solicitors, Cardiff",
-      content: "11th Temple's automation solutions helped us serve 60% more clients whilst maintaining the personal touch our Welsh community expects.",
+      name: "Anonymous Construction Company",
+      business: "Mid-Wales",
+      content: "Saved us 10 hours per week on admin tasks. Now I can focus on what matters - serving our community.",
       rating: 5
     },
     {
-      name: "James McKenzie", 
-      business: "Highland Farm Shop, Scottish Borders",
-      content: "Their local SEO AI increased our online orders by 45% and helped us reach customers we never thought possible in rural Scotland.",
+      name: "Anonymous Professional Services", 
+      business: "Border Counties",
+      content: "Our customer response times improved dramatically.",
       rating: 5
     },
     {
-      name: "Emma Thompson",
-      business: "Cotswold Craft Brewery",
-      content: "The customer insights tool revealed buying patterns we'd never noticed. Sales are up 35% and we understand our community better than ever.",
+      name: "Anonymous Independent Retailer",
+      business: "Herefordshire",
+      content: "Finally, technology that makes sense for a unique business like ours.",
       rating: 5
     }
   ];
@@ -78,12 +78,17 @@ const Index = () => {
               />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Powering <span className="gradient-text">Local Business</span>
+              Powering <span className="gradient-text">Community-Focused Business</span>
               <br />with AI Automation
             </h1>
-            <p className="text-xl text-brand-silver mb-8 max-w-3xl mx-auto">
-              We deliver cutting-edge AI automation solutions tailored specifically for UK local businesses. 
-              Our deep understanding of British community dynamics and rural business challenges helps your business thrive in the digital age.
+            <p className="text-xl text-brand-silver mb-4 max-w-3xl mx-auto">
+              Serving the heart of Wales and the border counties - where community matters and every business counts
+            </p>
+            <p className="text-lg text-brand-silver mb-4 max-w-3xl mx-auto">
+              Trusted by businesses across Powys, Shropshire, Herefordshire and rural Wales
+            </p>
+            <p className="text-base text-brand-silver mb-8 max-w-3xl mx-auto">
+              We understand rural business challenges: geographic isolation, limited tech support, and knowledge gaps in an increasingly tech-driven world - we work with you to craft the right solution.
             </p>
             <div className="flex justify-center">
               <Link to="/services-overview">
@@ -97,15 +102,68 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Understanding Rural Business Realities Section */}
+      <section className="py-20 bg-brand-navy-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              You're Not Alone in Feeling <span className="text-brand-lime">Uncertain About AI</span>
+            </h2>
+            <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
+              92.6% of Welsh SMEs haven't adopted AI yet - and there are many reasons why. We endeavour to understand the unique nuances of each business:
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-white mb-6">Rural Business Challenges We Understand</h3>
+              <ul className="space-y-4 text-brand-silver">
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <span>Seasonal fluctuations that affect cash flow</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <span>Geographic isolation from tech support or qualified staff</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <span>Wearing multiple hats with limited staff</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <span>Serving both Welsh and English markets</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <span>Balancing tradition with innovation</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-brand-navy border border-brand-silver/20 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-white mb-6">Our Approach</h3>
+              <p className="text-brand-silver mb-6">
+                That's why we focus on incremental, non-intimidating digital adoption that works for community-rooted businesses. No corporate jargon, no overwhelming tech - just practical solutions that fit your world.
+              </p>
+              <div className="bg-brand-lime/10 border border-brand-lime/20 rounded-lg p-4">
+                <p className="text-brand-silver text-sm italic">
+                  Construction businesses (16% of all SMEs) and professional services (14% of SMEs) have seen the biggest benefits from starting small with AI automation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-20 bg-gradient-to-b from-brand-navy to-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Local Knowledge, <span className="text-brand-lime">Global Technology</span>
+              Community Understanding, <span className="text-brand-lime">Global Technology</span>
             </h2>
             <p className="text-xl text-brand-silver max-w-2xl mx-auto">
-              Our AI solutions are designed specifically for UK local businesses who want to leverage automation 
+              Our AI solutions are designed specifically for UK independent businesses who want to leverage automation 
               whilst maintaining their community connection and complying with British data protection standards.
             </p>
           </div>
@@ -134,10 +192,10 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Proven Results for <span className="text-brand-lime">UK Local Businesses</span>
+                Proven Results for <span className="text-brand-lime">UK Independent Businesses</span>
               </h2>
               <p className="text-xl text-brand-silver mb-8">
-                Our AI automation solutions are specifically designed to understand and leverage local UK market dynamics, 
+                Our AI automation solutions are specifically designed to understand and leverage regional UK market dynamics, 
                 giving your business a competitive edge in your community whilst ensuring full compliance with UK data protection regulations.
               </p>
               <div className="space-y-4">
@@ -153,11 +211,11 @@ const Index = () => {
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
                 <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
                 <p className="text-brand-silver mb-6">
-                  Join hundreds of UK local businesses already using our AI automation solutions.
+                  Join hundreds of UK independent businesses already using our AI automation solutions.
                 </p>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                    Get Free Consultation
+                    Learn How We Can Give You Time With a Free Consultation
                   </Button>
                 </Link>
               </div>
@@ -171,10 +229,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What Our <span className="text-brand-lime">UK Partners</span> Say
+              What <span className="text-brand-lime">Rural Businesses</span> Are Saying
             </h2>
             <p className="text-xl text-brand-silver">
-              Results from local businesses across Wales, Scotland, and England.
+              Results from independent businesses across Wales and the border counties.
             </p>
           </div>
           
@@ -206,7 +264,7 @@ const Index = () => {
             <h3 className="text-2xl font-bold text-white mb-4">UK Compliant & Secure</h3>
             <p className="text-brand-silver mb-6 max-w-3xl mx-auto">
               All our AI solutions are designed with UK data protection regulations in mind. We understand the importance of 
-              GDPR compliance, local data storage requirements, and maintaining the trust your community places in your business.
+              GDPR compliance and maintaining the trust your community places in your business.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
@@ -219,7 +277,7 @@ const Index = () => {
               </div>
               <div className="text-center">
                 <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
-                <p className="text-brand-silver">Local Support</p>
+                <p className="text-brand-silver">Regional Support</p>
               </div>
             </div>
           </div>
@@ -233,12 +291,13 @@ const Index = () => {
             Ready to Automate Your Business?
           </h2>
           <p className="text-xl text-brand-silver mb-8">
-            Get a free consultation and discover how AI automation can transform your UK business whilst maintaining your local community connection.
+            Learn how AI automation can transform your UK business whilst maintaining your community connection. 
+            No obligation, a simple conversation between business people who understand the regional landscape, dispensing with tech jargon.
           </p>
           <div className="flex justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Schedule Free Consultation
+                Let's Chat About Your Business
               </Button>
             </Link>
           </div>
