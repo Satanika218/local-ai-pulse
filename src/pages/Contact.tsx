@@ -17,10 +17,10 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Let's Talk, <span className="text-brand-lime">How Can We Help Your Business?</span>
+              Let's Have a Friendly Chat About Your Business
             </h1>
             <p className="text-xl text-brand-silver max-w-3xl mx-auto">
-              No corporate pressure, no overwhelming tech talk - just a genuine conversation about how technology might help your business thrive.
+              No corporate pressure, no overwhelming tech talk - just a genuine conversation about how technology can help your business thrive.
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ const Contact = () => {
                   <CardContent>
                     <Link to="/consultation">
                       <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                        Let's Talk - Free - How Can We Help?
+                        Let's talk - 30mins to See How We Can Help - Free
                       </Button>
                     </Link>
                   </CardContent>

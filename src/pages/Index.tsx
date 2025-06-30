@@ -79,10 +79,10 @@ const Index = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Powering <span className="gradient-text">Community-Focused Business</span>
-              <br />with AI Automation
+              <br />with AI, Tech and Business Sense
             </h1>
             <p className="text-xl text-brand-silver mb-4 max-w-3xl mx-auto">
-              Serving the heart of Wales and the border counties - where community matters and every business counts
+              Serving the heart of Wales and the border counties - Our community matters and every business counts
             </p>
             <p className="text-base text-brand-silver mb-8 max-w-3xl mx-auto">
               We understand rural business challenges: geographic isolation, limited tech support, and knowledge gaps in an increasingly tech-driven world - we work with you to craft the right solution.
@@ -160,8 +160,7 @@ const Index = () => {
               Community Understanding, <span className="text-brand-lime">Global Technology</span>
             </h2>
             <p className="text-xl text-brand-silver max-w-2xl mx-auto">
-              Our AI solutions are designed specifically for UK independent businesses who want to leverage automation 
-              whilst maintaining their community connection and complying with British data protection standards.
+              Our solutions are designed specifically with your business in mind, we want to help you be as efficient and cost-effective as possible
             </p>
           </div>
           
@@ -192,8 +191,7 @@ const Index = () => {
                 Proven Results for <span className="text-brand-lime">UK Independent Businesses</span>
               </h2>
               <p className="text-xl text-brand-silver mb-8">
-                Our AI automation solutions are specifically designed to understand and leverage regional UK market dynamics, 
-                giving your business a competitive edge in your community whilst ensuring full compliance with UK data protection regulations.
+                Our AI and tech solutions are specifically designed to understand and leverage UK markets, giving your business a competitive edge in your community whilst ensuring you're in line with modern practices.
               </p>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -215,7 +213,7 @@ const Index = () => {
                 </p>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                    Let's Talk - Free - How Can We Help?
+                    Let's talk - 30mins to See How We Can Help - Free
                   </Button>
                 </Link>
               </div>
@@ -229,7 +227,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What <span className="text-brand-lime">Rural Businesses</span> Are Saying
+              What <span className="text-brand-lime">Customers</span> Are Saying
             </h2>
             <p className="text-xl text-brand-silver">
               Results from independent businesses across Wales and the border counties.
@@ -261,10 +259,10 @@ const Index = () => {
       <section className="py-16 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-brand-navy-light border border-brand-silver/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">UK-Based Support</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">UK Focused Support</h3>
             <p className="text-brand-silver mb-6 max-w-3xl mx-auto">
-              As a UK-based company, we understand the unique challenges facing British businesses. 
-              We provide regional support with full knowledge of UK regulations, market conditions, and community dynamics.
+              As a UK-based company, we understand the numerous and nuanced challenges facing British firms. 
+              We provide bespoke regional support with full knowledge of UK regulations, market conditions, and community dynamics.
             </p>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
@@ -295,13 +293,13 @@ const Index = () => {
             Ready to Automate Your Business?
           </h2>
           <p className="text-xl text-brand-silver mb-8">
-            Learn how AI automation can transform your UK business whilst maintaining your community connection. 
+            Learn how AI & Tech Automation can transform your UK business whilst maintaining your community connection. 
             No obligation, a simple conversation between business people who understand the regional landscape, dispensing with tech jargon.
           </p>
           <div className="flex justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Let's Talk - Free - How Can We Help?
+                Let's talk - 30mins to See How We Can Help - Free
               </Button>
             </Link>
           </div>

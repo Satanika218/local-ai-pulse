@@ -176,7 +176,7 @@ const Consultation = () => {
               disabled={!gdprConsent}
               className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime/90 font-semibold py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Let's Talk - Free - How Can We Help?
+              Let's talk - 30mins to See How We Can Help - Free
             </Button>
           </div>
         </form>

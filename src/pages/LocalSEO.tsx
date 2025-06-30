@@ -1,3 +1,4 @@
+
 import { TrendingUp, CheckCircle, ArrowRight, Search, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -63,8 +64,7 @@ const LocalSEO = () => {
               Local SEO <span className="text-brand-lime">AI</span>
             </h1>
             <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-              Dominate local search results with AI that understands your neighborhood's 
-              unique characteristics and customer behavior patterns.
+              Top local search results with AI that understands your business' unique characteristics and customer behavior patterns.
             </p>
             <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
               Boost Local Rankings

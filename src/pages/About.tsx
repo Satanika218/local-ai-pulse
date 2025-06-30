@@ -20,7 +20,7 @@ const About = () => {
             </h1>
             <p className="text-xl text-brand-silver max-w-3xl mx-auto">
               We're a UK-based AI automation company with deep roots in rural and community business communities. 
-              We understand rural business challenges through firsthand regional experience.
+              We understand rural business challenges through decades of first hand regional experience.
             </p>
           </div>
         </div>
@@ -172,7 +172,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-brand-navy border border-brand-silver/20 rounded-xl p-6 text-center">
               <Heart className="h-8 w-8 text-brand-lime mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-white mb-2">Part of the Rural Business Community</h3>
+              <h3 className="text-lg font-semibold text-white mb-2">This is our home and community, we want to see it thrive</h3>
             </div>
             <div className="bg-brand-navy border border-brand-silver/20 rounded-xl p-6 text-center">
               <Users className="h-8 w-8 text-brand-lime mx-auto mb-3" />
@@ -265,7 +265,7 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Let's Talk - Free - How Can We Help?
+                Let's talk - 30mins to See How We Can Help - Free
               </Button>
             </Link>
             <Link to="/contact">
