@@ -55,8 +55,8 @@ const MobileServicesDropdown = ({
               to={service.path}
               className={`block px-4 py-2 text-base transition-colors duration-200 rounded-md no-underline ${
                 isActive(service.path)
-                  ? "text-brand-lime underline bg-brand-lime/10"
-                  : "text-brand-silver hover:text-brand-lime hover:bg-brand-lime/10"
+                  ? "text-brand-lime underline bg-green-500/10"
+                  : "text-brand-silver hover:text-brand-lime hover:bg-green-500/10"
               }`}
               onClick={closeMenu}
             >
