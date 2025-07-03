@@ -36,6 +36,9 @@ const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const DesignMarketing = lazy(() => import("./pages/DesignMarketing"));
 const DigitalSkillsAudit = lazy(() => import("./pages/DigitalSkillsAudit"));
+const FreeTools = lazy(() => import("./pages/FreeTools"));
+const DigitalSkillsQuiz = lazy(() => import("./pages/DigitalSkillsQuiz"));
+const GDPRQuiz = lazy(() => import("./pages/GDPRQuiz"));
 
 const queryClient = new QueryClient();
 
@@ -72,6 +75,9 @@ const App = () => (
               <Route path="/analytics-audit" element={<AnalyticsAudit />} />
               <Route path="/seo-audit" element={<SEOAudit />} />
               <Route path="/digital-skills-audit" element={<DigitalSkillsAudit />} />
+              <Route path="/free-tools" element={<FreeTools />} />
+              <Route path="/digital-skills-quiz" element={<DigitalSkillsQuiz />} />
+              <Route path="/gdpr-quiz" element={<GDPRQuiz />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/consultation" element={<Consultation />} />

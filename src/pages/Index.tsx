@@ -64,105 +64,104 @@ const Index = () => {
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
       
-      {/* Hero Section */}
+      {/* Hero Section - Matching reference image */}
       <section className="pt-20 pb-16 purple-gradient relative overflow-hidden">
-        {/* Floating Background Icons */}
+        {/* Floating Background Icons - Animated */}
         <div className="floating-icons">
-          <Bot className="floating-icon animate-float" style={{ top: '10%', right: '10%', fontSize: '3rem' }} />
-          <Brain className="floating-icon animate-float-delayed" style={{ top: '30%', right: '20%', fontSize: '2rem' }} />
-          <BarChart3 className="floating-icon animate-float" style={{ top: '60%', right: '15%', fontSize: '2.5rem' }} />
-          <Settings className="floating-icon animate-float-delayed" style={{ top: '70%', right: '5%', fontSize: '2rem' }} />
+          <Bot className="floating-icon animate-float absolute" style={{ top: '15%', right: '8%', fontSize: '3rem', opacity: 0.6 }} />
+          <Brain className="floating-icon animate-float-delayed absolute" style={{ top: '35%', right: '20%', fontSize: '2rem', opacity: 0.5 }} />
+          <BarChart3 className="floating-icon animate-float absolute" style={{ top: '25%', right: '5%', fontSize: '2.5rem', opacity: 0.4 }} />
+          <Settings className="floating-icon animate-float-delayed absolute" style={{ top: '65%', right: '12%', fontSize: '2rem', opacity: 0.5 }} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            {/* Logo above main text */}
-            <div className="mb-12">
-              <img 
-                src="/lovable-uploads/87c7e72a-88ad-4a5e-bd58-1bff5a3dee6b.png" 
-                alt="11th Temple Solutions Logo" 
-                className="h-64 w-64 mx-auto drop-shadow-2xl"
-              />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Community-Focused <span className="text-brand-lime">Growth</span>
-              <br />with AI, Tech and Business Solutions
-            </h1>
-            <p className="text-xl text-white mb-4 max-w-3xl mx-auto">
-              Serving the heart of Wales and the border counties - One community and every business counts
-            </p>
-            <p className="text-base text-white/80 mb-8 max-w-3xl mx-auto">
-              We understand the unique challenges facing rural and border county businesses. Our AI automation and digital solutions help you save time, reduce costs, and compete with larger enterprises while maintaining your local advantage.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
+            {/* Left Column - Content */}
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Powering Community-Focused <span className="text-brand-lime">Growth</span> with AI, Tech and Business Solutions
+              </h1>
+              <p className="text-xl text-white mb-8 max-w-2xl">
+                Serving the heart of Wales and the border counties - One community and every business counts
+              </p>
+              <p className="text-base text-white/80 mb-12 max-w-2xl">
+                We understand the unique challenges facing rural and border county businesses. Our AI automation and digital solutions help you save time, reduce costs, and compete with larger enterprises while maintaining your local advantage.
+              </p>
 
-            {/* Key Statistics */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-2">92.6%</div>
-                <p className="text-white">of Welsh SMEs haven't adopted AI yet</p>
-              </div>
-              <div className="text-center">
-                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-2">40%</div>
-                <p className="text-white">average time savings with our automation</p>
-              </div>
-              <div className="text-center">
-                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-2">£15k</div>
-                <p className="text-white">average annual cost savings</p>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-16">
+                <Link to="/consultation">
+                  <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow">
+                    Lets Talk - Free 30min Consultation
+                  </Button>
+                </Link>
+                <Link to="/free-tools">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-navy">
+                    Try Free Tools
+                  </Button>
+                </Link>
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <Link to="/services-overview">
-                <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow">
-                  Start Your AI Journey
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+            {/* Right Column - Statistics */}
+            <div className="grid grid-cols-1 gap-8">
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
+                <div className="stats-highlight text-5xl md:text-6xl font-bold mb-4">92.6%</div>
+                <p className="text-white text-lg">of Welsh SMEs haven't adopted AI yet</p>
+              </div>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
+                <div className="stats-highlight text-5xl md:text-6xl font-bold mb-4">40%</div>
+                <p className="text-white text-lg">average time savings with our automation</p>
+              </div>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
+                <div className="stats-highlight text-5xl md:text-6xl font-bold mb-4">£15k</div>
+                <p className="text-white text-lg">average annual cost savings</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Understanding Rural Business Realities Section */}
-      <section className="py-20 bg-brand-navy-light">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
               You're Not Alone in Feeling <span className="text-brand-lime">Uncertain About AI</span>
             </h2>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-              <span className="stats-highlight">92.6%</span> of Welsh SMEs haven't adopted AI yet - and there are many reasons why. We endeavour to understand the unique nuances of each business:
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+              <span className="stats-highlight text-brand-lime">92.6%</span> of Welsh SMEs haven't adopted AI yet - and there are many reasons why. We endeavour to understand the unique nuances of each business:
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-brand-navy border border-brand-silver/20 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-white mb-6">Rural Business Challenges We Understand</h3>
-              <ul className="space-y-4 text-brand-silver">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+              <h3 className="text-2xl font-bold text-brand-navy mb-6">Rural Business Challenges We Understand</h3>
+              <ul className="space-y-4 text-gray-700">
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-brand-lime mr-3 mt-1 flex-shrink-0" />
                   <span>Seasonal fluctuations that affect cash flow</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-brand-lime mr-3 mt-1 flex-shrink-0" />
                   <span>Geographic isolation from tech support or qualified staff</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-brand-lime mr-3 mt-1 flex-shrink-0" />
                   <span>Wearing multiple hats with limited staff</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-brand-lime mr-3 mt-1 flex-shrink-0" />
                   <span>Serving both Welsh and English markets</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-brand-lime mr-3 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-brand-lime mr-3 mt-1 flex-shrink-0" />
                   <span>Balancing tradition with innovation</span>
                 </li>
               </ul>
             </div>
-            <div className="bg-brand-navy border border-brand-silver/20 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-white mb-6">Our Approach</h3>
+            <div className="bg-brand-navy rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-6">Our Approach</h3>
               <p className="text-brand-silver mb-6">
                 That's why we focus on incremental, non-intimidating digital adoption that works for community-rooted businesses. No corporate jargon, no overwhelming tech - just practical solutions that fit your world.
               </p>
@@ -177,32 +176,30 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 purple-gradient">
+      <section className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
               Our <span className="text-brand-lime">Services</span>
             </h2>
-            <p className="text-xl text-white max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Specialized solutions for rural and border county businesses
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Link key={index} to={service.link}>
-                <Card className="bg-white/10 backdrop-blur border-white/20 hover:border-brand-lime/50 transition-all duration-300 hover:glow-effect group cursor-pointer h-full">
-                  <CardContent className="p-6 text-center">
-                    <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                      <div className="bg-brand-purple rounded-2xl p-4">
-                        {service.icon}
-                      </div>
+              <Card key={index} className="bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 rounded-2xl overflow-hidden group">
+                <CardContent className="p-6 text-center">
+                  <div className="mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-brand-purple rounded-2xl p-4 w-16 h-16 flex items-center justify-center">
+                      {service.icon}
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-                    <p className="text-white/80">{service.description}</p>
-                  </CardContent>
-                </Card>
-              </Link>
+                  </div>
+                  <h3 className="text-xl font-semibold text-brand-navy mb-4">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -213,7 +210,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Proven Results for <span className="text-brand-lime">UK Independent Businesses</span>
               </h2>
               <p className="text-xl text-brand-silver mb-8">
@@ -239,7 +236,7 @@ const Index = () => {
                 </p>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                    Let's talk - 30mins to See How We Can Help - Free
+                    Lets Talk - Free 30min Consultation
                   </Button>
                 </Link>
               </div>
@@ -249,29 +246,29 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-brand-navy-light">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What <span className="text-brand-lime">Customers</span> Are Saying
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+              What Our <span className="text-brand-lime">Clients Say</span>
             </h2>
-            <p className="text-xl text-brand-silver">
-              Results from independent businesses across Wales and the border counties.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real results from real Welsh and border county businesses
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-brand-navy border-brand-silver/20">
+              <Card key={index} className="bg-gray-50 border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 text-brand-lime fill-current" />
                     ))}
                   </div>
-                  <p className="text-brand-silver mb-4 italic">"{testimonial.content}"</p>
-                  <div className="border-t border-brand-silver/20 pt-4">
-                    <p className="text-white font-semibold">{testimonial.name}</p>
+                  <p className="text-gray-700 mb-4 italic">"{testimonial.content}"</p>
+                  <div className="border-t border-gray-200 pt-4">
+                    <p className="text-brand-navy font-semibold">{testimonial.name}</p>
                     <p className="text-brand-lime text-sm">{testimonial.business}</p>
                   </div>
                 </CardContent>
@@ -282,30 +279,30 @@ const Index = () => {
       </section>
 
       {/* UK Compliance Section */}
-      <section className="py-16 bg-brand-navy">
+      <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-brand-navy-light border border-brand-silver/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">UK Focused Support</h3>
-            <p className="text-brand-silver mb-6 max-w-3xl mx-auto">
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
+            <h3 className="text-3xl font-bold text-brand-navy mb-6">UK Focused Support</h3>
+            <p className="text-gray-600 mb-8 max-w-4xl mx-auto text-lg">
               As a UK-based company, we understand the numerous and nuanced challenges facing British firms. 
               We provide bespoke regional support with full knowledge of UK regulations, market conditions, and community dynamics.
             </p>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
                 <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
-                <p className="text-brand-silver">GDPR Compliant Solutions</p>
+                <p className="text-gray-700 font-medium">GDPR Compliant Solutions</p>
               </div>
               <div className="text-center">
                 <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
-                <p className="text-brand-silver">UK Data Protection Standards</p>
+                <p className="text-gray-700 font-medium">UK Data Protection Standards</p>
               </div>
               <div className="text-center">
                 <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
-                <p className="text-brand-silver">Regional Market Understanding</p>
+                <p className="text-gray-700 font-medium">Regional Market Understanding</p>
               </div>
               <div className="text-center">
                 <CheckCircle className="h-8 w-8 text-brand-lime mx-auto mb-2" />
-                <p className="text-brand-silver">Rural Business Expertise</p>
+                <p className="text-gray-700 font-medium">Rural Business Expertise</p>
               </div>
             </div>
           </div>
@@ -315,7 +312,7 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 purple-gradient">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-white mb-8">
@@ -324,7 +321,7 @@ const Index = () => {
           <div className="flex justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Let's talk - 30mins to See How We Can Help - Free
+                Lets Talk - Free 30min Consultation
               </Button>
             </Link>
           </div>
