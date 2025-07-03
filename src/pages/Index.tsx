@@ -1,5 +1,5 @@
 
-import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star, Bot, Zap, PoundSterling } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star, Bot, Zap, PoundSterling, BarChart3, Settings, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/navigation/Navigation";
@@ -10,23 +10,23 @@ import { Link } from "react-router-dom";
 const Index = () => {
   const services = [
     {
-      icon: <Bot className="h-8 w-8 text-brand-lime" />,
+      icon: <Bot className="h-8 w-8 text-white" />,
       title: "Process Automation",
       description: "Streamline the manual tasks that too many businesses struggle with due to limited skilled staff. We're tailor-made for the hundreds of SMEs and family-run businesses across the border counties and Wales.",
       link: "/services/process-automation"
     },
     {
-      icon: <TrendingUp className="h-8 w-8 text-brand-lime" />,
+      icon: <TrendingUp className="h-8 w-8 text-white" />,
       title: "Regional SEO AI",
       description: "Help your business compete with larger urban competitors. Essential for businesses serving both Welsh and English markets in the border counties."
     },
     {
-      icon: <Users className="h-8 w-8 text-brand-lime" />,
+      icon: <Users className="h-8 w-8 text-white" />,
       title: "Customer Insights",
       description: "Understand your customer's patterns, seasonal variations, and community dynamics. Crucial for the productivity boost that smaller teams need."
     },
     {
-      icon: <Zap className="h-8 w-8 text-brand-lime" />,
+      icon: <Zap className="h-8 w-8 text-white" />,
       title: "Smart Responses",
       description: "Handle customer inquiries when you're busy with other work or serving customers face-to-face. Perfect for independent businesses wearing multiple hats."
     }
@@ -65,8 +65,15 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy opacity-90"></div>
+      <section className="pt-20 pb-16 purple-gradient relative overflow-hidden">
+        {/* Floating Background Icons */}
+        <div className="floating-icons">
+          <Bot className="floating-icon animate-float" style={{ top: '10%', right: '10%', fontSize: '3rem' }} />
+          <Brain className="floating-icon animate-float-delayed" style={{ top: '30%', right: '20%', fontSize: '2rem' }} />
+          <BarChart3 className="floating-icon animate-float" style={{ top: '60%', right: '15%', fontSize: '2.5rem' }} />
+          <Settings className="floating-icon animate-float-delayed" style={{ top: '70%', right: '5%', fontSize: '2rem' }} />
+        </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             {/* Logo above main text */}
@@ -78,15 +85,32 @@ const Index = () => {
               />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Powering <span className="gradient-text">Community-Focused Business</span>
-              <br />with AI, Tech and Business Sense
+              Community-Focused <span className="text-brand-lime">Growth</span>
+              <br />with AI, Tech and Business Solutions
             </h1>
-            <p className="text-xl text-brand-silver mb-4 max-w-3xl mx-auto">
-              Serving the heart of Wales and the border counties - Our community matters and every business counts
+            <p className="text-xl text-white mb-4 max-w-3xl mx-auto">
+              Serving the heart of Wales and the border counties - One community and every business counts
             </p>
-            <p className="text-base text-brand-silver mb-8 max-w-3xl mx-auto">
-              We understand rural business challenges: geographic isolation, limited tech support, and knowledge gaps in an increasingly tech-driven world - we work with you to craft the right solution.
+            <p className="text-base text-white/80 mb-8 max-w-3xl mx-auto">
+              We understand the unique challenges facing rural and border county businesses. Our AI automation and digital solutions help you save time, reduce costs, and compete with larger enterprises while maintaining your local advantage.
             </p>
+
+            {/* Key Statistics */}
+            <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-2">92.6%</div>
+                <p className="text-white">of Welsh SMEs haven't adopted AI yet</p>
+              </div>
+              <div className="text-center">
+                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-2">40%</div>
+                <p className="text-white">average time savings with our automation</p>
+              </div>
+              <div className="text-center">
+                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-2">£15k</div>
+                <p className="text-white">average annual cost savings</p>
+              </div>
+            </div>
+
             <div className="flex justify-center">
               <Link to="/services-overview">
                 <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow">
@@ -107,7 +131,7 @@ const Index = () => {
               You're Not Alone in Feeling <span className="text-brand-lime">Uncertain About AI</span>
             </h2>
             <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
-              92.6% of Welsh SMEs haven't adopted AI yet - and there are many reasons why. We endeavour to understand the unique nuances of each business:
+              <span className="stats-highlight">92.6%</span> of Welsh SMEs haven't adopted AI yet - and there are many reasons why. We endeavour to understand the unique nuances of each business:
             </p>
           </div>
           
@@ -153,27 +177,29 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-to-b from-brand-navy to-brand-navy-light">
+      <section className="py-20 purple-gradient">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Community Understanding, <span className="text-brand-lime">Global Technology</span>
+              Our <span className="text-brand-lime">Services</span>
             </h2>
-            <p className="text-xl text-brand-silver max-w-2xl mx-auto">
-              Our solutions are designed specifically with your business in mind, we want to help you be as efficient and cost-effective as possible
+            <p className="text-xl text-white max-w-2xl mx-auto">
+              Specialized solutions for rural and border county businesses
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <Link key={index} to={service.link}>
-                <Card className="bg-brand-navy-light border-brand-silver/20 hover:border-brand-lime/50 transition-all duration-300 hover:glow-effect group cursor-pointer h-full">
+                <Card className="bg-white/10 backdrop-blur border-white/20 hover:border-brand-lime/50 transition-all duration-300 hover:glow-effect group cursor-pointer h-full">
                   <CardContent className="p-6 text-center">
                     <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                      {service.icon}
+                      <div className="bg-brand-purple rounded-2xl p-4">
+                        {service.icon}
+                      </div>
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-                    <p className="text-brand-silver">{service.description}</p>
+                    <p className="text-white/80">{service.description}</p>
                   </CardContent>
                 </Card>
               </Link>
@@ -287,14 +313,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
+      <section className="py-20 purple-gradient">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Automate Your Business?
+            Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-brand-silver mb-8">
-            Learn how AI & Tech Automation can transform your UK business whilst maintaining your community connection. 
-            No obligation, a simple conversation between business people who understand the regional landscape, dispensing with tech jargon.
+          <p className="text-xl text-white mb-8">
+            Get your free consultation and discover how AI automation can help your business
           </p>
           <div className="flex justify-center">
             <Link to="/consultation">
