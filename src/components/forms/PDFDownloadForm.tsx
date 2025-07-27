@@ -100,7 +100,7 @@ const PDFDownloadForm = ({ onSubmit, isLoading = false }: PDFDownloadFormProps) 
             </Select>
           </div>
           
-          <div className="border-t border-brand-silver/20 pt-4">
+          <div className="border-t border-brand-silver/20 pt-4 bg-white/10 rounded-lg p-6">
             <div className="flex items-start space-x-3">
               <Checkbox 
                 id="gdprConsent"
@@ -109,10 +109,10 @@ const PDFDownloadForm = ({ onSubmit, isLoading = false }: PDFDownloadFormProps) 
                 required
               />
               <div className="flex-1">
-                <Label htmlFor="gdprConsent" className="text-brand-silver text-sm leading-relaxed">
-                  I consent to 11th Temple processing my personal data to provide the service guide and contact me about relevant services. 
+                <Label htmlFor="gdprConsent" className="text-white text-sm leading-relaxed font-medium">
+                  <span className="text-yellow-400 font-bold">REQUIRED:</span> I consent to 11th Temple processing my personal data to provide the service guide and contact me about relevant services. 
                   You can withdraw consent at any time. View our{" "}
-                  <a href="/privacy" className="text-brand-lime hover:text-brand-lime-dark underline">
+                  <a href="/privacy" className="text-yellow-400 hover:text-yellow-300 underline font-semibold">
                     Privacy Policy
                   </a>{" "}
                   for more information. *
