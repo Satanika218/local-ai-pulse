@@ -51,9 +51,15 @@ export default function AnalyticsAudit() {
         <h1 className="text-3xl font-bold text-white sm:text-4xl mb-4">
           Free Analytics Audit
         </h1>
-        <p className="text-lg text-brand-silver mb-8">
+        <p className="text-lg text-brand-silver mb-4">
           Get a comprehensive analytics audit report with actionable recommendations.
         </p>
+        <div className="bg-brand-navy-light border border-brand-silver/20 rounded-xl p-6 max-w-3xl mx-auto mb-8">
+          <h3 className="text-lg font-semibold text-brand-lime mb-2">What is Analytics?</h3>
+          <p className="text-brand-silver">
+            Analytics tracks what visitors do on your website - where they come from, what pages they visit, and where they leave. SEO focuses on helping people find your website through Google search results in the first place.
+          </p>
+        </div>
       </div>
 
       {/* Form or Results Section */}

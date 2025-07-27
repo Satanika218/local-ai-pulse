@@ -11,18 +11,6 @@ import { Link } from "react-router-dom";
 const FreeTools = () => {
   const tools = [
     {
-      icon: <Search className="h-8 w-8 text-white" />,
-      title: "SEO Audit Tool",
-      description: "Analyze your search engine optimization and get actionable recommendations. Export as PDF.",
-      link: "/seo-audit"
-    },
-    {
-      icon: <BarChart3 className="h-8 w-8 text-white" />,
-      title: "Analytics Audit Tool",
-      description: "Review your website analytics setup and discover optimization opportunities. Export as PDF.",
-      link: "/analytics-audit"
-    },
-    {
       icon: <Brain className="h-8 w-8 text-white" />,
       title: "Digital Skills in the Workplace Quiz",
       description: "Assess your team's essential digital capabilities and identify training needs for UK businesses.",
@@ -39,6 +27,18 @@ const FreeTools = () => {
       title: "Website Audit Tool",
       description: "Get a comprehensive analysis of your website's performance, SEO, and user experience.",
       link: "/website-audit"
+    },
+    {
+      icon: <Search className="h-8 w-8 text-white" />,
+      title: "SEO Audit Tool",
+      description: "Analyze your search engine optimization and get actionable recommendations.",
+      link: "/seo-audit"
+    },
+    {
+      icon: <BarChart3 className="h-8 w-8 text-white" />,
+      title: "Analytics Audit Tool",
+      description: "Review your website analytics setup and discover optimization opportunities.",
+      link: "/analytics-audit"
     }
   ];
 

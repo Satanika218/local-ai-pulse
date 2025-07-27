@@ -53,9 +53,15 @@ export default function SEOAudit() {
         <h1 className="text-3xl font-bold text-white sm:text-4xl mb-4">
           Free SEO Audit
         </h1>
-        <p className="text-lg text-brand-silver mb-8">
+        <p className="text-lg text-brand-silver mb-4">
           Get a comprehensive SEO analysis of your website with actionable recommendations.
         </p>
+        <div className="bg-brand-navy-light border border-brand-silver/20 rounded-xl p-6 max-w-3xl mx-auto mb-8">
+          <h3 className="text-lg font-semibold text-brand-lime mb-2">What is SEO?</h3>
+          <p className="text-brand-silver">
+            SEO (Search Engine Optimization) focuses on improving your website to rank higher in Google search results when people look for your services. Analytics tracks what visitors actually do once they're on your website, showing you how to improve their experience.
+          </p>
+        </div>
       </div>
 
       {/* Form or Results Section */}
