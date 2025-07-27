@@ -53,11 +53,12 @@ const Consultation = () => {
       {/* Hero Section */}
       <div className="bg-brand-navy-light py-12 text-center">
         <h1 className="text-3xl font-bold text-white mb-4">
-          Let's discuss how we can collaborate
+          Learn More
         </h1>
         <p className="text-brand-silver text-lg">
-          Get expert advice on how AI can transform your business. 
-          No obligation, a simple conversation between business people who understand the regional landscape.
+          Simple chat, we'll discuss your business, time-constraints, bottlenecks & maybe even things not yet considered.
+          <br /><br />
+          No hard sell, no commitment; a simple consultation to discuss potential solutions.
         </p>
       </div>
 
