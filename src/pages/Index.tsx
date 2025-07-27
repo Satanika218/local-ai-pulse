@@ -67,15 +67,15 @@ const Index = () => {
       
       {/* Hero Section - Matching reference image */}
       <section className="pt-20 pb-16 purple-gradient relative overflow-hidden">
-        {/* Floating Background Icons - Animated */}
+        {/* Floating Background Icons - Around Headline */}
         <div className="floating-icons">
-          <Bot className="floating-icon animate-float absolute" style={{ top: '15%', right: '8%', fontSize: '3rem', opacity: 0.6 }} />
-          <Brain className="floating-icon animate-float-delayed absolute" style={{ top: '35%', right: '20%', fontSize: '2rem', opacity: 0.5 }} />
-          <BarChart3 className="floating-icon animate-float absolute" style={{ top: '25%', right: '5%', fontSize: '2.5rem', opacity: 0.4 }} />
-          <Building2 className="floating-icon animate-float-delayed absolute" style={{ top: '45%', right: '15%', fontSize: '2rem', opacity: 0.5 }} />
-          <Laptop className="floating-icon animate-float absolute" style={{ top: '55%', right: '25%', fontSize: '2.2rem', opacity: 0.4 }} />
-          <Clock className="floating-icon animate-float-delayed absolute" style={{ top: '65%', right: '12%', fontSize: '2rem', opacity: 0.5 }} />
-          <Settings className="floating-icon animate-float absolute" style={{ top: '75%', right: '8%', fontSize: '1.8rem', opacity: 0.4 }} />
+          <Bot className="floating-icon animate-float absolute text-white/20" style={{ top: '8%', left: '15%', fontSize: '2.5rem' }} />
+          <Brain className="floating-icon animate-float-delayed absolute text-white/30" style={{ top: '12%', right: '20%', fontSize: '2rem' }} />
+          <BarChart3 className="floating-icon animate-float absolute text-white/25" style={{ top: '5%', left: '45%', fontSize: '2.2rem' }} />
+          <Building2 className="floating-icon animate-float-delayed absolute text-white/30" style={{ top: '15%', right: '10%', fontSize: '1.8rem' }} />
+          <Laptop className="floating-icon animate-float absolute text-white/20" style={{ top: '18%', left: '25%', fontSize: '2rem' }} />
+          <Clock className="floating-icon animate-float-delayed absolute text-white/25" style={{ top: '10%', right: '35%', fontSize: '1.8rem' }} />
+          <Settings className="floating-icon animate-float absolute text-white/20" style={{ top: '20%', left: '60%', fontSize: '1.6rem' }} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
