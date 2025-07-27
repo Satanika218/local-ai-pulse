@@ -1,5 +1,5 @@
 
-import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star, Bot, Zap, PoundSterling, BarChart3, Settings, Brain } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Award, Star, Bot, Zap, PoundSterling, BarChart3, Settings, Brain, Building2, Laptop, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/navigation/Navigation";
@@ -72,7 +72,10 @@ const Index = () => {
           <Bot className="floating-icon animate-float absolute" style={{ top: '15%', right: '8%', fontSize: '3rem', opacity: 0.6 }} />
           <Brain className="floating-icon animate-float-delayed absolute" style={{ top: '35%', right: '20%', fontSize: '2rem', opacity: 0.5 }} />
           <BarChart3 className="floating-icon animate-float absolute" style={{ top: '25%', right: '5%', fontSize: '2.5rem', opacity: 0.4 }} />
-          <Settings className="floating-icon animate-float-delayed absolute" style={{ top: '65%', right: '12%', fontSize: '2rem', opacity: 0.5 }} />
+          <Building2 className="floating-icon animate-float-delayed absolute" style={{ top: '45%', right: '15%', fontSize: '2rem', opacity: 0.5 }} />
+          <Laptop className="floating-icon animate-float absolute" style={{ top: '55%', right: '25%', fontSize: '2.2rem', opacity: 0.4 }} />
+          <Clock className="floating-icon animate-float-delayed absolute" style={{ top: '65%', right: '12%', fontSize: '2rem', opacity: 0.5 }} />
+          <Settings className="floating-icon animate-float absolute" style={{ top: '75%', right: '8%', fontSize: '1.8rem', opacity: 0.4 }} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,18 +108,18 @@ const Index = () => {
             </div>
 
             {/* Right Column - Statistics */}
-            <div className="grid grid-cols-1 gap-8">
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
-                <div className="stats-highlight text-5xl md:text-6xl font-bold mb-4">92.6%</div>
-                <p className="text-white text-lg">of Welsh SMEs haven't adopted AI yet</p>
+            <div className="grid grid-cols-1 gap-6">
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-3">92.6%</div>
+                <p className="text-white text-base">of Welsh SMEs haven't adopted AI yet</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
-                <div className="stats-highlight text-5xl md:text-6xl font-bold mb-4">40%</div>
-                <p className="text-white text-lg">average time savings with our automation</p>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-3">72%</div>
+                <p className="text-white text-base">No. of SMEs that lack the government's suggested digital skills to remain competitive in the modern market</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
-                <div className="stats-highlight text-5xl md:text-6xl font-bold mb-4">£15k</div>
-                <p className="text-white text-lg">average annual cost savings</p>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-3">£10-15k</div>
+                <p className="text-white text-base">Average savings cost per annum for firms that adopt our Tech solutions</p>
               </div>
             </div>
           </div>
@@ -231,13 +234,20 @@ const Index = () => {
             </div>
             <div className="relative">
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
-                <div className="flex items-center justify-center mb-4">
-                  <PoundSterling className="h-16 w-16 text-brand-lime" />
+                <div className="grid grid-cols-2 gap-6 mb-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-brand-lime mb-2">40%</div>
+                    <p className="text-brand-silver text-sm">Reduction in customer complaints for firms that adopt digital solutions</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-brand-lime mb-2">20 Hours</div>
+                    <p className="text-brand-silver text-sm">avg. Saved per week for SMEs that automate repetitive tasks</p>
+                  </div>
+                  <div className="text-center col-span-2">
+                    <div className="text-3xl font-bold text-brand-lime mb-2">50%</div>
+                    <p className="text-brand-silver text-sm">Reduction in manual data entry errors through AI-powered automation</p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 text-center">Reduce Costs by 60%</h3>
-                <p className="text-brand-silver mb-6 text-center">
-                  Lower operational expenses through intelligent automation
-                </p>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
                     Free 30min Consultation - No Commitment - Learn How We Help
