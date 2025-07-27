@@ -5,6 +5,7 @@ import ServicesDropdown from "./ServicesDropdown";
 
 // Main navigation items (excluding Home and Services)
 const navItems = [
+  { name: "Free Tools", path: "/free-tools" },
   { name: "About", path: "/about" },
   { name: "Blog", path: "/blog" },
   { name: "Testimonials", path: "/case-studies" },

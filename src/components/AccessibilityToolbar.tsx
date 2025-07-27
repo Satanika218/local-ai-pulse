@@ -227,7 +227,7 @@ const AccessibilityToolbar = () => {
               onClick={resetSettings}
               variant="outline"
               size="sm"
-              className="w-full text-xs"
+              className="w-full text-xs bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
             >
               Reset to Default
             </Button>

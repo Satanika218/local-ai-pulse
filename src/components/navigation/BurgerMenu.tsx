@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import MobileServicesDropdown from "./MobileServicesDropdown";
 
 const navItems = [
+  { name: "Free Tools", path: "/free-tools" },
   { name: "About", path: "/about" },
   { name: "Blog", path: "/blog" },
   { name: "Testimonials", path: "/case-studies" },
