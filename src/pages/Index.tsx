@@ -93,7 +93,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <Link to="/consultation">
                   <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow">
-                    Free 30min Consultation - No Fee or Commitment - Learn What We Do & How We Help
+                    Free 30min Consultation - No Commitment - Learn How We Help
                   </Button>
                 </Link>
                 <Link to="/free-tools">
@@ -240,7 +240,7 @@ const Index = () => {
                 </p>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                    Free 30min Consultation - No Fee or Commitment - Learn What We Do & How We Help
+                    Free 30min Consultation - No Commitment - Learn How We Help
                   </Button>
                 </Link>
               </div>
@@ -325,7 +325,7 @@ const Index = () => {
           <div className="flex justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Free 30min Consultation - No Fee or Commitment - Learn What We Do & How We Help
+                Free 30min Consultation - No Commitment - Learn How We Help
               </Button>
             </Link>
           </div>
