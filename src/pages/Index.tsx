@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
+import ServicesDropdownButton from "@/components/homepage/ServicesDropdownButton";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -182,9 +183,12 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
               Our <span className="text-brand-lime">Services</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
               Specialized solutions for rural and border county businesses
             </p>
+            <div className="flex justify-center">
+              <ServicesDropdownButton />
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
