@@ -76,10 +76,10 @@ const caseStudies = [
 
 const CaseStudies = () => {
   return (
-    <div className="min-h-screen bg-brand-navy">
+    <div className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero Section - Dark purple background */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -93,16 +93,16 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="py-16 bg-brand-navy-light">
+      {/* Case Studies Section - White background for readability */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue={caseStudies[0].id} className="w-full">
-            <TabsList className="flex space-x-4 p-2 bg-brand-navy border border-brand-silver/20 rounded-full">
+            <TabsList className="flex space-x-4 p-2 bg-gray-100 border border-gray-200 rounded-full mb-12">
               {caseStudies.map((study) => (
                 <TabsTrigger
                   key={study.id}
                   value={study.id}
-                  className="data-[state=active]:bg-brand-lime data-[state=active]:text-brand-navy text-brand-silver rounded-full px-4 py-2 font-medium text-sm focus:outline-none transition-colors"
+                  className="data-[state=active]:bg-brand-lime data-[state=active]:text-brand-navy text-gray-600 hover:text-gray-900 rounded-full px-6 py-3 font-medium text-sm focus:outline-none transition-colors"
                 >
                   {study.title}
                 </TabsTrigger>
@@ -115,29 +115,44 @@ const CaseStudies = () => {
                 value={study.id}
                 className="mt-8"
               >
-                <Card className="bg-brand-navy border border-brand-silver/20">
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-white">{study.title}</CardTitle>
-                    <div className="flex items-center space-x-2 text-brand-silver">
-                      <Star className="h-5 w-5 text-brand-lime" />
-                      <span>{study.stars}</span>
-                      <Calendar className="h-5 w-5 ml-4" />
-                      <span>{new Date(study.date).toLocaleDateString()}</span>
-                      <Users className="h-5 w-5 ml-4" />
-                      <span>{study.employees} Employees</span>
+                <Card className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <CardHeader className="border-b border-gray-100">
+                    <CardTitle className="text-2xl font-bold text-brand-navy">{study.title}</CardTitle>
+                    <div className="flex items-center space-x-4 text-gray-600 mt-4">
+                      <div className="flex items-center space-x-1">
+                        <Star className="h-5 w-5 text-brand-lime fill-current" />
+                        <span className="font-medium">{study.stars}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Calendar className="h-5 w-5 text-gray-500" />
+                        <span>{new Date(study.date).toLocaleDateString()}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Users className="h-5 w-5 text-gray-500" />
+                        <span>{study.employees} Employees</span>
+                      </div>
                     </div>
-                    <div className="mt-2 flex flex-wrap gap-2">
+                    <div className="mt-4 flex flex-wrap gap-2">
                       {study.tags.map((tag) => (
-                        <Badge key={tag} className="bg-brand-silver text-black">{tag}</Badge>
+                        <Badge key={tag} className="bg-brand-lime/20 text-brand-navy border-brand-lime/30">{tag}</Badge>
                       ))}
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    {typeof study.content === 'string' ? (
-                      <CardDescription className="text-brand-silver">{study.content}</CardDescription>
-                    ) : (
-                      study.content
-                    )}
+                  <CardContent className="pt-6">
+                    <div className="text-gray-700 space-y-4">
+                      {typeof study.content === 'string' ? (
+                        <p className="text-lg leading-relaxed">{study.content}</p>
+                      ) : (
+                        <div className="space-y-4">
+                          <div className="text-lg text-gray-600 font-medium">
+                            {study.content.props.children[0]}
+                          </div>
+                          <p className="text-gray-700 leading-relaxed">
+                            {study.content.props.children[1].props.children}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -146,8 +161,40 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
+      {/* Results Section - Light gray background */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+              Real Results from Real Businesses
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our AI automation solutions have helped businesses across Wales and the UK achieve measurable success.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-white border-none shadow-lg text-center p-8">
+              <TrendingUp className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+              <h3 className="text-3xl font-bold text-brand-navy mb-2">60%</h3>
+              <p className="text-gray-600">Average increase in lead generation</p>
+            </Card>
+            <Card className="bg-white border-none shadow-lg text-center p-8">
+              <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+              <h3 className="text-3xl font-bold text-brand-navy mb-2">40%</h3>
+              <p className="text-gray-600">Improvement in customer satisfaction</p>
+            </Card>
+            <Card className="bg-white border-none shadow-lg text-center p-8">
+              <Star className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+              <h3 className="text-3xl font-bold text-brand-navy mb-2">30%</h3>
+              <p className="text-gray-600">Reduction in operational costs</p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Dark background */}
+      <section className="py-20 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Achieve Your Own Success Story?
