@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Zap, Globe, Users, TrendingUp, Bot, Shield, Clock, DollarSign, Target, Lightbulb, CheckCircle } from "lucide-react";
+import { ArrowRight, Zap, Globe, Users, TrendingUp, Bot, Shield, Clock, DollarSign, Target, Lightbulb, CheckCircle, Palette, GraduationCap, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
@@ -74,7 +74,7 @@ export default function ServicesOverview() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/consultation">
             <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Learn How We Can Give You Time With a Free Consultation
+              Free 30min Consultation - No Commitment - Learn How We Help
             </Button>
           </Link>
           <Link to="/solutions">
@@ -167,19 +167,6 @@ export default function ServicesOverview() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link to="/services/website-creation">
-              <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
-                <CardHeader>
-                  <Globe className="h-10 w-10 text-brand-lime mb-2" />
-                  <CardTitle className="text-white">Website Creation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-brand-silver">
-                    Professional websites that convert visitors into customers
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </Link>
             <Link to="/services/process-automation">
               <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
                 <CardHeader>
@@ -193,11 +180,12 @@ export default function ServicesOverview() {
                 </CardContent>
               </Card>
             </Link>
+            
             <Link to="/services/customer-service">
               <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
                 <CardHeader>
                   <Users className="h-10 w-10 text-brand-lime mb-2" />
-                  <CardTitle className="text-white">Customer Service</CardTitle>
+                  <CardTitle className="text-white">Customer Service Agents</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-brand-silver">
@@ -206,6 +194,21 @@ export default function ServicesOverview() {
                 </CardContent>
               </Card>
             </Link>
+            
+            <Link to="/services/local-seo">
+              <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
+                <CardHeader>
+                  <Search className="h-10 w-10 text-brand-lime mb-2" />
+                  <CardTitle className="text-white">Local SEO AI</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-brand-silver">
+                    AI-powered local search optimization for better visibility
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
+            
             <Link to="/services/data-analytics">
               <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
                 <CardHeader>
@@ -219,6 +222,21 @@ export default function ServicesOverview() {
                 </CardContent>
               </Card>
             </Link>
+            
+            <Link to="/services/website-creation">
+              <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
+                <CardHeader>
+                  <Globe className="h-10 w-10 text-brand-lime mb-2" />
+                  <CardTitle className="text-white">Website Creation</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-brand-silver">
+                    Professional websites that convert visitors into customers
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
+            
             <Link to="/services/sales-lead-tools">
               <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
                 <CardHeader>
@@ -232,15 +250,44 @@ export default function ServicesOverview() {
                 </CardContent>
               </Card>
             </Link>
+            
             <Link to="/services/design-marketing">
               <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
                 <CardHeader>
-                  <Zap className="h-10 w-10 text-brand-lime mb-2" />
+                  <Palette className="h-10 w-10 text-brand-lime mb-2" />
                   <CardTitle className="text-white">Design & Marketing</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-brand-silver">
                     Professional design and marketing that drives results
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            <Link to="/services/gdpr-compliance">
+              <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
+                <CardHeader>
+                  <Shield className="h-10 w-10 text-brand-lime mb-2" />
+                  <CardTitle className="text-white">GDPR Compliance</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-brand-silver">
+                    Ensure your business meets all data protection requirements
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            <Link to="/services/digital-skills-workplace">
+              <Card className="bg-brand-navy border-brand-silver/20 hover:border-brand-lime/50 transition-colors h-full">
+                <CardHeader>
+                  <GraduationCap className="h-10 w-10 text-brand-lime mb-2" />
+                  <CardTitle className="text-white">Digital Skills for Workplace</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-brand-silver">
+                    Upskill your team with essential digital workplace skills
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -260,7 +307,7 @@ export default function ServicesOverview() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/consultation">
             <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Learn How We Can Give You Time With a Free Consultation
+              Free 30min Consultation - No Commitment - Learn How We Help
             </Button>
           </Link>
           <Link to="/seo-audit">
