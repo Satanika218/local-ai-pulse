@@ -42,6 +42,7 @@ const GDPRQuiz = lazy(() => import("./pages/GDPRQuiz"));
 const GDPRCompliance = lazy(() => import("./pages/GDPRCompliance"));
 const DigitalSkillsWorkplace = lazy(() => import("./pages/DigitalSkillsWorkplace"));
 const WebsiteAudit = lazy(() => import("./pages/WebsiteAudit"));
+const PDFTestAdmin = lazy(() => import("./pages/PDFTestAdmin"));
 
 const queryClient = new QueryClient();
 
@@ -80,10 +81,11 @@ const App = () => (
               <Route path="/website-audit" element={<WebsiteAudit />} />
               <Route path="/digital-skills-audit" element={<DigitalSkillsAudit />} />
               <Route path="/free-tools" element={<FreeTools />} />
-            <Route path="/digital-skills-quiz" element={<DigitalSkillsQuiz />} />
+              <Route path="/digital-skills-quiz" element={<DigitalSkillsQuiz />} />
             <Route path="/gdpr-quiz" element={<GDPRQuiz />} />
             <Route path="/services/gdpr-compliance" element={<GDPRCompliance />} />
             <Route path="/services/digital-skills-workplace" element={<DigitalSkillsWorkplace />} />
+            <Route path="/admin/pdf-test" element={<PDFTestAdmin />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/consultation" element={<Consultation />} />

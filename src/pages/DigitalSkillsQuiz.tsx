@@ -3,16 +3,20 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Brain, CheckCircle, AlertTriangle, TrendingUp } from "lucide-react";
+import { Brain, CheckCircle, AlertTriangle, TrendingUp, Download } from "lucide-react";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
 import { Link } from "react-router-dom";
+import { generateDigitalSkillsPDF } from "@/utils/digitalSkillsPDFGenerator";
+import { useLoadingState } from "@/hooks/useLoadingState";
+import { toast } from "sonner";
 
 const DigitalSkillsQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const { isLoading, execute } = useLoadingState();
 
   const questions = [
     {
@@ -266,6 +270,20 @@ const DigitalSkillsQuiz = () => {
     setShowResults(false);
   };
 
+  const handleDownloadPDF = () => {
+    execute(async () => {
+      const score = calculateScore();
+      await generateDigitalSkillsPDF({
+        score,
+        answers,
+        businessName: "Your Business", // In real implementation, collect this in a form
+        contactName: "Quiz Participant",
+        contactEmail: "participant@email.com"
+      });
+      toast.success("Digital Skills Assessment PDF downloaded successfully!");
+    });
+  };
+
   if (showResults) {
     const score = calculateScore();
     const scoreLevel = getScoreLevel(score);
@@ -330,6 +348,14 @@ const DigitalSkillsQuiz = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  onClick={handleDownloadPDF}
+                  disabled={isLoading}
+                  className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold px-6 py-3"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  {isLoading ? "Generating..." : "Download PDF Report"}
+                </Button>
                 <Button 
                   onClick={resetQuiz}
                   className="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-3"
