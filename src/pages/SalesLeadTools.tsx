@@ -26,21 +26,27 @@ export default function SalesLeadTools() {
 
       {/* What are Sales & Lead Tools Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               What are Sales & Lead Generation Tools?
             </h2>
-            <div className="bg-gray-50 rounded-2xl p-8 text-left">
-              <p className="text-lg text-gray-700 mb-4">
-                Imagine having a tireless salesperson who works 24/7, never forgets to follow up with customers, and knows exactly when someone is ready to buy - that's what sales and lead tools do for your business.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                These tools automatically find potential customers (leads), keep track of everyone who's interested in your business, and help you stay in touch with them until they're ready to make a purchase.
-              </p>
-              <p className="text-lg text-gray-700">
-                For example: When someone visits your website, the tool can automatically send them helpful information, remind you to call them, and even tell you the best time to contact them based on their behavior.
-              </p>
+            <div className="bg-gray-50 rounded-2xl p-6 lg:p-8 text-left">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                <div>
+                  <p className="text-lg text-gray-700 mb-4">
+                    Imagine having a tireless salesperson who works 24/7, never forgets to follow up with customers, and knows exactly when someone is ready to buy - that's what sales and lead tools do for your business.
+                  </p>
+                  <p className="text-lg text-gray-700">
+                    These tools automatically find potential customers (leads), keep track of everyone who's interested in your business, and help you stay in touch with them until they're ready to make a purchase.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-lg text-gray-700">
+                    For example: When someone visits your website, the tool can automatically send them helpful information, remind you to call them, and even tell you the best time to contact them based on their behavior.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
