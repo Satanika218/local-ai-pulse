@@ -5,6 +5,18 @@ export const conversationTree: ConversationTree = {
     id: 'start',
     text: [
       "Hi there! I'm your AI business consultant from 11th Temple Solutions. I help businesses identify areas where technology and automation can save time, reduce costs, and drive growth.",
+      "What area would you like to explore first?"
+    ],
+    options: [
+      { text: "GDPR Compliance & Data Protection", next: 'gdpr_compliance' },
+      { text: "Digital Skills & Workplace Champions", next: 'digital_skills' },
+      { text: "Explore other business areas", next: 'business_area_intro' },
+    ],
+  },
+
+  business_area_intro: {
+    id: 'business_area_intro',
+    text: [
       "Let's explore what's possible for your business. What area currently takes up the most time or feels like the biggest headache?"
     ],
     options: [
@@ -14,6 +26,112 @@ export const conversationTree: ConversationTree = {
       { text: "Keeping in touch with customers", next: 'customer_relations_q' },
       { text: "Other - Discuss problem now", next: 'redirect_consultation' },
     ],
+  },
+
+  gdpr_compliance: {
+    id: 'gdpr_compliance',
+    text: ["GDPR compliance is crucial for UK businesses. With 52% still not fully compliant and fines up to £17.5M, are you concerned about data protection risks?"],
+    options: [
+      { text: "Yes, we handle customer data", next: 'gdpr_data_handling' },
+      { text: "We've had compliance issues", next: 'gdpr_issues' },
+      { text: "Want to prevent future problems", next: 'gdpr_prevention' },
+      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' }
+    ]
+  },
+
+  gdpr_data_handling: {
+    id: 'gdpr_data_handling',
+    text: ["Customer data requires careful handling. With 73% of UK SMEs experiencing breaches, proper protection is essential for your business reputation and legal compliance."],
+    solutions: [
+      { title: "Automated Data Mapping", description: "Smart systems to identify and track all personal data across your organization, ensuring nothing falls through the cracks" },
+      { title: "Consent Management", description: "Technology platforms to manage customer consent and preferences seamlessly, keeping you compliant automatically" },
+      { title: "Staff Training Programs", description: "Comprehensive GDPR education to build a culture of data protection within your team" }
+    ],
+    options: [
+      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' },
+      { text: "Explore other areas", next: 'business_area_intro' }
+    ]
+  },
+
+  gdpr_issues: {
+    id: 'gdpr_issues',
+    text: ["Compliance issues need immediate attention. We help businesses recover from breaches and build robust protection systems to prevent future incidents."],
+    solutions: [
+      { title: "Incident Response Plans", description: "Rapid response protocols to minimize damage and meet ICO reporting requirements within 72 hours" },
+      { title: "Compliance Audits", description: "Thorough assessment of current practices and gap identification with actionable improvement plans" },
+      { title: "Policy Development", description: "Custom GDPR policies and procedures tailored to your specific business needs and industry requirements" }
+    ],
+    options: [
+      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' },
+      { text: "Explore other areas", next: 'business_area_intro' }
+    ]
+  },
+
+  gdpr_prevention: {
+    id: 'gdpr_prevention',
+    text: ["Prevention is always better than cure. We help businesses build proactive GDPR compliance from the ground up, avoiding costly mistakes."],
+    solutions: [
+      { title: "Privacy by Design", description: "Build data protection into your systems and processes from the start, making compliance automatic" },
+      { title: "Regular Monitoring", description: "Ongoing compliance checking and alert systems for potential issues before they become problems" },
+      { title: "GDPR Champions Program", description: "Train internal advocates to maintain compliance culture and support colleagues with confidence" }
+    ],
+    options: [
+      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' },
+      { text: "Explore other areas", next: 'business_area_intro' }
+    ]
+  },
+
+  digital_skills: {
+    id: 'digital_skills',
+    text: ["60% of UK workers can't complete essential digital tasks, creating security risks and productivity gaps. Is your team confident with technology?"],
+    options: [
+      { text: "Our staff struggle with technology", next: 'skills_struggles' },
+      { text: "We need better digital security", next: 'digital_security' },
+      { text: "Want to improve productivity", next: 'productivity_improvement' },
+      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' }
+    ]
+  },
+
+  skills_struggles: {
+    id: 'skills_struggles',
+    text: ["Technology anxiety is common, especially among older workers in rural areas. We create supportive learning environments that build confidence gradually."],
+    solutions: [
+      { title: "Age-Appropriate Training", description: "Learning methods designed for different age groups and comfort levels, ensuring everyone feels supported" },
+      { title: "One-to-One Mentoring", description: "Personal support to overcome technology fears and build confidence at each individual's pace" },
+      { title: "Tech Workplace Champions", description: "Train internal advocates to provide ongoing peer support and create a positive digital culture" }
+    ],
+    options: [
+      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' },
+      { text: "Explore other areas", next: 'business_area_intro' }
+    ]
+  },
+
+  digital_security: {
+    id: 'digital_security',
+    text: ["Digital security starts with educated staff. We help teams recognize threats and follow safe practices to protect your business from cyber attacks."],
+    solutions: [
+      { title: "Security Awareness Training", description: "Practical education about phishing, malware, and safe browsing tailored to your business context" },
+      { title: "Password Management", description: "Tools and training for strong, unique passwords across all systems with easy-to-use solutions" },
+      { title: "Incident Prevention", description: "Proactive measures to prevent data breaches and cyber attacks through staff education and smart technology" }
+    ],
+    options: [
+      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' },
+      { text: "Explore other areas", next: 'business_area_intro' }
+    ]
+  },
+
+  productivity_improvement: {
+    id: 'productivity_improvement',
+    text: ["Digital skills directly impact productivity. We help teams master the 20 essential digital work tasks for maximum efficiency and confidence."],
+    solutions: [
+      { title: "Skills Assessment", description: "Identify specific gaps in your team's digital capabilities with our comprehensive evaluation" },
+      { title: "Targeted Training", description: "Focus on the skills that will have the biggest impact on your business productivity and growth" },
+      { title: "Progress Tracking", description: "Monitor improvement and ensure skills are being applied effectively in daily work" }
+    ],
+    options: [
+      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' },
+      { text: "Explore other areas", next: 'business_area_intro' }
+    ]
   },
   redirect_consultation: {
     id: 'redirect_consultation',
@@ -156,7 +274,7 @@ export const conversationTree: ConversationTree = {
         { text: "Processing bills, receipts and invoices takes too long", next: 'finance_invoices_q' },
         { text: "Chasing late payments from customers is a hassle", next: 'finance_chasing_q' },
         { text: "Other - Discuss problem now", next: 'redirect_consultation' },
-        { text: "Go back", next: 'first_level_diagnostic' },
+        { text: "Go back", next: 'business_area_intro' },
     ],
   },
   finance_invoices_q: {
@@ -189,7 +307,7 @@ export const conversationTree: ConversationTree = {
       ],
       options: [
           { text: "Chat with a specialist", next: 'closing' },
-          { text: "Explore other challenges", next: 'first_level_diagnostic' },
+          { text: "Explore other challenges", next: 'business_area_intro' },
           { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'finance_invoices_q' },
       ]
@@ -202,7 +320,7 @@ export const conversationTree: ConversationTree = {
         { text: "Responding to customer questions quickly enough", next: 'customer_response_q' },
         { text: "Keeping customer information organised and up-to-date", next: 'customer_data_q' },
         { text: "Other - Discuss problem now", next: 'redirect_consultation' },
-        { text: "Go back", next: 'first_level_diagnostic' },
+        { text: "Go back", next: 'business_area_intro' },
     ],
   },
   customer_response_q: {
@@ -236,7 +354,7 @@ export const conversationTree: ConversationTree = {
       ],
        options: [
           { text: "Chat with a specialist", next: 'closing' },
-          { text: "Explore other challenges", next: 'first_level_diagnostic' },
+          { text: "Explore other challenges", next: 'business_area_intro' },
           { text: "Other - Discuss problem now", next: 'redirect_consultation' },
           { text: "Go back", next: 'customer_response_q' },
       ]

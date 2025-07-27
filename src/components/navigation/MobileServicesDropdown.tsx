@@ -21,6 +21,8 @@ const serviceItems = [
   { name: "Website Creation", path: "/services/website-creation" },
   { name: "Sales & Lead Tools", path: "/services/sales-lead-tools" },
   { name: "Design & Marketing", path: "/services/design-marketing" },
+  { name: "GDPR Compliance", path: "/services/gdpr-compliance" },
+  { name: "Digital Skills for Workplace", path: "/services/digital-skills-workplace" },
 ];
 
 const MobileServicesDropdown = ({
