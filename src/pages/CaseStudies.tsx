@@ -157,7 +157,7 @@ const CaseStudies = () => {
           </p>
           <Link to="/consultation">
             <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Schedule a Free Consultation
+              Free 30min Consultation - No Commitment - Learn How We Help
             </Button>
           </Link>
         </div>

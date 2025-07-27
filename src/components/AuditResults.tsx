@@ -195,7 +195,7 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
             </li>
           </ul>
           <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-            Schedule Free Consultation
+            Free 30min Consultation - No Commitment - Learn How We Help
           </Button>
         </CardContent>
       </Card>

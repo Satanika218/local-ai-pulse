@@ -127,7 +127,7 @@ export async function generateServicesPDF(services: ServiceData[]) {
   doc.setTextColor(...silver);
   doc.setFontSize(13);
   doc.text(
-    "Contact us today for a free consultation and discover how our AI automation solutions can transform your local business.\nhello@11thtemplesolutions.com | +44 7312 190 728",
+    "Free 30min Consultation - No Commitment - Learn How We Help\nhello@11thtemplesolutions.com | +44 7312 190 728",
     20, y, { maxWidth: pageWidth - 38 }
   );
 

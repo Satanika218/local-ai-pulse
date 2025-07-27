@@ -35,7 +35,7 @@ const NextStepsSection = () => {
           </li>
         </ul>
         <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-          Schedule Free SEO Consultation
+          Free 30min Consultation - No Commitment - Learn How We Help
         </Button>
       </CardContent>
     </Card>

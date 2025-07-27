@@ -154,7 +154,7 @@ export default function SalesLeadTools() {
         </p>
         <Link to="/consultation">
           <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-            Schedule a Consultation
+            Free 30min Consultation - No Commitment - Learn How We Help
           </Button>
         </Link>
       </div>

@@ -205,7 +205,7 @@ export default function Services() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/consultation">
             <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Schedule Consultation
+              Free 30min Consultation - No Commitment - Learn How We Help
             </Button>
           </Link>
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
