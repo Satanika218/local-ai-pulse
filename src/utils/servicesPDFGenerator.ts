@@ -28,10 +28,10 @@ function addLogo(doc: jsPDF, x: number, y: number, width: number, cb: () => void
   img.src = logoUrl;
 }
 
-// Brand palette
-const navy = [20, 33, 61] as const;
-const lime = [150, 255, 0] as const;
-const silver = [156, 163, 175] as const;
+// Updated brand palette to match website exactly
+const navy = [107, 70, 193] as const; // #6B46C1
+const lime = [252, 211, 77] as const; // #FCD34D
+const silver = [229, 231, 235] as const; // #E5E7EB
 
 export async function generateServicesPDF(services: ServiceData[]) {
   const doc = new jsPDF();
