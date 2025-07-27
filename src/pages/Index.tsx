@@ -66,9 +66,9 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section - Matching reference image */}
-      <section className="pt-20 pb-16 purple-gradient relative overflow-hidden">
-        {/* Floating Background Icons - Around Headline */}
-        <div className="floating-icons">
+      <section className="pt-20 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center">
+        {/* Floating Background Icons - Hidden on mobile to prevent overlaps */}
+        <div className="floating-icons hidden lg:block">
           <Bot className="floating-icon animate-float absolute text-white/20" style={{ top: '8%', left: '15%', fontSize: '2.5rem' }} />
           <Brain className="floating-icon animate-float-delayed absolute text-white/30" style={{ top: '12%', right: '20%', fontSize: '2rem' }} />
           <BarChart3 className="floating-icon animate-float absolute text-white/25" style={{ top: '5%', left: '45%', fontSize: '2.2rem' }} />
@@ -78,48 +78,48 @@ const Index = () => {
           <Settings className="floating-icon animate-float absolute text-white/20" style={{ top: '20%', left: '60%', fontSize: '1.6rem' }} />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
             {/* Left Column - Content */}
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <div className="order-2 lg:order-1">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight">
                 Powering Community-Focused <span className="text-brand-lime">Growth</span> with AI, Tech and Business Solutions
               </h1>
-              <p className="text-xl text-white mb-8 max-w-2xl">
+              <p className="text-lg sm:text-xl text-white mb-6 lg:mb-8 max-w-2xl">
                 Serving the heart of Wales and the border counties - One community and every business counts
               </p>
-              <p className="text-base text-white/80 mb-12 max-w-2xl">
+              <p className="text-sm sm:text-base text-white/80 mb-8 lg:mb-12 max-w-2xl">
                 We understand the unique challenges facing rural and border county businesses. Our AI automation and digital solutions help you save time, reduce costs, and compete with larger enterprises while maintaining your local advantage.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                <Link to="/consultation">
-                  <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow">
+              {/* CTA Buttons - Properly spaced */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 lg:mb-16">
+                <Link to="/consultation" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
                     Free 30min Consultation - No Commitment - Learn How We Help
                   </Button>
                 </Link>
-                <Link to="/free-tools">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-navy">
+                <Link to="/free-tools" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-brand-navy text-sm sm:text-base px-4 sm:px-6 py-3">
                     Try Free Tools
                   </Button>
                 </Link>
               </div>
             </div>
 
-            {/* Right Column - Statistics */}
-            <div className="grid grid-cols-1 gap-6">
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
-                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-3">92.6%</div>
-                <p className="text-white text-base">of Welsh SMEs haven't adopted AI yet</p>
+            {/* Right Column - Statistics - Stacked on mobile */}
+            <div className="order-1 lg:order-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-4 lg:p-6 border border-white/20">
+                <div className="stats-highlight text-3xl md:text-4xl lg:text-5xl font-bold mb-2 lg:mb-3">92.6%</div>
+                <p className="text-white text-sm lg:text-base">of Welsh SMEs haven't adopted AI yet</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
-                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-3">72%</div>
-                <p className="text-white text-base">No. of SMEs that lack the government's suggested digital skills to remain competitive in the modern market</p>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-4 lg:p-6 border border-white/20">
+                <div className="stats-highlight text-3xl md:text-4xl lg:text-5xl font-bold mb-2 lg:mb-3">72%</div>
+                <p className="text-white text-sm lg:text-base">No. of SMEs that lack the government's suggested digital skills to remain competitive in the modern market</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
-                <div className="stats-highlight text-4xl md:text-5xl font-bold mb-3">£10-15k</div>
-                <p className="text-white text-base">Average savings cost per annum for firms that adopt our Tech solutions</p>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-4 lg:p-6 border border-white/20 sm:col-span-2 lg:col-span-1">
+                <div className="stats-highlight text-3xl md:text-4xl lg:text-5xl font-bold mb-2 lg:mb-3">£10-15k</div>
+                <p className="text-white text-sm lg:text-base">Average savings cost per annum for firms that adopt our Tech solutions</p>
               </div>
             </div>
           </div>
