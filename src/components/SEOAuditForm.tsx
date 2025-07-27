@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SEOAuditData } from "@/pages/SEOAudit";
+import { processUrl } from "@/utils/urlUtils";
 import SEOContactInfoSection from "./seo-audit/SEOContactInfoSection";
 import SEOBusinessInfoSection from "./seo-audit/SEOBusinessInfoSection";
 import KeywordsAndCompetitorsSection from "./seo-audit/KeywordsAndCompetitorsSection";
@@ -28,17 +29,6 @@ const SEOAuditForm = ({ onSubmit }: SEOAuditFormProps) => {
     gdprConsent: false
   });
 
-  const processUrl = (url: string): string => {
-    let processedUrl = url.trim();
-    if (processedUrl && !/^https?:\/\//i.test(processedUrl)) {
-      // Remove www. if it exists at the beginning
-      if (processedUrl.startsWith('www.')) {
-        processedUrl = processedUrl.substring(4);
-      }
-      processedUrl = `https://www.${processedUrl}`;
-    }
-    return processedUrl;
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

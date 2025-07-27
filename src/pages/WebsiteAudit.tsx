@@ -10,6 +10,7 @@ import ChatbotLauncher from "@/components/ChatbotLauncher";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { generateWebsiteAuditPDF } from "@/utils/websiteAuditPDFGenerator";
+import { processUrl } from "@/utils/urlUtils";
 
 export type WebsiteAuditData = {
   websiteUrl: string;
@@ -50,11 +51,16 @@ export default function WebsiteAudit() {
       return;
     }
 
+    const processedUrl = processUrl(auditData.websiteUrl);
+
     setIsLoading(true);
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 3000));
-      setResults(auditData);
+      setResults({
+        ...auditData,
+        websiteUrl: processedUrl,
+      });
     } catch (error) {
       console.error("Error:", error);
       toast({
@@ -298,8 +304,8 @@ export default function WebsiteAudit() {
                   <div>
                     <label className="block text-white font-semibold mb-2">Website URL</label>
                     <Input
-                      type="url"
-                      placeholder="https://example.com"
+                      type="text"
+                      placeholder="example.com or www.example.com"
                       required
                       value={auditData.websiteUrl}
                       onChange={(e) => setAuditData({ ...auditData, websiteUrl: e.target.value })}
