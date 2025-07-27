@@ -207,66 +207,66 @@ const DigitalSkillsWorkplace = () => {
               </h2>
 
               <div className="grid lg:grid-cols-2 gap-8 mb-12">
-                <Card className="bg-gradient-to-br from-emerald-800/50 to-teal-800/50 border-emerald-500/30">
+                <Card className="bg-background/90 backdrop-blur-sm border-border">
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <Brain className="h-8 w-8 text-emerald-300" />
-                      <CardTitle className="text-white">Technology-Enhanced Learning</CardTitle>
+                      <Brain className="h-8 w-8 text-primary" />
+                      <CardTitle className="text-foreground">Technology-Enhanced Learning</CardTitle>
                     </div>
                   </CardHeader>
-                  <CardContent className="text-emerald-100">
+                  <CardContent className="text-foreground">
                     <ul className="space-y-3">
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>Interactive digital skills assessment platforms</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>Personalized learning pathways</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>Gamified progression tracking</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>Virtual reality workplace simulations</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>AI-powered skills gap identification</span>
                       </li>
                     </ul>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-teal-800/50 to-blue-800/50 border-teal-500/30">
+                <Card className="bg-background/90 backdrop-blur-sm border-border">
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <Users className="h-8 w-8 text-teal-300" />
-                      <CardTitle className="text-white">Human-Centered Approach</CardTitle>
+                      <Users className="h-8 w-8 text-primary" />
+                      <CardTitle className="text-foreground">Human-Centered Approach</CardTitle>
                     </div>
                   </CardHeader>
-                  <CardContent className="text-teal-100">
+                  <CardContent className="text-foreground">
                     <ul className="space-y-3">
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>One-to-one mentoring and support</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>Age-appropriate training methods</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>Confidence-building workshops</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>Peer learning networks</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                         <span>Ongoing support and refresher training</span>
                       </li>
                     </ul>
@@ -274,37 +274,37 @@ const DigitalSkillsWorkplace = () => {
                 </Card>
               </div>
 
-              <Card className="bg-gradient-to-r from-indigo-900/30 to-purple-900/30 border-indigo-500/30">
+              <Card className="bg-background/95 backdrop-blur-sm border-border">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-white mb-4">Tech Workplace Champions Program</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-foreground mb-4">Tech Workplace Champions Program</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-brand-silver mb-4">
+                  <p className="text-muted-foreground mb-4">
                     We create internal "Digital Champions" within your organization - employees who become 
                     confident technology advocates and peer mentors. These champions help colleagues overcome 
                     digital anxiety and build sustainable skills development within your team.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4 mt-6">
                     <div className="text-center">
-                      <div className="bg-green-500/20 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                        <Users className="h-8 w-8 text-green-400" />
+                      <div className="bg-primary/20 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <Users className="h-8 w-8 text-primary" />
                       </div>
-                      <h4 className="text-white font-bold">Peer Support</h4>
-                      <p className="text-brand-silver text-sm">Champions provide ongoing help and encouragement</p>
+                      <h4 className="text-foreground font-bold">Peer Support</h4>
+                      <p className="text-muted-foreground text-sm">Champions provide ongoing help and encouragement</p>
                     </div>
                     <div className="text-center">
-                      <div className="bg-blue-500/20 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                        <Shield className="h-8 w-8 text-blue-400" />
+                      <div className="bg-primary/20 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <Shield className="h-8 w-8 text-primary" />
                       </div>
-                      <h4 className="text-white font-bold">Risk Reduction</h4>
-                      <p className="text-brand-silver text-sm">Prevent breaches, scams, and security incidents</p>
+                      <h4 className="text-foreground font-bold">Risk Reduction</h4>
+                      <p className="text-muted-foreground text-sm">Prevent breaches, scams, and security incidents</p>
                     </div>
                     <div className="text-center">
-                      <div className="bg-purple-500/20 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                        <Award className="h-8 w-8 text-purple-400" />
+                      <div className="bg-primary/20 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <Award className="h-8 w-8 text-primary" />
                       </div>
-                      <h4 className="text-white font-bold">Productivity Boost</h4>
-                      <p className="text-brand-silver text-sm">Maximize digital tools and efficiency gains</p>
+                      <h4 className="text-foreground font-bold">Productivity Boost</h4>
+                      <p className="text-muted-foreground text-sm">Maximize digital tools and efficiency gains</p>
                     </div>
                   </div>
                 </CardContent>
