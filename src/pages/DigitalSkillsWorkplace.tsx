@@ -22,7 +22,7 @@ const DigitalSkillsWorkplace = () => {
             </p>
             <Link to="/consultation">
               <Button className="bg-emerald-400 text-emerald-900 hover:bg-emerald-300 font-bold py-4 px-8 text-lg">
-                Lets Talk - Free 30min Consultation
+                Free 30min Consultation - No Commitment - Learn How We Help
               </Button>
             </Link>
           </div>

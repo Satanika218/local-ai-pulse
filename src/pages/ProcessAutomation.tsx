@@ -83,6 +83,28 @@ const ProcessAutomation = () => {
         </div>
       </section>
 
+      {/* What is Process Automation Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+              What is Process Automation?
+            </h2>
+            <div className="bg-gray-50 rounded-2xl p-8 text-left">
+              <p className="text-lg text-gray-700 mb-4">
+                Think of process automation like having a tireless assistant that never takes breaks, never makes mistakes, and works exactly the same way every time.
+              </p>
+              <p className="text-lg text-gray-700 mb-4">
+                Instead of you or your team doing repetitive tasks like sending emails, organizing files, or entering data, software takes over these jobs. It's like setting up a series of "if this, then that" rules that your computer follows automatically.
+              </p>
+              <p className="text-lg text-gray-700">
+                For example: When a customer fills out a form on your website, automation can instantly send them a welcome email, add their details to your customer database, and notify your sales team - all without anyone lifting a finger.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-16 bg-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

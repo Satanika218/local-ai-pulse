@@ -24,6 +24,28 @@ export default function WebsiteCreation() {
         </Button>
       </div>
 
+      {/* What is Website Creation Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+              What is Professional Website Creation?
+            </h2>
+            <div className="bg-gray-50 rounded-2xl p-8 text-left">
+              <p className="text-lg text-gray-700 mb-4">
+                Think of a professional website like a 24/7 shopfront that never closes. It's where customers get their first impression of your business and decide whether to trust you with their money.
+              </p>
+              <p className="text-lg text-gray-700 mb-4">
+                Unlike a basic website that just shows information, a professional website is designed to turn visitors into customers. It loads fast, looks great on phones and computers, and guides people exactly where you want them to go.
+              </p>
+              <p className="text-lg text-gray-700">
+                For example: Instead of just saying "We sell shoes", a professional website might show happy customers wearing your shoes, make it easy to find the right size, and have a simple way to buy - all designed to make people want to purchase from you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Key Features Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="text-3xl font-bold text-white text-center mb-10">

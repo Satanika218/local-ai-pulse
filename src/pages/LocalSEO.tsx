@@ -74,6 +74,28 @@ const LocalSEO = () => {
         </div>
       </section>
 
+      {/* What is Local SEO Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+              What is Local SEO?
+            </h2>
+            <div className="bg-gray-50 rounded-2xl p-8 text-left">
+              <p className="text-lg text-gray-700 mb-4">
+                Local SEO is like putting up a big, bright sign that helps people in your area find your business when they search online.
+              </p>
+              <p className="text-lg text-gray-700 mb-4">
+                When someone nearby searches for "best restaurant near me" or "plumber in [your town]", Local SEO makes sure your business shows up at the top of their results instead of your competitors.
+              </p>
+              <p className="text-lg text-gray-700">
+                It's like the difference between having your shop on a busy main street versus being hidden down a back alley. Local SEO moves you to the main street of the internet where local customers can easily find you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-16 bg-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

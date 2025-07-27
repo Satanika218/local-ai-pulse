@@ -84,6 +84,7 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
             <div className="text-center">
               <div className="text-4xl font-bold text-brand-lime">{score}</div>
               <div className="text-brand-silver text-sm">Overall Score</div>
+              <div className="text-xs text-brand-silver mt-1">Based on goal alignment, data quality, and implementation readiness</div>
             </div>
           </div>
         </CardHeader>

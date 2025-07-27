@@ -22,7 +22,7 @@ const GDPRCompliance = () => {
             </p>
             <Link to="/consultation">
               <Button className="bg-yellow-400 text-purple-900 hover:bg-yellow-300 font-bold py-4 px-8 text-lg">
-                Lets Talk - Free 30min Consultation
+                Free 30min Consultation - No Commitment - Learn How We Help
               </Button>
             </Link>
           </div>

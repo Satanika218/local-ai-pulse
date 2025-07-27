@@ -290,6 +290,7 @@ const DigitalSkillsQuiz = () => {
                   {score}%
                 </div>
                 <p className="text-xl text-gray-600">Overall Digital Skills Score</p>
+                <p className="text-sm text-gray-500 mt-1">Based on knowledge of digital tools, online security, and workplace technology</p>
               </div>
 
               <div className="mb-8">

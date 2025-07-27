@@ -182,7 +182,7 @@ const Consultation = () => {
                 }
               }}
             >
-              Free 30min Consultation - No Fee or Commitment - Learn What We Do & How We Help
+              Free 30min Consultation - No Commitment - Learn How We Help
             </Button>
           </div>
         </form>

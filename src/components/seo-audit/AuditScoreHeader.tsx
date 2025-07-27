@@ -26,6 +26,7 @@ const AuditScoreHeader = ({ auditData, score, onDownloadPDF }: AuditScoreHeaderP
           <div className="text-center">
             <div className="text-4xl font-bold text-brand-lime">{score}</div>
             <div className="text-brand-silver text-sm">SEO Score</div>
+            <div className="text-xs text-brand-silver mt-1">Based on keywords, competition, goals, and current issues</div>
           </div>
         </div>
       </CardHeader>

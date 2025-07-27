@@ -83,6 +83,28 @@ const DataAnalytics = () => {
         </div>
       </section>
 
+      {/* What is Data Analytics Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+              What is Data Analytics?
+            </h2>
+            <div className="bg-gray-50 rounded-2xl p-8 text-left">
+              <p className="text-lg text-gray-700 mb-4">
+                Think of data analytics like having a detective for your business. Instead of guessing what's working, you get clear answers from the information you already have.
+              </p>
+              <p className="text-lg text-gray-700 mb-4">
+                Every day, your business creates lots of information - website visits, sales, customer emails, social media clicks. Data analytics looks at all this information and tells you the story behind it.
+              </p>
+              <p className="text-lg text-gray-700">
+                For example: Instead of wondering "Why did sales drop last month?", data analytics can show you exactly what happened - maybe fewer people visited your website, or customers from a specific area stopped buying. Then you know exactly what to fix.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-16 bg-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

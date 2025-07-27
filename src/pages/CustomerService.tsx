@@ -24,6 +24,28 @@ export default function CustomerService() {
         </Button>
       </div>
 
+      {/* What is Customer Service AI Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+              What is AI Customer Service?
+            </h2>
+            <div className="bg-gray-50 rounded-2xl p-8 text-left">
+              <p className="text-lg text-gray-700 mb-4">
+                Imagine having a helpful assistant who knows everything about your business and can talk to customers any time of day or night - that's AI customer service.
+              </p>
+              <p className="text-lg text-gray-700 mb-4">
+                It's like a very smart chatbot that can understand what customers are asking for and give them the right answers immediately. Unlike basic chatbots that only work with simple questions, AI customer service can handle complex conversations and even learn from each interaction.
+              </p>
+              <p className="text-lg text-gray-700">
+                For example: A customer might ask "What's the best product for my small garden?" and the AI can ask follow-up questions, understand their specific needs, and recommend the perfect solution - just like your best salesperson would.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solutions Overview */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="text-3xl font-bold text-white text-center mb-10">
