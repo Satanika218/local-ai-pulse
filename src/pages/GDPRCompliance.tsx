@@ -3,10 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, AlertTriangle, TrendingUp, Users, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/navigation/Navigation";
+import Footer from "@/components/Footer";
+import ChatbotLauncher from "@/components/ChatbotLauncher";
 
 const GDPRCompliance = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
+    <div className="min-h-screen bg-brand-navy">
+      <Navigation />
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">
@@ -105,14 +109,14 @@ const GDPRCompliance = () => {
             </h2>
 
             <div className="grid lg:grid-cols-2 gap-8 mb-12">
-              <Card className="bg-gradient-to-br from-indigo-800/50 to-purple-800/50 border-indigo-500/30">
+              <Card className="bg-brand-navy-light border-brand-silver/20">
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <Shield className="h-8 w-8 text-indigo-300" />
+                    <Shield className="h-8 w-8 text-brand-lime" />
                     <CardTitle className="text-white">Technology Solutions</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="text-purple-100">
+                <CardContent className="text-brand-silver">
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
@@ -138,14 +142,14 @@ const GDPRCompliance = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-purple-800/50 to-pink-800/50 border-purple-500/30">
+              <Card className="bg-brand-navy-light border-brand-silver/20">
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <Users className="h-8 w-8 text-purple-300" />
+                    <Users className="h-8 w-8 text-brand-lime" />
                     <CardTitle className="text-white">Human Expertise</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="text-purple-100">
+                <CardContent className="text-brand-silver">
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
@@ -216,6 +220,9 @@ const GDPRCompliance = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
+      <ChatbotLauncher />
     </div>
   );
 };

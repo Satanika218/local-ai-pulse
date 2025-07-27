@@ -286,7 +286,7 @@ const GDPRQuiz = () => {
             
             <CardContent className="p-8">
               <div className="text-center mb-8">
-                <div className="text-6xl font-bold mb-4" style={{ color: scoreLevel.color.replace('text-', '') }}>
+                <div className={`text-6xl font-bold mb-4 ${scoreLevel.color}`}>
                   {score}%
                 </div>
                 <p className="text-xl text-gray-600">GDPR Knowledge Score</p>

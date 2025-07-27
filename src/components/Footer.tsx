@@ -80,7 +80,7 @@ const Footer = () => {
         <div className="border-t border-brand-silver/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
             <p className="text-brand-silver text-sm">
-              © {currentYear} 11th Temple Solutions. All rights reserved.
+              © 2025 11th Temple Solutions. All rights reserved.
             </p>
             <AccessibilityFooterLink />
           </div>
