@@ -52,14 +52,17 @@ const Consultation = () => {
 
       {/* Hero Section */}
       <div className="bg-brand-navy-light py-12 text-center">
-        <h1 className="text-3xl font-bold text-white mb-4">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-white via-brand-lime to-white bg-clip-text text-transparent mb-6 animate-pulse">
           Learn More
         </h1>
-        <p className="text-brand-silver text-lg">
-          Simple chat, we'll discuss your business, time-constraints, bottlenecks & maybe even things not yet considered.
-          <br /><br />
-          No hard sell, no commitment; a simple consultation to discuss potential solutions.
-        </p>
+        <div className="max-w-4xl mx-auto space-y-4">
+          <p className="text-xl text-white font-medium leading-relaxed">
+            Simple chat, we'll discuss your business, time-constraints, bottlenecks & maybe even things not yet considered.
+          </p>
+          <p className="text-lg text-brand-lime font-semibold tracking-wide">
+            No hard sell, no commitment; a simple consultation to discuss potential solutions.
+          </p>
+        </div>
       </div>
 
       {/* Consultation Form */}
