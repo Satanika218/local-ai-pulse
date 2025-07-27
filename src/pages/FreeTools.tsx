@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
-import TestPDFButtons from "@/components/TestPDFButtons";
+
 import { Link } from "react-router-dom";
 
 const FreeTools = () => {
@@ -136,10 +136,6 @@ const FreeTools = () => {
         </div>
       </section>
 
-      {/* Test PDF Section */}
-      <section className="py-20 bg-white">
-        <TestPDFButtons />
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 purple-gradient">

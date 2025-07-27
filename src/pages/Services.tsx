@@ -8,7 +8,7 @@ import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
 import PDFDownloadForm from "@/components/forms/PDFDownloadForm";
-import PDFTestButton from "@/components/PDFTestButton";
+
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const services = [
@@ -166,7 +166,7 @@ export default function Services() {
               <PDFDownloadForm onSubmit={handlePDFDownload} isLoading={isGeneratingPDF} />
             </DialogContent>
           </Dialog>
-          <PDFTestButton />
+          
         </div>
       </div>
 
