@@ -135,18 +135,18 @@ const Consultation = () => {
           </div>
 
           {/* GDPR Consent Section */}
-          <div className="space-y-4 p-4 bg-brand-navy-light rounded-lg border border-brand-silver/20">
-            <h3 className="text-lg font-semibold text-white">Data Protection & Privacy</h3>
+          <div className="space-y-4 p-6 bg-gradient-to-r from-yellow-400/20 to-purple-500/20 rounded-lg border-2 border-yellow-400 shadow-lg">
+            <h3 className="text-xl font-bold text-yellow-400 text-center">Data Protection & Privacy - Action Required</h3>
             
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-4 p-4 bg-white/10 rounded-lg border border-yellow-400/50">
               <Checkbox
                 id="gdpr-consent"
                 checked={gdprConsent}
                 onCheckedChange={(checked) => setGdprConsent(checked as boolean)}
-                className="mt-1"
+                className="mt-1 h-6 w-6 border-2 border-yellow-400 data-[state=checked]:bg-yellow-400 data-[state=checked]:text-purple-900"
               />
-              <label htmlFor="gdpr-consent" className="text-sm text-brand-silver">
-                I consent to 11th Temple Solutions processing my personal data for the purpose of responding to my consultation request. 
+              <label htmlFor="gdpr-consent" className="text-sm text-white font-medium leading-relaxed">
+                <span className="text-yellow-400 font-bold">REQUIRED:</span> I consent to 11th Temple Solutions processing my personal data for the purpose of responding to my consultation request. 
                 I understand my data will be processed in accordance with your Privacy Policy and I have the right to withdraw consent at any time. *
               </label>
             </div>
@@ -174,9 +174,15 @@ const Consultation = () => {
             <Button
               type="submit"
               disabled={!gdprConsent}
-              className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime/90 font-semibold py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-yellow-400 text-purple-900 hover:bg-yellow-300 font-bold py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed shadow-lg transform transition-all duration-200 hover:scale-105"
+              onClick={(e) => {
+                e.preventDefault();
+                if (gdprConsent) {
+                  window.open('https://11thtemple.youcanbook.me/', '_blank');
+                }
+              }}
             >
-              Let's talk - 30mins to See How We Can Help - Free
+              Free 30min Consultation - No Fee or Commitment - Learn What We Do & How We Help
             </Button>
           </div>
         </form>
