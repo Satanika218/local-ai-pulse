@@ -102,7 +102,7 @@ const FreeTools = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-brand-navy">
+      <section className="py-20 bg-gradient-to-br from-brand-navy via-slate-800 to-brand-navy">{/* Changed from bg-brand-navy to gradient */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
