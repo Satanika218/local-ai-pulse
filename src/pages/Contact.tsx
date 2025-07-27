@@ -363,7 +363,7 @@ const Contact = () => {
                     className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold py-3 rounded-xl transition-all duration-300"
                     onClick={() => window.open('https://11thtemple.youcanbook.me/', '_blank')}
                   >
-                    Free 30min Consultation - No Commitment - Learn How We Help
+                    Free Consultation
                   </Button>
                 </div>
               </CardContent>

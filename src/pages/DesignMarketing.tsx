@@ -8,12 +8,13 @@ import ChatbotLauncher from "@/components/ChatbotLauncher";
 
 const DesignMarketing = () => {
   return (
-    <div className="min-h-screen bg-brand-navy">
+    <div className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - Gradient background */}
+      <section className="pt-20 pb-16 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-pink-600/20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Design & <span className="text-brand-lime">Marketing</span> Solutions
@@ -30,15 +31,15 @@ const DesignMarketing = () => {
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16">
+      {/* Visual Identity Section - White background */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-3xl font-bold text-brand-navy mb-6">
                 Transform Your <span className="text-brand-lime">Visual Identity</span>
               </h2>
-              <p className="text-brand-silver mb-6">
+              <p className="text-gray-700 mb-6 text-lg">
                 In today's digital landscape, your visual identity is often the first impression potential customers have of your business. Our AI-powered design solutions help you create a cohesive, professional brand identity that resonates with your target audience.
               </p>
               <ul className="space-y-3 mb-8">
@@ -49,15 +50,15 @@ const DesignMarketing = () => {
                   "Print materials that reinforce your brand message"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">{item}</span>
+                    <CheckCircle className="h-6 w-6 text-brand-lime mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-brand-navy-light p-6 rounded-2xl border border-brand-silver/20">
-              <Palette className="h-16 w-16 text-brand-lime mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Design Services</h3>
+            <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-8 rounded-2xl border-2 border-purple-200 shadow-lg">
+              <Palette className="h-16 w-16 text-purple-600 mb-6" />
+              <h3 className="text-2xl font-bold text-brand-navy mb-4">Design Services</h3>
               <ul className="space-y-3 mb-6">
                 {[
                   "AI-powered logo design and brand identity",
@@ -68,18 +69,23 @@ const DesignMarketing = () => {
                   "Custom illustrations and infographics"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">{item}</span>
+                    <CheckCircle className="h-5 w-5 text-purple-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div className="order-2 md:order-1 bg-brand-navy-light p-6 rounded-2xl border border-brand-silver/20">
-              <Megaphone className="h-16 w-16 text-brand-lime mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Marketing Services</h3>
+      {/* Marketing Section - Light purple background */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1 bg-gradient-to-br from-orange-100 to-yellow-100 p-8 rounded-2xl border-2 border-orange-200 shadow-lg">
+              <Megaphone className="h-16 w-16 text-orange-600 mb-6" />
+              <h3 className="text-2xl font-bold text-brand-navy mb-4">Marketing Services</h3>
               <ul className="space-y-3 mb-6">
                 {[
                   "Content marketing strategy and execution",
@@ -90,17 +96,17 @@ const DesignMarketing = () => {
                   "Marketing analytics and reporting"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">{item}</span>
+                    <CheckCircle className="h-5 w-5 text-orange-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-3xl font-bold text-brand-navy mb-6">
                 Amplify Your <span className="text-brand-lime">Marketing Impact</span>
               </h2>
-              <p className="text-brand-silver mb-6">
+              <p className="text-gray-700 mb-6 text-lg">
                 Marketing is no longer about shouting the loudest—it's about connecting with the right audience at the right time with the right message. Our AI-powered marketing solutions help you cut through the noise and make meaningful connections with potential customers.
               </p>
               <ul className="space-y-3 mb-8">
@@ -111,20 +117,25 @@ const DesignMarketing = () => {
                   "Detailed analytics to measure and optimize performance"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">{item}</span>
+                    <CheckCircle className="h-6 w-6 text-brand-lime mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* Photography Section - White background */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-3xl font-bold text-brand-navy mb-6">
                 Capture Your <span className="text-brand-lime">Best Moments</span>
               </h2>
-              <p className="text-brand-silver mb-6">
+              <p className="text-gray-700 mb-6 text-lg">
                 High-quality visual content is essential for engaging your audience. Our AI-enhanced photography solutions help you showcase your products, services, and team in the best possible light.
               </p>
               <ul className="space-y-3 mb-8">
@@ -135,15 +146,15 @@ const DesignMarketing = () => {
                   "Consistent visual style across all imagery"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">{item}</span>
+                    <CheckCircle className="h-6 w-6 text-brand-lime mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-brand-navy-light p-6 rounded-2xl border border-brand-silver/20">
-              <Camera className="h-16 w-16 text-brand-lime mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Photography Services</h3>
+            <div className="bg-gradient-to-br from-blue-100 to-cyan-100 p-8 rounded-2xl border-2 border-blue-200 shadow-lg">
+              <Camera className="h-16 w-16 text-blue-600 mb-6" />
+              <h3 className="text-2xl font-bold text-brand-navy mb-4">Photography Services</h3>
               <ul className="space-y-3 mb-6">
                 {[
                   "Product photography enhancement",
@@ -154,8 +165,8 @@ const DesignMarketing = () => {
                   "Virtual staging for real estate"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">{item}</span>
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -164,14 +175,14 @@ const DesignMarketing = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-brand-navy-light">
+      {/* Benefits Section - Light gray background */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               Why Choose Our <span className="text-brand-lime">Design & Marketing</span> Solutions?
             </h2>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our AI-powered approach delivers professional results at a fraction of the time and cost of traditional agencies.
             </p>
           </div>
@@ -179,28 +190,34 @@ const DesignMarketing = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <TrendingUp className="h-12 w-12 text-brand-lime" />,
+                icon: <TrendingUp className="h-12 w-12 text-green-600" />,
                 title: "Increased Engagement",
-                description: "Professional design and targeted marketing significantly increase customer engagement and conversion rates."
+                description: "Professional design and targeted marketing significantly increase customer engagement and conversion rates.",
+                bgColor: "bg-green-50",
+                borderColor: "border-green-200"
               },
               {
-                icon: <Palette className="h-12 w-12 text-brand-lime" />,
+                icon: <Palette className="h-12 w-12 text-purple-600" />,
                 title: "Consistent Brand Identity",
-                description: "Maintain a cohesive visual identity across all touchpoints to build brand recognition and trust."
+                description: "Maintain a cohesive visual identity across all touchpoints to build brand recognition and trust.",
+                bgColor: "bg-purple-50",
+                borderColor: "border-purple-200"
               },
               {
-                icon: <Megaphone className="h-12 w-12 text-brand-lime" />,
+                icon: <Megaphone className="h-12 w-12 text-orange-600" />,
                 title: "Targeted Messaging",
-                description: "Reach the right audience with the right message at the right time through data-driven marketing strategies."
+                description: "Reach the right audience with the right message at the right time through data-driven marketing strategies.",
+                bgColor: "bg-orange-50",
+                borderColor: "border-orange-200"
               }
             ].map((benefit, i) => (
-              <Card key={i} className="bg-brand-navy border-brand-silver/20">
+              <Card key={i} className={`${benefit.bgColor} ${benefit.borderColor} border-2 shadow-lg hover:shadow-xl transition-shadow duration-300`}>
                 <CardHeader>
-                  <div className="mb-2">{benefit.icon}</div>
-                  <CardTitle className="text-white text-xl">{benefit.title}</CardTitle>
+                  <div className="mb-4">{benefit.icon}</div>
+                  <CardTitle className="text-brand-navy text-xl">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-brand-silver">{benefit.description}</p>
+                  <p className="text-gray-700">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -208,72 +225,72 @@ const DesignMarketing = () => {
         </div>
       </section>
 
-      {/* Case Study Section */}
-      <section className="py-16">
+      {/* Case Study Section - White background */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               Success <span className="text-brand-lime">Stories</span>
             </h2>
-            <p className="text-xl text-brand-silver max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               See how our design and marketing solutions have helped local businesses thrive.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-brand-navy-light border-brand-silver/20">
+            <Card className="bg-gradient-to-br from-pink-50 to-rose-50 border-2 border-pink-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="text-white text-xl">Local Bakery Rebrand</CardTitle>
-                <CardDescription className="text-brand-silver">
+                <CardTitle className="text-brand-navy text-xl">Local Bakery Rebrand</CardTitle>
+                <CardDescription className="text-gray-600">
                   Complete visual identity refresh and marketing campaign
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-brand-silver mb-4">
+                <p className="text-gray-700 mb-4">
                   A family-owned bakery was struggling to stand out in a competitive market. We created a fresh, modern brand identity and implemented a targeted local marketing campaign.
                 </p>
-                <p className="text-brand-lime font-semibold">Results:</p>
+                <p className="text-pink-600 font-semibold mb-3">Results:</p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">43% increase in foot traffic</span>
+                    <CheckCircle className="h-5 w-5 text-pink-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">43% increase in foot traffic</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">68% increase in social media engagement</span>
+                    <CheckCircle className="h-5 w-5 text-pink-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">68% increase in social media engagement</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">52% increase in online orders</span>
+                    <CheckCircle className="h-5 w-5 text-pink-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">52% increase in online orders</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="bg-brand-navy-light border-brand-silver/20">
+            <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="text-white text-xl">Real Estate Photography Enhancement</CardTitle>
-                <CardDescription className="text-brand-silver">
+                <CardTitle className="text-brand-navy text-xl">Real Estate Photography Enhancement</CardTitle>
+                <CardDescription className="text-gray-600">
                   AI-powered image enhancement for property listings
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-brand-silver mb-4">
+                <p className="text-gray-700 mb-4">
                   A local real estate agency was struggling with low-quality property photos. We implemented our AI image enhancement solution to transform their listing photos.
                 </p>
-                <p className="text-brand-lime font-semibold">Results:</p>
+                <p className="text-blue-600 font-semibold mb-3">Results:</p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">37% increase in listing views</span>
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">37% increase in listing views</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">28% reduction in days on market</span>
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">28% reduction in days on market</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-lime mr-2 flex-shrink-0" />
-                    <span className="text-brand-silver">15% increase in average sale price</span>
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" />
+                    <span className="text-gray-700">15% increase in average sale price</span>
                   </li>
                 </ul>
               </CardContent>
@@ -282,7 +299,7 @@ const DesignMarketing = () => {
 
           <div className="text-center mt-12">
             <Link to="/case-studies">
-              <Button variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy">
+              <Button variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
                 View More Case Studies <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -290,8 +307,8 @@ const DesignMarketing = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
+      {/* CTA Section - Dark gradient background */}
+      <section className="py-20 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Transform Your Brand?
@@ -302,7 +319,7 @@ const DesignMarketing = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/consultation">
               <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Free 30min Consultation - No Commitment - Learn How We Help
+                Free Consultation
               </Button>
             </Link>
             <Link to="/contact">
