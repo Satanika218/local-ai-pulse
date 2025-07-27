@@ -109,7 +109,29 @@ export async function generateGDPRQuizPDF(result: GDPRQuizResult) {
   doc.text(complianceLevel.description, 100, y + 28);
   doc.setFontSize(11);
   doc.text(`Risk Level: ${complianceLevel.risk}`, 100, y + 38);
-  y += 60;
+  y += 50;
+
+  // Score calculation explanation
+  doc.setFontSize(14);
+  doc.setFont("helvetica", "bold");
+  doc.setTextColor(navy[0], navy[1], navy[2]);
+  doc.text("How Your Score is Calculated", 20, y);
+  
+  y += 12;
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "normal");
+  const calculations = [
+    "• Data protection principles understanding (25 points)",
+    "• Individual rights and breach procedures (25 points)", 
+    "• Technical and organizational measures (25 points)",
+    "• Staff training and vendor management (25 points)"
+  ];
+  
+  calculations.forEach((calc) => {
+    doc.text(calc, 25, y);
+    y += 7;
+  });
+  y += 10;
 
   // Key compliance areas
   doc.setFontSize(16);

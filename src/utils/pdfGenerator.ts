@@ -95,17 +95,49 @@ export const generateAuditPDF = async (
 
   // Analytics Score
   yPosition += 25;
+  
+  // Score box background
   doc.setFillColor(...brandLime);
-  doc.rect(20, yPosition - 5, 50, 25, 'F');
+  doc.rect(20, yPosition - 5, 60, 30, 'F');
   
+  // Score text
   doc.setTextColor(...brandNavy);
-  doc.setFontSize(20);
+  doc.setFontSize(24);
   doc.setFont('helvetica', 'bold');
-  doc.text(`${score}/100`, 30, yPosition + 8);
+  doc.text(`${score}/100`, 35, yPosition + 10);
   
+  // Label next to score box
   doc.setTextColor(...brandNavy);
+  doc.setFontSize(16);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Overall Analytics Score', 90, yPosition + 5);
+  
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Based on business goals,', 90, yPosition + 15);
+  doc.text('challenges, and industry factors', 90, yPosition + 23);
+
+  // Score calculation explanation
+  yPosition += 45;
   doc.setFontSize(14);
-  doc.text('Overall Analytics Score', 80, yPosition + 8);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(...brandNavy);
+  doc.text('How Your Score is Calculated', 20, yPosition);
+  
+  yPosition += 15;
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  const calculations = [
+    '• Business goals clarity and measurability (25 points)',
+    '• Current challenges severity and impact (25 points)', 
+    '• Industry-specific analytics maturity (25 points)',
+    '• Data infrastructure and tracking setup (25 points)'
+  ];
+  
+  calculations.forEach((calc) => {
+    doc.text(calc, 25, yPosition);
+    yPosition += 8;
+  });
 
   // Primary Goals
   if (auditData.primaryGoals.length > 0) {

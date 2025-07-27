@@ -115,6 +115,28 @@ export const generateSEOAuditPDF = async (
   doc.text('Based on keywords, competition,', 90, yPosition + 15);
   doc.text('goals, and current issues', 90, yPosition + 23);
 
+  // Score calculation explanation
+  yPosition += 45;
+  doc.setFontSize(14);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(...brandNavy);
+  doc.text('How Your Score is Calculated', 20, yPosition);
+  
+  yPosition += 15;
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  const calculations = [
+    '• Keywords relevance and competition level (25 points)',
+    '• Current ranking position and visibility (25 points)', 
+    '• SEO goals alignment and achievability (25 points)',
+    '• Current issues impact and severity (25 points)'
+  ];
+  
+  calculations.forEach((calc) => {
+    doc.text(calc, 25, yPosition);
+    yPosition += 8;
+  });
+
   // Primary Keywords
   if (auditData.primaryKeywords.length > 0) {
     yPosition += 35;

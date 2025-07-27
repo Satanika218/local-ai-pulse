@@ -94,17 +94,49 @@ export const generateWebsiteAuditPDF = async (
 
   // Website Audit Score
   yPosition += 25;
+  
+  // Score box background
   doc.setFillColor(...brandLime);
-  doc.rect(20, yPosition - 5, 50, 25, 'F');
+  doc.rect(20, yPosition - 5, 60, 30, 'F');
   
+  // Score text
   doc.setTextColor(...brandNavy);
-  doc.setFontSize(20);
+  doc.setFontSize(24);
   doc.setFont('helvetica', 'bold');
-  doc.text(`${score}/100`, 30, yPosition + 8);
+  doc.text(`${score}/100`, 35, yPosition + 10);
   
+  // Label next to score box
   doc.setTextColor(...brandNavy);
+  doc.setFontSize(16);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Overall Website Score', 90, yPosition + 5);
+  
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Based on performance, UX,', 90, yPosition + 15);
+  doc.text('security, and SEO factors', 90, yPosition + 23);
+
+  // Score calculation explanation
+  yPosition += 45;
   doc.setFontSize(14);
-  doc.text('Overall Website Score', 80, yPosition + 8);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(...brandNavy);
+  doc.text('How Your Score is Calculated', 20, yPosition);
+  
+  yPosition += 15;
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  const calculations = [
+    '• Performance and loading speed (25 points)',
+    '• User experience and mobile responsiveness (25 points)', 
+    '• Security and SSL implementation (25 points)',
+    '• SEO optimization and content quality (25 points)'
+  ];
+  
+  calculations.forEach((calc) => {
+    doc.text(calc, 25, yPosition);
+    yPosition += 8;
+  });
 
   // Current Issues
   if (auditData.currentIssues.length > 0) {

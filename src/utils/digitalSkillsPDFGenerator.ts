@@ -87,7 +87,29 @@ export async function generateDigitalSkillsPDF(result: DigitalSkillsResult) {
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");
   doc.text(scoreLevel.description, 100, y + 32);
-  y += 55;
+  y += 45;
+
+  // Score calculation explanation
+  doc.setFontSize(14);
+  doc.setFont("helvetica", "bold");
+  doc.setTextColor(navy[0], navy[1], navy[2]);
+  doc.text("How Your Score is Calculated", 20, y);
+  
+  y += 12;
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "normal");
+  const calculations = [
+    "• Basic digital operations and software skills (30 points)",
+    "• Communication and collaboration tools (25 points)", 
+    "• Information management and security awareness (25 points)",
+    "• Problem-solving and emerging tech adaptability (20 points)"
+  ];
+  
+  calculations.forEach((calc) => {
+    doc.text(calc, 25, y);
+    y += 7;
+  });
+  y += 10;
 
   // Key areas analysis
   doc.setFontSize(16);
