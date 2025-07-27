@@ -2,7 +2,7 @@
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
-import { CheckCircle, Heart, Users, Zap, Handshake } from "lucide-react";
+import { CheckCircle, Heart, Users, Zap, Handshake, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -66,10 +66,10 @@ const About = () => {
               <div className="bg-gradient-to-r from-brand-lime/20 to-brand-silver/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-silver/20">
                 <h3 className="text-2xl font-bold text-white mb-4">Why We're Different</h3>
                 <p className="text-brand-silver mb-6">
-                  Unlike larger tech companies, we understand the unique challenges facing UK rural and community-focused businesses, why? because it's our home, it's where we've worked and where we've seen great ideas come and go.
+                  Unlike larger tech companies, we understand the unique challenges facing UK rural and community-focused businesses. Why? Because it's our home, it's where we worked, where we've seen great ideas, and jobs come and go.
                 </p>
                 <p className="text-brand-silver mb-6">
-                  We've live in these communities, have family and friends as part of the workforce. There is huge culture of entrepreneurship, self-employment and 'micro-businesses' (less than 10-employees) rank among the highest in the UK, there's a wealth of knowledge and independence. We don't want to take anything away from that, we want to help you optimise it by helping minimise the time spent doing the tasks you don't like and giving you the freedom to spend more time doing what you want to be doing!
+                  We live in these communities, have family and friends as part of the workforce and want to be part of ensuring that the tradition of locally-owned businesses persist. There is a huge culture of entrepreneurship, self-employment, and 'micro-businesses' (less than 10-employees) rank among the highest in the UK, there's a wealth of knowledge and independence. We don't want to take anything away from that, we want to help you optimise it by helping minimise the time spent doing the tasks you don't like and giving you the freedom to spend more time doing what you want to be doing!
                 </p>
                 <p className="text-brand-silver mb-6">
                   Unfortunately, rural areas miss out on the technological advances of larger cities and with the speed that tech is accelerating at, businesses will be left behind and that when smaller businesses die because they can't compete with the biggest firms. We want to help firms stay as up to date as possible, whilst minimising costs and maximising returns, and empowering businesses to become technologically competent, for now and the future.
@@ -80,7 +80,7 @@ const About = () => {
                     <p className="text-brand-silver text-sm">Community First</p>
                   </div>
                   <div className="text-center">
-                    <Users className="h-8 w-8 text-brand-lime mx-auto mb-2" />
+                    <Home className="h-8 w-8 text-brand-lime mx-auto mb-2" />
                     <p className="text-brand-silver text-sm">Regional Knowledge</p>
                   </div>
                   <div className="text-center">
@@ -150,8 +150,8 @@ const About = () => {
               </p>
             </div>
             <div className="bg-brand-navy-light border border-brand-silver/20 rounded-2xl p-8 text-center">
-              <Users className="h-12 w-12 text-brand-lime mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-4">Regional Understanding</h3>
+              <Home className="h-12 w-12 text-brand-lime mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-4">Regional Knowledge</h3>
               <p className="text-brand-silver">
                 Rural businesses face unique challenges. We understand seasonal variations, limited resources, 
                 and the importance of word-of-mouth reputation in close-knit communities.
