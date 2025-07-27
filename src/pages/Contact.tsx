@@ -194,7 +194,7 @@ const Contact = () => {
             <Card className="text-center bg-gray-50 border-gray-200 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
                 <Phone className="h-12 w-12 text-brand-purple mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-brand-navy mb-2">Call Us/Message Us/WhatsApp</h3>
+                <h3 className="text-xl font-semibold text-brand-navy mb-2">Contact us on all platforms</h3>
                 <p className="text-gray-600">+44 7312 190 728</p>
               </CardContent>
             </Card>
