@@ -8,17 +8,17 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 
-// Service items for submenu
+// Service items for submenu - reordered per user requirements
 const serviceItems = [
-  { name: "Process Automation", path: "/services/process-automation" },
-  { name: "Customer Service Agents", path: "/services/customer-service" },
-  { name: "Local SEO AI", path: "/services/local-seo" },
-  { name: "Data Analytics", path: "/services/data-analytics" },
-  { name: "Website Creation", path: "/services/website-creation" },
   { name: "Sales & Lead Tools", path: "/services/sales-lead-tools" },
-  { name: "Design & Marketing", path: "/services/design-marketing" },
   { name: "GDPR Compliance", path: "/services/gdpr-compliance" },
   { name: "Digital Skills for Workplace", path: "/services/digital-skills-workplace" },
+  { name: "Local SEO AI", path: "/services/local-seo" },
+  { name: "Process Automation", path: "/services/process-automation" },
+  { name: "Data Analytics", path: "/services/data-analytics" },
+  { name: "Customer Service Agents", path: "/services/customer-service" },
+  { name: "Design & Marketing", path: "/services/design-marketing" },
+  { name: "Website Creation", path: "/services/website-creation" },
 ];
 
 const ServicesDropdown = ({
