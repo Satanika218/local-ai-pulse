@@ -91,19 +91,29 @@ export const generateSEOAuditPDF = async (
   yPosition += 10;
   doc.text(`Current Ranking: ${auditData.currentRanking}`, 20, yPosition);
 
-  // SEO Score
+  // SEO Score - Improved layout
   yPosition += 25;
+  
+  // Score box background
   doc.setFillColor(...brandLime);
-  doc.rect(20, yPosition - 5, 50, 25, 'F');
+  doc.rect(20, yPosition - 5, 60, 30, 'F');
   
+  // Score text
   doc.setTextColor(...brandNavy);
-  doc.setFontSize(20);
+  doc.setFontSize(24);
   doc.setFont('helvetica', 'bold');
-  doc.text(`${score}/100`, 30, yPosition + 8);
+  doc.text(`${score}/100`, 35, yPosition + 10);
   
+  // Label next to score box
   doc.setTextColor(...brandNavy);
-  doc.setFontSize(14);
-  doc.text('Overall SEO Score', 80, yPosition + 8);
+  doc.setFontSize(16);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Overall SEO Score', 90, yPosition + 5);
+  
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Based on keywords, competition,', 90, yPosition + 15);
+  doc.text('goals, and current issues', 90, yPosition + 23);
 
   // Primary Keywords
   if (auditData.primaryKeywords.length > 0) {
