@@ -53,7 +53,7 @@ const Consultation = () => {
       {/* Hero Section */}
       <div className="bg-brand-navy-light py-12 text-center">
         <h1 className="text-3xl font-bold text-white mb-4">
-          Let's Chat About Your Business
+          Let's discuss how we can collaborate
         </h1>
         <p className="text-brand-silver text-lg">
           Get expert advice on how AI can transform your business. 

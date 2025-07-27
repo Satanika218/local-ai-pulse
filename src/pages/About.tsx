@@ -270,7 +270,7 @@ const About = () => {
             </Link>
             <Link to="/contact">
               <Button size="lg" variant="outline" className="border-brand-lime text-brand-lime hover:bg-brand-lime hover:text-brand-navy font-semibold">
-                Let's Chat About Your Business
+                Let's discuss how we can collaborate
               </Button>
             </Link>
           </div>

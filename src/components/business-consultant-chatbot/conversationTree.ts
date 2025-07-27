@@ -5,11 +5,13 @@ export const conversationTree: ConversationTree = {
     id: 'start',
     text: [
       "Hi there! I'm your AI business consultant from 11th Temple Solutions. I help businesses identify areas where technology and automation can save time, reduce costs, and drive growth.",
-      "What brings you here today? Are you looking to solve a specific business challenge, or are you interested in exploring how technology might help your business run more smoothly?"
+      "Let's explore what's possible for your business. What area currently takes up the most time or feels like the biggest headache?"
     ],
     options: [
-      { text: "Solve a specific challenge", next: 'first_level_diagnostic' },
-      { text: "Explore what's possible", next: 'first_level_diagnostic' },
+      { text: "Your website and online presence", next: 'website_presence_q' },
+      { text: "Getting the word out and finding new customers", next: 'marketing_q' },
+      { text: "Paperwork, invoices and financial tasks", next: 'finance_q' },
+      { text: "Keeping in touch with customers", next: 'customer_relations_q' },
       { text: "Other - Discuss problem now", next: 'redirect_consultation' },
     ],
   },
