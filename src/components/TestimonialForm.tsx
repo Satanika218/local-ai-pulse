@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 
 interface TestimonialFormData {
@@ -15,6 +16,7 @@ interface TestimonialFormData {
   impact: string;
   rating: number;
   permission: boolean;
+  gdprConsent: boolean;
 }
 
 const TestimonialForm = () => {
@@ -25,7 +27,8 @@ const TestimonialForm = () => {
     servicesDescription: '',
     impact: '',
     rating: 0,
-    permission: false
+    permission: false,
+    gdprConsent: false
   });
   const [hoveredStar, setHoveredStar] = useState(0);
 
@@ -46,10 +49,10 @@ const TestimonialForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.businessName || !formData.servicesDescription || !formData.impact || formData.rating === 0 || !formData.permission) {
+    if (!formData.name || !formData.businessName || !formData.servicesDescription || !formData.impact || formData.rating === 0 || !formData.permission || !formData.gdprConsent) {
       toast({
         title: "Incomplete Form",
-        description: "Please fill in all fields, provide a rating, and grant permission to use your testimonial.",
+        description: "Please fill in all fields, provide a rating, grant permission, and consent to data processing.",
         variant: "destructive"
       });
       return;
@@ -71,7 +74,8 @@ const TestimonialForm = () => {
       servicesDescription: '',
       impact: '',
       rating: 0,
-      permission: false
+      permission: false,
+      gdprConsent: false
     });
   };
 
@@ -170,6 +174,28 @@ const TestimonialForm = () => {
             <Label htmlFor="permission" className="text-brand-silver text-sm leading-relaxed">
               I give permission for 11th Temple Solutions to use this testimonial on their website and marketing materials. *
             </Label>
+          </div>
+
+          {/* GDPR Consent Section */}
+          <div className="border-t border-brand-silver/20 pt-6 bg-white/10 rounded-lg p-6">
+            <div className="flex items-start space-x-3">
+              <Checkbox 
+                id="gdprConsent"
+                checked={formData.gdprConsent}
+                onCheckedChange={(checked) => handleInputChange('gdprConsent', checked as boolean)}
+                required
+              />
+              <div className="flex-1">
+                <Label htmlFor="gdprConsent" className="text-white text-sm leading-relaxed font-medium">
+                  <span className="text-brand-lime font-bold">REQUIRED:</span> I consent to 11th Temple processing my personal data to process this testimonial and contact me if needed. 
+                  You can withdraw consent at any time. View our{" "}
+                  <a href="/privacy" className="text-brand-lime hover:text-yellow-300 underline font-semibold">
+                    Privacy Policy
+                  </a>{" "}
+                  for more information. *
+                </Label>
+              </div>
+            </div>
           </div>
 
           <Button
