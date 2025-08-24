@@ -31,11 +31,11 @@ const Navigation = () => {
           {/* Burger and mobile actions */}
           <div className="flex items-center space-x-2 md:hidden">
             <button
-              className="text-brand-silver hover:text-brand-lime flex-shrink-0 focus:outline-none"
+              className="text-brand-silver hover:text-brand-lime flex-shrink-0 focus:outline-none p-3 -mr-3 mobile-touch-target"
               onClick={() => setIsMenuOpen((o) => !o)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
         </div>

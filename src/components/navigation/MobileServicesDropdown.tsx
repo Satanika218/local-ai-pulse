@@ -31,10 +31,10 @@ const MobileServicesDropdown = ({
   <div className="w-full">
     <Link
       to="/services-overview"
-      className={`block px-3 py-2 text-base transition-colors duration-200 no-underline ${
+      className={`mobile-nav-item block rounded-lg text-lg font-medium transition-colors duration-200 no-underline mobile-touch-target ${
         isActive("/services-overview") || serviceItems.some((srv) => isActive(srv.path))
-          ? "text-brand-lime underline"
-          : "text-white hover:text-brand-lime hover:underline"
+          ? "text-brand-lime bg-brand-lime/10 underline"
+          : "text-white hover:text-brand-lime hover:bg-white/5 hover:underline"
       }`}
       onClick={closeMenu}
     >
@@ -42,17 +42,17 @@ const MobileServicesDropdown = ({
     </Link>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="w-full flex justify-between items-center px-3 py-2 text-base transition-colors duration-200 outline-none text-brand-silver hover:text-brand-lime">
+        <button className="w-full flex justify-between items-center mobile-nav-item rounded-lg text-lg font-medium transition-colors duration-200 outline-none text-brand-silver hover:text-brand-lime hover:bg-white/5 mobile-touch-target">
           <span>View All Services</span>
-          <ChevronDown className="h-4 w-4 ml-2 text-brand-lime" />
+          <ChevronDown className="h-5 w-5 ml-2 text-brand-lime" />
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-64 ml-2 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50">
+      <DropdownMenuContent className="w-72 ml-2 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-2 z-[110]">
         {serviceItems.map((service) => (
           <DropdownMenuItem asChild key={service.name}>
             <Link
               to={service.path}
-              className={`block px-4 py-2 text-base transition-colors duration-200 rounded-md no-underline ${
+              className={`block px-4 py-3 text-base font-medium transition-colors duration-200 rounded-lg no-underline mobile-touch-target ${
                 isActive(service.path)
                   ? "text-brand-lime underline bg-brand-lime/10"
                   : "text-brand-silver hover:text-brand-lime hover:bg-brand-lime/10"
