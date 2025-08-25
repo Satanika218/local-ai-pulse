@@ -172,7 +172,7 @@ const DigitalSkillsWorkplace = () => {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-8 mb-12">
-                <Card className="bg-gradient-to-br from-brand-lime/20 to-brand-lime/10 border-brand-lime/30 shadow-lg backdrop-blur-sm">
+                <Card className="bg-gradient-to-br from-brand-navy-light/80 to-brand-navy/60 border-brand-lime/30 shadow-lg backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center space-x-3">
                       <Brain className="h-10 w-10 text-brand-lime" />
