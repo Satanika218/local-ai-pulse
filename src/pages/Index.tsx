@@ -107,18 +107,18 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right Column - Statistics - Stacked on mobile */}
-            <div className="order-1 lg:order-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-4 lg:p-6 border border-white/20">
-                <div className="stats-highlight text-3xl md:text-4xl lg:text-5xl font-bold mb-2 lg:mb-3">92.6%</div>
+            {/* Right Column - Statistics - Stacked on mobile with proper spacing */}
+            <div className="order-1 lg:order-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-8 mb-8 lg:mb-0">
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 lg:p-8 border border-white/20">
+                <div className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">92.6%</div>
                 <p className="text-white text-sm lg:text-base">of Welsh SMEs haven't adopted AI yet</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-4 lg:p-6 border border-white/20">
-                <div className="stats-highlight text-3xl md:text-4xl lg:text-5xl font-bold mb-2 lg:mb-3">72%</div>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 lg:p-8 border border-white/20">
+                <div className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">72%</div>
                 <p className="text-white text-sm lg:text-base">No. of SMEs that lack the government's suggested digital skills to remain competitive in the modern market</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-4 lg:p-6 border border-white/20 sm:col-span-2 lg:col-span-1">
-                <div className="stats-highlight text-3xl md:text-4xl lg:text-5xl font-bold mb-2 lg:mb-3">£10-15k</div>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 lg:p-8 border border-white/20 sm:col-span-2 lg:col-span-1 mt-4 lg:mt-0">
+                <div className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">£10-15k</div>
                 <p className="text-white text-sm lg:text-base">Average savings cost per annum for firms that adopt our Tech solutions</p>
               </div>
             </div>
