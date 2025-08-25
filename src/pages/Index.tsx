@@ -92,8 +92,8 @@ const Index = () => {
                 We understand the unique challenges facing rural and border county businesses. Our AI automation and digital solutions help you save time, reduce costs, and compete with larger enterprises while maintaining your local advantage.
               </p>
 
-              {/* CTA Buttons - Properly spaced */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 lg:mb-16">
+              {/* CTA Buttons - Extra spacing to prevent overlap with stats */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 lg:mb-20">
                 <Link to="/consultation" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
                     Free 30min Consultation - No Commitment - Learn How We Help
