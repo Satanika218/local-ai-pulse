@@ -6,13 +6,32 @@ import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+import SEOAuditForm from "@/components/SEOAuditForm";
+import SEOAuditResults from "@/components/SEOAuditResults";
+import { SEOAuditData } from "@/pages/SEOAudit";
+import { useLoadingState } from "@/hooks/useLoadingState";
 
 const LocalSEO = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { isLoading, execute } = useLoadingState();
+  const [auditResults, setAuditResults] = useState<SEOAuditData | null>(null);
 
   const handleSEOAudit = () => {
     navigate('/seo-audit');
+  };
+
+  const handleAuditSubmit = async (data: SEOAuditData) => {
+    await execute(async () => {
+      // Simulate API call with a delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setAuditResults(data);
+      toast({
+        title: "SEO Audit Complete!",
+        description: "Your comprehensive SEO analysis is ready.",
+      });
+    });
   };
 
   const features = [
@@ -74,14 +93,74 @@ const LocalSEO = () => {
         </div>
       </section>
 
-      {/* What is Local SEO Section */}
+      {/* Free SEO Audit Tool Section */}
       <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+              Try Our <span className="text-brand-lime">Free</span> SEO Audit Tool
+            </h2>
+            <p className="text-xl text-gray-600 mb-6">
+              Get instant insights into your website's SEO performance and discover opportunities to improve your local search rankings.
+            </p>
+            <div className="bg-brand-navy/5 border border-brand-navy/10 rounded-xl p-6 max-w-3xl mx-auto mb-8">
+              <h3 className="text-lg font-semibold text-brand-navy mb-2">What You'll Get:</h3>
+              <div className="grid md:grid-cols-3 gap-4 text-left">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-brand-lime flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">Technical SEO Analysis</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-brand-lime flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">Keyword Opportunities</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-brand-lime flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">Actionable Recommendations</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {!auditResults ? (
+            <Card className="bg-white border border-gray-200 shadow-lg">
+              <CardContent className="p-8">
+                {isLoading ? (
+                  <div className="text-center py-12">
+                    <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-brand-lime mx-auto mb-4"></div>
+                    <h3 className="text-xl font-semibold text-brand-navy mb-2">Analyzing Your Website</h3>
+                    <p className="text-gray-600">Please wait while we generate your comprehensive SEO audit...</p>
+                  </div>
+                ) : (
+                  <SEOAuditForm onSubmit={handleAuditSubmit} />
+                )}
+              </CardContent>
+            </Card>
+          ) : (
+            <div className="space-y-6">
+              <div className="text-center">
+                <Button 
+                  variant="outline" 
+                  onClick={() => setAuditResults(null)}
+                  className="mb-6"
+                >
+                  ← Start New Audit
+                </Button>
+              </div>
+              <SEOAuditResults auditData={auditResults} />
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* What is Local SEO Section */}
+      <section className="py-16 bg-brand-navy/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               What is Local SEO?
             </h2>
-            <div className="bg-gray-50 rounded-2xl p-6 lg:p-8 text-left">
+            <div className="bg-white rounded-2xl p-6 lg:p-8 text-left shadow-sm border border-gray-100">
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                 <div>
                   <p className="text-lg text-gray-700 mb-4">
