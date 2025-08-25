@@ -282,12 +282,12 @@ const DigitalSkillsWorkplace = () => {
               </h2>
 
               <div className="grid lg:grid-cols-5 gap-6 mb-12">
-                <Card className="bg-gradient-to-br from-blue-800/50 to-blue-900/50 border-blue-500/30">
+                <Card className="bg-gradient-to-br from-brand-purple/50 to-brand-navy/50 border-brand-purple/30">
                   <CardHeader className="text-center">
-                    <Users className="h-8 w-8 text-blue-300 mx-auto mb-2" />
+                    <Users className="h-8 w-8 text-brand-lime mx-auto mb-2" />
                     <CardTitle className="text-white text-lg">Communicating</CardTitle>
                   </CardHeader>
-                  <CardContent className="text-blue-100 text-sm">
+                  <CardContent className="text-brand-silver text-sm">
                     <p>Digital workplace communication, professional online accounts, collaborative tools</p>
                   </CardContent>
                 </Card>

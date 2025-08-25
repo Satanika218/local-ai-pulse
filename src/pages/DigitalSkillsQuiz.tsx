@@ -258,8 +258,8 @@ const DigitalSkillsQuiz = () => {
   };
 
   const getScoreLevel = (score: number) => {
-    if (score >= 85) return { level: "Digital Expert", color: "text-green-600", icon: <TrendingUp className="h-6 w-6 text-green-600" /> };
-    if (score >= 70) return { level: "Advanced User", color: "text-blue-600", icon: <CheckCircle className="h-6 w-6 text-blue-600" /> };
+    if (score >= 85) return { level: "Digital Expert", color: "text-brand-lime", icon: <TrendingUp className="h-6 w-6 text-brand-lime" /> };
+    if (score >= 70) return { level: "Advanced User", color: "text-brand-purple", icon: <CheckCircle className="h-6 w-6 text-brand-purple" /> };
     if (score >= 50) return { level: "Competent User", color: "text-yellow-600", icon: <Brain className="h-6 w-6 text-yellow-600" /> };
     return { level: "Developing Skills", color: "text-red-600", icon: <AlertTriangle className="h-6 w-6 text-red-600" /> };
   };
@@ -363,7 +363,7 @@ const DigitalSkillsQuiz = () => {
                   Retake Assessment
                 </Button>
                 <Link to="/consultation">
-                  <Button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3">
+                  <Button className="bg-brand-lime hover:bg-brand-lime/90 text-brand-navy font-semibold px-6 py-3">
                     Discuss Your Results
                   </Button>
                 </Link>
@@ -427,10 +427,10 @@ const DigitalSkillsQuiz = () => {
                 <Button
                   key={index}
                   onClick={() => handleAnswer(index)}
-                  className="w-full p-6 text-left bg-gray-50 hover:bg-blue-50 text-gray-800 border border-gray-200 hover:border-blue-300 rounded-xl transition-all duration-300 min-h-[60px] justify-start text-base leading-relaxed"
+                  className="w-full p-6 text-left bg-white/10 hover:bg-brand-lime/20 text-white border border-brand-silver/20 hover:border-brand-lime rounded-xl transition-all duration-300 min-h-[60px] justify-start text-base leading-relaxed"
                   variant="outline"
                 >
-                  <span className="font-semibold mr-3 text-blue-600">
+                  <span className="font-semibold mr-3 text-brand-lime">
                     {String.fromCharCode(65 + index)}.
                   </span>
                   {option}

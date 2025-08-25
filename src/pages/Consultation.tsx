@@ -185,6 +185,7 @@ const Consultation = () => {
                   window.open('https://11thtemple.youcanbook.me/', '_blank');
                 }
               }}
+              aria-label="Book free consultation - opens in new window"
             >
               Free 30min Consultation - Let's Talk How We Can Help
             </Button>

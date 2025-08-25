@@ -302,12 +302,13 @@ const DigitalSkillsAudit = () => {
               <div className="text-center text-xs text-brand-silver pt-4">
                 <p>
                   This audit is based on the UK's Essential Digital Skills Framework.{" "}
-                  <a 
-                    href="https://www.gov.uk/government/publications/essential-digital-skills-framework" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-brand-lime hover:underline"
-                  >
+                    <a 
+                      href="https://www.gov.uk/government/publications/essential-digital-skills-framework" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-brand-lime hover:underline"
+                      aria-label="Essential Digital Skills Framework - opens in new window"
+                    >
                     [1]: https://www.gov.uk/government/publications/essential-digital-skills-framework
                   </a>
                 </p>
@@ -428,6 +429,7 @@ const DigitalSkillsAudit = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="text-brand-lime hover:underline"
+              aria-label="Essential Digital Skills Framework - opens in new window"
             >
               [1]: https://www.gov.uk/government/publications/essential-digital-skills-framework
             </a>

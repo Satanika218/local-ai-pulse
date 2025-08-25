@@ -104,7 +104,7 @@ export default function WebsiteAudit() {
   if (results) {
     const score = calculateOverallScore();
     const getScoreColor = (score: number) => {
-      if (score >= 80) return "text-green-600";
+      if (score >= 80) return "text-brand-lime";
       if (score >= 60) return "text-yellow-600";
       return "text-red-600";
     };
@@ -213,14 +213,14 @@ export default function WebsiteAudit() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
+                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2"></div>
                   <div>
                     <h4 className="text-white font-semibold">Medium: Optimize SEO Meta Tags</h4>
                     <p className="text-brand-silver text-sm">Add missing meta descriptions and improve title tags for better search visibility.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mt-2"></div>
+                  <div className="w-2 h-2 rounded-full bg-brand-lime mt-2"></div>
                   <div>
                     <h4 className="text-white font-semibold">Low: Add Structured Data</h4>
                     <p className="text-brand-silver text-sm">Implement schema markup to help search engines understand your content better.</p>

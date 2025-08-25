@@ -98,7 +98,7 @@ const AccessibilityToolbar = () => {
   return (
     <>
       <Button
-        className={`fixed left-6 w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl z-[9999] transition-all duration-500
+        className={`fixed left-6 w-16 h-16 rounded-full bg-brand-purple hover:bg-brand-purple/80 text-white shadow-xl z-[9999] transition-all duration-500
             ${moveToTop ? "top-6" : "bottom-6"}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Accessibility settings"
@@ -123,8 +123,8 @@ const AccessibilityToolbar = () => {
           </div>
 
           {hasShownInitialPrompt && (
-            <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-              <p className="text-sm text-blue-800 dark:text-blue-200">
+            <div className="mb-4 p-3 bg-brand-lime/10 dark:bg-brand-navy/20 rounded-lg">
+              <p className="text-sm text-brand-navy dark:text-brand-silver">
                 We want to ensure everyone can access our content comfortably. Customize these settings to improve your browsing experience.
               </p>
             </div>
@@ -177,7 +177,7 @@ const AccessibilityToolbar = () => {
                   onChange={(e) => setSettings(prev => ({ ...prev, reducedMotion: e.target.checked }))}
                   className="sr-only"
                 />
-                <div className={`w-8 h-4 rounded-full ${settings.reducedMotion ? 'bg-blue-600' : 'bg-gray-300'} relative transition-colors`}>
+                <div className={`w-8 h-4 rounded-full ${settings.reducedMotion ? 'bg-brand-lime' : 'bg-gray-300'} relative transition-colors`}>
                   <div className={`w-3 h-3 bg-white rounded-full absolute top-0.5 transition-transform ${settings.reducedMotion ? 'translate-x-4' : 'translate-x-0.5'}`} />
                 </div>
               </label>
@@ -196,7 +196,7 @@ const AccessibilityToolbar = () => {
                   onChange={(e) => setSettings(prev => ({ ...prev, focusIndicators: e.target.checked }))}
                   className="sr-only"
                 />
-                <div className={`w-8 h-4 rounded-full ${settings.focusIndicators ? 'bg-blue-600' : 'bg-gray-300'} relative transition-colors`}>
+                <div className={`w-8 h-4 rounded-full ${settings.focusIndicators ? 'bg-brand-lime' : 'bg-gray-300'} relative transition-colors`}>
                   <div className={`w-3 h-3 bg-white rounded-full absolute top-0.5 transition-transform ${settings.focusIndicators ? 'translate-x-4' : 'translate-x-0.5'}`} />
                 </div>
               </label>
@@ -215,7 +215,7 @@ const AccessibilityToolbar = () => {
                   onChange={(e) => setSettings(prev => ({ ...prev, textSpacing: e.target.checked }))}
                   className="sr-only"
                 />
-                <div className={`w-8 h-4 rounded-full ${settings.textSpacing ? 'bg-blue-600' : 'bg-gray-300'} relative transition-colors`}>
+                <div className={`w-8 h-4 rounded-full ${settings.textSpacing ? 'bg-brand-lime' : 'bg-gray-300'} relative transition-colors`}>
                   <div className={`w-3 h-3 bg-white rounded-full absolute top-0.5 transition-transform ${settings.textSpacing ? 'translate-x-4' : 'translate-x-0.5'}`} />
                 </div>
               </label>

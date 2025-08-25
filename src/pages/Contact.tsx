@@ -128,10 +128,10 @@ const Contact = () => {
           disabled={!isAvailable}
           className={`h-10 w-10 rounded-lg text-sm font-medium transition-all duration-300 ${
             isSelected
-              ? 'bg-blue-600 text-white'
+              ? 'bg-brand-lime text-brand-navy'
               : isAvailable
-              ? 'bg-green-100 text-green-800 hover:bg-green-200'
-              : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+              ? 'bg-white/10 text-white hover:bg-brand-lime hover:text-brand-navy border border-brand-silver/20'
+              : 'bg-brand-silver/20 text-brand-silver/50 cursor-not-allowed'
           }`}
         >
           {day}
@@ -351,17 +351,18 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <p className="text-blue-800 text-sm font-medium mb-2">Business Hours:</p>
-                    <p className="text-blue-700 text-sm">Monday - Friday: 9:00 AM - 5:00 PM</p>
-                    <p className="text-blue-600 text-xs mt-2">
+                  <div className="bg-brand-lime/10 border border-brand-lime/20 rounded-lg p-4">
+                    <p className="text-brand-navy text-sm font-medium mb-2">Business Hours:</p>
+                    <p className="text-brand-navy/80 text-sm">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <p className="text-brand-navy/60 text-xs mt-2">
                       If your preferred time isn't available, we'll suggest the next closest half-hour slot.
                     </p>
                   </div>
                   
                   <Button 
-                    className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold py-3 rounded-xl transition-all duration-300"
+                    className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime/90 font-semibold py-3 rounded-xl transition-all duration-300"
                     onClick={() => window.open('https://11thtemple.youcanbook.me/', '_blank')}
+                    aria-label="Book free consultation - opens in new window"
                   >
                     Free Consultation
                   </Button>

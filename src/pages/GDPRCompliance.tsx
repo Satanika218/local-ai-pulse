@@ -119,23 +119,23 @@ const GDPRCompliance = () => {
                 <CardContent className="text-brand-silver">
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Automated data mapping and inventory systems</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Smart consent management platforms</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Breach detection and notification systems</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Subject access request automation</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Privacy impact assessment tools</span>
                     </li>
                   </ul>
@@ -152,23 +152,23 @@ const GDPRCompliance = () => {
                 <CardContent className="text-brand-silver">
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>GDPR compliance audits and gap analysis</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Staff training and awareness programs</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Policy development and documentation</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Ongoing compliance monitoring and support</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
                       <span>Incident response planning and execution</span>
                     </li>
                   </ul>
@@ -176,7 +176,7 @@ const GDPRCompliance = () => {
               </Card>
             </div>
 
-            <div className="bg-gradient-to-r from-green-900/30 to-blue-900/30 rounded-lg p-8 border border-green-500/30">
+            <div className="bg-gradient-to-r from-brand-lime/20 to-brand-purple/20 rounded-lg p-8 border border-brand-lime/30">
               <h3 className="text-2xl font-bold text-white mb-4">Workforce Development</h3>
               <p className="text-purple-100 mb-4">
                 We create a culture of data protection within your organization by developing internal 

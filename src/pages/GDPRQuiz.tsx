@@ -258,8 +258,8 @@ const GDPRQuiz = () => {
   };
 
   const getScoreLevel = (score: number) => {
-    if (score >= 85) return { level: "GDPR Expert", color: "text-green-600", icon: <TrendingUp className="h-6 w-6 text-green-600" /> };
-    if (score >= 70) return { level: "Compliance Professional", color: "text-blue-600", icon: <CheckCircle className="h-6 w-6 text-blue-600" /> };
+    if (score >= 85) return { level: "GDPR Expert", color: "text-brand-lime", icon: <TrendingUp className="h-6 w-6 text-brand-lime" /> };
+    if (score >= 70) return { level: "Compliance Professional", color: "text-brand-purple", icon: <CheckCircle className="h-6 w-6 text-brand-purple" /> };
     if (score >= 50) return { level: "Developing Knowledge", color: "text-yellow-600", icon: <Shield className="h-6 w-6 text-yellow-600" /> };
     return { level: "Requires Training", color: "text-red-600", icon: <AlertTriangle className="h-6 w-6 text-red-600" /> };
   };

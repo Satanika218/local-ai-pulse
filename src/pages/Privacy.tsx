@@ -220,7 +220,7 @@ const Privacy = () => (
             <p className="text-brand-silver text-sm">
               <strong className="text-brand-lime">Complaints:</strong> If you're not satisfied with our response, 
               you have the right to lodge a complaint with the Information Commissioner's Office (ICO) at 
-              <a href="https://ico.org.uk" className="text-brand-lime hover:underline ml-1">ico.org.uk</a>
+              <a href="https://ico.org.uk" className="text-brand-lime hover:underline ml-1" target="_blank" rel="noopener noreferrer" aria-label="Information Commissioner's Office website - opens in new window">ico.org.uk</a>
             </p>
           </div>
         </CardContent>
