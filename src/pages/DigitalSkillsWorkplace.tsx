@@ -87,42 +87,42 @@ const DigitalSkillsWorkplace = () => {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-8">
-                <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
+                <Card className="bg-gradient-to-br from-brand-navy-light/80 to-brand-navy/80 backdrop-blur-sm border-brand-lime/20 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-brand-navy mb-4">Age Demographics</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-white mb-4">Age Demographics</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-3 text-gray-700">
+                    <ul className="space-y-3 text-brand-silver">
                       <li className="flex justify-between">
                         <span>16-24 years:</span> 
-                        <span className="text-green-600 font-bold">8% lack digital skills</span>
+                        <span className="text-green-400 font-bold">8% lack digital skills</span>
                       </li>
                       <li className="flex justify-between">
                         <span>25-34 years:</span> 
-                        <span className="text-yellow-600 font-bold">12% lack digital skills</span>
+                        <span className="text-yellow-400 font-bold">12% lack digital skills</span>
                       </li>
                       <li className="flex justify-between">
                         <span>35-54 years:</span> 
-                        <span className="text-orange-600 font-bold">18% lack digital skills</span>
+                        <span className="text-orange-400 font-bold">18% lack digital skills</span>
                       </li>
                       <li className="flex justify-between">
                         <span>55+ years:</span> 
-                        <span className="text-red-600 font-bold">43% lack digital skills</span>
+                        <span className="text-red-400 font-bold">43% lack digital skills</span>
                       </li>
                     </ul>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
+                <Card className="bg-gradient-to-br from-brand-navy-light/80 to-brand-navy/80 backdrop-blur-sm border-brand-lime/20 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-brand-navy mb-4">Rural Wales Challenge</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-white mb-4">Rural Wales Challenge</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 mb-4">
+                    <p className="text-brand-silver mb-4">
                       Powys faces unique challenges with an aging population and traditional industries. 
                       Tourism, agriculture, and retail businesses struggle with:
                     </p>
-                    <ul className="space-y-2 text-gray-700">
+                    <ul className="space-y-2 text-brand-silver">
                       <li>• Limited access to digital skills training</li>
                       <li>• Aging workforce resistant to change</li>
                       <li>• Poor broadband infrastructure in rural areas</li>
@@ -159,26 +159,26 @@ const DigitalSkillsWorkplace = () => {
         </section>
 
         {/* Digital Skills Assessment Tool */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-brand-navy-light/30">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-brand-navy mb-6">
+                <h2 className="text-4xl font-bold text-white mb-6">
                   Check Your Digital Skills
                 </h2>
-                <p className="text-xl text-gray-600 mb-8">
+                <p className="text-xl text-brand-silver mb-8">
                   Take our free assessment to identify skills gaps in your workforce and get personalized recommendations.
                 </p>
               </div>
 
               <div className="grid lg:grid-cols-2 gap-8 mb-12">
-                <Card className="bg-gradient-to-br from-brand-lime/10 to-brand-navy/5 border-brand-lime/20 shadow-lg">
+                <Card className="bg-gradient-to-br from-brand-lime/20 to-brand-lime/10 border-brand-lime/30 shadow-lg backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center space-x-3">
                       <Brain className="h-10 w-10 text-brand-lime" />
                       <div>
-                        <CardTitle className="text-2xl font-bold text-brand-navy">Free Skills Assessment</CardTitle>
-                        <CardDescription className="text-gray-600">Identify your team's digital readiness</CardDescription>
+                        <CardTitle className="text-2xl font-bold text-white">Free Skills Assessment</CardTitle>
+                        <CardDescription className="text-brand-silver">Identify your team's digital readiness</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
@@ -186,19 +186,19 @@ const DigitalSkillsWorkplace = () => {
                     <ul className="space-y-3 mb-6">
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Assess all 20 essential digital work tasks</span>
+                        <span className="text-brand-silver">Assess all 20 essential digital work tasks</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Get personalized skills gap analysis</span>
+                        <span className="text-brand-silver">Get personalized skills gap analysis</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Receive tailored training recommendations</span>
+                        <span className="text-brand-silver">Receive tailored training recommendations</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Download comprehensive report</span>
+                        <span className="text-brand-silver">Download comprehensive report</span>
                       </li>
                     </ul>
                     <Link to="/digital-skills-audit">
@@ -209,37 +209,37 @@ const DigitalSkillsWorkplace = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-brand-navy/10 to-brand-navy/5 border-brand-navy/20 shadow-lg">
+                <Card className="bg-gradient-to-br from-brand-navy-light/80 to-brand-navy/60 border-brand-silver/20 shadow-lg backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <Award className="h-10 w-10 text-brand-navy" />
+                      <Award className="h-10 w-10 text-brand-silver" />
                       <div>
-                        <CardTitle className="text-2xl font-bold text-brand-navy">Digital Skills Quiz</CardTitle>
-                        <CardDescription className="text-gray-600">Quick 5-minute skills check</CardDescription>
+                        <CardTitle className="text-2xl font-bold text-white">Digital Skills Quiz</CardTitle>
+                        <CardDescription className="text-brand-silver">Quick 5-minute skills check</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3 mb-6">
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-brand-navy mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Fast digital literacy evaluation</span>
+                        <CheckCircle className="h-5 w-5 text-brand-silver mt-0.5 flex-shrink-0" />
+                        <span className="text-brand-silver">Fast digital literacy evaluation</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-brand-navy mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Instant results and scoring</span>
+                        <CheckCircle className="h-5 w-5 text-brand-silver mt-0.5 flex-shrink-0" />
+                        <span className="text-brand-silver">Instant results and scoring</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-brand-navy mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Identify priority learning areas</span>
+                        <CheckCircle className="h-5 w-5 text-brand-silver mt-0.5 flex-shrink-0" />
+                        <span className="text-brand-silver">Identify priority learning areas</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <CheckCircle className="h-5 w-5 text-brand-navy mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Compare with industry benchmarks</span>
+                        <CheckCircle className="h-5 w-5 text-brand-silver mt-0.5 flex-shrink-0" />
+                        <span className="text-brand-silver">Compare with industry benchmarks</span>
                       </li>
                     </ul>
                     <Link to="/digital-skills-quiz">
-                      <Button variant="outline" className="w-full border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-bold py-3">
+                      <Button variant="outline" className="w-full border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-navy font-bold py-3">
                         Take Quick Quiz
                       </Button>
                     </Link>
@@ -248,23 +248,23 @@ const DigitalSkillsWorkplace = () => {
               </div>
 
               <div className="text-center">
-                <div className="bg-brand-navy/5 border border-brand-navy/10 rounded-xl p-6 max-w-3xl mx-auto">
-                  <h3 className="text-lg font-semibold text-brand-navy mb-2">Why Check Your Digital Skills?</h3>
-                  <p className="text-gray-700 mb-4">
+                <div className="bg-brand-navy-light/50 border border-brand-lime/20 rounded-xl p-6 max-w-3xl mx-auto backdrop-blur-sm">
+                  <h3 className="text-lg font-semibold text-brand-lime mb-2">Why Check Your Digital Skills?</h3>
+                  <p className="text-brand-silver mb-4">
                     Understanding your current digital capabilities is the first step to building a more confident and productive workforce.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4 text-left">
                     <div className="flex items-center space-x-2">
                       <Shield className="h-4 w-4 text-brand-lime flex-shrink-0" />
-                      <span className="text-gray-700 text-sm">Reduce Security Risks</span>
+                      <span className="text-brand-silver text-sm">Reduce Security Risks</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <TrendingDown className="h-4 w-4 text-brand-lime flex-shrink-0" />
-                      <span className="text-gray-700 text-sm">Boost Productivity</span>
+                      <span className="text-brand-silver text-sm">Boost Productivity</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Users className="h-4 w-4 text-brand-lime flex-shrink-0" />
-                      <span className="text-gray-700 text-sm">Improve Team Confidence</span>
+                      <span className="text-brand-silver text-sm">Improve Team Confidence</span>
                     </div>
                   </div>
                 </div>
