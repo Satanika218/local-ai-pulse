@@ -183,11 +183,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Understanding Rural Business Realities Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        {/* Understanding Rural Business Realities Section */}
+        <section 
+          className="py-20 bg-white"
+          aria-labelledby="rural-business-section"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 
+                id="rural-business-section"
+                className="text-4xl md:text-5xl font-bold text-brand-navy mb-6"
+              >
               You're Not Alone in Feeling <span className="text-brand-lime">Uncertain About AI</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
@@ -236,11 +242,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        {/* Services Section */}
+        <section 
+          className="py-20 bg-gray-100"
+          aria-labelledby="services-section"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 
+                id="services-section"
+                className="text-4xl md:text-5xl font-bold text-brand-navy mb-6"
+              >
               Our <span className="text-brand-lime">Services</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
@@ -269,12 +281,18 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-brand-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        {/* Benefits Section */}
+        <section 
+          className="py-20 bg-brand-navy"  
+          aria-labelledby="benefits-section"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 
+                  id="benefits-section"
+                  className="text-4xl md:text-5xl font-bold text-white mb-6"
+                >
                 Proven Results for <span className="text-brand-lime">UK Independent Businesses</span>
               </h2>
               <p className="text-xl text-brand-silver mb-8">
@@ -316,11 +334,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        {/* Testimonials Section */}
+        <section 
+          className="py-20 bg-white"
+          aria-labelledby="testimonials-section"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 
+                id="testimonials-section"
+                className="text-4xl md:text-5xl font-bold text-brand-navy mb-6"
+              >
               What Our <span className="text-brand-lime">Clients Say</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">

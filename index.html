@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -24,22 +24,55 @@
     <meta name="twitter:site" content="@11thtemple" />
     <meta name="twitter:image" content="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" />
 
-    <!-- Structured Data for Organization -->
+    <meta name="theme-color" content="#5e17eb" />
+    <meta name="msapplication-TileColor" content="#5e17eb" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- DNS prefetch for performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png" as="image" />
+    
+    <!-- Structured Data for Local Business -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "name": "11th Temple Solutions",
       "description": "AI automation solutions for local businesses in Wales and border counties",
       "url": "https://11thtemple.com",
       "logo": "/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+44-123-456-7890",
-        "contactType": "Customer Service"
+      "image": "/lovable-uploads/dd8b5070-aff9-46a2-848d-770741ee222c.png",
+      "telephone": "+44-123-456-7890",
+      "email": "info@11thtemple.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Wales",
+        "addressCountry": "GB"
       },
-      "areaServed": ["Wales", "Herefordshire", "Shropshire", "Gloucestershire"],
-      "serviceType": ["AI Automation", "Digital Transformation", "Process Automation", "SEO Services"]
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Wales"
+        },
+        {
+          "@type": "Place", 
+          "name": "Herefordshire"
+        },
+        {
+          "@type": "Place",
+          "name": "Shropshire" 
+        },
+        {
+          "@type": "Place",
+          "name": "Gloucestershire"
+        }
+      ],
+      "serviceType": ["AI Automation", "Digital Transformation", "Process Automation", "SEO Services", "Digital Skills Training"],
+      "priceRange": "£",
+      "openingHours": "Mo-Fr 09:00-17:00"
     }
     </script>
 

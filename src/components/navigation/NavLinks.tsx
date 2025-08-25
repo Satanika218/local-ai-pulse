@@ -31,15 +31,15 @@ const NavLinks = ({
     </Link>
     <ServicesDropdown isActive={isActive} />
     {navItems.map((item) => (
-      <Link
-        key={item.name}
-        to={item.path}
-        className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 ${
-          isActive(item.path)
-            ? "text-brand-lime underline"
-            : "text-white hover:text-brand-lime hover:underline"
-        }`}
-      >
+        <Link
+          key={item.name}
+          to={item.path}
+          className={`px-4 py-2 text-sm xl:text-base rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-lime focus:ring-offset-2 focus:ring-offset-brand-navy ${
+            isActive(item.path)
+              ? "text-brand-lime underline"
+              : "text-white hover:text-brand-lime hover:underline"
+          }`}
+        >
         {item.name}
       </Link>
     ))}

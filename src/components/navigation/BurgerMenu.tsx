@@ -23,32 +23,39 @@ const BurgerMenu = ({
 }) => {
   if (!isOpen) return null;
   return (
-    <div className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden z-[100] fixed top-20 left-0 right-0 shadow-lg">
+    <div 
+      className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden z-[100] fixed top-20 left-0 right-0 shadow-lg"
+      id="mobile-menu"
+      role="menu"
+      aria-label="Mobile navigation menu"
+    >
       <div className="px-4 pt-4 pb-6 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto ios-safe-area">
-        <Link
-          key="Home-mobile"
-          to="/"
-          className={`mobile-nav-item block rounded-lg text-lg font-medium transition-colors duration-200 no-underline mobile-touch-target ${
-            isActive("/")
-              ? "text-brand-lime bg-brand-lime/10 underline"
-              : "text-white hover:text-brand-lime hover:bg-white/5 hover:underline"
-          }`}
-          onClick={closeMenu}
-        >
-          Home
-        </Link>
-        <MobileServicesDropdown isActive={isActive} closeMenu={closeMenu} />
-        {navItems.map((item) => (
           <Link
-            key={item.name + "-mobile"}
-            to={item.path}
-            className={`mobile-nav-item block rounded-lg text-lg font-medium transition-colors duration-200 no-underline mobile-touch-target ${
-              isActive(item.path)
+            key="Home-mobile"
+            to="/"
+            className={`mobile-nav-item block rounded-lg text-lg font-medium transition-colors duration-200 no-underline mobile-touch-target focus:outline-none focus:ring-2 focus:ring-brand-lime focus:ring-offset-2 focus:ring-offset-brand-navy ${
+              isActive("/")
                 ? "text-brand-lime bg-brand-lime/10 underline"
                 : "text-white hover:text-brand-lime hover:bg-white/5 hover:underline"
             }`}
             onClick={closeMenu}
+            role="menuitem"
           >
+          Home
+        </Link>
+        <MobileServicesDropdown isActive={isActive} closeMenu={closeMenu} />
+        {navItems.map((item) => (
+            <Link
+              key={item.name + "-mobile"}
+              to={item.path}
+              className={`mobile-nav-item block rounded-lg text-lg font-medium transition-colors duration-200 no-underline mobile-touch-target focus:outline-none focus:ring-2 focus:ring-brand-lime focus:ring-offset-2 focus:ring-offset-brand-navy ${
+                isActive(item.path)
+                  ? "text-brand-lime bg-brand-lime/10 underline"
+                  : "text-white hover:text-brand-lime hover:bg-white/5 hover:underline"
+              }`}
+              onClick={closeMenu}
+              role="menuitem"
+            >
             {item.name}
           </Link>
         ))}
