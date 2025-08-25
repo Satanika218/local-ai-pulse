@@ -66,7 +66,11 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section - Matching reference image */}
-      <section className="pt-20 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center">
+      <main id="main-content">
+        <section 
+          className="pt-20 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center"
+          aria-labelledby="hero-heading"
+        >
         {/* Floating Background Icons - Hidden on mobile to prevent overlaps */}
         <div className="floating-icons hidden lg:block">
           <Bot className="floating-icon animate-float absolute text-white/20" style={{ top: '8%', left: '15%', fontSize: '2.5rem' }} />
@@ -99,7 +103,10 @@ const Index = () => {
 
             {/* Content - Mobile Only */}
             <div className="text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h1 
+                id="hero-heading"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
+              >
                 Powering Community-Focused <span className="text-brand-lime">Growth</span> with AI, Tech and Business Solutions
               </h1>
               <p className="text-lg sm:text-xl text-white mb-6 max-w-2xl mx-auto lg:mx-0">
@@ -129,7 +136,10 @@ const Index = () => {
           <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
             {/* Left Column - Content */}
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight">
+              <h1 
+                id="hero-heading"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight"
+              >
                 Powering Community-Focused <span className="text-brand-lime">Growth</span> with AI, Tech and Business Solutions
               </h1>
               <p className="text-lg sm:text-xl text-white mb-6 lg:mb-8 max-w-2xl">
@@ -391,6 +401,7 @@ const Index = () => {
 
       <Footer />
       <ChatbotLauncher />
+      </main>
     </div>
   );
 };

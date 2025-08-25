@@ -39,12 +39,20 @@ const ServicesDropdown = ({
         >
           Services
         </Link>
-        <button className="p-1 hover:bg-brand-navy-light rounded">
+        <button 
+          className="p-1 hover:bg-brand-navy-light rounded focus:outline-none focus:ring-2 focus:ring-brand-lime focus:ring-offset-2 focus:ring-offset-brand-navy"
+          aria-label="Open services menu"
+          aria-haspopup="menu"
+        >
           <ChevronDown className="h-4 w-4 text-white group-hover:text-brand-lime" />
         </button>
       </div>
     </DropdownMenuTrigger>
-    <DropdownMenuContent className="w-64 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50">
+    <DropdownMenuContent 
+      className="w-64 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50"
+      role="menu"
+      aria-label="Services menu"
+    >
       {serviceItems.map((service) => (
         <DropdownMenuItem asChild key={service.name}>
           <Link
