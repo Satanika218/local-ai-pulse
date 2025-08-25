@@ -294,7 +294,7 @@ const DigitalSkillsAudit = () => {
                 </p>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold px-8 py-3">
-                    Free 30min Consultation - Let's Talk How We Help
+                    Free 30min Consultation - Let's Talk How We Can Help
                   </Button>
                 </Link>
               </div>
