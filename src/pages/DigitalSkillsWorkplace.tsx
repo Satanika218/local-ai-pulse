@@ -87,42 +87,42 @@ const DigitalSkillsWorkplace = () => {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-8">
-                <Card className="bg-gradient-to-r from-brand-navy-light via-blue-900/30 to-purple-900/30 border-blue-500/30">
+                <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-white mb-4">Age Demographics</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-brand-navy mb-4">Age Demographics</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-3 text-brand-silver">
+                    <ul className="space-y-3 text-gray-700">
                       <li className="flex justify-between">
                         <span>16-24 years:</span> 
-                        <span className="text-green-400 font-bold">8% lack digital skills</span>
+                        <span className="text-green-600 font-bold">8% lack digital skills</span>
                       </li>
                       <li className="flex justify-between">
                         <span>25-34 years:</span> 
-                        <span className="text-yellow-400 font-bold">12% lack digital skills</span>
+                        <span className="text-yellow-600 font-bold">12% lack digital skills</span>
                       </li>
                       <li className="flex justify-between">
                         <span>35-54 years:</span> 
-                        <span className="text-orange-400 font-bold">18% lack digital skills</span>
+                        <span className="text-orange-600 font-bold">18% lack digital skills</span>
                       </li>
                       <li className="flex justify-between">
                         <span>55+ years:</span> 
-                        <span className="text-red-400 font-bold">43% lack digital skills</span>
+                        <span className="text-red-600 font-bold">43% lack digital skills</span>
                       </li>
                     </ul>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-r from-brand-navy-light via-purple-900/30 to-pink-900/30 border-purple-500/30">
+                <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-white mb-4">Rural Wales Challenge</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-brand-navy mb-4">Rural Wales Challenge</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-brand-silver mb-4">
+                    <p className="text-gray-700 mb-4">
                       Powys faces unique challenges with an aging population and traditional industries. 
                       Tourism, agriculture, and retail businesses struggle with:
                     </p>
-                    <ul className="space-y-2 text-brand-silver">
+                    <ul className="space-y-2 text-gray-700">
                       <li>• Limited access to digital skills training</li>
                       <li>• Aging workforce resistant to change</li>
                       <li>• Poor broadband infrastructure in rural areas</li>
@@ -130,6 +130,144 @@ const DigitalSkillsWorkplace = () => {
                     </ul>
                   </CardContent>
                 </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Transform Your Workforce CTA - Moved Up */}
+        <section className="py-16 bg-gradient-to-r from-brand-lime/10 to-brand-navy-light/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Transform Your Workforce's Digital Confidence
+              </h2>
+              <p className="text-xl text-brand-silver mb-8">
+                Don't let digital skills gaps hold your Powys business back. Create a confident, 
+                capable, and secure digital workforce.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/consultation">
+                  <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-bold py-4 px-8 text-lg">
+                    <Brain className="h-5 w-5 mr-2" />
+                    Free 30min Consultation - Let's Talk How We Can Help
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Digital Skills Assessment Tool */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-brand-navy mb-6">
+                  Check Your Digital Skills
+                </h2>
+                <p className="text-xl text-gray-600 mb-8">
+                  Take our free assessment to identify skills gaps in your workforce and get personalized recommendations.
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-8 mb-12">
+                <Card className="bg-gradient-to-br from-brand-lime/10 to-brand-navy/5 border-brand-lime/20 shadow-lg">
+                  <CardHeader>
+                    <div className="flex items-center space-x-3">
+                      <Brain className="h-10 w-10 text-brand-lime" />
+                      <div>
+                        <CardTitle className="text-2xl font-bold text-brand-navy">Free Skills Assessment</CardTitle>
+                        <CardDescription className="text-gray-600">Identify your team's digital readiness</CardDescription>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3 mb-6">
+                      <li className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Assess all 20 essential digital work tasks</span>
+                      </li>
+                      <li className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Get personalized skills gap analysis</span>
+                      </li>
+                      <li className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Receive tailored training recommendations</span>
+                      </li>
+                      <li className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-brand-lime mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Download comprehensive report</span>
+                      </li>
+                    </ul>
+                    <Link to="/digital-skills-audit">
+                      <Button className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-bold py-3">
+                        Start Free Assessment
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gradient-to-br from-brand-navy/10 to-brand-navy/5 border-brand-navy/20 shadow-lg">
+                  <CardHeader>
+                    <div className="flex items-center space-x-3">
+                      <Award className="h-10 w-10 text-brand-navy" />
+                      <div>
+                        <CardTitle className="text-2xl font-bold text-brand-navy">Digital Skills Quiz</CardTitle>
+                        <CardDescription className="text-gray-600">Quick 5-minute skills check</CardDescription>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3 mb-6">
+                      <li className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-brand-navy mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Fast digital literacy evaluation</span>
+                      </li>
+                      <li className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-brand-navy mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Instant results and scoring</span>
+                      </li>
+                      <li className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-brand-navy mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Identify priority learning areas</span>
+                      </li>
+                      <li className="flex items-start space-x-2">
+                        <CheckCircle className="h-5 w-5 text-brand-navy mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Compare with industry benchmarks</span>
+                      </li>
+                    </ul>
+                    <Link to="/digital-skills-quiz">
+                      <Button variant="outline" className="w-full border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-bold py-3">
+                        Take Quick Quiz
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-brand-navy/5 border border-brand-navy/10 rounded-xl p-6 max-w-3xl mx-auto">
+                  <h3 className="text-lg font-semibold text-brand-navy mb-2">Why Check Your Digital Skills?</h3>
+                  <p className="text-gray-700 mb-4">
+                    Understanding your current digital capabilities is the first step to building a more confident and productive workforce.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4 text-left">
+                    <div className="flex items-center space-x-2">
+                      <Shield className="h-4 w-4 text-brand-lime flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">Reduce Security Risks</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <TrendingDown className="h-4 w-4 text-brand-lime flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">Boost Productivity</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Users className="h-4 w-4 text-brand-lime flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">Improve Team Confidence</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -309,35 +447,6 @@ const DigitalSkillsWorkplace = () => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="py-16 bg-gradient-to-r from-brand-lime/10 to-brand-navy-light/50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Transform Your Workforce's Digital Confidence
-              </h2>
-              <p className="text-xl text-brand-silver mb-8">
-                Don't let digital skills gaps hold your Powys business back. Create a confident, 
-                capable, and secure digital workforce.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/consultation">
-                  <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-bold py-4 px-8 text-lg">
-                    <Brain className="h-5 w-5 mr-2" />
-                    Free Skills Assessment
-                  </Button>
-                </Link>
-                <Link to="/digital-skills-quiz">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-brand-navy font-bold py-4 px-8 text-lg">
-                    <Award className="h-5 w-5 mr-2" />
-                    Test Your Digital Skills
-                  </Button>
-                </Link>
-              </div>
             </div>
           </div>
         </section>
