@@ -79,9 +79,56 @@ const Index = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
+          {/* Mobile Layout - Stack statistics at top, then content */}
+          <div className="lg:hidden animate-fade-in">
+            {/* Statistics - Mobile Only */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div className="text-accent text-3xl md:text-4xl font-bold mb-3">92.6%</div>
+                <p className="text-white text-sm">of Welsh SMEs haven't adopted AI yet</p>
+              </div>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div className="text-accent text-3xl md:text-4xl font-bold mb-3">72%</div>
+                <p className="text-white text-sm">No. of SMEs that lack the government's suggested digital skills to remain competitive in the modern market</p>
+              </div>
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 sm:col-span-2">
+                <div className="text-accent text-3xl md:text-4xl font-bold mb-3">£10-15k</div>
+                <p className="text-white text-sm">Average savings cost per annum for firms that adopt our Tech solutions</p>
+              </div>
+            </div>
+
+            {/* Content - Mobile Only */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                Powering Community-Focused <span className="text-brand-lime">Growth</span> with AI, Tech and Business Solutions
+              </h1>
+              <p className="text-lg sm:text-xl text-white mb-6 max-w-2xl mx-auto lg:mx-0">
+                Serving the heart of Wales and the border counties - One community and every business counts
+              </p>
+              <p className="text-sm sm:text-base text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0">
+                We understand the unique challenges facing rural and border county businesses. Our AI automation and digital solutions help you save time, reduce costs, and compete with larger enterprises while maintaining your local advantage.
+              </p>
+
+              {/* CTA Buttons - Mobile with proper spacing */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <Link to="/consultation" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
+                    Free 30min Consultation - No Commitment - Learn How We Help
+                  </Button>
+                </Link>
+                <Link to="/free-tools" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-brand-navy text-sm sm:text-base px-4 sm:px-6 py-3">
+                    Try Free Tools
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Layout - Side by side */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
             {/* Left Column - Content */}
-            <div className="order-2 lg:order-1">
+            <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight">
                 Powering Community-Focused <span className="text-brand-lime">Growth</span> with AI, Tech and Business Solutions
               </h1>
@@ -92,8 +139,8 @@ const Index = () => {
                 We understand the unique challenges facing rural and border county businesses. Our AI automation and digital solutions help you save time, reduce costs, and compete with larger enterprises while maintaining your local advantage.
               </p>
 
-              {/* CTA Buttons - Extra spacing to prevent overlap with stats */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 lg:mb-20">
+              {/* CTA Buttons - Desktop */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/consultation" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
                     Free 30min Consultation - No Commitment - Learn How We Help
@@ -107,8 +154,8 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right Column - Statistics - Stacked on mobile with proper spacing */}
-            <div className="order-1 lg:order-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-8 mb-8 lg:mb-0">
+            {/* Right Column - Statistics */}
+            <div className="grid grid-cols-1 gap-6 lg:gap-8">
               <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 lg:p-8 border border-white/20">
                 <div className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">92.6%</div>
                 <p className="text-white text-sm lg:text-base">of Welsh SMEs haven't adopted AI yet</p>
@@ -117,7 +164,7 @@ const Index = () => {
                 <div className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">72%</div>
                 <p className="text-white text-sm lg:text-base">No. of SMEs that lack the government's suggested digital skills to remain competitive in the modern market</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 lg:p-8 border border-white/20 sm:col-span-2 lg:col-span-1 mt-4 lg:mt-0">
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 lg:p-8 border border-white/20">
                 <div className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">£10-15k</div>
                 <p className="text-white text-sm lg:text-base">Average savings cost per annum for firms that adopt our Tech solutions</p>
               </div>
