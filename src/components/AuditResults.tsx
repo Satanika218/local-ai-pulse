@@ -125,7 +125,7 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
         <Card className="bg-brand-navy border-brand-silver/20">
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-yellow-500" />
+              <AlertTriangle className="h-5 w-5 text-brand-lime" />
               Areas for Improvement
             </CardTitle>
           </CardHeader>
@@ -133,7 +133,7 @@ const AuditResults = ({ auditData }: AuditResultsProps) => {
             <ul className="space-y-2">
               {insights.weaknesses.map((weakness, index) => (
                 <li key={index} className="text-brand-silver flex items-start gap-2">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-lime rounded-full mt-2 flex-shrink-0"></div>
                   {weakness}
                 </li>
               ))}

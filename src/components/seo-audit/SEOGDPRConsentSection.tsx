@@ -17,13 +17,13 @@ const SEOGDPRConsentSection = ({ formData, setFormData }: SEOGDPRConsentSectionP
           checked={formData.gdprConsent}
           onCheckedChange={(checked) => setFormData(prev => ({ ...prev, gdprConsent: checked as boolean }))}
           required
-          className="border-2 border-yellow-400 data-[state=checked]:bg-yellow-400 data-[state=checked]:border-yellow-400 data-[state=checked]:text-purple-900"
+          className="border-2 border-brand-lime data-[state=checked]:bg-brand-lime data-[state=checked]:border-brand-lime data-[state=checked]:text-purple-900"
         />
         <div className="flex-1">
           <Label htmlFor="gdprConsent" className="text-white text-sm leading-relaxed font-medium">
-            <span className="text-yellow-400 font-bold">REQUIRED:</span> I consent to 11th Temple processing my personal data to provide the SEO audit and contact me about relevant services. 
+            <span className="text-brand-lime font-bold">REQUIRED:</span> I consent to 11th Temple processing my personal data to provide the SEO audit and contact me about relevant services. 
             You can withdraw consent at any time. View our{" "}
-            <a href="/privacy" className="text-yellow-400 hover:text-yellow-300 underline font-semibold">
+            <a href="/privacy" className="text-brand-lime hover:text-brand-lime-dark underline font-semibold">
               Privacy Policy
             </a>{" "}
             for more information. *
