@@ -20,7 +20,7 @@ const Navigation = () => {
 
   return (
     <nav 
-      className="bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/20 sticky top-0 z-50"
+      className="bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/20 sticky top-0 z-[9999]"
       role="navigation"
       aria-label="Main navigation"
     >

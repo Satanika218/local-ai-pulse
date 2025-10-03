@@ -72,7 +72,7 @@ const Index = () => {
           aria-labelledby="hero-heading"
         >
         {/* Floating Background Icons - Hidden on mobile to prevent overlaps */}
-        <div className="floating-icons hidden lg:block">
+        <div className="floating-icons hidden lg:block relative z-0">
           <Bot className="floating-icon animate-float absolute text-white/20" style={{ top: '8%', left: '15%', fontSize: '2.5rem' }} />
           <Brain className="floating-icon animate-float-delayed absolute text-white/30" style={{ top: '12%', right: '20%', fontSize: '2rem' }} />
           <BarChart3 className="floating-icon animate-float absolute text-white/25" style={{ top: '5%', left: '45%', fontSize: '2.2rem' }} />
