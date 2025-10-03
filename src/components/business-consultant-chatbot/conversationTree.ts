@@ -4,13 +4,16 @@ export const conversationTree: ConversationTree = {
   start: {
     id: 'start',
     text: [
-      "Hi there! I'm your AI business consultant from 11th Temple Solutions. I help businesses identify areas where technology and automation can save time, reduce costs, and drive growth.",
-      "What area would you like to explore first?"
+      "Hi! I'm here to help your business save time and money with simple technology solutions.",
+      "What's your biggest challenge right now?"
     ],
     options: [
-      { text: "GDPR Compliance & Data Protection", next: 'gdpr_compliance' },
-      { text: "Digital Skills & Workplace Champions", next: 'digital_skills' },
-      { text: "Explore other business areas", next: 'business_area_intro' },
+      { text: "Staff need digital skills training", next: 'digital_skills' },
+      { text: "GDPR compliance worries", next: 'gdpr_compliance' },
+      { text: "Too much paperwork and admin", next: 'finance_q' },
+      { text: "Finding and keeping customers", next: 'marketing_q' },
+      { text: "Website needs improvement", next: 'website_presence_q' },
+      { text: "Let's talk about my specific needs", next: 'redirect_consultation' },
     ],
   },
 
@@ -83,25 +86,41 @@ export const conversationTree: ConversationTree = {
 
   digital_skills: {
     id: 'digital_skills',
-    text: ["60% of UK workers can't complete essential digital tasks, creating security risks and productivity gaps. Is your team confident with technology?"],
+    text: ["Many businesses struggle because staff aren't confident with technology. We help train your team and create 'tech champions' who can teach others."],
     options: [
-      { text: "Our staff struggle with technology", next: 'skills_struggles' },
-      { text: "We need better digital security", next: 'digital_security' },
-      { text: "Want to improve productivity", next: 'productivity_improvement' },
-      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' }
+      { text: "Train someone to be our tech leader", next: 'tech_champion_training' },
+      { text: "Staff are scared of technology", next: 'skills_struggles' },
+      { text: "Need better computer security", next: 'digital_security' },
+      { text: "Want staff to work faster", next: 'productivity_improvement' },
+      { text: "Let's talk about training options", next: 'redirect_consultation' }
+    ]
+  },
+
+  tech_champion_training: {
+    id: 'tech_champion_training',
+    text: ["Smart choice! Training an internal 'tech champion' is one of the most effective ways to improve digital skills across your whole team. We'll train someone from your business to become the go-to person for technology help."],
+    solutions: [
+      { title: "Tech Leader Training Program", description: "Intensive training for one of your staff to become your internal technology expert and trainer" },
+      { title: "Train-the-Trainer Skills", description: "Teaching techniques so your tech champion can effectively help colleagues learn new systems" },
+      { title: "Ongoing Support &amp; Resources", description: "Continued backup and resources so your tech champion never feels stuck or alone" }
+    ],
+    options: [
+      { text: "This sounds perfect for us", next: 'redirect_consultation' },
+      { text: "What if they leave the company?", next: 'champion_backup_plan' },
+      { text: "How long does training take?", next: 'training_timeline' }
     ]
   },
 
   skills_struggles: {
     id: 'skills_struggles',
-    text: ["Technology anxiety is common, especially among older workers in rural areas. We create supportive learning environments that build confidence gradually."],
+    text: ["Don't worry - technology fear is very common! We specialize in helping people who find computers intimidating. We go slowly and make sure everyone feels comfortable."],
     solutions: [
-      { title: "Age-Appropriate Training", description: "Learning methods designed for different age groups and comfort levels, ensuring everyone feels supported" },
-      { title: "One-to-One Mentoring", description: "Personal support to overcome technology fears and build confidence at each individual's pace" },
-      { title: "Tech Workplace Champions", description: "Train internal advocates to provide ongoing peer support and create a positive digital culture" }
+      { title: "Patient, Step-by-Step Training", description: "We never rush anyone and explain everything in plain English, not technical jargon" },
+      { title: "One-to-One Support", description: "Personal help for those who need extra time or have specific concerns about technology" },
+      { title: "Build Confidence Gradually", description: "Start with simple tasks and build up skills slowly so no one feels overwhelmed" }
     ],
     options: [
-      { text: "Let's discuss how we can collaborate", next: 'redirect_consultation' },
+      { text: "This is exactly what we need", next: 'redirect_consultation' },
       { text: "Explore other areas", next: 'business_area_intro' }
     ]
   },
@@ -359,6 +378,27 @@ export const conversationTree: ConversationTree = {
           { text: "Go back", next: 'customer_response_q' },
       ]
   },
+
+  champion_backup_plan: {
+    id: 'champion_backup_plan',
+    text: ["Great question! We always train at least 2 people so you're never stuck. Plus, we document everything and provide ongoing support so knowledge doesn't walk out the door."],
+    options: [
+      { text: "That makes sense - let's talk", next: 'redirect_consultation' },
+      { text: "How long does training take?", next: 'training_timeline' },
+      { text: "Go back to training options", next: 'tech_champion_training' }
+    ]
+  },
+
+  training_timeline: {
+    id: 'training_timeline', 
+    text: ["Most tech champion training takes 2-4 weeks, depending on your needs. We work around your schedule - evenings, weekends, whatever works for your business."],
+    options: [
+      { text: "That's manageable - let's discuss", next: 'redirect_consultation' },
+      { text: "What if they need backup?", next: 'champion_backup_plan' },
+      { text: "Go back to training options", next: 'tech_champion_training' }
+    ]
+  },
+
   // Closing
   closing: {
     id: 'closing',
