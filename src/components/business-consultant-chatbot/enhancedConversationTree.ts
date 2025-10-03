@@ -1,6 +1,6 @@
-import { ConversationTree } from './types';
+import { ConversationTree } from '../components/business-consultant-chatbot/types';
 
-export const conversationTree: ConversationTree = {
+export const enhancedConversationTree: ConversationTree = {
   start: {
     id: 'start',
     text: [
