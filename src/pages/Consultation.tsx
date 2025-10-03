@@ -187,7 +187,7 @@ const Consultation = () => {
               }}
               aria-label="Book free consultation - opens in new window"
             >
-              Free 30min Consultation - Let's Talk How We Can Help
+              Free 30min Consultation - Let's Talk How We Help
             </Button>
           </div>
         </form>

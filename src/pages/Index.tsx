@@ -120,7 +120,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-8 sm:mt-10 relative z-20">
                 <Link to="/consultation" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
-                    Free 30min Consultation - Let's Talk How We Can Help
+                    Free 30min Consultation - Let's Talk How We Help
                   </Button>
                 </Link>
                 <Link to="/free-tools" className="w-full sm:w-auto">
@@ -158,7 +158,7 @@ const Index = () => {
                 </Link>
                 <Link to="/consultation" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
-                    Free 30min Consultation - Let's Talk How We Can Help
+                    Free 30min Consultation - Let's Talk How We Help
                   </Button>
                 </Link>
               </div>
@@ -325,7 +325,7 @@ const Index = () => {
                 </div>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                    Free 30min Consultation - Let's Talk How We Can Help
+                    Free 30min Consultation - Let's Talk How We Help
                   </Button>
                 </Link>
               </div>
@@ -415,9 +415,9 @@ const Index = () => {
           </p>
           <div className="flex justify-center">
             <Link to="/consultation">
-              <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Free 30min Consultation - Let's Talk How We Can Help
-              </Button>
+                    <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                      Free 30min Consultation - Let's Talk How We Help
+                    </Button>
             </Link>
           </div>
         </div>
