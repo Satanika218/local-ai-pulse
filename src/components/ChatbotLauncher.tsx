@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { MessageSquare, X } from "lucide-react";
-import BusinessConsultantChatbot from "./business-consultant-chatbot";
+import EnhancedChatbot from "./business-consultant-chatbot/EnhancedChatbot";
 
 const ChatbotLauncher = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ const ChatbotLauncher = () => {
       >
         {isOpen ? <X size={50} /> : <MessageSquare size={50} />}
       </Button>
-      {isOpen && <BusinessConsultantChatbot onClose={() => setIsOpen(false)} />}
+      {isOpen && <EnhancedChatbot />}
     </>
   );
 };

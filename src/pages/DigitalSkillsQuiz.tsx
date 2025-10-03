@@ -418,7 +418,7 @@ const DigitalSkillsQuiz = () => {
           </CardHeader>
           
           <CardContent className="p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               {questions[currentQuestion].question}
             </h2>
             
@@ -427,7 +427,7 @@ const DigitalSkillsQuiz = () => {
                 <Button
                   key={index}
                   onClick={() => handleAnswer(index)}
-                  className="w-full p-6 text-left bg-white/10 hover:bg-brand-lime/20 text-white border border-brand-silver/20 hover:border-brand-lime rounded-xl transition-all duration-300 min-h-[60px] justify-start text-base leading-relaxed"
+                  className="w-full p-6 text-left bg-white hover:bg-brand-lime/10 text-gray-800 border border-gray-300 hover:border-brand-lime rounded-xl transition-all duration-300 min-h-[60px] justify-start text-base leading-relaxed shadow-sm"
                   variant="outline"
                 >
                   <span className="font-semibold mr-3 text-brand-lime">
