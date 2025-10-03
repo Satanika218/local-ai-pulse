@@ -1,30 +1,39 @@
+export interface ChatMessage {
+  id: string;
+  content: string;
+  sender: 'user' | 'assistant';
+  timestamp: Date;
+}
 
-export type Solution = {
-  title: string;
-  description: string;
-};
-
-export type Option = {
+export interface ConversationNode {
+  id: string;
   text: string;
-  next: string; // ID of the next node
-};
+  options?: ConversationOption[];
+}
 
-export type Node = {
-  id: string;
-  text: string | string[];
-  options?: Option[];
-  solutions?: { title: string; description: string; }[];
-  isEnd?: boolean;
-};
+export interface ConversationOption {
+  text: string;
+  keywords?: string[];
+  next: string;
+}
 
-export type ConversationTree = {
-  [key: string]: Node;
-};
+export interface LLMResponse {
+  content: string;
+  confidence: number;
+  sourceDocuments?: string[];
+}
 
-export type Message = {
-  id: string;
-  text: string | string[];
-  sender: 'bot' | 'user';
-  options?: Option[];
-  solutions?: { title: string; description: string; }[];
-};
+export interface ChatbotState {
+  currentNode: string;
+  messages: ChatMessage[];
+  isLoading: boolean;
+  useLLM: boolean;
+  isLLMInitialized: boolean;
+}
+
+export interface LLMConfig {
+  apiKey?: string;
+  model?: string;
+  maxTokens?: number;
+  temperature?: number;
+}
