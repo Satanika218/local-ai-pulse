@@ -17,7 +17,7 @@ const NavLinks = ({
 }: {
   isActive: (p: string) => boolean
 }) => (
-  <div className="hidden md:flex flex-1 items-center justify-center space-x-2 font-semibold">
+  <div className="hidden md:flex flex-1 items-center justify-center space-x-2 font-semibold relative z-[10000]">
     <Link
       key="Home"
       to="/"
