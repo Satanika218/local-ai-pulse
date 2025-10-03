@@ -1,6 +1,79 @@
 import { ConversationTree } from './types';
 
 export const conversationTree: ConversationTree = {
+  welcome: {
+    id: 'welcome',
+    text: [
+      "👋 Hello! Welcome to 11th Temple Solutions!",
+      "I'm your AI business consultant, here to help Welsh and border county businesses like yours discover how technology can save time, reduce costs, and drive growth.",
+      "Whether you're looking to streamline operations, improve customer service, or boost your digital presence, I'm here to guide you to the right solutions.",
+      "What brings you here today? Are you looking for help with something specific, or would you like me to ask a few questions to understand your needs better?"
+    ],
+    options: [
+      { text: "I have a specific challenge I need help with", next: 'specific_challenge' },
+      { text: "I'm not sure - ask me some questions", next: 'discovery_questions' },
+      { text: "I want to learn about your services", next: 'services_overview' },
+      { text: "Book a free consultation", next: 'redirect_consultation' },
+    ],
+  },
+
+  specific_challenge: {
+    id: 'specific_challenge',
+    text: [
+      "Perfect! I'd love to help you with your specific challenge.",
+      "What's the main issue that's been taking up your time or causing headaches in your business?"
+    ],
+    options: [
+      { text: "Staff need digital skills training", next: 'digital_skills' },
+      { text: "GDPR compliance worries", next: 'gdpr_compliance' },
+      { text: "Too much paperwork and admin", next: 'finance_q' },
+      { text: "Finding and keeping customers", next: 'marketing_q' },
+      { text: "Website needs improvement", next: 'website_presence_q' },
+      { text: "Customer service takes too much time", next: 'customer_relations_q' },
+      { text: "Something else - let's discuss", next: 'redirect_consultation' },
+    ],
+  },
+
+  discovery_questions: {
+    id: 'discovery_questions',
+    text: [
+      "Great! I'll ask you a few questions to understand your business better and recommend the most suitable solutions.",
+      "Let's start with the area that's currently taking up the most time or feels like the biggest headache for your business:"
+    ],
+    options: [
+      { text: "Managing customer inquiries and support", next: 'customer_relations_q' },
+      { text: "Website and online presence", next: 'website_presence_q' },
+      { text: "Marketing and finding new customers", next: 'marketing_q' },
+      { text: "Paperwork, invoices, and admin tasks", next: 'finance_q' },
+      { text: "Staff training and digital skills", next: 'digital_skills' },
+      { text: "Data protection and GDPR compliance", next: 'gdpr_compliance' },
+      { text: "None of these - something else", next: 'redirect_consultation' },
+    ],
+  },
+
+  services_overview: {
+    id: 'services_overview',
+    text: [
+      "Excellent! We offer a comprehensive range of AI and digital solutions specifically designed for Welsh and border county businesses:",
+      "🤖 AI Customer Service - 24/7 automated support",
+      "📈 Digital Marketing & SEO - Get found online",
+      "💼 Process Automation - Reduce paperwork",
+      "🎓 Digital Skills Training - Upskill your team",
+      "🔒 GDPR Compliance - Stay legally compliant",
+      "🌐 Website Creation - Professional online presence",
+      "Which of these areas interests you most?"
+    ],
+    options: [
+      { text: "AI Customer Service", next: 'customer_relations_q' },
+      { text: "Digital Marketing & SEO", next: 'marketing_q' },
+      { text: "Process Automation", next: 'finance_q' },
+      { text: "Digital Skills Training", next: 'digital_skills' },
+      { text: "GDPR Compliance", next: 'gdpr_compliance' },
+      { text: "Website Creation", next: 'website_presence_q' },
+      { text: "I'd like to discuss multiple areas", next: 'redirect_consultation' },
+    ],
+  },
+
   start: {
     id: 'start',
     text: [
