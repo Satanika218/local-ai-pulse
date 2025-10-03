@@ -93,7 +93,11 @@ export const blogPosts: BlogPost[] = [
     id: 7,
     slug: mobileFirstBusiness.slug,
     title: mobileFirstBusiness.title,
-    excerpt: mobileFirstBusiness.excerpt
+    excerpt: mobileFirstBusiness.excerpt,
+    content: mobileFirstBusiness.content,
+    author: 'Dan Armour',
+    date: '2024-02-10'
+  },
   // Additional blog posts from 2024
   {
     id: 14,
@@ -247,11 +251,6 @@ export const blogPosts: BlogPost[] = [
     content: workplaceChampionsTechAdoption.content,
     author: 'Dan Armour',
     date: '2024-03-15'
-  }
-,
-    content: mobileFirstBusiness.content,
-    author: 'Dan Armour',
-    date: '2024-02-10'
   },
   {
     id: 8,

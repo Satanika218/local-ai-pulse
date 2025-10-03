@@ -4,7 +4,8 @@ import { BlogPostType } from '../types';
 export const post: Omit<BlogPostType, 'id' | 'date'> = {
   slug: 'ai-ethics-smes-building-trust-responsible-technology',
   title: 'AI Ethics for SMEs: Building Trust Through Responsible Technology',
-  excerpt: 'Ethical AI isn't just for tech giants. Small businesses must also consider the ethical implications of AI deployment. Learn how to implement AI responsibly and build customer trust.',
+  excerpt: 'Ethical AI is not just for tech giants. Small businesses must also consider the ethical implications of AI deployment. Learn how to implement AI responsibly and build customer trust.',
+  author: 'Dan Armour',
   content: (
     <>
       <p>Ethical AI considerations are no longer just concerns for large technology companies. SMEs implementing AI solutions must address ethical implications to build customer trust, ensure regulatory compliance, and create sustainable competitive advantages.</p>
@@ -15,7 +16,7 @@ export const post: Omit<BlogPostType, 'id' | 'date'> = {
 <p>Regulatory trends suggest that ethical AI requirements will expand beyond large corporations. SMEs that proactively address ethical considerations will be better positioned for future compliance requirements and customer expectations.</p>
 
 <h3 className="text-2xl font-bold text-white mt-6 mb-4">Key Ethical Considerations</h3>
-<p>Bias and fairness represent primary concerns. AI systems can perpetuate or amplify existing biases if not properly designed and monitored. SMEs must ensure their AI applications treat all customers fairly and don't discriminate based on protected characteristics.</p>
+<p>Bias and fairness represent primary concerns. AI systems can perpetuate or amplify existing biases if not properly designed and monitored. SMEs must ensure their AI applications treat all customers fairly and do not discriminate based on protected characteristics.</p>
 
 <p>Transparency and explainability are crucial for building trust. Customers should understand when AI systems are making decisions that affect them and have access to meaningful explanations of how those decisions are made.</p>
 
