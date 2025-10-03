@@ -16,7 +16,7 @@ const GDPRCompliance = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
-              <Shield className="h-16 w-16 text-yellow-400" />
+              <Shield className="h-16 w-16 text-brand-lime" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               GDPR Compliance Services
@@ -25,7 +25,7 @@ const GDPRCompliance = () => {
               Protecting Powys businesses from costly data breaches and regulatory penalties
             </p>
             <Link to="/consultation">
-              <Button className="bg-yellow-400 text-purple-900 hover:bg-yellow-300 font-bold py-4 px-8 text-lg">
+              <Button className="bg-brand-lime text-purple-900 hover:bg-yellow-300 font-bold py-4 px-8 text-lg">
                 Free 30min Consultation - Let's Talk How We Can Help
               </Button>
             </Link>
@@ -205,7 +205,7 @@ const GDPRCompliance = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/consultation">
-                <Button className="bg-yellow-400 text-purple-900 hover:bg-yellow-300 font-bold py-4 px-8 text-lg">
+                <Button className="bg-brand-lime text-purple-900 hover:bg-yellow-300 font-bold py-4 px-8 text-lg">
                   <Shield className="h-5 w-5 mr-2" />
                   Free GDPR Assessment
                 </Button>

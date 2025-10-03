@@ -189,7 +189,7 @@ const TestimonialForm = () => {
                 <Label htmlFor="gdprConsent" className="text-white text-sm leading-relaxed font-medium">
                   <span className="text-brand-lime font-bold">REQUIRED:</span> I consent to 11th Temple processing my personal data to process this testimonial and contact me if needed. 
                   You can withdraw consent at any time. View our{" "}
-                  <a href="/privacy" className="text-brand-lime hover:text-yellow-300 underline font-semibold">
+                  <a href="/privacy" className="text-brand-lime hover:text-brand-lime-dark underline font-semibold">
                     Privacy Policy
                   </a>{" "}
                   for more information. *

@@ -246,7 +246,7 @@ const DigitalSkillsAudit = () => {
                   </div>
                 ) : results.score >= 60 ? (
                   <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-yellow-400 mb-2">Good Foundation with Room for Growth</h3>
+                    <h3 className="text-xl font-semibold text-brand-lime mb-2">Good Foundation with Room for Growth</h3>
                     <p className="text-brand-silver">
                       You have solid basic skills but could benefit from targeted training in specific areas. 
                       Our customized training programs can help you bridge these gaps and unlock your business potential.

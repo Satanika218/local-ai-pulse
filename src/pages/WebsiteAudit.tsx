@@ -206,7 +206,7 @@ export default function WebsiteAudit() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500 mt-2"></div>
+                  <div className="w-2 h-2 rounded-full bg-brand-lime mt-2"></div>
                   <div>
                     <h4 className="text-white font-semibold">High: Enhance Mobile Responsiveness</h4>
                     <p className="text-brand-silver text-sm">Improve mobile layout and touch targets for better mobile user experience.</p>

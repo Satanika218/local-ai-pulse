@@ -99,7 +99,7 @@ const DigitalSkillsWorkplace = () => {
                       </li>
                       <li className="flex justify-between">
                         <span>25-34 years:</span> 
-                        <span className="text-yellow-400 font-bold">12% lack digital skills</span>
+                        <span className="text-brand-lime font-bold">12% lack digital skills</span>
                       </li>
                       <li className="flex justify-between">
                         <span>35-54 years:</span> 
@@ -314,7 +314,7 @@ const DigitalSkillsWorkplace = () => {
 
                 <Card className="bg-gradient-to-br from-yellow-800/50 to-yellow-900/50 border-yellow-500/30">
                   <CardHeader className="text-center">
-                    <Brain className="h-8 w-8 text-yellow-300 mx-auto mb-2" />
+                    <Brain className="h-8 w-8 text-brand-lime-dark mx-auto mb-2" />
                     <CardTitle className="text-white text-lg">Problem Solving</CardTitle>
                   </CardHeader>
                   <CardContent className="text-yellow-100 text-sm">
