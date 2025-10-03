@@ -68,21 +68,21 @@ const Index = () => {
       {/* Hero Section - Matching reference image */}
       <main id="main-content">
         <section 
-          className="pt-20 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center"
+          className="pt-24 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center"
           aria-labelledby="hero-heading"
         >
         {/* Floating Background Icons - Hidden on mobile to prevent overlaps */}
         <div className="floating-icons hidden lg:block">
-          <Bot className="floating-icon animate-float absolute text-white/20" style={{ top: '8%', left: '15%', fontSize: '2.5rem' }} />
-          <Brain className="floating-icon animate-float-delayed absolute text-white/30" style={{ top: '12%', right: '20%', fontSize: '2rem' }} />
-          <BarChart3 className="floating-icon animate-float absolute text-white/25" style={{ top: '5%', left: '45%', fontSize: '2.2rem' }} />
-          <Building2 className="floating-icon animate-float-delayed absolute text-white/30" style={{ top: '15%', right: '10%', fontSize: '1.8rem' }} />
-          <Laptop className="floating-icon animate-float absolute text-white/20" style={{ top: '18%', left: '25%', fontSize: '2rem' }} />
-          <Clock className="floating-icon animate-float-delayed absolute text-white/25" style={{ top: '10%', right: '35%', fontSize: '1.8rem' }} />
-          <Settings className="floating-icon animate-float absolute text-white/20" style={{ top: '20%', left: '60%', fontSize: '1.6rem' }} />
+          <Bot className="floating-icon animate-float absolute text-white/20" style={{ top: '15%', left: '15%', fontSize: '2.5rem' }} />
+          <Brain className="floating-icon animate-float-delayed absolute text-white/30" style={{ top: '20%', right: '20%', fontSize: '2rem' }} />
+          <BarChart3 className="floating-icon animate-float absolute text-white/25" style={{ top: '12%', left: '45%', fontSize: '2.2rem' }} />
+          <Building2 className="floating-icon animate-float-delayed absolute text-white/30" style={{ top: '25%', right: '10%', fontSize: '1.8rem' }} />
+          <Laptop className="floating-icon animate-float absolute text-white/20" style={{ top: '28%', left: '25%', fontSize: '2rem' }} />
+          <Clock className="floating-icon animate-float-delayed absolute text-white/25" style={{ top: '18%', right: '35%', fontSize: '1.8rem' }} />
+          <Settings className="floating-icon animate-float absolute text-white/20" style={{ top: '30%', left: '60%', fontSize: '1.6rem' }} />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-8">
           {/* Mobile Layout - Stack statistics at top, then content */}
           <div className="lg:hidden animate-fade-in">
             {/* Statistics - Mobile Only */}
