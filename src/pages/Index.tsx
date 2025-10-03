@@ -68,7 +68,7 @@ const Index = () => {
       {/* Hero Section - Matching reference image */}
       <main id="main-content">
         <section 
-          className="pt-24 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center z-0"
+          className="pt-16 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center z-0"
           aria-labelledby="hero-heading"
         >
         {/* Floating Background Icons - Hidden on mobile to prevent overlaps */}
@@ -82,7 +82,7 @@ const Index = () => {
           <Settings className="floating-icon animate-float absolute text-white/20" style={{ top: '30%', left: '60%', fontSize: '1.6rem' }} />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4">
           {/* Mobile Layout - Stack statistics at top, then content */}
           <div className="lg:hidden animate-fade-in">
             {/* Statistics - Mobile Only */}
