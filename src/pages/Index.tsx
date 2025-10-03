@@ -68,7 +68,7 @@ const Index = () => {
       {/* Hero Section - Matching reference image */}
       <main id="main-content">
         <section 
-          className="pt-24 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center"
+          className="pt-24 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center z-0"
           aria-labelledby="hero-heading"
         >
         {/* Floating Background Icons - Hidden on mobile to prevent overlaps */}

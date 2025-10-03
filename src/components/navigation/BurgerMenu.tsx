@@ -24,7 +24,7 @@ const BurgerMenu = ({
   if (!isOpen) return null;
   return (
     <div 
-      className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden z-[100] fixed top-20 left-0 right-0 shadow-lg"
+      className="border-t border-brand-silver/20 bg-brand-navy-light md:hidden z-[10000] fixed top-20 left-0 right-0 shadow-lg"
       id="mobile-menu"
       role="menu"
       aria-label="Mobile navigation menu"
