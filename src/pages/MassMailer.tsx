@@ -273,13 +273,13 @@ Digital Skills Training Specialist`
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Mass <span className="text-brand-lime">Mailer</span> System
+              Admin <span className="text-brand-lime">Mass Mailer</span>
             </h1>
             <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
-              Reach businesses across Powys, Shropshire, Wales, and Herefordshire
+              Private email campaign system for business outreach
             </p>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              Professional email campaigns to promote your AI and digital transformation services
+              ⚠️ Admin-only tool - Not accessible to public visitors
             </p>
           </div>
         </div>
