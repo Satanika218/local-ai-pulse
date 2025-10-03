@@ -95,7 +95,7 @@ const Index = () => {
                 <div className="text-accent text-3xl md:text-4xl font-bold mb-3">72%</div>
                 <p className="text-white text-sm">No. of SMEs that lack the government's suggested digital skills to remain competitive in the modern market</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 sm:col-span-2">
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 sm:col-span-2 relative z-10">
                 <div className="text-accent text-3xl md:text-4xl font-bold mb-3">£10-15k</div>
                 <p className="text-white text-sm">Average savings cost per annum for firms that adopt our Tech solutions</p>
               </div>
@@ -174,7 +174,7 @@ const Index = () => {
                 <div className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">72%</div>
                 <p className="text-white text-sm lg:text-base">No. of SMEs that lack the government's suggested digital skills to remain competitive in the modern market</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 lg:p-8 border border-white/20">
+              <div className="text-center bg-white/10 backdrop-blur rounded-2xl p-6 lg:p-8 border border-white/20 relative z-10">
                 <div className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4">£10-15k</div>
                 <p className="text-white text-sm lg:text-base">Average savings cost per annum for firms that adopt our Tech solutions</p>
               </div>
