@@ -19,9 +19,11 @@ export default function SalesLeadTools() {
         <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
           Automate your sales pipeline and generate more qualified leads with our AI-powered tools.
         </p>
-        <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-          Get Started Today
-        </Button>
+        <Link to="/consultation">
+          <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+            Get Started Today
+          </Button>
+        </Link>
       </div>
 
       {/* What are Sales & Lead Tools Section */}

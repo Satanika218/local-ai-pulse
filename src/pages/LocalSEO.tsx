@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import SEOAuditForm from "@/components/SEOAuditForm";
@@ -85,10 +85,12 @@ const LocalSEO = () => {
             <p className="text-xl text-brand-silver max-w-3xl mx-auto mb-8">
               Top local search results with AI that understands your business' unique characteristics and customer behavior patterns.
             </p>
-            <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Boost Local Rankings
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/consultation">
+              <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                Boost Local Rankings
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
