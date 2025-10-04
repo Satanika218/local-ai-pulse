@@ -39,7 +39,14 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-brand-silver">
                 <Phone className="h-4 w-4 text-brand-lime" />
-                <span>+44 7312 190 728</span>
+                <a 
+                  href="https://wa.me/447312190728" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-lime transition-colors"
+                >
+                  +44 7312 190 728 (WhatsApp)
+                </a>
               </div>
               <div className="flex items-center space-x-3 text-brand-silver">
                 <MapPin className="h-4 w-4 text-brand-lime" />
