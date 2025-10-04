@@ -189,14 +189,26 @@ const Contact = () => {
               <CardContent className="p-6">
                 <Mail className="h-12 w-12 text-brand-purple mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-brand-navy mb-2">Email Us</h3>
-                <p className="text-gray-600">Hello@11thtemplesolutions.com</p>
+                <a 
+                     href="mailto:Hello@11thtemplesolutions.com"
+                     className="text-brand-purple hover:text-brand-lime transition-colors duration-200 font-medium"
+                   >
+                     Hello@11thtemplesolutions.com
+                   </a>
               </CardContent>
             </Card>
             <Card className="text-center bg-gray-50 border-gray-200 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
                 <Phone className="h-12 w-12 text-brand-purple mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-brand-navy mb-2">Contact us on all platforms</h3>
-                <p className="text-gray-600">+44 7312 190 728</p>
+                <a 
+                     href="https://wa.me/447312190728"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="text-brand-purple hover:text-brand-lime transition-colors duration-200 font-medium"
+                   >
+                     +44 7312 190 728
+                   </a>
               </CardContent>
             </Card>
             <Card className="text-center bg-gray-50 border-gray-200 hover:shadow-lg transition-all duration-300">
