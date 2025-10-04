@@ -5,23 +5,9 @@ import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
 import { blogPosts } from "@/content/blogData";
-import { newBlogPosts } from "@/content/newBlogData";
+
 
 const Blog = () => {
-  // Combine all blog posts and sort by date (newest first)
-  const allBlogPosts = [...blogPosts, ...newBlogPosts].sort((a, b) => 
-    new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-
-  // Format date to UK standard (DD/MM/YYYY)
-  const formatDateUK = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-GB', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
-    });
-  };
   return (
     <div className="min-h-screen bg-brand-navy">
       <Navigation />
@@ -44,13 +30,13 @@ const Blog = () => {
       <section className="py-12 bg-brand-navy-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allBlogPosts.map((post) => (
+            {blogPosts.map((post) => (
               <div key={post.slug} className="bg-brand-navy rounded-2xl p-6 border border-brand-silver/20 shadow transition-transform hover:-translate-y-2">
                 <Link to={`/blog/${post.slug}`} className="block no-underline">
                   <h2 className="text-2xl font-bold text-white mb-2">{post.title}</h2>
                   <div className="flex items-center text-brand-silver text-sm mb-4">
                     <CalendarDays className="h-4 w-4 mr-2" />
-                    <span>{formatDateUK(post.date)}</span>
+                    <span>{new Date(post.date).toLocaleDateString()}</span>
                     <span className="mx-2">•</span>
                     <User className="h-4 w-4 mr-2" />
                     <span>{post.author}</span>

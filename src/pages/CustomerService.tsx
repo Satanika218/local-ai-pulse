@@ -19,11 +19,9 @@ export default function CustomerService() {
         <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
           Elevate your customer support with AI-driven solutions that provide exceptional service and build lasting relationships.
         </p>
-        <Link to="/consultation">
-          <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-            Explore Our Solutions
-          </Button>
-        </Link>
+        <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          Explore Our Solutions
+        </Button>
       </div>
 
       {/* What is Customer Service AI Section */}
