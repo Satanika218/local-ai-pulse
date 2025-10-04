@@ -7,7 +7,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
-import BookingSection from "@/components/BookingSection";
 
 const Consultation = () => {
   const [name, setName] = useState("");
@@ -66,30 +65,7 @@ const Consultation = () => {
         </div>
       </div>
 
-         {/* Calendar Booking Section */}
-         <div className="max-w-4xl mx-auto px-4 py-8">
-           <div className="text-center mb-8">
-             <h2 className="text-3xl font-bold text-white mb-4">
-               Book Your Free 30-Minute Consultation
-             </h2>
-             <p className="text-brand-silver text-lg">
-               Choose a time that works for you using our secure booking system
-             </p>
-           </div>
-           <BookingSection />
-         </div>
-
-         {/* Alternative Contact Form */}
-         <div className="max-w-3xl mx-auto px-4 py-8">
-           <div className="text-center mb-6">
-             <h3 className="text-2xl font-bold text-white mb-2">
-               Prefer to Contact Us Directly?
-             </h3>
-             <p className="text-brand-silver">
-               Fill out the form below and we'll get back to you within 24 hours
-             </p>
-           </div>
-      {/* Contact Form */}
+      {/* Consultation Form */}
       <div className="max-w-3xl mx-auto px-4 py-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>

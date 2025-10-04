@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Calendar, Clock, CheckCircle, ArrowLeft, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/Footer";
 import ChatbotLauncher from "@/components/ChatbotLauncher";
@@ -373,14 +372,13 @@ const Contact = () => {
                     </p>
                   </div>
                   
-                     <Link to="/consultation">
-                       <Button 
-                         className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime/90 font-semibold py-3 rounded-xl transition-all duration-300"
-                         aria-label="Book free consultation"
-                       >
-                         Free Consultation
-                       </Button>
-                     </Link>
+                  <Button 
+                    className="w-full bg-brand-lime text-brand-navy hover:bg-brand-lime/90 font-semibold py-3 rounded-xl transition-all duration-300"
+                    onClick={() => window.open('https://11thtemple.youcanbook.me/', '_blank')}
+                    aria-label="Book free consultation - opens in new window"
+                  >
+                    Free Consultation
+                  </Button>
                 </div>
               </CardContent>
             </Card>

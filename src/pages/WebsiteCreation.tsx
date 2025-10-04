@@ -19,11 +19,9 @@ export default function WebsiteCreation() {
         <p className="text-xl text-brand-silver max-w-2xl mx-auto mb-6">
           Establish a powerful online presence with our AI-driven website creation services.
         </p>
-           <Link to="/consultation">
-             <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-               Get Started
-             </Button>
-           </Link>
+        <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+          Get Started
+        </Button>
       </div>
 
       {/* What is Website Creation Section */}
