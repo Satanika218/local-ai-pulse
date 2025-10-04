@@ -37,7 +37,8 @@ const EnhancedChatbot = () => {
     if (messages.length === 0) {
       const welcomeNode = conversationTree[currentNode];
       if (welcomeNode) {
-        addMessage(welcomeNode.text, 'assistant');
+        const textContent = Array.isArray(welcomeNode.text) ? welcomeNode.text.join('\n') : welcomeNode.text;
+        addMessage(textContent, 'assistant');
       }
     }
   }, []);
@@ -66,7 +67,7 @@ const EnhancedChatbot = () => {
       if (useLLM && isLLMInitialized) {
         // Use LLM for response generation
         const conversationHistory = messages.map(msg => ({
-          role: msg.sender === 'user' ? 'user' : 'assistant',
+          role: (msg.sender === 'user' ? 'user' : 'assistant') as 'user' | 'assistant' | 'system',
           content: msg.content
         }));
 
@@ -104,7 +105,7 @@ const EnhancedChatbot = () => {
       const nextNode = conversationTree[matchingOption.next];
       if (nextNode) {
         setCurrentNode(matchingOption.next);
-        return nextNode.text;
+        return Array.isArray(nextNode.text) ? nextNode.text.join('\n') : nextNode.text;
       }
     }
 

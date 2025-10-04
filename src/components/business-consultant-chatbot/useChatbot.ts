@@ -23,9 +23,12 @@ export const useChatbot = () => {
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
+      const textContent = Array.isArray(node.text) ? node.text.join('\n') : node.text;
       addMessage({
         sender: 'bot',
-        text: node.text,
+        content: textContent,
+        timestamp: new Date(),
+        text: textContent,
         options: node.options,
         solutions: node.solutions,
       });
@@ -39,7 +42,12 @@ export const useChatbot = () => {
   }, []);
 
   const handleOptionClick = useCallback((option: Option) => {
-    addMessage({ sender: 'user', text: option.text });
+    addMessage({ 
+      sender: 'user', 
+      content: option.text,
+      timestamp: new Date(),
+      text: option.text 
+    });
 
     if (
       option.text.trim().toLowerCase() === SPECIALIST_OPTION_TEXT.toLowerCase()
@@ -47,10 +55,12 @@ export const useChatbot = () => {
       setIsTyping(true);
       setTimeout(() => {
         setIsTyping(false);
+        const botMessage = "Perfect! I'd love to connect you with one of our specialists who can discuss these solutions in detail and create a customised plan for your business. Click Book Consultation Now";
         addMessage({
           sender: 'bot',
-          text:
-            "Perfect! I'd love to connect you with one of our specialists who can discuss these solutions in detail and create a customised plan for your business. Click Book Consultation Now",
+          content: botMessage,
+          timestamp: new Date(),
+          text: botMessage,
         });
         setShowBookConsultNow(true);
       }, 900);

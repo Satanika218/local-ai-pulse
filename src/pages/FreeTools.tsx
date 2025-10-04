@@ -148,7 +148,7 @@ const FreeTools = () => {
           </p>
           <Link to="/consultation">
             <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold px-8 py-4 rounded-xl text-lg">
-              Free 30min Consultation - Let's Talk How We Can Help
+              Free 30min Consultation - Let's Talk How We Help
             </Button>
           </Link>
         </div>

@@ -77,16 +77,17 @@ export const conversationTree: ConversationTree = {
   start: {
     id: 'start',
     text: [
-      "Hi! I'm here to help your business save time and money with simple technology solutions.",
-      "What's your biggest challenge right now?"
+      "Hello! I'm your AI business consultant from 11th Temple Solutions. We help Welsh and border county businesses save time, reduce costs, and grow through practical AI and digital solutions.",
+      "Let's explore what's possible for your business. What area currently takes up the most time or feels like the biggest headache?"
     ],
     options: [
-      { text: "Staff need digital skills training", next: 'digital_skills' },
-      { text: "GDPR compliance worries", next: 'gdpr_compliance' },
-      { text: "Too much paperwork and admin", next: 'finance_q' },
-      { text: "Finding and keeping customers", next: 'marketing_q' },
-      { text: "Website needs improvement", next: 'website_presence_q' },
-      { text: "Let's talk about my specific needs", next: 'redirect_consultation' },
+      { text: "Your website and online presence", next: 'website_presence_q' },
+      { text: "Getting the word out and finding new customers", next: 'marketing_q' },
+      { text: "Paperwork, invoices and financial tasks", next: 'finance_q' },
+      { text: "Keeping in touch with customers", next: 'customer_relations_q' },
+      { text: "Keeping current with digital skills in the workplace", next: 'digital_skills' },
+      { text: "GDPR compliance", next: 'gdpr_compliance' },
+      { text: "Other - Discuss problem now", next: 'redirect_consultation' },
     ],
   },
 
@@ -100,6 +101,8 @@ export const conversationTree: ConversationTree = {
       { text: "Getting the word out and finding new customers", next: 'marketing_q' },
       { text: "Paperwork, invoices and financial tasks", next: 'finance_q' },
       { text: "Keeping in touch with customers", next: 'customer_relations_q' },
+      { text: "Keeping current with digital skills in the workplace", next: 'digital_skills' },
+      { text: "GDPR compliance", next: 'gdpr_compliance' },
       { text: "Other - Discuss problem now", next: 'redirect_consultation' },
     ],
   },

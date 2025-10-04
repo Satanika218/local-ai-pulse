@@ -157,7 +157,7 @@ export default function WebsiteCreation() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/consultation">
             <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-              Free 30min Consultation - Let's Talk How We Can Help
+              Free 30min Consultation - Let's Talk How We Help
             </Button>
           </Link>
           <Link to="/contact">

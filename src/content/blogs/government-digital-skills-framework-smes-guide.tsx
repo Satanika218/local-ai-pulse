@@ -4,10 +4,11 @@ import { BlogPostType } from '../types';
 export const post: Omit<BlogPostType, 'id' | 'date'> = {
   slug: 'government-digital-skills-framework-smes-guide',
   title: 'Government Digital Skills Framework: What SMEs Need to Know',
-  excerpt': 'The UK Government\'s Digital Skills Framework provides a roadmap for workforce development. Discover how SMEs can leverage this framework to build competitive digital capabilities.',
+  excerpt: 'The UK Government Digital Skills Framework provides a roadmap for workforce development. Discover how SMEs can leverage this framework to build competitive digital capabilities.',
+  author: 'Dan Armour',
   content: (
     <>
-      <p>The UK Government's Digital Skills Framework offers SMEs a structured approach to building workforce capabilities. This comprehensive guide helps businesses understand digital competency requirements and develop training strategies that align with national standards.</p>
+      <p>The UK Government Digital Skills Framework offers SMEs a structured approach to building workforce capabilities. This comprehensive guide helps businesses understand digital competency requirements and develop training strategies that align with national standards.</p>
 
       <h3 className="text-2xl font-bold text-white mt-6 mb-4">Understanding the Framework Structure</h3>
       <p>The framework identifies five key competency areas: digital foundation skills, digital communication and collaboration, digital data and information literacy, digital creation and innovation, and digital safety and security. Each area contains specific skills and proficiency levels.</p>
@@ -15,7 +16,7 @@ export const post: Omit<BlogPostType, 'id' | 'date'> = {
       <p>For SMEs, this structure provides clarity on what skills to prioritize and how to measure progress. Rather than guessing what training might be useful, businesses can follow government-endorsed standards that align with broader economic objectives.</p>
 
       <h3 className="text-2xl font-bold text-white mt-6 mb-4">Benefits for Welsh SMEs</h3>
-      <p>Welsh businesses can access government funding for framework-aligned training programs. The Welsh Government's Digital Skills Partnership offers grants covering up to 50% of training costs for eligible programs.</p>
+      <p>Welsh businesses can access government funding for framework-aligned training programs. The Welsh Government Digital Skills Partnership offers grants covering up to 50% of training costs for eligible programs.</p>
 
       <p>Following the framework also helps SMEs compete for government contracts. Many public sector tenders now require evidence of digital competency development, making framework compliance a competitive advantage.</p>
 

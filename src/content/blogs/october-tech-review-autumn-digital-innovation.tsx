@@ -4,10 +4,11 @@ import { BlogPostType } from '../types';
 export const post: Omit<BlogPostType, 'id' | 'date'> = {
   slug: 'october-tech-review-autumn-digital-innovation',
   title: 'October Tech Review: Autumn Opportunities for Digital Innovation',
-  excerpt: 'As we enter Q4, it's time to review your technology strategy and plan for year-end. Discover the latest AI trends and opportunities for finishing the year strong.',
+  excerpt: 'As we enter Q4, it is time to review your technology strategy and plan for year-end. Discover the latest AI trends and opportunities for finishing the year strong.',
+  author: 'Dan Armour',
   content: (
     <>
-      <p>As autumn arrives and we enter the final quarter of 2025, it's the perfect time for businesses to review their technology strategies and identify opportunities for digital innovation. The changing season brings new possibilities for implementing AI solutions that can strengthen year-end performance and prepare for the year ahead.</p>
+      <p>As autumn arrives and we enter the final quarter of 2025, it is the perfect time for businesses to review their technology strategies and identify opportunities for digital innovation. The changing season brings new possibilities for implementing AI solutions that can strengthen year-end performance and prepare for the year ahead.</p>
 
 <h3 className="text-2xl font-bold text-white mt-6 mb-4">Q4 Technology Planning</h3>
 <p>The final quarter offers unique advantages for technology implementation. With clearer visibility into annual performance, businesses can make informed decisions about technology investments that support year-end goals and prepare for the following year.</p>

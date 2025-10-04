@@ -16,4 +16,5 @@ export interface BlogPostType {
   date: string;
   excerpt: string;
   content: JSX.Element;
+  author?: string;
 }

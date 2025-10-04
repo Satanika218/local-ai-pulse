@@ -68,7 +68,7 @@ const Index = () => {
       {/* Hero Section - Matching reference image */}
       <main id="main-content">
         <section 
-          className="pt-24 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center z-0"
+          className="pt-16 pb-16 purple-gradient relative overflow-hidden min-h-screen flex items-center z-0"
           aria-labelledby="hero-heading"
         >
         {/* Floating Background Icons - Hidden on mobile to prevent overlaps */}
@@ -82,7 +82,7 @@ const Index = () => {
           <Settings className="floating-icon animate-float absolute text-white/20" style={{ top: '30%', left: '60%', fontSize: '1.6rem' }} />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4">
           {/* Mobile Layout - Stack statistics at top, then content */}
           <div className="lg:hidden animate-fade-in">
             {/* Statistics - Mobile Only */}
@@ -117,10 +117,10 @@ const Index = () => {
               </p>
 
               {/* CTA Buttons - Mobile with proper spacing */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-8 sm:mt-10 relative z-20">
                 <Link to="/consultation" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
-                    Free 30min Consultation - Let's Talk How We Can Help
+                    Free 30min Consultation - Let's Talk How We Help
                   </Button>
                 </Link>
                 <Link to="/free-tools" className="w-full sm:w-auto">
@@ -150,15 +150,15 @@ const Index = () => {
               </p>
 
               {/* CTA Buttons - Desktop */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
-                    Free 30min Consultation - Let's Talk How We Can Help
-                  </Button>
-                </Link>
+              <div className="flex flex-col sm:flex-row gap-4 mt-16 lg:mt-20 relative z-20">
                 <Link to="/free-tools" className="w-full sm:w-auto">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-brand-navy text-sm sm:text-base px-4 sm:px-6 py-3">
                     Try Free Tools
+                  </Button>
+                </Link>
+                <Link to="/consultation" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm sm:text-base px-4 sm:px-6 py-3">
+                    Free 30min Consultation - Let's Talk How We Help
                   </Button>
                 </Link>
               </div>
@@ -325,7 +325,7 @@ const Index = () => {
                 </div>
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold w-full">
-                    Free 30min Consultation - Let's Talk How We Can Help
+                    Free 30min Consultation - Let's Talk How We Help
                   </Button>
                 </Link>
               </div>
@@ -415,9 +415,9 @@ const Index = () => {
           </p>
           <div className="flex justify-center">
             <Link to="/consultation">
-              <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
-                Free 30min Consultation - Let's Talk How We Can Help
-              </Button>
+                    <Button size="lg" className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold">
+                      Free 30min Consultation - Let's Talk How We Help
+                    </Button>
             </Link>
           </div>
         </div>

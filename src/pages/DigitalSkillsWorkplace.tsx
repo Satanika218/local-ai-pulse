@@ -29,7 +29,7 @@ const DigitalSkillsWorkplace = () => {
               </p>
               <Link to="/consultation">
                 <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-bold py-4 px-8 text-lg">
-                  Free 30min Consultation - Let's Talk How We Can Help
+                  Free 30min Consultation - Let's Talk How We Help
                 </Button>
               </Link>
             </div>
@@ -150,7 +150,7 @@ const DigitalSkillsWorkplace = () => {
                 <Link to="/consultation">
                   <Button className="bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-bold py-4 px-8 text-lg">
                     <Brain className="h-5 w-5 mr-2" />
-                    Free 30min Consultation - Let's Talk How We Can Help
+                    Free 30min Consultation - Let's Talk How We Help
                   </Button>
                 </Link>
               </div>

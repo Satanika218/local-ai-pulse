@@ -4,7 +4,8 @@ import { BlogPostType } from '../types';
 export const post: Omit<BlogPostType, 'id' | 'date'> = {
   slug: 'sustainable-business-ai-reducing-waste-energy',
   title: 'Sustainable Business Through AI: Reducing Waste and Energy Costs',
-  excerpt: 'AI isn't just about efficiency—it's a powerful tool for sustainability. Learn how Welsh businesses are using AI to reduce waste, optimize energy consumption, and meet environmental goals.',
+  excerpt: 'AI is not just about efficiency - it is a powerful tool for sustainability. Learn how Welsh businesses are using AI to reduce waste, optimize energy consumption, and meet environmental goals.',
+  author: 'Dan Armour',
   content: (
     <>
       <p>Sustainability and profitability increasingly go hand in hand. Welsh businesses are discovering that AI technologies can simultaneously reduce environmental impact and operating costs. From energy optimization to waste reduction, AI offers practical solutions for businesses committed to environmental responsibility.</p>

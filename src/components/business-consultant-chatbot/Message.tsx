@@ -4,6 +4,14 @@ import { Message as MessageType } from "./types";
 
 export const Message = ({ message }: { message: MessageType }) => {
   const isBot = message.sender === 'bot';
+  const text = message.text || message.content || '';
+  
+  const renderText = () => {
+    if (Array.isArray(text)) {
+      return text.map((line, index) => <p key={index}>{line}</p>);
+    }
+    return <p>{text}</p>;
+  };
   
   return (
     <div
@@ -12,11 +20,7 @@ export const Message = ({ message }: { message: MessageType }) => {
         isBot ? "bg-brand-navy text-brand-silver" : "ml-auto bg-brand-lime text-brand-navy"
       )}
     >
-      {typeof message.text === 'string' ? (
-        <p>{message.text}</p>
-      ) : (
-        message.text.map((line, index) => <p key={index}>{line}</p>)
-      )}
+      {renderText()}
     </div>
   );
 };
