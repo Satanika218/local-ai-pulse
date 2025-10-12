@@ -89,6 +89,8 @@ const Consultation = () => {
                Fill out the form below and we'll get back to you within 24 hours
              </p>
            </div>
+         </div>
+
       {/* Contact Form */}
       <div className="max-w-3xl mx-auto px-4 py-8">
         <form onSubmit={handleSubmit} className="space-y-6">

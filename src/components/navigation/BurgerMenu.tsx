@@ -61,7 +61,7 @@ const BurgerMenu = ({
         ))}
         <div className="pt-4">
           <Link to="/consultation" onClick={closeMenu}>
-            <Button className="mobile-cta bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-lg py-4">
+            <Button className="mobile-cta w-full bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold text-base sm:text-lg py-4 min-h-[48px]">
               Get Started
             </Button>
           </Link>

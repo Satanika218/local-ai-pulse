@@ -47,15 +47,15 @@ const MobileServicesDropdown = ({
           <ChevronDown className="h-5 w-5 ml-2 text-brand-lime" />
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-72 ml-2 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-2 z-[110]">
+      <DropdownMenuContent className="w-72 ml-2 bg-brand-navy-light border-2 border-brand-silver/40 mt-2 shadow-xl rounded-xl p-2 z-[110] max-h-[70vh] overflow-y-auto">
         {serviceItems.map((service) => (
           <DropdownMenuItem asChild key={service.name}>
             <Link
               to={service.path}
-              className={`block px-4 py-3 text-base font-medium transition-colors duration-200 rounded-lg no-underline mobile-touch-target ${
+              className={`block px-4 py-3 text-sm md:text-base font-medium transition-colors duration-200 rounded-lg no-underline mobile-touch-target min-h-[44px] flex items-center ${
                 isActive(service.path)
                   ? "text-brand-lime underline bg-brand-lime/10"
-                  : "text-brand-silver hover:text-brand-lime hover:bg-brand-lime/10"
+                  : "text-white hover:text-brand-lime hover:bg-brand-lime/10"
               }`}
               onClick={closeMenu}
             >

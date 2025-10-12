@@ -49,7 +49,7 @@ const ServicesDropdown = ({
       </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent 
-      className="w-64 bg-brand-navy border border-brand-silver/30 mt-2 shadow-xl rounded-xl p-1 z-50"
+      className="w-64 bg-brand-navy-light border-2 border-brand-silver/40 mt-2 shadow-xl rounded-xl p-2 z-[10001] max-h-[70vh] overflow-y-auto"
       role="menu"
       aria-label="Services menu"
     >
@@ -57,10 +57,10 @@ const ServicesDropdown = ({
         <DropdownMenuItem asChild key={service.name}>
           <Link
             to={service.path}
-            className={`block px-4 py-2 text-base transition-colors duration-200 rounded-md no-underline ${
+            className={`block px-4 py-3 text-sm md:text-base transition-colors duration-200 rounded-lg no-underline min-h-[44px] flex items-center ${
               isActive(service.path)
                 ? "text-brand-lime underline bg-brand-lime/10"
-                : "text-brand-silver hover:text-brand-lime hover:bg-brand-lime/10"
+                : "text-white hover:text-brand-lime hover:bg-brand-lime/10"
             }`}
           >
             {service.name}
