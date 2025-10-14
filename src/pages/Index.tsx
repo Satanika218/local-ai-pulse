@@ -117,15 +117,15 @@ const Index = () => {
               </p>
 
               {/* CTA Buttons - Mobile with proper spacing */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-8 sm:mt-10 relative z-20">
-                <Link to="/consultation" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-3 min-h-[44px] leading-tight">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-8 sm:mt-10 relative z-50">
+                <Link to="/consultation" className="w-full sm:w-auto relative z-50">
+                  <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-3 min-h-[44px] leading-tight relative z-50">
                     <span className="hidden sm:inline">Free 30min Consultation - Let's Talk How We Help</span>
                     <span className="sm:hidden">Free Consultation</span>
                   </Button>
                 </Link>
-                <Link to="/free-tools" className="w-full sm:w-auto">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-3 min-h-[44px]">
+                <Link to="/free-tools" className="w-full sm:w-auto relative z-50">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-3 min-h-[44px] relative z-50">
                     Try Free Tools
                   </Button>
                 </Link>
@@ -151,14 +151,14 @@ const Index = () => {
               </p>
 
               {/* CTA Buttons - Desktop */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-16 lg:mt-20 relative z-20">
-                <Link to="/free-tools" className="w-full sm:w-auto">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-brand-navy text-sm md:text-base px-4 md:px-6 py-3 min-h-[44px]">
+              <div className="flex flex-col sm:flex-row gap-4 mt-16 lg:mt-20 relative z-50">
+                <Link to="/free-tools" className="w-full sm:w-auto relative z-50">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-brand-navy text-sm md:text-base px-4 md:px-6 py-3 min-h-[44px] relative z-50">
                     Try Free Tools
                   </Button>
                 </Link>
-                <Link to="/consultation" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm md:text-base px-4 md:px-6 py-3 min-h-[44px] whitespace-normal leading-tight">
+                <Link to="/consultation" className="w-full sm:w-auto relative z-50">
+                  <Button size="lg" className="w-full sm:w-auto bg-brand-lime text-brand-navy hover:bg-brand-lime-dark font-semibold glow-effect animate-pulse-glow text-sm md:text-base px-4 md:px-6 py-3 min-h-[44px] whitespace-normal leading-tight relative z-50">
                     Free 30min Consultation - Let's Talk How We Help
                   </Button>
                 </Link>
